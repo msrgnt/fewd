@@ -1,0 +1,11 @@
+
+Font: Avenir Next
+
+Colors:
+
+yellow: #e4ba3f
+green: #89bc62
+pink: #c85977
+purple: #c384c5
+orange: #cb732b
+blue: #73bec8
