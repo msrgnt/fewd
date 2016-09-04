@@ -22,7 +22,6 @@ section p {
   width: auto;
 }
 div p {
-  align: top;
   margin: 0 0 20px 0;
   width: 150px;
   padding: 0;
@@ -61,10 +60,8 @@ ul {
   padding: 0;
   margin: 0;
 }
-
 li {
   list-style-type: none;
-  padding: none;
 }
 footer p {
   padding: 0 0 0 20px;
@@ -159,6 +156,12 @@ nav {
   display: inline;
 }
 main p {
+  font-size: 19px;
+}
+div.fifthhow {
+  font-size: 19px;
+}
+div.sixthagree {
   font-size: 19px;
 }
 p {
