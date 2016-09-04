@@ -114,11 +114,15 @@ main nav a {
   padding: 40px 10px 40px 40px;
   text-shadow: 1px 1px rgb(85, 85, 85);
 }
-  input {
+input {
   color: rgb(184, 184, 184);
   padding: 0 0 0 8px;
   font-family: "Lucida Grande";
   font-size: 8px;
+}
+input:focus {
+  border: 2px #2A4CB2 solid;
+  outline: none;
 }
 main {
   background: white;
