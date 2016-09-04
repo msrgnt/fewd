@@ -12,7 +12,7 @@ header img {
 }
 body {
   font-family: "Lucida Grande";
-  background: url("../img/background.png");
+  background: url("/img/background.png");
   margin: 0 auto;
 }
 div {
