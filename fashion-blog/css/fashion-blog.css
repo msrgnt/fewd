@@ -1,3 +1,44 @@
 /* Fonts */
 
 /* Layout */
+body {
+  padding-left: 50px;
+  max-width: 690px;
+}
+ul {
+  overflow: hidden;
+  padding: 0;
+  list-style-type: none;
+}
+li {
+  float: left;
+  list-style-type: none;
+  padding: 0 5px;
+}
+img {
+  width: 690px;
+}
+h2.date {
+  padding-top: 50px;
+  margin: none;
+}
+footer a, a.expand {
+  color: red;
+  text-decoration: none;
+}
+a.expand {
+  float: right;
+}
+div.post {
+  padding-bottom: 50px;
+  border-bottom:1px rgb(221, 221, 221) solid;
+}
+footer{
+  margin-top: 70px;
+}
+footer li {
+  border-left: 1px solid rgb(221, 221, 221);
+}
+footer p{
+  margin-top: 30px;
+}
