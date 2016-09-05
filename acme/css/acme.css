@@ -117,8 +117,8 @@ main nav a {
 input {
   color: rgb(184, 184, 184);
   padding: 0 0 0 12px;
-  font-family: "Arial";
-  font-size: 9px;
+  font-family: "Lucida Grande";
+  font-size: 11px;
 }
 input:focus {
   border: 2px #2A4CB2 solid;
