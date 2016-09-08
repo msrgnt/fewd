@@ -5,6 +5,16 @@ header {
   border-bottom:1px rgb(132, 132, 132) solid;
   height: 107;
   }
+.add {
+  color: white;
+  font-family: "Lucida Grande";
+  font-size: 20px;
+  text-decoration: none;
+  padding: 15px 25px 15px 25px;
+  text-shadow: 1px 1px rgb(85, 85, 85);
+}
+
+}
 header img {
   margin: 15px 0 15px 30px;
   height: 75px;
@@ -103,7 +113,7 @@ header a {
   font-family: "Lucida Grande";
   font-size: 20px;
   text-decoration: none;
-  padding: 40px 10px 40px 40px;
+  padding: 40px 0 40px 0;
   text-shadow: 1px 1px rgb(85, 85, 85);
 }
 main nav a {
@@ -174,12 +184,4 @@ p {
 }
 main h1 {
   font-size: 45px;
-}
-a {
-  color: white;
-  font-family: "Lucida Grande";
-  font-size: 20px;
-  text-decoration: none;
-  padding: 40px 10px 40px 40px;
-  text-shadow: 1px 1px rgb(85, 85, 85);
 }
