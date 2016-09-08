@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Playing around with display</title>
+    <style media="screen">
+      body {
+        font-family: "helvetica"
+      }
+      fieldset {
+        border-width: 0;
+      }
+      .left {
+        display: inline-block;
+        width: 150px;
+      }
+      .box {
+        border-width: 1px sold black;
+        width: 200px;
+      }
+      button {
+        margin: 0 0 0 12px;
+      }
+      div {
+        display: block;
+        padding: 3px 0;
+      }
+      legend {
+        font-size: 12px;
+        padding: 0;
+
+      }
+      p {
+        margin: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <form>
+  <fieldset>
+    <legend>NAME</legend>
+      <div class="first">
+        <label class="left" for="">First</label>
+        <input class="box" type="text" name="f-name" value="" placeholder="John"></input>
+      </div>
+      <div class="second">
+        <label class="left" for="">Last</label>
+        <input class="box" type="text" name="l-name" value="" placeholder="Doe"></input>
+      </div>
+  </fieldset>
+  <fieldset>
+  <legend>ACCOUNT INFO</legend>
+      <div class="third">
+        <label class="left" >Email</label>
+        <input class="box" type="text" name="email" value="" placeholder="john.doe@gmail.com"></input>
+      </div>
+    <div class="fourth">
+      <label class="left" >Password</label>
+      <input class="box" type="text" name="pw" value="" placeholder="shhhh"></input>
+      <div>
+  </fieldset>
+  <fieldset>
+    <div class="fifth"><legend>GENDER</legend></div>
+      <label for="click-male"><input type="radio" id="click-male" name="gender" value="Male"> Male</input></label>
+      <label for="click-female"><input type="radio" id="click-female" name="gender" value="Female"> Female</input></label>
+    </fieldset>
+</form>
+<button type="button" name="button">Save</button>
+  </body>
+</html>
