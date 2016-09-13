@@ -2,16 +2,42 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Twitter</title>
-    <style media="screen">
-      h1 {
-        display: inline;
-      }
-      header nav {
-        float: right;
-      }
-    </style>
-  </head>
+      <title>Twitter</title>
+        <style media="screen">
+          body {
+            background-color: rgb(241, 240, 245)
+          }
+          div {
+            display: flex;
+          }
+          h1 {
+            display: inline;
+          }
+          header nav {
+            float: right;
+          }
+          img {
+            width: 100px;
+            height: 100px;
+            margin: 20px;
+            border-radius: 5px;
+            display: inline;
+          }
+          main {
+            background: white;
+            width: 80%;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            border-radius: 5px;
+            box-shadow: 0 0 7px 1px rgba(199,199,199,0.75), inset 0 0 0 1px rgb(199,199,199);
+          }
+          section {
+            flex: 1;
+            margin-top: 20px;
+          }
+        </style>
+      </head>
   <body>
     <header>
       <h1>Twitter</h1>
@@ -21,42 +47,40 @@
         </nav>
     </header>
       <main>
-        <div class="whats-hap">
-          <img src="img/head4.jpg" class="user" alt="" />
-            <section class="stuff">
-                <form>
-                  <input type="text" placeholder="What's happening?" autofocus required>
-                  <button type="submit">Tweet</button>
-                </form>
-              <a href="#">Like (0)</a>
-            <section class="stuff">
+        <div>
+          <img src="img/head4.jpg"/>
+            <section>
+                <input type="text" name="name" value="">
+                <br />
+                <a href="#">Like (0)</a>
+            </section>
         </div>
-        <div class="top-tweet">
-          <img src="img/head3.jpg" class="user" alt="" />
-          <section class="stuff">
-              <p>
+        <div>
+          <img src="img/head3.jpg"/>
+            <section>
+                <article>
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                </article>
+                <a href="#">Like (0)</a>
+            </section>
+        </div>
+        <div>
+          <img src="img/head2.jpg"/>
+            <section class="stuff">
+                <article>
+                  Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                </article>
+                <a href="#">Like (0)</a>
+            </section>
+        </div>
+        <div>
+          <img src="img/head1.jpg"/>
+            <section class="stuff">
+              <article>
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-              </p>
+              </article>
                 <a href="#">Like (0)</a>
             </section>
-        </div>
-        <div class="mid-tweet">
-          <img src="img/head2.jpg" class="user" alt="" />
-            <section class="stuff">
-              <p>
-                Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-              </p>
-                <a href="#">Like (0)</a>
-            </section>
-        </div>
-        <div class="bottom-pic">
-          <img src="img/head1.jpg" class="user" alt="" />
-          <section class="stuff">
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-            </p>
-              <a href="#">Like (0)</a>
-          </section>
         </div>
       </main>
     <footer>
