@@ -9,12 +9,25 @@
             font-family: "helvetica";
             margin: 0;
           }
+          .characters {
+            position: absolute;
+            right: 0;
+            bottom: 45px;
+            font-size: 12px;
+            font-weight: bold;
+          }
           footer a {
             margin: 0 15px;
           }
           .footer-items {
             text-align: center;
-            margin-top: 50px;
+            margin-top: 40px;
+            margin-bottom: 50px;
+          }
+          .footer-items a {
+          font-size: 14px;
+          color: rgb(181, 181, 181);
+          text-decoration: none;
           }
           h1 {
             display: inline;
@@ -31,13 +44,26 @@
           img {
             width: 70px;
             height: 70px;
-            margin: 20px;
+            margin: 20px 0;
             border-radius: 5px;
             display: inline;
+          }
+          .like-stuff {
+            padding-top: 5px;
+          }
+          .like-link {
+              font-weight: bold;
+              text-decoration: none;
+              color: rgb(6, 148, 86);
+          }
+          .like-count {
+              color: rgb(220, 220, 220);
           }
           main {
             background: white;
             width: 80%;
+            padding-top: 15px;
+            padding-bottom: 15px;
             max-width: 800px;
             margin-left: auto;
             margin-right: auto;
@@ -45,23 +71,53 @@
             border-radius: 5px;
             box-shadow: 0 0 7px 1px rgba(199,199,199,0.75), inset 0 0 0 1px rgb(199,199,199);
           }
-          .tweets {
-            display: flex;
+          #new-tweet {
+            position: relative;
+          }
+          .old-tweet {
+            font-size: 20px;
+            padding-top: 10px;
+            line-height: 30px;
           }
           section {
             flex: 1;
-            margin-top: 20px;
+            margin: 10px;
+            margin-bottom: 20px;
           }
           .style-button {
             color: white;
             background: rgb(6, 148, 86);
             font-size: 16px;
             padding: 10px 15px;
-            margin: 0 5px;
+            margin-right: 5px;
             font-weight: 500;
             border-radius: 3px;
             border: none;
             box-shadow: 0 1px 1px 1px rgb(5, 119, 69);
+          }
+          textarea {
+            border-radius: 5px;
+            display: block;
+            font: inherit;
+            margin-top: 11px;
+            width: 98%;
+            padding: 10px;
+            border: 1px solid rgb(223, 223, 223);
+            box-shadow: 0 0 0 1px rgba(239, 239, 239, 1);
+          }
+          .top-tweet {
+            width: 90%;
+            margin-left: auto;
+            margin-right: auto;
+            display: flex;
+          }
+          .tweets {
+            width: 90%;
+            margin-left: auto;
+            margin-right: auto;
+            display: flex;
+            border-top: 1px solid rgb(223, 223, 223);
+            box-shadow: inset 0 1px 0 0 rgba(239, 239, 239, 1);
           }
           .tweet-button {
             margin-top: 5px;
@@ -77,39 +133,50 @@
         </nav>
     </header>
       <main>
-        <div class="tweets">
+        <div class="top-tweet">
           <img src="img/head4.jpg"/>
             <section>
-                <input type="text" name="name" value="">
-                <br />
-                <button type="button" class="style-button tweet-button" name="button">Tweet</button>
+              <form id="new-tweet">
+                <textarea id="new-comment-body" placeholder="What's happening?" maxlength="140"></textarea>
+                  <span class="characters">140</span>
+                <button type="submit" class="style-button tweet-button">Tweet</button>
+              </form>
             </section>
         </div>
         <div class="tweets">
           <img src="img/head3.jpg"/>
             <section>
-                <article>
+                <article class="old-tweet">
                   Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                 </article>
-                <a href="#">Like (0)</a>
+                  <div class="like-stuff">
+                    <a href="#" class="like-link">Like</a>
+                      <span class="like-count"> (0)</span>
+                    </div>
             </section>
         </div>
         <div class="tweets">
           <img src="img/head1.jpg"/>
             <section class="stuff">
-                <article>
+              <article class="old-tweet">
                   Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
                 </article>
-                <a href="#">Like (0)</a>
+                  <div class="like-stuff">
+                    <a href="#" class="like-link">Like</a>
+                      <span class="like-count"> (0)</span>
+                    </div>
             </section>
         </div>
         <div class="tweets">
           <img src="img/head2.jpg"/>
             <section class="stuff">
-              <article>
+              <article class="old-tweet">
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
               </article>
-                <a href="#">Like (0)</a>
+                  <div class="like-stuff">
+                    <a href="#" class="like-link">Like</a>
+                      <span class="like-count"> (0)</span>
+                    </div>
             </section>
         </div>
       </main>
