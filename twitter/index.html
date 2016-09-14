@@ -12,7 +12,18 @@
           #new-tweet {
             position: relative;
           }
-          .characters {
+          .button-style {
+            color: white;
+            background: rgb(6, 148, 86);
+            font-size: 16px;
+            padding: 10px 15px;
+            margin-right: 5px;
+            font-weight: 500;
+            border-radius: 3px;
+            border: none;
+            box-shadow: 0 1px 1px 1px rgb(5, 119, 69);
+          }
+          .character-limit {
             position: absolute;
             right: 0;
             bottom: 45px;
@@ -79,19 +90,7 @@
           }
           section {
             flex: 1;
-            margin: 10px;
-            margin-bottom: 20px;
-          }
-          .style-button {
-            color: white;
-            background: rgb(6, 148, 86);
-            font-size: 16px;
-            padding: 10px 15px;
-            margin-right: 5px;
-            font-weight: 500;
-            border-radius: 3px;
-            border: none;
-            box-shadow: 0 1px 1px 1px rgb(5, 119, 69);
+            margin: 10px 10px 20px 10px;
           }
           textarea {
             border-radius: 5px;
@@ -126,8 +125,8 @@
     <header>
       <h1>Twitter</h1>
         <nav>
-          <button type="" class="style-button" name="button">Sign Up</button>
-          <button type="button" class="style-button" name="button">Log In</button>
+          <button type="" class="button-style" name="button">Sign Up</button>
+          <button type="button" class="button-style" name="button">Log In</button>
         </nav>
     </header>
       <main>
@@ -136,8 +135,8 @@
             <section>
               <form id="new-tweet">
                 <textarea id="new-comment-body" placeholder="What's happening?" maxlength="140"></textarea>
-                  <span class="characters">140</span>
-                <button type="submit" class="style-button tweet-button">Tweet</button>
+                  <span class="character-limit">140</span>
+                <button type="submit" class="button-style tweet-button">Tweet</button>
               </form>
             </section>
         </div>
