@@ -5,20 +5,32 @@
       <title>Twitter</title>
         <style media="screen">
           body {
-            background-color: rgb(241, 240, 245)
+            background-color: rgb(241, 240, 245);
+            font-family: "helvetica";
+            margin: 0;
           }
-          div {
-            display: flex;
+          footer a {
+            margin: 0 15px;
+          }
+          .footer-items {
+            text-align: center;
+            margin-top: 50px;
           }
           h1 {
             display: inline;
+            color: white;
+          }
+          header {
+            padding: 20px;
+            border-bottom: 1px solid rgb(80, 176, 137);
+            background: linear-gradient(rgb(48, 196, 133), rgb(7, 148, 88));
           }
           header nav {
             float: right;
           }
           img {
-            width: 100px;
-            height: 100px;
+            width: 70px;
+            height: 70px;
             margin: 20px;
             border-radius: 5px;
             display: inline;
@@ -29,12 +41,30 @@
             max-width: 800px;
             margin-left: auto;
             margin-right: auto;
+            margin-top: 40px;
             border-radius: 5px;
             box-shadow: 0 0 7px 1px rgba(199,199,199,0.75), inset 0 0 0 1px rgb(199,199,199);
+          }
+          .tweets {
+            display: flex;
           }
           section {
             flex: 1;
             margin-top: 20px;
+          }
+          .style-button {
+            color: white;
+            background: rgb(6, 148, 86);
+            font-size: 16px;
+            padding: 10px 15px;
+            margin: 0 5px;
+            font-weight: 500;
+            border-radius: 3px;
+            border: none;
+            box-shadow: 0 1px 1px 1px rgb(5, 119, 69);
+          }
+          .tweet-button {
+            margin-top: 5px;
           }
         </style>
       </head>
@@ -42,20 +72,20 @@
     <header>
       <h1>Twitter</h1>
         <nav>
-          <button type="" name="button">Sign Up</button>
-          <button type="button" name="button">Log In</button>
+          <button type="" class="style-button" name="button">Sign Up</button>
+          <button type="button" class="style-button" name="button">Log In</button>
         </nav>
     </header>
       <main>
-        <div>
+        <div class="tweets">
           <img src="img/head4.jpg"/>
             <section>
                 <input type="text" name="name" value="">
                 <br />
-                <a href="#">Like (0)</a>
+                <button type="button" class="style-button tweet-button" name="button">Tweet</button>
             </section>
         </div>
-        <div>
+        <div class="tweets">
           <img src="img/head3.jpg"/>
             <section>
                 <article>
@@ -64,8 +94,8 @@
                 <a href="#">Like (0)</a>
             </section>
         </div>
-        <div>
-          <img src="img/head2.jpg"/>
+        <div class="tweets">
+          <img src="img/head1.jpg"/>
             <section class="stuff">
                 <article>
                   Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
@@ -73,8 +103,8 @@
                 <a href="#">Like (0)</a>
             </section>
         </div>
-        <div>
-          <img src="img/head1.jpg"/>
+        <div class="tweets">
+          <img src="img/head2.jpg"/>
             <section class="stuff">
               <article>
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
@@ -84,12 +114,14 @@
         </div>
       </main>
     <footer>
-      <a href="#">About Us</a>
-      <a href="#">Careers</a>
-      <a href="#">Press</a>
-      <a href="#">Terms of Service</a>
-      <a href="#">Privacy Policy</a>
-      <a href="#">Contact Us</a>
+      <div class="footer-items">
+        <a href="#">About Us</a>
+        <a href="#">Careers</a>
+        <a href="#">Press</a>
+        <a href="#">Terms of Service</a>
+        <a href="#">Privacy Policy</a>
+        <a href="#">Contact Us</a>
+      </div>
   </footer>
   </body>
 </html>
