@@ -1,5 +1,24 @@
-<script type="text/javascript">
-  var a = 15;
-  var b = 16;
-  console.log(a + b);
-</script>
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Calculator</title>
+  </head>
+  <body>
+    <p>
+      Calculator
+    </p>
+    <form class="" action="index.html" method="post">
+      <input type="text" class="num-1" name="name" value="15"> +
+      <input type="text" class="num-2" name="name" value="16"> =
+      <input disabled type="text" name="name" class="result">
+      <br />
+      <button type="submit" name="button"> Add </button>
+    </form>
+    <script type="text/javascript">
+      var a = parseInt(document.querySelector(".num-1").value);
+      var b = parseInt(document.querySelector(".num-2").value);
+      document.querySelector(".result").value = a + b;
+    </script>
+  </body>
+</html>
