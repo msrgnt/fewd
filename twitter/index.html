@@ -134,7 +134,7 @@
         <img src="img/head4.jpg"/>
           <section>
             <form id="new-tweet-form">
-              <textarea id="new-tweet-text" placeholder="What's happening?" maxlength="140"></textarea>
+              <textarea id="new-tweet-text" placeholder="What's happening?" maxlength="140" class="new-tweet-text"></textarea>
                 <span class="character-limit">140</span>
               <button id="new-tweet-button" type="submit" class="button-style tweet-button">Tweet</button>
             </form>
@@ -187,7 +187,17 @@
           <a href="#">Contact Us</a>
         </div>
       </footer>
-    <script type="text/javascript" src="js/twitter.js">
+    <script type="text/javascript">
+      var button = document.querySelector(".tweet-button");
+      button.addEventListener("click", add);
+      function add(event) {
+        var newDiv = document.createElement("div");
+        newDiv.textContent = document.querySelector(".new-tweet-text").value;
+        // Append the new div to the body
+        var body = document.querySelector("section");
+        body.appendChild(newDiv);
+        event.preventDefault();
+    }
     </script>
   </body>
 </html>
