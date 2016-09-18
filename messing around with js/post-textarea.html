@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <form id="new-tweet-form">
+      <textarea id="new-tweet-text" placeholder="What's happening?" maxlength="140" class="new-tweet"></textarea>
+        <span class="character-limit">140</span>
+      <button id="new-tweet-button" type="submit" class="button-style tweet-button">Tweet</button>
+    </form>
+    <script type="text/javascript">
+              var button = document.querySelector(".tweet-button");
+              button.addEventListener("click", add);
+              function add(event) {
+                var newDiv = document.createElement("div");
+                newDiv.textContent = document.querySelector(".new-tweet").value;
+                // Append the new div to the body
+                var body = document.querySelector("body");
+                body.appendChild(newDiv);
+                event.preventDefault();
+              }
+    </script>
+  </body>
+</html>

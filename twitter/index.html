@@ -189,7 +189,9 @@
       </footer>
     <script type="text/javascript">
       var button = document.querySelector(".tweet-button");
+
       button.addEventListener("click", add);
+
       function add(event) {
         var newDiv = document.createElement("div");
         newDiv.textContent = document.querySelector(".new-tweet-text").value;
