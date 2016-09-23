@@ -24,7 +24,18 @@
           </form>
         </section>
       </div>
-
+      <div id="old-tweet-3" class="old-tweet">
+        <img src="img/head3.jpg"/>
+          <section>
+              <article class="old-tweet-text">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+              </article>
+              <div id="like-stuff" class="like-stuff">
+                  <a href="#" id="like-link-3" class="like-link">Like</a>
+                  (<span id="like-count" class="like-count">0</span>)
+              </div>
+          </section>
+      </div>
     </main>
       <footer>
         <div class="footer-items">
@@ -85,6 +96,17 @@
     //prevents new tweet from flashing and not posting
     event.preventDefault();
 
+}
+
+var li = document.querySelector(".like-stuff");
+var sp = parseInt(document.querySelector(".like-count").textContent);
+
+li.addEventListener("click", count);
+
+function count(event) {
+  event.preventDefault();
+  sp = sp + 1;
+  document.querySelector(".like-count").textContent = sp;
 }
     </script>
   </body>

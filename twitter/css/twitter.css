@@ -67,16 +67,13 @@ img {
 
 .like-stuff {
   padding-top: 5px;
+  color: rgb(220, 220, 220);
 }
 
 .like-link {
     font-weight: bold;
     text-decoration: none;
     color: rgb(6, 148, 86);
-}
-
-.like-count {
-    color: rgb(220, 220, 220);
 }
 
 main {

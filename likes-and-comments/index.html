@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="css/style.css" media="screen" charset="utf-8">
   </head>
   <body>
-    <main>
+    <main class="main">
       <article>
         <h1>The Challenges of Programming</h1>
 
@@ -43,14 +43,40 @@
       </div>
 
       <form id="new-comment">
-        <textarea id="new-comment-body" placeholder="Leave a comment..."></textarea>
-        <button type="submit">Comment</button>
+        <textarea id="new-comment-body" class="new-comment-box" placeholder="Leave a comment..."></textarea>
+        <button type="submit" class="button">Comment</button>
       </form>
     </main>
 
-    <script src="js/script.js">
+    <script>
+
+    var button = document.querySelector(".button");
+
+    button.addEventListener("click", newText);
+
+    function newText(event) {
+      event.preventDefault();
+
+      var newP = document.createElement("p");
+
+      newP.setAttribute("class", "main");
+      newP.textContent = document.querySelector(".new-comment-box").value;
+
+      var body = document.querySelector("main");
+      body.appendChild(newP);
+    }
 
 
+    var link = document.querySelector(".like");
+    var span = parseInt(document.querySelector(".like-count").textContent);
+
+    link.addEventListener("click", add);
+
+    function add(event) {
+      event.preventDefault();
+      span = span + 1;
+      document.querySelector(".like-count").textContent = span;
+    }
 
     </script>
   </body>
