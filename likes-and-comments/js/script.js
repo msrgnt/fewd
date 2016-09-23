@@ -1,17 +1,28 @@
-var link = document.querySelector(".like-link");
-var form = document.querySelector("#new-comment");
+// your code for comments goes here
+var button = document.querySelector(".button");
 
-link.addEventListener("click", like);
-form.addEventListener("submit", comment);
+button.addEventListener("click", newText);
 
-function like(event) {
+function newText(event) {
   event.preventDefault();
 
-  // Your code for like goes here
+  var newP = document.createElement("p");
+
+  newP.setAttribute("class", "main");
+  newP.textContent = document.querySelector(".new-comment-box").value;
+
+  var body = document.querySelector("main");
+  body.appendChild(newP);
 }
 
-function comment(event) {
-  event.preventDefault();
+// your code for likes goes here
+var link = document.querySelector(".like");
+var span = parseInt(document.querySelector(".like-count").textContent);
 
-  // Your code for comments goes here
+link.addEventListener("click", add);
+
+function add(event) {
+  event.preventDefault();
+  span = span + 1;
+  document.querySelector(".like-count").textContent = span;
 }

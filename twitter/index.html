@@ -24,15 +24,15 @@
           </form>
         </section>
       </div>
-      <div id="old-tweet-3" class="old-tweet">
+      <div class="old-tweet">
         <img src="img/head3.jpg"/>
           <section>
               <article class="old-tweet-text">
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
               </article>
-              <div id="like-stuff" class="like-stuff">
-                  <a href="#" id="like-link-3" class="like-link">Like</a>
-                  (<span id="like-count" class="like-count">0</span>)
+              <div class="like-stuff">
+                  <a href="#" class="like-link">Like</a>
+                  (<span class="like-count">0</span>)
               </div>
           </section>
       </div>
@@ -47,67 +47,6 @@
           <a href="#">Contact Us</a>
         </div>
       </footer>
-    <script type="text/javascript">
-
-    var button = document.querySelector(".tweet-button");
-    var newArticle = document.createElement("article");
-    var newDiv = document.createElement("div");
-    var newImg = document.createElement("img");
-    var newSection = document.createElement("section");
-    var newDivB = document.createElement("div");
-    var newA = document.createElement("a");
-    var newSpan = document.createElement("span");
-
-    button.addEventListener("click", add);
-
-    function add(event) {
-
-    var button = document.querySelector(".tweet-button");
-    var newArticle = document.createElement("article");
-    var newDiv = document.createElement("div");
-    var newImg = document.createElement("img");
-    var newSection = document.createElement("section");
-    var newDivB = document.createElement("div");
-    var newA = document.createElement("a");
-    var newSpan = document.createElement("span");
-
-    // brings css and new value into new tweet
-    newDiv.setAttribute("class", "old-tweet");
-    newImg.setAttribute("src", "img/head4.jpg");
-    newSection.setAttribute("class", "tweet-sec");
-    newArticle.setAttribute("class", "old-tweet-text");
-    newArticle.textContent = document.querySelector(".new-tweet-text").value;
-    newDivB.setAttribute("class", "like-stuff");
-    newA.setAttribute("class", "like-link");
-    newA.textContent = "Like";
-    newSpan.textContent =" (0)";
-    newSpan.setAttribute("class", "like-count");
-
-    // attaches new tweet's parts to each other and main
-    var body = document.querySelector("main");
-    body.appendChild(newDiv);
-    newDiv.appendChild(newImg);
-    newDiv.appendChild(newSection);
-    newSection.appendChild(newArticle);
-    newDivB.appendChild(newA);
-    newDivB.appendChild(newSpan);
-    newSection.appendChild(newDivB);
-
-    //prevents new tweet from flashing and not posting
-    event.preventDefault();
-
-}
-
-var li = document.querySelector(".like-stuff");
-var sp = parseInt(document.querySelector(".like-count").textContent);
-
-li.addEventListener("click", count);
-
-function count(event) {
-  event.preventDefault();
-  sp = sp + 1;
-  document.querySelector(".like-count").textContent = sp;
-}
-    </script>
+    <script src="js/twitter.js" type="text/javascript"></script>
   </body>
 </html>
