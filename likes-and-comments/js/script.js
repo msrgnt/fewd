@@ -10,6 +10,7 @@ function newText(event) {
 
   newP.setAttribute("class", "main");
   newP.textContent = document.querySelector(".new-comment-box").value;
+  document.querySelector(".new-comment-box").value = "";
 
   var body = document.querySelector("main");
   body.appendChild(newP);
