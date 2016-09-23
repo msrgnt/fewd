@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style media="screen">
+      p {
+        color: red;
+        margin-top: 20px;
+      }
+    </style>
+    <meta charset="utf-8">
+    <title>Title Content</title>
+  </head>
+  <body>
+    <p>
+      Hello world!
+    </p>
+    <ul>
+      <li>Milk</li>
+    </ul>
+    <script type="text/javascript">
+
+      //create new p with text
+      var p = document.querySelector("p");
+      console.log(p.textContent);
+      p.textContent = "Fuck you world!";
+
+      //create new li
+      var newItem = document.createElement("li");
+      newItem.textContent = "Cookies!";
+      var parent = document.querySelector("ul");
+      parent.appendChild(newItem);
+
+      //add squirrel image to ul
+      var image = document.createElement("img");
+      var url = "http://www.livescience.com/images/i/000/025/221/original/squirrel.jpg?interpolation=lanczos-none&downsize=*:1000";
+      image.setAttribute("src", url);
+      parent.appendChild(image);
+      image.setAttribute("width", "300");
+      image.setAttribute("class", "button")
+
+    </script>
+  </body>
+</html>

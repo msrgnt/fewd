@@ -1,7 +1,12 @@
-var like document.querySelector(".like-link")
+var button = document.querySelector(".tweet-button");
 
-like.addEventListener("click", addlike)
+button.addEventListener("click", add);
 
-function addlike() {
-
+function add(event) {
+  var newDiv = document.createElement("div");
+  newDiv.textContent = document.querySelector(".new-tweet-text").value;
+  // Append the new div to the body
+  var body = document.querySelector("section");
+  body.appendChild(newDiv);
+  event.preventDefault();
 }

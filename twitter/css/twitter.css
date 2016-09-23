@@ -1,0 +1,137 @@
+body {
+  background-color: rgb(241, 240, 245);
+  font-family: "helvetica";
+  margin: 0;
+}
+
+.new-tweet-form {
+  position: relative;
+  box-sizing: border-box;
+}
+
+.button-style {
+  color: white;
+  background: rgb(6, 148, 86);
+  font-size: 16px;
+  padding: 10px 15px;
+  margin-right: 5px;
+  font-weight: 500;
+  border-radius: 3px;
+  border: none;
+  box-shadow: 0 1px 1px 1px rgb(5, 119, 69);
+}
+
+.character-limit {
+  position: absolute;
+  right: 10px;
+  bottom: 45px;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+footer a {
+  margin: 0 15px;
+  font-size: 14px;
+  color: rgb(181, 181, 181);
+  text-decoration: none;
+}
+
+.footer-items {
+  text-align: center;
+  margin-top: 40px;
+  margin-bottom: 50px;
+}
+
+h1 {
+  display: inline;
+  color: white;
+}
+
+header {
+  padding: 20px;
+  border-bottom: 1px solid rgb(80, 176, 137);
+  background-image: linear-gradient(rgb(48, 196, 133), rgb(7, 148, 88));
+}
+
+header nav {
+  float: right;
+}
+
+img {
+  width: 70px;
+  height: 70px;
+  margin: 20px 0;
+  border-radius: 5px;
+  display: inline;
+}
+
+.like-stuff {
+  padding-top: 5px;
+}
+
+.like-link {
+    font-weight: bold;
+    text-decoration: none;
+    color: rgb(6, 148, 86);
+}
+
+.like-count {
+    color: rgb(220, 220, 220);
+}
+
+main {
+  background: white;
+  width: 80%;
+  max-width: 800px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 40px;
+  border-radius: 5px;
+  box-shadow: 0 0 7px -1px rgb(199, 199, 199);
+}
+
+.old-tweet-text {
+  font-size: 20px;
+  padding-top: 10px;
+  line-height: 30px;
+}
+
+section {
+  flex: 1;
+  margin: 10px 10px 20px 10px;
+}
+
+textarea {
+  border-radius: 5px;
+  display: block;
+  font: inherit;
+  margin-top: 11px;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 10px;
+
+  border: 1px solid rgb(223, 223, 223);
+  box-shadow: 0 0 0 1px rgba(239, 239, 239, 1);
+}
+
+.new-tweet {
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+}
+
+.old-tweet  {
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  border-top: 1px solid rgb(223, 223, 223);
+  box-shadow: inset 0 1px 0 0 rgba(239, 239, 239, 1);
+}
+
+.tweet-button {
+  margin-top: 5px;
+}

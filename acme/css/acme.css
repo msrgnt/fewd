@@ -36,6 +36,14 @@ div p {
   width: 150px;
   padding: 0;
 }
+.basics {
+    margin: 0 0 20px 0;
+    width: 150px;
+    padding: 0;
+    font-size: 20px;
+
+  }
+}
 section div p {
   width: 300px;
 }

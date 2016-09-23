@@ -2,180 +2,29 @@
 <html>
   <head>
     <meta charset="utf-8">
-      <title>Twitter</title>
-        <style media="screen">
-          body {
-            background-color: rgb(241, 240, 245);
-            font-family: "helvetica";
-            margin: 0;
-          }
-          #new-tweet-form {
-            position: relative;
-          }
-          .button-style {
-            color: white;
-            background: rgb(6, 148, 86);
-            font-size: 16px;
-            padding: 10px 15px;
-            margin-right: 5px;
-            font-weight: 500;
-            border-radius: 3px;
-            border: none;
-            box-shadow: 0 1px 1px 1px rgb(5, 119, 69);
-          }
-          .character-limit {
-            position: absolute;
-            right: 0;
-            bottom: 45px;
-            font-size: 12px;
-            font-weight: bold;
-          }
-          footer a {
-            margin: 0 15px;
-            font-size: 14px;
-            color: rgb(181, 181, 181);
-            text-decoration: none;
-          }
-          .footer-items {
-            text-align: center;
-            margin-top: 40px;
-            margin-bottom: 50px;
-          }
-          h1 {
-            display: inline;
-            color: white;
-          }
-          header {
-            padding: 20px;
-            border-bottom: 1px solid rgb(80, 176, 137);
-            background-image: linear-gradient(rgb(48, 196, 133), rgb(7, 148, 88));
-          }
-          header nav {
-            float: right;
-          }
-          img {
-            width: 70px;
-            height: 70px;
-            margin: 20px 0;
-            border-radius: 5px;
-            display: inline;
-          }
-          .like-stuff {
-            padding-top: 5px;
-          }
-          .like-link {
-              font-weight: bold;
-              text-decoration: none;
-              color: rgb(6, 148, 86);
-          }
-          .like-count {
-              color: rgb(220, 220, 220);
-          }
-          main {
-            background: white;
-            width: 80%;
-            max-width: 800px;
-            padding-top: 15px;
-            padding-bottom: 15px;
-            margin-left: auto;
-            margin-right: auto;
-            margin-top: 40px;
-            border-radius: 5px;
-            box-shadow: 0 0 7px -1px rgb(199, 199, 199);
-          }
-          .old-tweet-text {
-            font-size: 20px;
-            padding-top: 10px;
-            line-height: 30px;
-          }
-          section {
-            flex: 1;
-            margin: 10px 10px 20px 10px;
-          }
-          textarea {
-            border-radius: 5px;
-            display: block;
-            font: inherit;
-            margin-top: 11px;
-            width: 98%;
-            padding: 10px;
-            border: 1px solid rgb(223, 223, 223);
-            box-shadow: 0 0 0 1px rgba(239, 239, 239, 1);
-          }
-          .new-tweet {
-            width: 90%;
-            margin-left: auto;
-            margin-right: auto;
-            display: flex;
-          }
-          .old-tweet  {
-            width: 90%;
-            margin-left: auto;
-            margin-right: auto;
-            display: flex;
-            border-top: 1px solid rgb(223, 223, 223);
-            box-shadow: inset 0 1px 0 0 rgba(239, 239, 239, 1);
-          }
-          .tweet-button {
-            margin-top: 5px;
-          }
-    </style>
+    <title>Twitter</title>
+    <link rel="stylesheet" href="css/twitter.css" media="screen" title="no title">
   </head>
 <body>
   <header>
     <h1>Twitter</h1>
-      <nav>
-        <button type="button" id="sign-up-button" class="button-style" name="button">Sign Up</button>
-        <button type="button" id="log-in-button" class="button-style" name="button">Log In</button>
-      </nav>
+    <nav>
+      <button type="button" class="button-style" name="button">Sign Up</button>
+      <button type="button" class="button-style" name="button">Log In</button>
+    </nav>
   </header>
     <main>
       <div class="new-tweet">
         <img src="img/head4.jpg"/>
-          <section>
-            <form id="new-tweet-form">
-              <textarea id="new-tweet-text" placeholder="What's happening?" maxlength="140" class="new-tweet-text"></textarea>
-                <span class="character-limit">140</span>
-              <button id="new-tweet-button" type="submit" class="button-style tweet-button">Tweet</button>
-            </form>
-          </section>
+        <section>
+          <form class="new-tweet-form">
+            <textarea placeholder="What's happening?" maxlength="140" class="new-tweet-text"></textarea>
+            <span class="character-limit">140</span>
+            <button type="submit" class="button-style tweet-button">Tweet</button>
+          </form>
+        </section>
       </div>
-      <div id="old-tweet-3" class="old-tweet">
-        <img src="img/head3.jpg"/>
-          <section>
-              <article class="old-tweet-text">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-              </article>
-                <div id="like-stuff-3" class="like-stuff">
-                    <a href="#" id="like-link-3" class="like-link">Like</a>
-                    <span id="like-count-3" class="like-count"> (0)</span>
-                </div>
-          </section>
-      </div>
-      <div id="old-tweet-2" class="old-tweet">
-        <img src="img/head2.jpg"/>
-          <section>
-            <article class="old-tweet-text">
-                Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-              </article>
-                <div id="like-stuff-2" class="like-stuff">
-                    <a href="#" id="like-link-2" class="like-link">Like</a>
-                    <span id="like-count-2" class="like-count"> (0)</span>
-                </div>
-          </section>
-      </div>
-      <div id="old-tweet-1" class="old-tweet">
-        <img src="img/head1.jpg"/>
-          <section>
-            <article class="old-tweet-text">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-            </article>
-                <div id="like-stuff-1" class="like-stuff">
-                  <a href="#" id="like-link-1" class="like-link">Like</a>
-                  <span id="like-count-1" class="like-count"> (0)</span>
-                </div>
-          </section>
-      </div>
+
     </main>
       <footer>
         <div class="footer-items">
@@ -188,18 +37,55 @@
         </div>
       </footer>
     <script type="text/javascript">
-      var button = document.querySelector(".tweet-button");
 
-      button.addEventListener("click", add);
+    var button = document.querySelector(".tweet-button");
+    var newArticle = document.createElement("article");
+    var newDiv = document.createElement("div");
+    var newImg = document.createElement("img");
+    var newSection = document.createElement("section");
+    var newDivB = document.createElement("div");
+    var newA = document.createElement("a");
+    var newSpan = document.createElement("span");
 
-      function add(event) {
-        var newDiv = document.createElement("div");
-        newDiv.textContent = document.querySelector(".new-tweet-text").value;
-        // Append the new div to the body
-        var body = document.querySelector("section");
-        body.appendChild(newDiv);
-        event.preventDefault();
-    }
+    button.addEventListener("click", add);
+
+    function add(event) {
+
+    var button = document.querySelector(".tweet-button");
+    var newArticle = document.createElement("article");
+    var newDiv = document.createElement("div");
+    var newImg = document.createElement("img");
+    var newSection = document.createElement("section");
+    var newDivB = document.createElement("div");
+    var newA = document.createElement("a");
+    var newSpan = document.createElement("span");
+
+    // brings css and new value into new tweet
+    newDiv.setAttribute("class", "old-tweet");
+    newImg.setAttribute("src", "img/head4.jpg");
+    newSection.setAttribute("class", "tweet-sec");
+    newArticle.setAttribute("class", "old-tweet-text");
+    newArticle.textContent = document.querySelector(".new-tweet-text").value;
+    newDivB.setAttribute("class", "like-stuff");
+    newA.setAttribute("class", "like-link");
+    newA.textContent = "Like";
+    newSpan.textContent =" (0)";
+    newSpan.setAttribute("class", "like-count");
+
+    // attaches new tweet's parts to each other and main
+    var body = document.querySelector("main");
+    body.appendChild(newDiv);
+    newDiv.appendChild(newImg);
+    newDiv.appendChild(newSection);
+    newSection.appendChild(newArticle);
+    newDivB.appendChild(newA);
+    newDivB.appendChild(newSpan);
+    newSection.appendChild(newDivB);
+
+    //prevents new tweet from flashing and not posting
+    event.preventDefault();
+
+}
     </script>
   </body>
 </html>

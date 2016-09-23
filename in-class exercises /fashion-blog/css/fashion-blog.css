@@ -1,3 +1,23 @@
 /* Fonts */
+h1,
+.expand {
+  color: red;
+}
+a {
+  margin-right: 15px;
+}
+.text{
+}
+.letter {
+  font-size: 60px;
+  float: left;
+  display: inline;
+}
+.words {
+  margin-top: 30px;
+}
+.words-1 {
+  margin-top: 0px;
+}
 
 /* Layout */

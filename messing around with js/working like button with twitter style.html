@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <script src="http://code.jquery.com/jquery-1.4.3.min.js"></script>
+    <title></title>
+    <style media="screen">
+    .like {
+        font-weight: bold;
+        text-decoration: none;
+        color: rgb(6, 148, 86);
+        font-size: 20px;
+        border: none;
+        background: white;
+
+    }
+    .likecount {
+        color: rgb(220, 220, 220);
+        font-size: 16px;
+        width: 20px;
+        border: none;
+        text-align: center;
+    }
+    .parenthesis {
+        color: rgb(220, 220, 220);
+        font-size: 20px;
+    }
+    .like:focus {
+      border: none;
+      outline: none;
+    }
+    </style>
+  </head>
+  <body>
+    <p class="parenthesis"><input type="button" class="like" value="Like"/>
+    (<input type="text" name="likecount" class="likecount" value="0"/>)</p>
+
+  <script>
+  $(document).ready(function(){
+    $('.like').click( function() {
+      var counter = $('.likecount').val();
+      counter++ ;
+      $('.likecount').val(counter);
+      });
+  });
+
+  </script>
+    </body>
+</html>

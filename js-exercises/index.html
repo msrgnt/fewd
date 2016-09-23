@@ -8,6 +8,7 @@
   <body>
     <h1>JS Exercises</h1>
 
+
     <h2>Document Title</h2>
 
     <label>
@@ -158,96 +159,36 @@
     </table>
 
     <script>
+    //first problem
     document.querySelector(".document-title").value = document.title;
-    //name stuff
+
+    //second problem
     var a = document.querySelector(".first-name").value;
-    var b = document.querySelector(" .last-name").value;
+    var b = document.querySelector(".last-name").value;
     document.querySelector(".full-name").value = a + " " + b;
 
-    //first column of multiplication table
-    var a = parseInt(document.querySelector(".a1").value);
-    var b = parseInt(document.querySelector(".b0").value);
-    document.querySelector(".b1").value = a * b;
+    //third problem
 
-    var b = parseInt(document.querySelector(".c0").value);
-    document.querySelector(".c1").value = a * b;
+  function multiply(row, col, prod) {
+    var n = parseInt(document.querySelector(row).value);
+    var m = parseInt(document.querySelector(col).value);
+    document.querySelector(prod).value = n * m;
+  }
 
-    var b = parseInt(document.querySelector(".d0").value);
-    document.querySelector(".d1").value = a * b;
+    multiplyRow("b");
+    multiplyRow("c");
+    multiplyRow("d");
+    multiplyRow("e");
+    multiplyRow("f");
 
-    var b = parseInt(document.querySelector(".e0").value);
-    document.querySelector(".e1").value = a * b;
+  function multiplyRow(letter) {
+    multiply(".a1", "." + letter + "0", "." + letter + "1");
+    multiply(".a2", "." + letter + "0", "." + letter + "2");
+    multiply(".a3", "." + letter + "0", "." + letter + "3");
+    multiply(".a4", "." + letter + "0", "." + letter + "4");
+    multiply(".a5", "." + letter + "0", "." + letter + "5");
+  }
 
-    var b = parseInt(document.querySelector(".f0").value);
-    document.querySelector(".f1").value = a * b;
-
-    //second column of multiplication table
-    var a = parseInt(document.querySelector(".a2").value);
-    var b = parseInt(document.querySelector(".b0").value);
-    document.querySelector(".b2").value = a * b;
-
-    var b = parseInt(document.querySelector(".c0").value);
-    document.querySelector(".c2").value = a * b;
-
-    var b = parseInt(document.querySelector(".d0").value);
-    document.querySelector(".d2").value = a * b;
-
-    var b = parseInt(document.querySelector(".e0").value);
-    document.querySelector(".e2").value = a * b;
-
-    var b = parseInt(document.querySelector(".f0").value);
-    document.querySelector(".f2").value = a * b;
-
-    //third column of multiplication table
-    var a = parseInt(document.querySelector(".a3").value);
-    var b = parseInt(document.querySelector(".b0").value);
-    document.querySelector(".b3").value = a * b;
-
-    var b = parseInt(document.querySelector(".c0").value);
-    document.querySelector(".c3").value = a * b;
-
-    var b = parseInt(document.querySelector(".d0").value);
-    document.querySelector(".d3").value = a * b;
-
-    var b = parseInt(document.querySelector(".e0").value);
-    document.querySelector(".e3").value = a * b;
-
-    var b = parseInt(document.querySelector(".f0").value);
-    document.querySelector(".f3").value = a * b;
-
-    //fourth column of multiplication table
-    var a = parseInt(document.querySelector(".a4").value);
-    var b = parseInt(document.querySelector(".b0").value);
-    document.querySelector(".b4").value = a * b;
-
-    var b = parseInt(document.querySelector(".c0").value);
-    document.querySelector(".c4").value = a * b;
-
-    var b = parseInt(document.querySelector(".d0").value);
-    document.querySelector(".d4").value = a * b;
-
-    var b = parseInt(document.querySelector(".e0").value);
-    document.querySelector(".e4").value = a * b;
-
-    var b = parseInt(document.querySelector(".f0").value);
-    document.querySelector(".f4").value = a * b;
-
-    //fifth column of multiplication table
-    var a = parseInt(document.querySelector(".a5").value);
-    var b = parseInt(document.querySelector(".b0").value);
-    document.querySelector(".b5").value = a * b;
-
-    var b = parseInt(document.querySelector(".c0").value);
-    document.querySelector(".c5").value = a * b;
-
-    var b = parseInt(document.querySelector(".d0").value);
-    document.querySelector(".d5").value = a * b;
-
-    var b = parseInt(document.querySelector(".e0").value);
-    document.querySelector(".e5").value = a * b;
-
-    var b = parseInt(document.querySelector(".f0").value);
-    document.querySelector(".f5").value = a * b;
     </script>
   </body>
 </html>
