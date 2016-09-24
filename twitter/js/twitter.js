@@ -7,7 +7,9 @@
     var newSection = document.createElement("section");
     var newDivB = document.createElement("div");
     var newA = document.createElement("a");
+    var newParSpanA = document.createElement("span");
     var newSpan = document.createElement("span");
+    var newParSpanB = document.createElement("span");
 
     button.addEventListener("click", add);
 
@@ -22,7 +24,9 @@
     newDivB.setAttribute("class", "like-stuff");
     newA.setAttribute("class", "like-link");
     newA.textContent = "Like";
-    newSpan.textContent =" (0)";
+    newParSpanA.textContent =" ("
+    newSpan.textContent ="0";
+    newParSpanB.textContent =")"
     newSpan.setAttribute("class", "like-count");
     document.querySelector(".new-tweet-text").value = "";
 
@@ -33,7 +37,9 @@
     newDiv.appendChild(newSection);
     newSection.appendChild(newArticle);
     newDivB.appendChild(newA);
+    newDivB.appendChild(newParSpanA);
     newDivB.appendChild(newSpan);
+    newDivB.appendChild(newParSpanB);
     newSection.appendChild(newDivB);
 
     //prevents new tweet from flashing and not posting
@@ -44,9 +50,19 @@
     var li = document.querySelector(".like-stuff");
     var sp = parseInt(document.querySelector(".like-count").textContent);
 
-    li.addEventListener("click", count);
+    li.addEventListener("click", countLike);
 
-    function count(event) {
+    function countLike(event) {
+      event.preventDefault();
+      sp = sp + 1;
+      document.querySelector(".like-count").textContent = sp;
+    }
+    var li = document.querySelector(".like-stuff");
+    var sp = parseInt(document.querySelector(".like-count").textContent);
+
+    li.addEventListener("click", countLike);
+
+    function countLike(event) {
       event.preventDefault();
       sp = sp + 1;
       document.querySelector(".like-count").textContent = sp;

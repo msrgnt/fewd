@@ -1,28 +1,29 @@
-// your code for comments goes here
+// code for comments goes here
 var button = document.querySelector(".button");
 
-button.addEventListener("click", newText);
+button.addEventListener("click", makeComment);
 
-function newText(event) {
+function makeComment(event) {
   event.preventDefault();
 
   var newP = document.createElement("p");
+  newP.setAttribute("class", "comment");
 
-  newP.setAttribute("class", "main");
   newP.textContent = document.querySelector(".new-comment-box").value;
+  // reset new-comment-box value to no text after submit
   document.querySelector(".new-comment-box").value = "";
 
-  var body = document.querySelector("main");
+  var body = document.querySelector(".comments");
   body.appendChild(newP);
 }
 
-// your code for likes goes here
+// code for likes goes here
 var link = document.querySelector(".like");
 var span = parseInt(document.querySelector(".like-count").textContent);
 
-link.addEventListener("click", add);
+link.addEventListener("click", likeCounter);
 
-function add(event) {
+function likeCounter(event) {
   event.preventDefault();
   span = span + 1;
   document.querySelector(".like-count").textContent = span;
