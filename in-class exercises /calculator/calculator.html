@@ -3,6 +3,23 @@
   <head>
     <meta charset="utf-8">
     <title>Calculator</title>
+    <style media="screen">
+
+    button {
+      margin: 10px 0;
+      font-size: 24px;
+      color: green;
+      border: 1px solid green;
+      border-radius: 24px;
+      padding: 5px 10px;
+      background-image: linear-gradient(rgb(48, 196, 133), rgb(7, 148, 88));
+    }
+
+    button:hover {
+      color: white;
+      background-color: blue;
+    }
+    </style>
   </head>
   <body>
     <p>
@@ -20,7 +37,7 @@
       <input type="text" class="num-2-m" name="name" value=""> =
       <input disabled type="text" name="name" class="result-m" value="">
         <br />
-      <button type="submit" name="button" class="multiply-button"> Multply </button>
+      <button type="submit" name="button" class="multiply-button"> Multiply </button>
     </form>
     <form class="" action="index.html" method="post">
       <input type="text" class="num-1-d" name="name" value=""> /

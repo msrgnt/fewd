@@ -175,12 +175,6 @@
     document.querySelector(prod).value = n * m;
   }
 
-    multiplyRow("b");
-    multiplyRow("c");
-    multiplyRow("d");
-    multiplyRow("e");
-    multiplyRow("f");
-
   function multiplyRow(letter) {
     multiply(".a1", "." + letter + "0", "." + letter + "1");
     multiply(".a2", "." + letter + "0", "." + letter + "2");
@@ -189,6 +183,11 @@
     multiply(".a5", "." + letter + "0", "." + letter + "5");
   }
 
+      multiplyRow("b");
+      multiplyRow("c");
+      multiplyRow("d");
+      multiplyRow("e");
+      multiplyRow("f");
     </script>
   </body>
 </html>
