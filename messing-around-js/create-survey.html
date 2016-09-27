@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Survey Request</title>
+    <style media="screen">
+      .first-row {
+        display: flex;
+      }
+      .second-row {
+        display: flex;
+      }
+      p {
+        color: red;
+      }
+
+      .set-comment {
+        color: blue;
+      }
+      input {
+        margin-right: 10px;
+      }
+      label {
+        display: flex;
+      }
+      .section-box {
+
+      }
+      section.at-choice {
+        flex: 1;
+        border: 1px dashed red;
+        padding: 10px;
+        margin: 10px 20px;
+      }
+      section.set {
+        flex: 1;
+        border: 1px solid blue;
+        padding: 10px;
+        margin: 10px 20px;
+      }
+      .preferences {
+        display: flex;
+      }
+    </style>
+  </head>
+  <body>
+
+    <div class="context">
+
+        <label>What type of survey would you like to run?</label>
+        <br />
+
+          <select>
+            <option>Survey types...</option>
+            <option value="1">Appeal SxS</option>
+            <option value="2">Notifications SxS</option>
+            <option value="3">Recs on Watch SxS</option>
+            <option value="4">Appeal@k (one-sided)</option>
+            <option value="4">VWT@k (one-sided)</option>
+            <option value="4">Custom</option>
+
+          </select>
+
+        </div>
+
+        <p>// At dropdown choice, one of the below boxes will appear:</p>
+
+<main class="first-row">
+  <section class ="at-choice">
+    <h2>Appeal SxS</h2>
+    <div class="email">
+      <label class="basics">Email</label>
+      <input type="email" class="box" name="" placeholder="">
+    </div>
+    <br />
+    <div class="survey_identifier">
+      <label class="basics">Survey Identifier</label>
+      <input type="email" class="box" name="" placeholder="">
+    </div>
+      <br />
+    <div class="exp_id">
+      <label class="basics">Experiment ID</label>
+      <input type="email" class="box" name="" placeholder="">
+    </div>
+      <br />
+    <div class="control_id">
+      <label class="basics">Control ID</label>
+      <input type="email" class="box" name="" placeholder="">
+    </div>
+      <br />
+    <div class="free-form">
+      <label><input type="checkbox"  class="section-box" value="agree">I'd like respondents to comment on each rating</label>
+    </div>
+      <br />
+    <div class="follow-up">
+      <label><input type="checkbox"  class="section-box" value="agree">I'd like respondents to categorize their rating in a follow-up question</label>
+    </div>
+</section>
+<section class ="at-choice">
+  <h2>Notifications SxS</h2>
+  <div class="email">
+    <label class="basics">Email</label>
+    <input type="email" class="box" name="" placeholder="">
+  </div>
+    <br />
+  <div class="survey_identifier">
+    <label class="basics">Survey Identifier</label>
+    <input type="email" class="box" name="" placeholder="">
+  </div>
+    <br />
+  <div class="exp_id">
+    <label class="basics">Experiment ID</label>
+    <input type="email" class="box" name="" placeholder="">
+  </div>
+    <br />
+  <div class="control_id">
+    <label class="basics">Control ID</label>
+    <input type="email" class="box" name="" placeholder="">
+  </div>
+    <br />
+  <div class="free-form">
+    <label><input type="checkbox"  class="section-box" value="agree">I'd like respondents to comment on each rating</label>
+  </div>
+</section>
+<section class ="at-choice">
+  <h2>Recs on Watch SxS</h2>
+  <div class="email">
+    <label class="basics">Email</label>
+    <input type="email" class="box" name="" placeholder="">
+  </div>
+    <br />
+  <div class="survey_identifier">
+    <label class="basics">Survey Identifier</label>
+    <input type="email" class="box" name="" placeholder="">
+  </div>
+    <br />
+  <div class="exp_id">
+    <label class="basics">Experiment ID</label>
+    <input type="email" class="box" name="" placeholder="">
+  </div>
+    <br />
+  <div class="control_id">
+    <label class="basics">Control ID</label>
+    <input type="email" class="box" name="" placeholder="">
+  </div>
+    <br />
+  <div class="free-form">
+    <label><input type="checkbox" class="section-box" value="agree">I'd like respondents to comment on each rating</label>
+  </div>
+</section>
+
+</main>
+<main class="second-row">
+  <section class ="at-choice">
+    <h2>Appeal@k</h2>
+    <div class="email">
+      <label class="basics">Email</label>
+      <input type="email" class="box" name="" placeholder="">
+    </div>
+      <br />
+    <div class="survey_identifier">
+      <label class="basics">Survey Identifier</label>
+      <input type="email" class="box" name="" placeholder="">
+    </div>
+      <br />
+    <div class="exp_id">
+      <label class="basics">Experiment ID (0 for control)</label>
+      <input type="email" class="box" name="" placeholder="">
+    </div>
+    <br />
+    <div class="free-form">
+      <label><input type="checkbox"  class="section-box" value="agree">I'd like respondents to comment on each rating</label>
+    </div>
+      <br />
+    <div class="head_question">
+      <label><input type="checkbox"  class="section-box" value="agree">I'd like to insert a "head_question" directly after the Permissions question</label>
+    </div>
+      <br />
+    <div class="tail_question">
+      <label><input type="checkbox"  class="section-box" value="agree">I'd like to insert a "tail_question" at the end of the survey</label>
+    </div>
+  </section>
+  <section class ="at-choice">
+    <h2>VWT@k</h2>
+    <div class="email">
+      <label class="basics">Email</label>
+      <input type="email" class="box" name="" placeholder="">
+    </div>
+    <br />
+    <div class="survey_identifier">
+      <label class="basics">Survey Identifier</label>
+      <input type="email" class="box" name="" placeholder="">
+    </div>
+    <br />
+
+    <div class="exp_id">
+      <label class="basics">Experiment ID (0 for control)</label>
+      <input type="email" class="box" name="" placeholder="">
+    </div>
+    <br />
+
+    <div class="free-form">
+      <label><input type="checkbox"  class="section-box" value="agree">I'd like respondents to comment on each rating</label>
+    </div>
+    <br />
+
+    <div class="head_question">
+      <label><input type="checkbox"  class="section-box" value="agree">I'd like to insert a "head_question" directly after the Permissions question</label>
+    </div>
+    <br />
+
+    <div class="tail_question">
+      <label><input type="checkbox"  class="section-box" value="agree">I'd like to insert a "tail_question" at the end of the survey</label>
+    </div>
+  </section>
+  <section class ="at-choice">
+    <h2>Custom</h2>
+    <div class="email">
+      <label class="basics">Email</label>
+      <input type="email" name="" placeholder="">
+    </div>
+    <br />
+    <div class="survey_identifier">
+      <label class="basics">Survey Identifier</label>
+      <input type="email" name="" placeholder="">
+    </div>
+    <br />
+</main>
+<p class="set-comment">
+  // these sections will be fixed. Same options whichever survey is chosen at dropdown
+</p>
+<main class=preferences>
+
+  <section class="set">
+    <h3>Analysis Preferences</h3>
+    <div class="Analysis Preferences">
+      <label><input type="checkbox"  value="agree">All (default)</label>
+      <label><input type="checkbox"  value="agree">Breakdown by YouTube activity</label>
+      <label><input type="checkbox"  value="agree">Breakdown by gender</label>
+      <label><input type="checkbox"  value="agree">Breakdown by age</label>
+          <label><input type="checkbox"  value="agree">Breakdown by language</label>
+          <label><input type="checkbox"  value="agree">Breakdown by location</label>
+    </div>
+  </section>
+  <section class="set">
+    <h3>Language Preferences</h3>
+    <div class="languages">
+      <label><input type="checkbox"  value="agree">All (default)</label>
+      <label><input type="checkbox"  value="agree">English</label>
+      <label><input type="checkbox"  value="agree">Spanish</label>
+      <label><input type="checkbox"  value="agree">German</label>
+      <label><input type="checkbox"  value="agree">Italian</label>
+      <label><input type="checkbox"  value="agree">Portuguese</label>
+      <label><input type="checkbox"  value="agree">Japanese</label>
+      <label><input type="checkbox"  value="agree">Swedish</label>
+
+    </div>
+  </section>
+
+  </main>
+</body>
+</html>
