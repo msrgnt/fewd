@@ -9,11 +9,11 @@ function makeComment(event) {
   var newP = document.createElement("p");
   newP.setAttribute("class", "comment");
 
-  newP.textContent = document.querySelector(".new-comment-box").value;
+  newP.textContent = document.querySelector("#new-comment-body").value;
   // reset new-comment-box value to no text after submit
-  document.querySelector(".new-comment-box").value = "";
+  document.querySelector("#new-comment-body").value = "";
 
-  var body = document.querySelector(".comments");
+  var body = document.querySelector("#comments");
   body.appendChild(newP);
 }
 
