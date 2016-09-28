@@ -31,7 +31,7 @@
     document.querySelector(".new-tweet-text").value = "";
 
     // attaches new tweet's parts to each other and main
-    var body = document.querySelector("main");
+    var body = document.querySelector("#comments");
     body.appendChild(newDiv);
     newDiv.appendChild(newImg);
     newDiv.appendChild(newSection);
