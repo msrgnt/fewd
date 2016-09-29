@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head></head>
+
+<body>
+
+<!--just a button. You’ll notice there’s seemingly no text content for this button.
+There isn’t any here in the html (if there were it’d be between these blue guys: “...button-3”></button>” But if you look below you’ll see we make it say
+This is a line of text that I just made up! in the javascript-->
+
+<button type="button" name="button" class="button-1"></button>
+<br />
+<br />
+
+<!--three input boxes, + and = signs between those boxes, and a button with text
+content Add numbers!-->
+
+ <input type="text" class="entered-num-1" name="" placeholder="put a number here" value=""> +
+<input type="text" class="entered-num-2" name="" placeholder="put a number here" value=""> =
+<input disabled type="text" name="" placeholder="click for an answer" class="click-result" value="">
+<button type="button" name="button" class="button-2">Add numbers!</button>
+<br />
+<br />
+
+
+
+<!--just a button with the text content Push me-->
+
+<button type="button" name="button" class="button-3">Push me</button>
+
+
+<script type="text/javascript">
+
+// script for first button. This button has text on it. When you click the button
+// the text content of the button changes. That’s dope yo!
+// More specifically, javascript
+// a) immediately gives the button something to say
+// b) at click, gives the button something else to say
+
+         var firstButton = document.querySelector(".button-1");
+         firstButton.textContent = "This is a line of text that I just made up!";
+
+         firstButton.addEventListener("click", poopyShit);
+
+         function poopyShit() {
+          firstButton.textContent = "I made this up too!";
+         }
+
+// script for second button. This button takes the content of two inputs, adds them // together, then outputs the result in another input. That’s coo!
+// More specifically, javascript tells the button, when clicked, to
+// a) grab entered numbers and turn them into integers
+// b) add those numbers together
+// c) put whatever that equals into a third input box called click-result
+
+         var secondButton = document.querySelector(".button-2")
+
+         secondButton.addEventListener("click", calculateFart);
+
+         function calculateFart(event) {
+           var poopoo = parseInt(document.querySelector(".entered-num-1").value);
+           var peepee = parseInt(document.querySelector(".entered-num-2").value);
+           document.querySelector(".click-result").value = poopoo + peepee;
+           event.preventDefault();
+         }
+
+// script for third button. This button makes a new comment appear on the page!
+// More specifically, it tells the button, when clicked, to
+// a) create a new element (a div)
+	// b) make that div feature text content that I made up
+	// c) append the new div, now featuring text content, to appear on the page
+
+         var thirdButton = document.querySelector(".button-3");
+
+         thirdButton.addEventListener("click", newPoop);
+
+         function newPoop(event) {
+           var myDiv = document.createElement("div");
+           myDiv.textContent = "This is a line of text that I just made up!";
+           var mySite = document.querySelector("body");
+           mySite.appendChild(myDiv);
+           event.preventDefault();
+         }
+
+</script>
+</body>
+</html>
