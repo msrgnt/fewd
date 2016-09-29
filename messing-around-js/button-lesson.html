@@ -1,19 +1,19 @@
 <!DOCTYPE html>
 <html>
-<head></head>
+<head><meta charset="utf-8"></head>
 
 <body>
 
-<!--just a button. You’ll notice there’s seemingly no text content for this button.
-There isn’t any here in the html (if there were it’d be between these blue guys: “...button-3”></button>” But if you look below you’ll see we make it say
-This is a line of text that I just made up! in the javascript-->
+<!--Everything that’s bolded is something that I named, and is what we are using to make javascript work.-->
 
 <button type="button" name="button" class="button-1"></button>
 <br />
 <br />
 
-<!--three input boxes, + and = signs between those boxes, and a button with text
-content Add numbers!-->
+<!--just a button. You’ll notice there’s seemingly no text content for this button.
+There isn’t any here in the html (if there were it’d be between these blue guys: “...button-3”></button>” But if you look below you’ll see we make it say
+This is a line of text that I just made up! in the javascript-->
+
 
  <input type="text" class="entered-num-1" name="" placeholder="put a number here" value=""> +
 <input type="text" class="entered-num-2" name="" placeholder="put a number here" value=""> =
@@ -22,35 +22,31 @@ content Add numbers!-->
 <br />
 <br />
 
-
-
-<!--just a button with the text content Push me-->
+<!--three input boxes, + and = signs between those boxes, and a button with text
+content Add numbers!-->
 
 <button type="button" name="button" class="button-3">Push me</button>
 
+<!--just a button with the text content Push me-->
+
+
 
 <script type="text/javascript">
+
+         var firstButton = document.querySelector(".button-1");
+         firstButton.textContent = "You haven’t clicked me";
+
+         firstButton.addEventListener("click", poopyShit);
+
+         function poopyShit() {
+          firstButton.textContent = "You clicked me!";
+         }
 
 // script for first button. This button has text on it. When you click the button
 // the text content of the button changes. That’s dope yo!
 // More specifically, javascript
 // a) immediately gives the button something to say
 // b) at click, gives the button something else to say
-
-         var firstButton = document.querySelector(".button-1");
-         firstButton.textContent = "This is a line of text that I just made up!";
-
-         firstButton.addEventListener("click", poopyShit);
-
-         function poopyShit() {
-          firstButton.textContent = "I made this up too!";
-         }
-
-// script for second button. This button takes the content of two inputs, adds them // together, then outputs the result in another input. That’s coo!
-// More specifically, javascript tells the button, when clicked, to
-// a) grab entered numbers and turn them into integers
-// b) add those numbers together
-// c) put whatever that equals into a third input box called click-result
 
          var secondButton = document.querySelector(".button-2")
 
@@ -63,11 +59,11 @@ content Add numbers!-->
            event.preventDefault();
          }
 
-// script for third button. This button makes a new comment appear on the page!
-// More specifically, it tells the button, when clicked, to
-// a) create a new element (a div)
-	// b) make that div feature text content that I made up
-	// c) append the new div, now featuring text content, to appear on the page
+// script for second button. This button takes the content of two inputs, adds them // together, then outputs the result in another input. That’s coo!
+// More specifically, javascript tells the button, when clicked, to
+// a) grab entered numbers and turn them into integers
+// b) add those numbers together
+// c) put whatever that equals into a third input box called click-result
 
          var thirdButton = document.querySelector(".button-3");
 
@@ -80,6 +76,12 @@ content Add numbers!-->
            mySite.appendChild(myDiv);
            event.preventDefault();
          }
+
+// script for third button. This button makes a new comment appear on the page!
+// More specifically, it tells the button, when clicked, to
+// a) create a new element (a div)
+	// b) make that div feature text content that I made up
+	// c) append the new div, now featuring text content, to appear on the page
 
 </script>
 </body>
