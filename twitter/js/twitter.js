@@ -46,12 +46,12 @@ function add(event) {
   newParSpanB.textContent =")"
   newSpan.setAttribute("class", "like-count");
 
-  // reset
+  // reset stuff
   resetNewTweetBox()
 
   // attaches new tweet's parts to each other and main
-  var body = document.querySelector("main");
-  body.appendChild(newDiv);
+  var body = document.querySelector(".comments");
+  body.insertBefore( newDiv, body.firstChild );
   newDiv.appendChild(newImg);
   newDiv.appendChild(newSection);
   newSection.appendChild(newArticle);

@@ -7,19 +7,38 @@
   <body>
     <form id="new-tweet-form">
       <textarea id="new-tweet-text" placeholder="What's happening?" maxlength="140" class="new-tweet"></textarea>
-        <span class="character-limit">140</span>
+      <br />
       <button id="new-tweet-button" type="submit" class="button-style tweet-button">Tweet</button>
     </form>
+  <div id="comments" class="comments">
+    <div id="old-tweet" class="old-tweet">
+      <img src="img/head3.jpg"/>
+        <section>
+            <article class="old-tweet-text">
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            </article>
+            <div class="like-stuff">
+                <a href="#" class="like-link">Like</a>
+                (<span class="like-count">0</span>)
+            </div>
+          </section>
+      </div>
+    </div>
     <script type="text/javascript">
-              var button = document.querySelector(".tweet-button");
-              button.addEventListener("click", add);
-              function add(event) {
-                var newDiv = document.createElement("div");
-                newDiv.textContent = document.querySelector(".new-tweet").value;
+    function resetNewTweetBox() {
+      document.querySelector(".new-tweet").value = "";
+    }
+
+      var button = document.querySelector(".tweet-button");
+      button.addEventListener("click", add);
+      function add(event) {
+      var newDiv = document.createElement("div");
+      newDiv.textContent = document.querySelector(".new-tweet").value;
                 // Append the new div to the body
-                var body = document.querySelector("body");
-                body.appendChild(newDiv);
-                event.preventDefault();
+      var body = document.querySelector(".comments");
+      body.insertBefore( newDiv, body.firstChild );
+      event.preventDefault();
+      resetNewTweetBox();
               }
     </script>
   </body>
