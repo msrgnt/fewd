@@ -65,24 +65,41 @@ function add(event) {
 
 }
 
-// adds another like when like div is clicked
-    var li = document.querySelector(".like-stuff");
-    var sp = parseInt(document.querySelector(".like-count").textContent);
+// Yes, there's probably a nicer way to do the below. I don't know that nicer
+// way yet. SORRY!
+
+// adds likes when top old-tweet's like div is clicked
+    var li = document.querySelector("#like-stuff-3");
+    var sp = parseInt(document.querySelector("#like-count-3").textContent);
 
     li.addEventListener("click", countLike);
 
     function countLike(event) {
       event.preventDefault();
       sp = sp + 1;
-      document.querySelector(".like-count").textContent = sp;
+      document.querySelector("#like-count-3").textContent = sp;
     }
-    var li = document.querySelector(".like-stuff");
-    var sp = parseInt(document.querySelector(".like-count").textContent);
 
-    li.addEventListener("click", countLike);
+// adds likes when mid old-tweet's like div is clicked
+    var li2 = document.querySelector("#like-stuff-2");
+    var sp2 = parseInt(document.querySelector("#like-count-2").textContent);
 
-    function countLike(event) {
+    li2.addEventListener("click", countLike2);
+
+    function countLike2(event) {
       event.preventDefault();
-      sp = sp + 1;
-      document.querySelector(".like-count").textContent = sp;
+      sp2 = sp2 + 1;
+      document.querySelector("#like-count-2").textContent = sp2;
+    }
+
+// adds likes when bottom old-tweet's like div is clicked
+    var li1 = document.querySelector("#like-stuff-1");
+    var sp1 = parseInt(document.querySelector("#like-count-1").textContent);
+
+    li1.addEventListener("click", countLike1);
+
+    function countLike1(event) {
+      event.preventDefault();
+      sp1 = sp1 + 1;
+      document.querySelector("#like-count-1").textContent = sp1;
     }
