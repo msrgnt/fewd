@@ -1,0 +1,74 @@
+<table>
+  <tr>
+    <td colspan="2">
+      <h1>
+        Receipt
+      </h1>
+    </td>
+  </tr>
+  <tr>
+    <td>Hamburger</td>
+    <td class="i-0 item-price">7.99</td>
+  </tr>
+  <tr>
+    <td>Fries</td>
+    <td class="i-1 item-price">3.99</td>
+  </tr>
+  <tr>
+    <td>Soda</td>
+    <td class="i-2 item-price">1.99</td>
+  </tr>
+  <tr>
+    <td>Apple Pie</td>
+    <td class="i-3 item-price">1.99</td>
+  </tr>
+  <tr>
+    <td>Milk Shake</td>
+    <td class="i-3 item-price">6.99</td>
+  </tr>
+  <tr>
+    <td>Bag</td>
+    <td class="i-4 item-price">0.10</td>
+  </tr>
+  <tr>
+    <th>
+      Total<br>
+      <button>Calculate</button>
+    </td>
+    <td class="t"></td>
+  </tr>
+</table>
+
+<script>
+//currently this just grabs that last value?
+var button = document.querySelector("button");
+var items = document.querySelectorAll(".item-price");
+var price = 0;
+
+button.addEventListener("click", ohShit);
+
+function ohShit(event){
+  for (var i = 0; i < items.length; i++) {
+
+    //this, at loop, takes the parsed textContent (each price) and adds it to whatever
+    //price was before. Price starts at 0 (above). It increments up at every loop.
+    price = price + parseFloat(items[i].textContent);
+
+    //some rounding thing I found and copied
+    price = Math.round(price * 100.0) / 100.0;
+    document.querySelector(".t").textContent = price;
+
+  }
+
+event.preventDefault();
+}
+
+</script>
+
+<style>
+h1 { text-align: center; margin: 0; font-size: 1.2em; }
+body { font-family: sans-serif; font-size: 20px; }
+table { margin: 0 auto; }
+th { text-align: right; }
+th, td { border: 1px solid #ccc; padding: 1em; }
+</style>

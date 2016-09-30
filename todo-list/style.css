@@ -2,7 +2,7 @@
 
 body {
   margin: 0;
-  background: #f1f0f5;
+  background: rgb(240, 240, 240);
   font-family: sans-serif;
   font-size: 18px;
   line-height: 1.4em;
@@ -11,7 +11,7 @@ body {
 main {
   margin: 2em auto;
   box-shadow: 0 5px 30px rgba(0, 0, 0, 0.2);
-  background: white;
+  background: rgb(240, 240, 240);
   padding: 2em 3em;
   max-width: 600px;
   border-radius: 5px;

@@ -52,11 +52,10 @@ content Add numbers!-->
 
          secondButton.addEventListener("click", calculateFart);
 
-         function calculateFart(event) {
+         function calculateFart() {
            var poopoo = parseInt(document.querySelector(".entered-num-1").value);
            var peepee = parseInt(document.querySelector(".entered-num-2").value);
            document.querySelector(".click-result").value = poopoo + peepee;
-           event.preventDefault();
          }
 
 // script for second button. This button takes the content of two inputs, adds them // together, then outputs the result in another input. That’s coo!
@@ -69,12 +68,11 @@ content Add numbers!-->
 
          thirdButton.addEventListener("click", newPoop);
 
-         function newPoop(event) {
+         function newPoop() {
            var myDiv = document.createElement("div");
            myDiv.textContent = "This is a line of text that I just made up!";
            var mySite = document.querySelector("body");
            mySite.appendChild(myDiv);
-           event.preventDefault();
          }
 
 // script for third button. This button makes a new comment appear on the page!
