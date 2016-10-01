@@ -7,18 +7,57 @@
       body {
         background-color: rgb(240, 240, 244);
       }
+
+      .box-ish:checked + span{
+        text-decoration:line-through;
+        color: rgb(200, 200, 200);
+      }
+
       .buttonish {
-        margin-top: 40px;
+        margin-top: 20px;
         padding: 10px 20px;
         border-radius: 5px;
         font-size: 20px;
         font-family: "Times";
       }
 
-      footer {
-        text-align: center;
+      .footer {
         font-family: "Times";
-        padding-top: 40px;
+        color: rgb(220, 220, 220);
+        font-size: 32px;
+        display: block;
+        text-align: center;
+      }
+
+      li {
+        margin: 3px 0;
+      }
+
+      #nameapp {
+        display: inline-block;
+        width: 350px;
+        margin-top: 30px;
+        padding-right: 70px;
+      }
+
+      #new-item-click {
+        background-color: rgb(4, 155, 215);
+        color: rgb(254, 254, 254);
+        border: none;
+        margin-left: 5px;
+        box-shadow: inset 0 0 0 1px rgb(3, 128, 173);
+      }
+
+      #new-item-input {
+        width: 350px;
+        box-shadow: inset 0 0 0 1px rgb(205, 205, 205);
+        border: none;
+
+      }
+
+      #new-item-input:focus {
+        border: 1px rgb(145, 204, 230) solid;
+        border: none;
       }
 
       .new-task {
@@ -26,47 +65,37 @@
         font-family: "Times";
       }
 
-      .box-ish:checked + span{
-        text-decoration:line-through;
-        color: rgb(200, 200, 200);
+
+      #todo-num {
+        position: absolute;
+        top: 35px;
+        left: 407px;
       }
 
-      footer h1 {
-        color: rgb(220, 220, 220);
-      }
-      form {
-        text-align: center;
-      }
-
-      main {
+      .top {
+        font-size: 32px;
+        font-family: "Times";
+        display: block;
         margin-left: auto;
         margin-right: auto;
-        width: 80%;
+        max-width: 500px;
+        position: relative;
       }
 
-      #new-item-input {
-        width: 70%
-      }
-      #new-item-click {
-        background-color: rgb(4, 155, 215);
-        color: white;
-
-
-      }
-
-      #todo-list {
-
-      }
 
       ul {
         list-style: none;
+        padding-left: 20px;
+        margin-top: 8px;
       }
+
     </style>
   </head>
   <body>
-    <main>
-      <h1>Today's todos</h1>
-      <div class="countz">
+
+    <div class="top">
+      <div class="top-row">
+        <span id="nameapp"><strong>Today's todos</strong></span>
         <span id="todo-num" class="todo-count">0</span>
         <span id="text" class="todo-count">todos</span>
       </div>
@@ -74,62 +103,61 @@
         <input type="text" id="new-item-input" class="buttonish" placeholder="What do you need to do today?" autofocus required>
         <button id="new-item-click" class="buttonish" type="submit">Create</button>
       </form>
+
       <ul id="todo-list">
-
       </ul>
-    </main>
-    <footer>
-      <h1>Nothing to do</h1>
-    </footer>
-<script type="text/javascript">
+
+</div>
+
+      <span class="footer"><strong>Nothing to do</strong></span>
 
 
-  //button click stuff
-  var button = document.querySelector("button");
-  var span = document.querySelector("#todo-num");
+    <script type="text/javascript">
 
-  button.addEventListener("click", tododoo);
+      //button click stuff
+      var button = document.querySelector("button");
+      var span = document.querySelector("#todo-num");
 
-  function tododoo(event) {
-    event.preventDefault();
-    //make new checkbox
-    newLi = document.createElement("li");
-    newLab = document.createElement("label");
-    newInny = document.createElement("input");
-    newSpan = document.createElement("span");
+      button.addEventListener("click", tododoo);
 
-    newInny.setAttribute("type", "checkbox")
-    newInny.setAttribute("class", "box-ish")
-    newSpan.textContent = document.querySelector("#new-item-input").value;
-    newSpan.setAttribute("class", "new-task")
+      function tododoo(event) {
+        event.preventDefault();
+        //make new checkbox
+        newLi = document.createElement("li");
+        newLab = document.createElement("label");
+        newInny = document.createElement("input");
+        newSpan = document.createElement("span");
 
-    grabbedUl = document.querySelector("ul");
+        newInny.setAttribute("type", "checkbox")
+        newInny.setAttribute("class", "box-ish")
+        newSpan.textContent = document.querySelector("#new-item-input").value;
+        newSpanArray = newSpan.textContent.split(",");
+        for (var i = 0; i < newSpanArray.length; i++) {
+          newSpanArray[i].textContent;
+        }
 
+        newSpan.setAttribute("class", "new-task")
+        grabbedUl = document.querySelector("ul");
 
+        grabbedUl.appendChild(newLi);
+        newLi.appendChild(newLab);
+        newLab.appendChild(newInny);
+        newLab.appendChild(newSpan);
 
-    grabbedUl.appendChild(newLi);
-    newLi.appendChild(newLab);
-    newLab.appendChild(newInny);
-    newLab.appendChild(newSpan);
+        //fuck with footer content
+        var footy = document.querySelector(".footer");
+        footy.textContent = "";
 
-    //fuck with footer content
-    var footy = document.querySelector("footer");
-    footy.textContent = "";
+        //count todos
+        var items = document.querySelectorAll(".box-ish");
 
-
-
-    //count todos
-    var items = document.querySelectorAll(".box-ish");
-    for (var i = 0; i < items.length; i++) {
-    var span = document.querySelector("#todo-num");
-    span = parseInt(span);
-    document.querySelector("#todo-num").textContent = items.length;
-    document.querySelector("#new-item-input").value = "";
-    }
-  }
-
-
-</script>
-
+        for (var i = 0; i < items.length; i++) {
+        var span = document.querySelector("#todo-num");
+        span = parseInt(span);
+        document.querySelector("#todo-num").textContent = items.length;
+        document.querySelector("#new-item-input").value = "";
+        }
+      }
+    </script>
   </body>
 </html>
