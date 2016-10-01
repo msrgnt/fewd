@@ -140,7 +140,6 @@ input {
 }
 input:focus {
   border: 2px #2A4CB2 solid;
-  outline: none;
 }
 main {
   background: white;
