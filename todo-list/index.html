@@ -3,19 +3,94 @@
   <head>
     <meta charset="utf-8">
     <title>Todo List</title>
-    <link rel="stylesheet" href="style.css" media="screen" charset="utf-8">
+    <style media="screen">
+      .buttonish {
+        margin-top: 40px;
+        padding: 10px;
+        border-radius: 5px;
+      }
+
+      footer {
+        text-align: center;
+
+      }
+
+      form {
+        text-align: center;
+      }
+
+      main {
+        margin-left: auto;
+        margin-right: auto;
+        width: 80%;
+      }
+
+      #new-item-input {
+        width: 70%
+      }
+
+      #todo-list {
+
+      }
+    </style>
   </head>
   <body>
     <main>
+      <h1>Today's todos</h1>
+      <div class="countz">
+        <span id="todo-num" class="todo-count">0</span>
+        <span id="text" class="todo-count">todos</span>
+      </div>
       <form id="new-item-form">
         <input type="text" id="new-item-input" class="buttonish" placeholder="What do you need to do today?" autofocus required>
         <button class="buttonish" type="submit">Create</button>
       </form>
-
       <ul id="todo-list">
+
       </ul>
     </main>
+    <footer>Nothing to do</footer>
+<script type="text/javascript">
+  //button click stuff
+  var button = document.querySelector("button");
+  var span = document.querySelector("#todo-num");
 
-    <script type="text/javascript" src="script.js"></script>
+  button.addEventListener("click", tododoo);
+
+  function tododoo(event) {
+    event.preventDefault();
+    //make new checkbox
+    newLi = document.createElement("li");
+    newLab = document.createElement("label");
+    newInny = document.createElement("input");
+    newSpan = document.createElement("span");
+
+    newInny.setAttribute("type", "checkbox")
+    newInny.setAttribute("class", "box-ish")
+    newSpan.textContent = document.querySelector("#new-item-input").value;
+    grabbedUl = document.querySelector("ul");
+
+    grabbedUl.appendChild(newLi);
+    newLi.appendChild(newLab);
+    newLab.appendChild(newInny);
+    newLab.appendChild(newSpan);
+
+    //fuck with footer content
+    var footy = document.querySelector("footer");
+    footy.textContent = "";
+
+    //count todos
+    var items = document.querySelectorAll(".box-ish");
+    for (var i = 0; i < items.length; i++) {
+    var span = document.querySelector("#todo-num");
+    span = parseInt(span);
+    document.querySelector("#todo-num").textContent = items.length;
+
+    }
+  }
+
+
+</script>
+
   </body>
 </html>
