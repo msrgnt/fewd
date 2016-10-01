@@ -109,7 +109,7 @@
 
 </div>
 
-      <span class="footer"><strong>Nothing to do</strong></span>
+      <span class="footer">Nothing to do</span>
 
 
     <script type="text/javascript">
@@ -130,10 +130,25 @@
 
         newInny.setAttribute("type", "checkbox")
         newInny.setAttribute("class", "box-ish")
-        newSpan.textContent = document.querySelector("#new-item-input").value;
+        newSpan.textContent = " " + document.querySelector("#new-item-input").value;
+
         newSpanArray = newSpan.textContent.split(",");
         for (var i = 0; i < newSpanArray.length; i++) {
-          newSpanArray[i].textContent;
+          grabbedUl = document.querySelector("ul");
+          newLi = document.createElement("li");
+          newLab = document.createElement("label");
+
+          newInny = document.createElement("input");
+          newInny.setAttribute("type", "checkbox")
+          newInny.setAttribute("class", "box-ish")
+          newSpan = document.createElement("span");
+          newSpan.setAttribute("class", "new-task")
+          newSpan.textContent = newSpanArray[i];
+
+          grabbedUl.appendChild(newLi);
+          newLi.appendChild(newLab);
+          newLab.appendChild(newInny);
+          newLab.appendChild(newSpan);
         }
 
         newSpan.setAttribute("class", "new-task")
@@ -158,6 +173,16 @@
         document.querySelector("#new-item-input").value = "";
         }
       }
+
+
+
+
+
+
+
+
+
+
     </script>
   </body>
 </html>
