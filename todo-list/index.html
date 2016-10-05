@@ -108,31 +108,44 @@
       <span class="footer">Nothing to do</span>
     <script type="text/javascript">
 
-      //button click stuff
+      //grab the button
       var button = document.querySelector("button");
+      //grab the number we're gonna change
       var span = document.querySelector("#todo-num");
 
+      //listen for a button click
       button.addEventListener("click", tododoo);
 
+
+      //function that adds a to-do
       function tododoo(event) {
         event.preventDefault();
-        //make new checkbox
+        //this stuff makes a new list item, a new label to wrap shit,
+        //a new input and span - which are the checkbox and the text
         newLi = document.createElement("li");
         newLab = document.createElement("label");
         newInny = document.createElement("input");
         newSpan = document.createElement("span");
 
+        //this makes the input into a checkbox type of input and gives
+        //the checkbox css that will make it pretty and cross-out-able
         newInny.setAttribute("type", "checkbox")
         newInny.setAttribute("class", "box-ish")
+        //this grabs what's written in the todo box, adds a space before
+        //it, and makes it the text content of the new checkbox/item
         newSpan.textContent = " " + document.querySelector("#new-item-input").value;
 
+        //this takes the grabbed text content and splits it on commas
         newSpanArray = newSpan.textContent.split(",");
+        //this loops through the newly created array and makes a new list
+        //item, just like before, but for every thing in the array
         for (var i = 0; i < newSpanArray.length; i++) {
           newLi = document.createElement("li");
           newLab = document.createElement("label");
           newInny = document.createElement("input");
           newSpan = document.createElement("span");
-
+        //this is more loopy shit: looping through the array's stuff and
+        //making it prettier and giving it text content per item after split
           newInny.setAttribute("type", "checkbox")
           newInny.setAttribute("class", "box-ish")
           newSpan.setAttribute("class", "new-task")

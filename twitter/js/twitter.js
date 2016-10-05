@@ -60,45 +60,26 @@ function add(event) {
   newDivB.appendChild(newParSpanB);
   newSection.appendChild(newDivB);
 
-//prevents new tweet from flashing and not posting
-
 }
+
 
 // Yes, there's probably a nicer way to do the below. I don't know that nicer
 // way yet. SORRY!
-
 // adds likes when top old-tweet's like div is clicked
-var li = document.querySelector("#like-stuff-3");
-var sp = parseInt(document.querySelector("#like-count-3").textContent);
+var li = document.querySelectorAll(".like-stuff");
+var sp = document.querySelectorAll(".like-count");
 
-li.addEventListener("click", countLike);
+for (var i = 0; i < li.length; i++) {
+  li[i].addEventListener("click", countLike);
+
+}
+
+for (var i = 0; i < sp.length; i++) {
+  sp = parseInt(sp[i].textContent);
+}
 
 function countLike(event) {
   event.preventDefault();
-  sp = sp + 1;
-  document.querySelector("#like-count-3").textContent = sp;
-}
-
-// adds likes when mid old-tweet's like div is clicked
-var li2 = document.querySelector("#like-stuff-2");
-var sp2 = parseInt(document.querySelector("#like-count-2").textContent);
-
-li2.addEventListener("click", countLike2);
-
-function countLike2(event) {
-  event.preventDefault();
-  sp2 = sp2 + 1;
-  document.querySelector("#like-count-2").textContent = sp2;
-}
-
-// adds likes when bottom old-tweet's like div is clicked
-var li1 = document.querySelector("#like-stuff-1");
-var sp1 = parseInt(document.querySelector("#like-count-1").textContent);
-
-li1.addEventListener("click", countLike1);
-
-function countLike1(event) {
-  event.preventDefault();
-  sp1 = sp1 + 1;
-  document.querySelector("#like-count-1").textContent = sp1;
+    sp = sp + 1;
+    document.querySelector(".like-count").textContent = sp;
 }
