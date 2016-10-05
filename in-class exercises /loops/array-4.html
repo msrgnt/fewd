@@ -37,15 +37,16 @@ var studentsArray = students.textContent.split(",");
 button.addEventListener("click", sorty);
 
 function sorty(event){
+
   document.querySelector("#count").textContent = studentsArray.length;
-  event.preventDefault();
   document.querySelector("#students").textContent = studentsArray.sort();
-  var ol = document.querySelector("ol");
-  var li = document.createElement("li");
+
     for (var i = 0; i < studentsArray.length; i++) {
-      studentsArray[i];
+      var ol = document.querySelector("ol");
+      var li = document.createElement("li");
       li.textContent = studentsArray[i];
       ol.appendChild(li);
+      event.preventDefault();
     }
 }
 

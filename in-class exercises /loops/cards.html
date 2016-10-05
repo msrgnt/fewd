@@ -52,19 +52,23 @@
     var board = document.querySelector("#board");
     var showButton =  document.querySelector("#show");
     var dealButton =  document.querySelector("#deal");
+    var newCardD = [];
 
     showButton.addEventListener("click", show);
     dealButton.addEventListener("click", deal);
 
     function deal(event) {
-      for (var j = 0; j < 5; j++) {
-        for (var i = 0; i < 5; i++) {
-            newCard = document.createElement("div");
-            newCard.setAttribute("class", "card");
-            board.appendChild(newCard);
-            newCard.textContent = values[i] + " " + suits[j]
+      for (var i = 0; i < 5; i++) {
+      newCardD[i] = document.createElement("div");
+      newCardD[i].setAttribute("class", "card");
+      board.appendChild(newCardD[i]);
+      for (var k = 0; k < 5; k++) {
+        for (var l = 0; l < 5; l++) {
+      newCardD[i].textContent = values[l] + " " + suits[k];
+      console.log(newCardD.textContent);
         }
       }
+    }
       event.preventDefault();
     }
 
@@ -80,7 +84,6 @@
       showButton.textContent = "Hide all the cards";
       event.preventDefault();
     }
-
     </script>
   </body>
 </html>
