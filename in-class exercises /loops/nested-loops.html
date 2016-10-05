@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+<ul>
+  <li>cows,horses,dogs,cats</li>
+  <li>porsche,vw,audi</li>
+  <li>homework,grocery shopping</li>
+</ul>
+    <script type="text/javascript">
+//consolidate the list
+var list = document.querySelectorAll("li");
+// outer loop
+for (var i = 0; i < list.length; i++) {
+  var nouns = list[i].textContent.split(",");
+
+  for (var j = 0; j < nouns.length; j++) {
+    console.log("i:" + i,"j:" + j);
+
+  }
+
+}
+    </script>
+  </body>
+</html>

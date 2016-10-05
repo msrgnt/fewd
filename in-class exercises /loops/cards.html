@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Cards</title>
+    <style>
+    body {
+      background-color: #59A856;
+      font-family: sans-serif;
+    }
+    /* Define the styles for a card here... */
+    .card {
+      border-radius: 5px;
+      border: black 1px solid;
+      background-color: white;
+      height: 140px;
+      width: 100px;
+      margin: 10px;
+      padding-top: 10px;
+      text-align: center;
+      display: inline-block;
+    }
+    </style>
+  </head>
+  <body>
+
+    <button id="show">
+      Show all the cards
+    </button>
+
+    <button id="deal">
+      Deal a new hand
+    </button>
+
+    <div id="board">
+      <!-- cards will go here (js will put them here) -->
+      <!-- try making a couple just to make sure they look right -->
+    </div>
+
+    <script>
+    var suits = [
+      "♠️",
+      "❤️",
+      "♦️",
+      "♣️"
+    ];
+
+    var values = [
+      "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K", "A"
+    ];
+
+    var board = document.querySelector("#board");
+    var showButton =  document.querySelector("#show");
+    var dealButton =  document.querySelector("#deal");
+
+    showButton.addEventListener("click", show);
+    dealButton.addEventListener("click", deal);
+
+    function deal(event) {
+      for (var j = 0; j < 5; j++) {
+        for (var i = 0; i < 5; i++) {
+            newCard = document.createElement("div");
+            newCard.setAttribute("class", "card");
+            board.appendChild(newCard);
+            newCard.textContent = values[i] + " " + suits[j]
+        }
+      }
+      event.preventDefault();
+    }
+
+    function show(event) {
+      for (var j = 0; j < suits.length; j++) {
+        for (var i = 0; i < values.length; i++) {
+              newCard = document.createElement("div");
+              newCard.setAttribute("class", "card");
+              board.appendChild(newCard);
+              newCard.textContent = values[i] + " " + suits[j];
+        }
+      }
+      showButton.textContent = "Hide all the cards";
+      event.preventDefault();
+    }
+
+    </script>
+  </body>
+</html>
