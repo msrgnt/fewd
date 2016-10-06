@@ -4,11 +4,12 @@
     <meta charset="utf-8">
     <title>Cards</title>
     <style>
+
     body {
       background-color: #59A856;
       font-family: sans-serif;
     }
-    /* Define the styles for a card here... */
+
     .card {
       border-radius: 5px;
       border: black 1px solid;
@@ -19,6 +20,23 @@
       padding-top: 10px;
       text-align: center;
       display: inline-block;
+    }
+
+    button {
+      padding: 10px;
+      border-radius: 5px;
+      border: none;
+    }
+
+    #deal:hover, #show:hover {
+      background-color: green;
+    }
+    button:focus {
+      outline:none;
+    }
+
+    #clear:hover {
+      background-color: red;
     }
     </style>
   </head>
@@ -32,6 +50,20 @@
       Deal a new hand
     </button>
 
+    <button id="clear">
+      Clear the table
+    </button>
+
+    <hr>
+
+    <div id="dealer">
+      <!-- cards will go here (js will put them here) -->
+      <!-- try making a couple just to make sure they look right -->
+    </div>
+
+
+
+    <hr>
     <div id="board">
       <!-- cards will go here (js will put them here) -->
       <!-- try making a couple just to make sure they look right -->
@@ -50,22 +82,27 @@
     ];
 
     var board = document.querySelector("#board");
+    var dealer = document.querySelector("#dealer");
     var showButton =  document.querySelector("#show");
     var dealButton =  document.querySelector("#deal");
+    var clearButton = document.querySelector("#clear");
+
     var newCardD = [];
 
     showButton.addEventListener("click", show);
     dealButton.addEventListener("click", deal);
+    clearButton.addEventListener("click", wipe);
 
     function deal(event) {
+
       for (var i = 0; i < 5; i++) {
       newCardD[i] = document.createElement("div");
       newCardD[i].setAttribute("class", "card");
-      board.appendChild(newCardD[i]);
+      dealer.appendChild(newCardD[i]);
       for (var k = 0; k < 5; k++) {
         for (var l = 0; l < 5; l++) {
-      newCardD[i].textContent = values[l] + " " + suits[k];
-      console.log(newCardD.textContent);
+      newCardD[i].textContent = values[valRan] + " " + suits[suitRan];
+
         }
       }
     }
@@ -73,17 +110,24 @@
     }
 
     function show(event) {
-      for (var j = 0; j < suits.length; j++) {
-        for (var i = 0; i < values.length; i++) {
+      for (var i = 0; i < values.length; i++) {
+        for (var j = 0; j < suits.length; j++) {
               newCard = document.createElement("div");
               newCard.setAttribute("class", "card");
               board.appendChild(newCard);
               newCard.textContent = values[i] + " " + suits[j];
         }
       }
-      showButton.textContent = "Hide all the cards";
       event.preventDefault();
     }
+
+    function wipe(event) {
+      board.textContent = " ";
+      dealer.textContent = " ";
+
+    }
+
+
     </script>
   </body>
 </html>

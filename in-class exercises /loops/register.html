@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Cash Register</title>
+    <style>
+
+      h1 { margin: 1em 0; font-size: 1.2em; }
+      h2 { font-size: 1em; }
+      body { font-family: sans-serif; font-size: 20px; }
+      th { text-align: right; }
+      th, td { border: 1px solid #ccc; padding: 1em; }
+
+      button {
+        text-align: center;
+        background-color: rgb(241, 86, 52);
+        color: white;
+        border-radius: 5px;
+        border: 0;
+        font-size: inherit;
+        font-family: inherit;
+        cursor: pointer;
+        padding: 0.5em 1em;
+      }
+
+      .hidden { display: none; }
+
+    </style>
+  </head>
+  <body>
+  <h1>Cash Register</h1>
+
+  <button id="hamburger" data-description="BURGER" data-price="7.99">
+    Hamburger<br>
+    $7.99
+  </button>
+
+  <button id="cheeseburger" data-description="BURGER W/ CHZ" data-price="7.99">
+    Cheeseburger<br>
+    $8.99
+  </button>
+
+  <button id="fries" data-description="FRY" data-price="3.99">
+    Fries<br>
+    $7.99
+  </button>
+
+  <button id="soda" data-description="FOUNTAIN" data-price="1.99">
+    Soda<br>
+    $1.99
+  </button>
+
+  <button id="shake" data-description="SHAKE" data-price="1.99">
+    Milke Shake<br>
+    $1.99
+  </button>
+
+  <button id="pie" data-description="PIE" data-price="1.99">
+    Apple Pie<br>
+    $1.99
+  </button>
+
+  <button id="bag" data-description="BAG" data-price="0.10">
+    Bag<br>
+    $0.10
+  </button>
+
+  <h2>Receipt</h2>
+
+  <table>
+    <tr>
+      <th>
+        Total
+      </td>
+      <td id="total">0</td>
+    </tr>
+    <tr id="no-items">
+      <td class="new-total" colspan="2">
+        No items. Press a button.
+      </td>
+    </tr>
+  </table>
+
+<script>
+//grabs the hamburger button
+var butt = document.querySelector("#hamburger");
+//listens to the hamburger button
+butt.addEventListener("click", tallya);
+//when clicked the hamburger button does stuff:
+function tallya (event){
+//...it takes the text content and splits it at the dollar sign, then assign the second value to newTotal
+newTotal = document.querySelector("#hamburger").textContent.split("$")[1];
+//...it takes newTotal, the value, which is the price, a string, and turns it into a float
+//...then it jams that float into the text content of total, which displays the new price
+document.querySelector("#total").textContent = parseFloat(newTotal);
+//this throws the item, whatever we pushed, and makes it appear underneath the total
+document.querySelector(".new-total").textContent = document.querySelector("#hamburger").textContent;
+  event.preventDefault();
+}
+
+</script>
+</body>
+</html>
