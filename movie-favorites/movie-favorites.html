@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Movie Favorites</title>
+    <style media="screen">
+      body {
+        font-family: "helvetica neue";
+        background-color: rgb(58, 58, 58);
+        color: white;
+      }
+
+      img {
+        height: 200px;
+        width: 140px;
+        margin: 5px;
+      }
+
+      .info {
+        flex: 1;
+      }
+      main {
+        display: flex;
+      }
+
+
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  </head>
+  <body>
+    <h1>My favorite Movies</h1>
+    <h2>Click on a movie to see the details</h2>
+    <main>
+    <section class="posters">
+      <a href="#">
+        <img src="img/children-of-men.jpg" id="tt0206634" alt="" />
+      </a>
+      <a href="#">
+        <img src="img/fifth-element.jpg" id="tt0119116" alt="" />
+      </a>
+      <a href="#">
+        <img src="img/interstellar.jpg" id="tt0816692"  alt="" />
+      </a>
+      <a href="#">
+        <img src="img/kill-bill.jpg" id="tt0266697"  alt="" />
+      </a>
+          <br />
+      <a href="#">
+        <img src="img/man-bites-dog.jpg" id="tt0103905"  alt="" />
+      </a>
+      <a href="#">
+        <img src="img/man-on-wire.jpg" id="tt1155592"  alt="" />
+      </a>
+      <a href="#">
+        <img src="img/seven-samurai.jpg" id="tt0047478" alt="" />
+      </a>
+      <a href="#">
+        <img src="img/y-tu-mama.jpg" id="tt0245574"  alt="" />
+      </a>
+    </section>
+
+    <section class="info">
+      <div class="">
+        Title:
+        <span id="title"></span>
+      </div>
+      <div class="">
+        Year:
+        <span id="year"></span>
+      </div>
+      <div class="">
+        Rating:
+        <span id="rating"></span>
+      </div>
+      <div class="">
+        Runtime:
+        <span id="runtime"></span>
+      </div>
+      <div class="">
+        Plot:
+        <span id="plot"></span>
+      </div>
+    </section>
+  <script type="text/javascript">
+
+  var links = document.querySelectorAll("a");
+
+  for (var i = 0; i < links.length; i++) {
+    links[i].addEventListener("click", getMovie);
+  }
+
+  function getMovie(event){
+    var clickedMovie = event.target;
+    var imdbID = clickedMovie.getAttribute("id");
+    var newQuery = "http://omdbapi.com/?i=" + imdbID;
+
+    $.get(newQuery, displayResults);
+
+    function displayResults(results) {
+      document.querySelector("#title").textContent = results.Title;
+      document.querySelector("#year").textContent = results.Year;
+      document.querySelector("#rating").textContent = results.Rated;
+      document.querySelector("#runtime").textContent = results.Runtime;
+      document.querySelector("#plot").textContent = results.Plot;
+
+
+      console.log(results.Title);
+      console.log(results.Year);
+      console.log(results.Rated);
+      console.log(results.Runtime);
+      console.log(results.Plot);
+    }
+
+  }
+
+  </script>
+  </body>
+</html>
