@@ -1,0 +1,48 @@
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+<form>
+  <input type="search" id="query" placeholder="GitHub username">
+  <input type="submit" value="Lookup">
+</form>
+
+<table>
+  <tr>
+    <th>Name:</th>
+    <td id="user-name"></td>
+  </tr>
+  <tr>
+    <th>Bio:</th>
+    <td id="user-bio"></td>
+  </tr>
+  <tr>
+    <th>Picture:</th>
+    <td id="user-picture"></td>
+  </tr>
+</table>
+
+<script>
+
+var form = document.querySelector("form");
+form.addEventListener("submit", goGetStuff);
+function goGetStuff(event){
+
+  $.get("https://api.github.com/users/avand", handleResults);
+    function handleResults(results){
+      grabName = results.name;
+      grabBio = results.bio;
+      grabUrl = results.avatar_url;
+
+      document.querySelector("#user-name").textContent = grabName;
+      document.querySelector("#user-bio").textContent = grabBio;
+
+      newImg = document.createElement("img");
+      newImg.setAttribute("src", grabUrl);
+      newImg.setAttribute("width", "100");
+
+      var pic = document.querySelector("#user-picture");
+      pic.appendChild(newImg);
+    }
+  event.preventDefault();
+}
+
+</script>
