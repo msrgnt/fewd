@@ -44,6 +44,8 @@ function add(event) {
   newSpan.textContent ="0";
   newParSpanB.textContent =")"
   newSpan.setAttribute("class", "like-count");
+  newSpan.setAttribute("data-price", "15");
+  newSpan.addEventListener("click", countLike);
 
 // reset stuff
   resetNewTweetBox()
@@ -62,24 +64,18 @@ function add(event) {
 
 }
 
-
 // Yes, there's probably a nicer way to do the below. I don't know that nicer
 // way yet. SORRY!
 // adds likes when top old-tweet's like div is clicked
-var li = document.querySelectorAll(".like-stuff");
-var sp = document.querySelectorAll(".like-count");
-
+var li = document.querySelectorAll(".like-count");
 for (var i = 0; i < li.length; i++) {
   li[i].addEventListener("click", countLike);
 
-}
+  }
 
-for (var i = 0; i < sp.length; i++) {
-  sp = parseInt(sp[i].textContent);
-}
-
-function countLike(event) {
-  event.preventDefault();
-    sp = sp + 1;
-    document.querySelector(".like-count").textContent = sp;
+function countLike(event){
+  var clickedButton = event.target;
+  sp = 0;
+  sp = sp + 1;
+  clickedButton.textContent = sp ;
 }
