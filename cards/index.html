@@ -71,17 +71,19 @@
 
     <script>
 
+    function getRandomIntSuits(min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+function getRandomIntVals(min, max) {
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
     var suits = [
       "♠️",
       "❤️",
       "♦️",
-      "♣️",
-      "♠️",
-      "❤️",
-      "♦️",
-      "♣️",
-      "♠️",
-      "❤️",
+      "♣️"
     ];
 
     var values = [
@@ -106,7 +108,7 @@
       newCardD[i] = document.createElement("div");
       newCardD[i].setAttribute("class", "card");
       dealer.appendChild(newCardD[i]);
-      newCardD[i].textContent = values[Math.floor(Math.random() * 10)] + " " + suits[Math.floor(Math.random() * 10)];
+      newCardD[i].textContent = values[getRandomIntVals(0, 12)] + " " + suits[getRandomIntSuits(0, 3)];
     }
       event.preventDefault();
     }

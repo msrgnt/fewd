@@ -22,16 +22,18 @@
       }
 
       img:active {
-        border: 2px solid grey;
+        border: 2px solid rgb(58, 58, 58);
       }
-
+      .posters {
+        margin-right: 20px;
+      }
       .info {
         flex: 1;
       }
+
       main {
         display: flex;
       }
-
 
     </style>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
@@ -41,39 +43,17 @@
     <h2>Click on a movie to see the details</h2>
     <main>
     <section class="posters">
-      <a href="#">
-        <img src="img/adaptation.jpg" id="tt0268126"  alt="" />
-      </a>
-      <a href="#">
-        <img src="img/airborne.jpg" id="tt0106233" alt="" />
-      </a>
-      <a href="#">
-        <img src="img/fifth-element.jpg" id="tt0119116" alt="" />
-      </a>
-      <a href="#">
-        <img src="img/huckabees.jpg" id="tt0356721" alt="" />
-      </a>
-
-      <a href="#">
-        <img src="img/kill-bill.jpg" id="tt0266697"  alt="" />
-      </a>
-        <br />
-      <a href="#">
-        <img src="img/life-aquatic.jpg" id="tt0362270"  alt="" />
-      </a>
-
-      <a href="#">
-        <img src="img/man-bites-dog.jpg" id="tt0103905"  alt="" />
-      </a>
-      <a href="#">
-        <img src="img/man-on-wire.jpg" id="tt1155592"  alt="" />
-      </a>
-      <a href="#">
-        <img src="img/seven-samurai.jpg" id="tt0047478" alt="" />
-      </a>
-      <a href="#">
-        <img src="img/y-tu-mama.jpg" id="tt0245574"  alt="" />
-      </a>
+      <img src="img/adaptation.jpg" id="tt0268126"  alt="" />
+      <img src="img/airborne.jpg" id="tt0106233" alt="" />
+      <img src="img/fifth-element.jpg" id="tt0119116" alt="" />
+      <img src="img/huckabees.jpg" id="tt0356721" alt="" />
+      <img src="img/kill-bill.jpg" id="tt0266697"  alt="" />
+      <br />
+      <img src="img/life-aquatic.jpg" id="tt0362270"  alt="" />
+      <img src="img/man-bites-dog.jpg" id="tt0103905"  alt="" />
+      <img src="img/man-on-wire.jpg" id="tt1155592"  alt="" />
+      <img src="img/seven-samurai.jpg" id="tt0047478" alt="" />
+      <img src="img/y-tu-mama.jpg" id="tt0245574"  alt="" />
     </section>
 
     <section class="info">
@@ -100,7 +80,7 @@
     </section>
   <script type="text/javascript">
 
-  var links = document.querySelectorAll("a");
+  var links = document.querySelectorAll("img");
 
   for (var i = 0; i < links.length; i++) {
     links[i].addEventListener("click", getMovie);
