@@ -70,11 +70,18 @@
     </div>
 
     <script>
+
     var suits = [
       "♠️",
       "❤️",
       "♦️",
-      "♣️"
+      "♣️",
+      "♠️",
+      "❤️",
+      "♦️",
+      "♣️",
+      "♠️",
+      "❤️",
     ];
 
     var values = [
@@ -99,12 +106,7 @@
       newCardD[i] = document.createElement("div");
       newCardD[i].setAttribute("class", "card");
       dealer.appendChild(newCardD[i]);
-      for (var k = 0; k < 5; k++) {
-        for (var l = 0; l < 5; l++) {
-      newCardD[i].textContent = values[valRan] + " " + suits[suitRan];
-
-        }
-      }
+      newCardD[i].textContent = values[Math.floor(Math.random() * 10)] + " " + suits[Math.floor(Math.random() * 10)];
     }
       event.preventDefault();
     }
