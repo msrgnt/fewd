@@ -17,14 +17,11 @@
         padding-top: 5px;
         padding-bottom: 5px;
         text-align: center;
-        margin-top: 40px;
         border-radius: 5px;
         box-shadow: 0 0 7px -1px rgb(199, 199, 199);
       }
       section {
           background: white;
-          width: 80%;
-          max-width: 800px;
           padding-top: 15px;
           padding-bottom: 15px;
           margin-left: auto;
@@ -33,9 +30,23 @@
           border-radius: 5px;
           box-shadow: 0 0 7px -1px rgb(199, 199, 199);
       }
+      .sidebar {
+        max-width: 50%;
+      }
+      header {
+        display: flex;
+      }
+      article {
+        flex: 1;
+        padding-left: 20px;
+      }
     </style>
   </head>
   <body>
+    <header>
+
+      <div class="sidebar">
+
 <main>
 <img src="flags-mini/af.png" id="Afghanistan" alt="" />
 <img src="flags-mini/al.png" id="Albania" alt="" />
@@ -279,7 +290,9 @@
 <img src="flags-mini/zw.png" id="Zimbabwe" alt="" />
 <img src="flags-mini/ax.png" id="Aland Islands" alt="" />
 </main>
-<section class="info">
+
+</div>
+<article>
       <div class="">
         You’ve selected:
         <span class="country_select"></span>
@@ -290,22 +303,30 @@
       </div>
       <div class="">
         Plot:
-      </div>
-      <div class="">
-        Runtime:
+        <span class="plot"></span>
 
       </div>
       <div class="">
-        Awards:
+        Runtime:
+        <span class="runt"></span>
       </div>
       <div class="">
-        Learn more about cinema from: https://en.wikipedia.org/wiki/Cinema_of
+        Awards:
+        <span class="awards"></span>
+
+      </div>
+      <div class="country_link">
+
       </div>
       <div class="">
         Learn more about the flag of:
         https://en.wikipedia.org/wiki/Flag_of_
       </div>
-</section>
+
+  </article>
+
+    </header>
+
 
     <script type="text/javascript">
     var buttons = document.querySelectorAll("img");
@@ -319,6 +340,10 @@
       var clickedButton = event.target;
       var country = clickedButton.getAttribute("id");
       var search = "https://omdbapi.com/?s=" + country;
+      var wiki = document.createElement("a");
+      var wikiParent = document.querySelector(".country-link");
+      var link = "https://en.wikipedia.org/wiki/Cinema_of" + country;
+
 
       document.querySelector(".country_select").textContent = country;
 
@@ -326,10 +351,21 @@
       function handleResults(results){
         for (var i = 0; i < results.Search.length; i++) {
         grabTitle = results.Search[i].Title;
+      //  var searchTwo = "https://omdbapi.com/?t=" + grabTitle;
 
-      document.querySelector(".watch_this").textContent = grabTitle;
-}
-}
+      //  $.get(searchTwo, handleResultsTwo);
+      //  function handleResultsTwo(taco){
+      //    document.querySelector(".watch_this").textContent = taco.Title;
+      //    document.querySelector(".plot").textContent = taco.Plot;
+      //    document.querySelector(".runt").textContent = taco.Runtime;
+      //    document.querySelector(".awards").textContent = taco.Awards;
+      //    console.log(wiki);
+      //    wiki.setAttribute("src", link);
+      //    wikiParent.appendChild("wiki"); -->
+
+        //}
+      }
+    }
   }
     </script>
   </body>

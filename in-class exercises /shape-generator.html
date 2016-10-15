@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="jquery-3.1.1.js"></script>
+    <meta charset="utf-8">
+    <title></title>
+    <style media="screen">
+div{margin: 0 auto;
+}
+
+    </style>
+  </head>
+  <body>
+    <button class="color">change color!</button>
+    <button class="shape" name="button">create a shape!</button>
+
+    <div class="place">
+
+    </div>
+<script type="text/javascript">
+  $(".color").click(function() {
+  //Assign each named color a random number 0 - 255
+  var red = Math.floor(Math.random() * 255);
+  var green = Math.floor(Math.random() * 255);
+  var blue = Math.floor(Math.random() * 255);
+  var trans = Math.random();
+
+  //Display the three values in an alert window
+  var randomRGBA = "rgba("+ red +","+ green +","+ blue +","+ trans +")";
+  //alert(randomRGBA);
+  $("body").css("background", randomRGBA);
+  console.log(document.body);
+
+  });
+
+  $(".shape").click(function() {
+    //Assign each named color a random number 0 - 255
+    var red = Math.floor(Math.random() * 255);
+    var green = Math.floor(Math.random() * 255);
+    var blue = Math.floor(Math.random() * 255);
+    var trans = Math.random();
+    var randomRGBA = "rgba("+ red +","+ green +","+ blue +","+ trans +")";
+    var border = red + "solid" + "transparent";
+
+    var body = document.querySelector(".place");
+    var newP = document.createElement("p");
+
+    $(newP).css("background", randomRGBA)
+    $(newP).css("height", Math.floor(Math.random() * 100))
+    $(newP).css("width", Math.floor(Math.random() * 100))
+    $(newP).css("border-radius", Math.floor(Math.random() * 100))
+
+
+
+    //this isn't working. The p exists but it won't append.
+    body.appendChild(newP);
+    //the newP shows up in console log, looking perfect
+    console.log(newP);
+
+  });
+
+
+</script>
+  </body>
+</html>
