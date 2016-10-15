@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style media="screen">
+
+    .chimney {
+      height: 40px;
+      width: 20px;
+      border: red 1px solid;
+      margin-left: 150px;
+    }
+
+    .floor, .top-wall {
+      margin-left: 100px;
+    }
+
+    .top-wall {
+	       width: 200px;
+	        height: 25px;
+	         -webkit-transform: skew(-70deg);
+	         -moz-transform: skew(-70deg);
+	         -o-transform: skew(-70deg);
+	        border: 1px dashed red;
+    }
+
+    .a-wall {
+	       width: 68px;
+	        height: 200px;
+	         -webkit-transform: skewY(-20deg);
+	         -moz-transform: skewY(-20deg);
+	         -o-transform: skewY(-20deg);
+	        border: 1px dashed red;
+          display: inline-block;
+    }
+
+    .triangle-up {
+  	width: 0;
+  	height: 0;
+  	border-left: 5px solid transparent;
+  	border-right: 5px solid transparent;
+  	border-bottom: 10px solid grey;
+    margin-bottom: 1px;
+    }
+
+    .triangle-down {
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 10px solid grey;
+    margin-top: 1px;
+    }
+
+    .back-wall {
+	       width: 200px;
+	        height: 200px;
+	        border: 1px dashed red;
+          margin-left: auto;
+          margin-right: auto;
+          position: relative;
+          display: inline-block;
+
+    }
+
+    .right-wall {
+         width: 70px;
+          height: 200px;
+           -webkit-transform: skewY(-20deg);
+           -moz-transform: skewY(-20deg);
+           -o-transform: skewY(-20deg);
+          display: inline-block;
+          border: 1px dashed red;
+
+
+    }
+
+    .floor {
+        width: 200px;
+        height: 25px;
+           -webkit-transform: skew(-70deg);
+           -moz-transform: skew(-70deg);
+           -o-transform: skew(-70deg);
+          border: 1px dashed red;
+
+    }
+
+    button {
+      width: 20px;
+    	height: 20px;
+    	-moz-border-radius: 10px;
+    	-webkit-border-radius: 10px;
+    	border-radius: 10px;
+    }
+
+    .up-down {
+      display:inline;
+    }
+
+    </style>
+  </head>
+  <body>
+    <table style="width:100%">
+      <tr>
+        <th class="top-row"></th>
+        <th class="top-row">B</th>
+        <th class="top-row">W</th>
+        <th class="top-row">B</th>
+        <th class="top-row">R</th>
+        <th class="top-row">O</th>
+        <th class="top-row">Y</th>
+        <th class="top-row">G</th>
+        <th class="top-row">B</th>
+        <th class="top-row">V</th>
+        <th class="top-row">?</th>
+      </tr>
+      <tr>
+        <td>A</td>
+        <td class="a-row">
+          <button class="black" name="button"></button>
+          <div class="up-down">
+            <div class="triangle-up black" name="button"></div>
+            <div class="triangle-down black" name="button"></div>
+          </div>
+        </td>
+        <td class="a-row">
+          <button class="white" name="button"></button>
+          <div class="up-down">
+            <div class="triangle-up white" name="button"></div>
+            <div class="triangle-down white" name="button"></div>
+          </div>
+        </td>
+        <td class="a-row">
+          <button class="brown" name="button"></button>
+          <div class="up-down">
+            <div class="triangle-up brown" name="button"></div>
+            <div class="triangle-down brown" name="button"></div>
+          </div>
+        </td>
+        <td class="a-row">
+          <button class="red" name="button"></button>
+          <div class="up-down">
+            <div class="triangle-up red" name="button"></div>
+            <div class="triangle-down red" name="button"></div>
+          </div>
+        </td>
+        <td class="a-row">
+          <button class="orange" name="button"></button>
+          <div class="up-down">
+            <div class="triangle-up orange" name="button"></div>
+            <div class="triangle-down orange" name="button"></div>
+          </div>
+        </td>
+        <td class="a-row">
+          <button class="yellow" name="button"></button>
+          <div class="up-down">
+            <div class="triangle-up yellow" name="button"></div>
+            <div class="triangle-down yellow" name="button"></div>
+          </div>
+        </td>
+        <td class="a-row">
+          <button class="green" name="button"></button>
+          <div class="up-down">
+            <div class="triangle-up green" name="button"></div>
+            <div class="triangle-down green" name="button"></div>
+          </div>
+        </td>
+        <td class="a-row">
+          <button class="blue" name="button"></button>
+          <div class="up-down">
+            <div class="triangle-up blue" name="button"></div>
+            <div class="triangle-down blue" name="button"></div>
+          </div>
+        </td>
+        <td class="a-row">
+          <button class="violet" name="button"></button>
+          <div class="triangle-up violet" name="button"></div>
+          <div class="triangle-down violet" name="button"></div>
+        </td>
+        <td class="a-row">
+          <button class="random" name="button"></button>
+          <div class="triangle-up random" name="button"></div>
+          <div class="triangle-down random" name="button"></div>
+        </td>
+      </tr>
+      <tr>
+        <td>B</td>
+        <td class="b-row">
+          <button class="black" name="button"></button>
+          <div class="up-down">
+            <div class="triangle-up black" name="button"></div>
+            <div class="triangle-down black" name="button"></div>
+          </div>
+        </td>
+        <td class="b-row">
+          <button class="white" name="button"></button>
+          <div class="up-down">
+            <div class="triangle-up white" name="button"></div>
+            <div class="triangle-down white" name="button"></div>
+          </div>
+        </td>
+        <td class="b-row">
+          <button class="brown" name="button"></button>
+          <div class="up-down">
+            <div class="triangle-up brown" name="button"></div>
+            <div class="triangle-down brown" name="button"></div>
+          </div>
+        </td>
+        <td class="b-row">
+          <button class="red" name="button"></button>
+          <div class="up-down">
+            <div class="triangle-up red" name="button"></div>
+            <div class="triangle-down red" name="button"></div>
+          </div>
+        </td>
+        <td class="b-row">
+          <button class="orange" name="button"></button>
+          <div class="up-down">
+            <div class="triangle-up orange" name="button"></div>
+            <div class="triangle-down orange" name="button"></div>
+          </div>
+        </td>
+        <td class="b-row">
+          <button class="yellow" name="button"></button>
+          <div class="up-down">
+            <div class="triangle-up yellow" name="button"></div>
+            <div class="triangle-down yellow" name="button"></div>
+          </div>
+        </td>
+        <td class="b-row">
+          <button class="green" name="button"></button>
+          <div class="up-down">
+            <div class="triangle-up green" name="button"></div>
+            <div class="triangle-down green" name="button"></div>
+          </div>
+        </td>
+        <td class="b-row">
+          <button class="blue" name="button"></button>
+          <div class="up-down">
+            <div class="triangle-up blue" name="button"></div>
+            <div class="triangle-down blue" name="button"></div>
+          </div>
+        </td>
+        <td class="b-row">
+          <button class="violet" name="button"></button>
+          <div class="triangle-up violet" name="button"></div>
+          <div class="triangle-down violet" name="button"></div>
+        </td>
+        <td class="b-row">
+          <button class="random" name="button"></button>
+          <div class="triangle-up random" name="button"></div>
+          <div class="triangle-down random" name="button"></div>
+        </td>
+      </tr>
+      <tr>
+        <td>C</td>
+        <td class="c-row">
+          <button class="black" name="button"></button>
+          <div class="up-down">
+            <div class="triangle-up black" name="button"></div>
+            <div class="triangle-down black" name="button"></div>
+          </div>
+        </td>
+        <td class="c-row">
+          <button class="white" name="button"></button>
+          <div class="up-down">
+            <div class="triangle-up white" name="button"></div>
+            <div class="triangle-down white" name="button"></div>
+          </div>
+        </td>
+        <td class="c-row">
+          <button class="brown" name="button"></button>
+          <div class="up-down">
+            <div class="triangle-up brown" name="button"></div>
+            <div class="triangle-down brown" name="button"></div>
+          </div>
+        </td>
+        <td class="c-row">
+          <button class="red" name="button"></button>
+          <div class="up-down">
+            <div class="triangle-up red" name="button"></div>
+            <div class="triangle-down red" name="button"></div>
+          </div>
+        </td>
+        <td class="c-row">
+          <button class="orange" name="button"></button>
+          <div class="up-down">
+            <div class="triangle-up orange" name="button"></div>
+            <div class="triangle-down orange" name="button"></div>
+          </div>
+        </td>
+        <td class="c-row">
+          <button class="yellow" name="button"></button>
+          <div class="up-down">
+            <div class="triangle-up yellow" name="button"></div>
+            <div class="triangle-down yellow" name="button"></div>
+          </div>
+        </td>
+        <td class="c-row">
+          <button class="green" name="button"></button>
+          <div class="up-down">
+            <div class="triangle-up green" name="button"></div>
+            <div class="triangle-down green" name="button"></div>
+          </div>
+        </td>
+        <td class="c-row">
+          <button class="blue" name="button"></button>
+          <div class="up-down">
+            <div class="triangle-up blue" name="button"></div>
+            <div class="triangle-down blue" name="button"></div>
+          </div>
+        </td>
+        <td class="c-row">
+          <button class="violet" name="button"></button>
+          <div class="triangle-up violet" name="button"></div>
+          <div class="triangle-down violet" name="button"></div>
+        </td>
+        <td class="c-row">
+          <button class="random" name="button"></button>
+          <div class="triangle-up random" name="button"></div>
+          <div class="triangle-down random" name="button"></div>
+        </td>
+      </tr>
+    </table>
+    <main>
+      <div class="chimney"></div>
+      <div class="top-wall"></div>
+      <div class="a-wall"></div>
+      <div class="back-wall"></div>
+      <div class="right-wall"></div>
+      <div class="floor"></div>
+    </main>
+    <script type="text/javascript">
+      var button = document.querySelectorAll("button");
+      for (var i = 0; i < button.length; i++) {
+        button[i].addEventListener("click", primary);
+        function primary(event){
+          event.preventDefault();
+          console.log("primary color!");
+
+        }
+      }
+      var divUp = document.querySelectorAll(".triangle-up");
+      for (var i = 0; i < divUp.length; i++) {
+        divUp[i].addEventListener("click", increm);
+        function increm(event){
+          event.preventDefault();
+          console.log("up!");
+        }
+      }
+
+      var divDown = document.querySelectorAll(".triangle-down");
+      for (var i = 0; i < divDown.length; i++) {
+        divDown[i].addEventListener("click", decrem);
+        function decrem(event){
+          event.preventDefault();
+          console.log("down!");
+        }
+      }
+    </script>
+  </body>
+</html>
