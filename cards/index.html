@@ -95,7 +95,7 @@ function getRandomIntVals(min, max) {
     var showButton =  document.querySelector("#show");
     var dealButton =  document.querySelector("#deal");
     var clearButton = document.querySelector("#clear");
-
+    var cardsToDeal = [];
     var newCardD = [];
 
     showButton.addEventListener("click", show);
@@ -103,16 +103,29 @@ function getRandomIntVals(min, max) {
     clearButton.addEventListener("click", wipe);
 
     function deal(event) {
-
-      for (var i = 0; i < 5; i++) {
-      newCardD[i] = document.createElement("div");
-      newCardD[i].setAttribute("class", "card");
-      dealer.appendChild(newCardD[i]);
-      newCardD[i].textContent = values[getRandomIntVals(0, 12)] + " " + suits[getRandomIntSuits(0, 3)];
-    }
+      for (var i = 0; i < values.length; i++) {
+        for (var j = 0; j < suits.length; j++) {
+              cardsToDeal = values[i] + " " + suits[j];
+              for (var i = 0; i < cardsToDeal.length; i++) {
+                cardsToDeal.push( = [Math.floor(Math.random())i]
+              }
+              console.log(cardsToDeal);
+        }
+      }
       event.preventDefault();
     }
 
+  //  function deal(event) {
+
+  //    for (var i = 0; i < 5; i++) {
+  //    newCardD[i] = document.createElement("div");
+  //    newCardD[i].setAttribute("class", "card");
+  //    dealer.appendChild(newCardD[i]);
+  //    newCardD[i].textContent = values[getRandomIntVals(0, 12)] + " " + suits[getRandomIntSuits(0, 3)];
+//    }
+//      event.preventDefault();
+//    }
+//
     function show(event) {
       for (var i = 0; i < values.length; i++) {
         for (var j = 0; j < suits.length; j++) {
@@ -120,6 +133,8 @@ function getRandomIntVals(min, max) {
               newCard.setAttribute("class", "card");
               board.appendChild(newCard);
               newCard.textContent = values[i] + " " + suits[j];
+              var newCardArray = values[i] + " " + suits[j];
+              console.log(newCardArray);
         }
       }
       event.preventDefault();

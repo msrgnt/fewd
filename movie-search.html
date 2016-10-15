@@ -1,0 +1,88 @@
+<html>
+  <head>
+    <meta charset="utf-8">
+
+    <title>Movie Search</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+
+    <style>
+
+    main {
+      background: white;
+      width: 80%;
+      max-width: 800px;
+      padding-top: 15px;
+      padding-bottom: 15px;
+      margin-left: auto;
+      margin-right: auto;
+      margin-top: 40px;
+      border-radius: 5px;
+      box-shadow: 0 0 7px -1px rgb(199, 199, 199);
+    }
+
+    button {
+      color: white;
+      background: rgb(6, 148, 86);
+      font-size: 16px;
+      padding: 10px 15px;
+      margin-right: 5px;
+      font-weight: 500;
+      border-radius: 3px;
+      border: none;
+      box-shadow: 0 1px 1px 1px rgb(5, 119, 69);
+    }
+
+    #query {
+        margin-top: 20px;
+        padding: 10px 20px;
+        border-radius: 5px;
+        font-size: 20px;
+        font-family: "Times";
+        width: 350px;
+        box-shadow: inset 0 0 0 1px rgb(205, 205, 205);
+        border: 1px rgb(205, 205, 205) solid;
+  }
+
+    </style>
+  </head>
+  <body>
+    <main>
+      <form id="movie-search-form">
+        <input type="text" id="query" placeholder="Movie title" autocomplete="off">
+        <button type="submit">Search</button>
+      </form>
+
+      <ul id="movies">
+        <!-- A movie result might look like this:
+        <li class="movie">
+          <div class="movie-title">
+            <a href="http://www.imdb.com/title/tt0106611" target="_blank">
+              Cool Runnings
+            </a>
+          </div>
+          <div class="movie-release-date">1993</div>
+        </li>
+        -->
+      </ul>
+    </main>
+
+    <script>
+    var form = document.querySelector("form");
+    form.addEventListener("submit", goGetStuff);
+    function goGetStuff(event){
+      var query = document.querySelector("#query").value;
+      var search = "https://omdbapi.com/?s=" + query;
+      event.preventDefault();
+
+      $.get(search, handleResults);
+        function handleResults(results){
+          for (var i = 0; i < results.Search.length; i++) {
+          grabTitle = results.Search[i].Title;
+          console.log(grabTitle);
+            }
+      }
+}
+    </script>
+  </body>
+</html>

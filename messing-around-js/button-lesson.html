@@ -1,6 +1,15 @@
 <!DOCTYPE html>
 <html>
-<head><meta charset="utf-8"></head>
+<head>
+<style media="screen">
+  .color {
+    color: rgb(10, 255, 17);
+
+  }
+</style>
+
+
+  <meta charset="utf-8"></head>
 
 <body>
 
@@ -71,6 +80,7 @@ content Add numbers!-->
          function newPoop() {
            var myDiv = document.createElement("div");
            myDiv.textContent = "This is a line of text that I just made up!";
+           myDiv.setAttribute("class", "color");
            var mySite = document.querySelector("body");
            mySite.appendChild(myDiv);
          }

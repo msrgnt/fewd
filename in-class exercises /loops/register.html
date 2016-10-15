@@ -68,7 +68,7 @@ function addy(event) {
 
     var clickedButton = event.target;
     var price = clickedButton.getAttribute("data-price");
-
+    console.log(event.target);
     message.classList.add("hidden");
 
     tdDescription.textContent = clickedButton.getAttribute("data-description");

@@ -18,11 +18,11 @@
       }
 
       img:hover {
-        border: 2px solid white;
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
       }
 
       img:active {
-        border: 2px solid rgb(58, 58, 58);
+        border: 2px solid rgb(100, 100, 100);
       }
       .posters {
         margin-right: 20px;
@@ -88,6 +88,7 @@
 
   function getMovie(event){
     var clickedMovie = event.target;
+    console.log(clickedMovie.getAttribute("id"));
     var imdbID = clickedMovie.getAttribute("id");
     var newQuery = "https://omdbapi.com/?i=" + imdbID;
 
