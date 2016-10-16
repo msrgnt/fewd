@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Increment Practice</title>
+    <script src="jquery.js"></script>
+    <style media="screen">
+
+    .triangle-up {
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-bottom: 10px solid grey;
+    margin-bottom: 1px;
+    }
+
+    .triangle-down {
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 10px solid grey;
+    margin-top: 1px;
+    }
+
+    .all-buttons {
+      display: flex;
+    }
+
+    </style>
+  </head>
+  <body>
+    <div class="all-buttons">
+      <button type="button" name="button">Red</button>
+      <div class="up-down">
+        <div class="triangle-up"></div>
+        <div class="triangle-down"></div>
+      </div>
+    </div>
+  <script type="text/javascript">
+  redrA = 255;
+  redgA = 0;
+  redbA = 0;
+  redrB = 255;
+  redgB = 0;
+  redbB = 0;
+  redrC = 255;
+  redgC = 0;
+  redbC = 0;
+  var rgbReset = "rgb("+ 255 +","+ 0 + ","+ 0 +")";
+
+  function resetRed() {
+    redrB = 255;
+    redgC = 0;
+    redbC = 0;
+  }
+    var button = document.querySelector("button");
+      button.addEventListener("click", primary);
+    function primary(event){
+      $("body").css("background", rgbReset);
+      console.log(rgbReset);
+      resetRed()
+      $(".triangle-up").css("visibility", "visible");
+      $(".triangle-down").css("visibility", "visible");
+      }
+
+    var divUp = document.querySelector(".triangle-up");
+      divUp.addEventListener("click", increm);
+      function increm(event){
+        event.preventDefault();
+        redrB = redrB - 5;
+        var rgbBNew = "rgb("+ redrB +","+ redgB + ","+ redbB +")";
+        console.log(rgbBNew);
+        $("body").css("background", rgbBNew);
+        $(".triangle-down").css("visibility", "hidden");
+      }
+
+      var divDown = document.querySelector(".triangle-down");
+        divDown.addEventListener("click", decrem);
+        function decrem(event){
+          event.preventDefault();
+          redgC = redgC + 5;
+          redbC = redbC + 5;
+          var rgbCNew = "rgb("+ redrC +","+ redgC + ","+ redbC +")";
+          console.log(rgbCNew);
+          $("body").css("background", rgbCNew);
+          $(".triangle-up").css("visibility", "hidden");
+        }
+  </script>
+  </body>
+</html>
