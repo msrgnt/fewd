@@ -7,6 +7,10 @@
 
     <style media="screen">
 
+    table, th, tr, td {
+      border: 1px solid black;
+    }
+
     .chimney {
       height: 40px;
       width: 20px;
@@ -106,16 +110,30 @@
     <table style="width:100%">
       <tr>
         <th class="top-row"></th>
-        <th class="top-row">B <button color="black" class="top-but" name="button"></button></th>
-        <th class="top-row">W <button color="white" class="top-but" name="button"></button></th>
-        <th class="top-row">B <button color="brown" class="top-but" name="button"></button></th>
-        <th class="top-row">R <button color="red" class="top-but" name="button"></button></th>
-        <th class="top-row">O <button color="orange" class="top-but" name="button"></button></th>
-        <th class="top-row">Y <button color="yellow" class="top-but" name="button"></button></th>
-        <th class="top-row">G <button color="green" class="top-but" name="button"></button></th>
-        <th class="top-row">B <button color="blue" class="top-but" name="button"></button></th>
-        <th class="top-row">V <button color="violet" class="top-but" name="button"></button></th>
-        <th class="top-row">? <button color="" class="top-but" name="button"></button></th>
+        <th class="top-row">B <button color="black" class="top-but" name="button"></button>
+          <div class="triangle-up" name="button"></div>
+          <div class="triangle-down" name="button"></div>
+        </th>
+        <th class="top-row">G <button color="grey" class="top-but" name="button"></button>     <div class="triangle-up" name="button"></div>
+            <div class="triangle-down" name="button"></div></th>
+        <th class="top-row">W <button color="white" class="top-but" name="button"></button>     <div class="triangle-up" name="button"></div>
+            <div class="triangle-down" name="button"></div></th>
+        <th class="top-row">B <button color="brown" class="top-but" name="button"></button>     <div class="triangle-up"   name="button"></div>
+            <div class="triangle-down" name="button"></div></th>
+        <th class="top-row">R <button color="red" class="top-but" name="button"></button>     <div class="triangle-up"   r="255" g="0" b="0"  name="button"></div>
+            <div class="triangle-down" name="button"></div></th>
+        <th class="top-row">O <button color="orange" class="top-but" name="button"></button>     <div class="triangle-up" name="button"></div>
+            <div class="triangle-down" name="button"></div></th>
+        <th class="top-row">Y <button color="yellow" class="top-but" name="button"></button>     <div class="triangle-up" name="button"></div>
+            <div class="triangle-down" name="button"></div></th>
+        <th class="top-row">G <button color="green" class="top-but" name="button"></button>     <div class="triangle-up" name="button"></div>
+            <div class="triangle-down" name="button"></div></th>
+        <th class="top-row">B <button color="blue" class="top-but" name="button"></button>     <div class="triangle-up" name="button"></div>
+            <div class="triangle-down" name="button"></div></th>
+        <th class="top-row">V <button color="violet" class="top-but" name="button"></button>     <div class="triangle-up" name="button"></div>
+            <div class="triangle-down" name="button"></div></th>
+        <th class="top-row">? <button color="" class="top-random" name="button"></button>     <div class="triangle-up" name="button"></div>
+            <div class="triangle-down" name="button"></div></th>
       </tr>
       <tr>
         <td>A</td>
@@ -124,6 +142,13 @@
           <div class="up-down">
             <div class="triangle-up black" name="button"></div>
             <div class="triangle-down black" name="button"></div>
+          </div>
+        </td>
+        <td class="a-row">
+          <button class="a-but grey" color="grey" name="button"></button>
+          <div class="up-down">
+            <div class="triangle-up grey" name="button"></div>
+            <div class="triangle-down grey" name="button"></div>
           </div>
         </td>
         <td class="a-row">
@@ -141,9 +166,9 @@
           </div>
         </td>
         <td class="a-row">
-          <button class="a-but red" color="red" name="button"></button>
+          <button class="a-but red" color="red"  r="255" g="0" b="0" name="button"></button>
           <div class="up-down">
-            <div class="triangle-up red" name="button"></div>
+            <div class="triangle-up red"   r="255" g="0" b="0" name="button"></div>
             <div class="triangle-down red" name="button"></div>
           </div>
         </td>
@@ -181,7 +206,7 @@
           <div class="triangle-down violet" name="button"></div>
         </td>
         <td class="a-row">
-          <button class="a-but random" color="" name="button"></button>
+          <button class="a-random" color="" name="button"></button>
           <div class="triangle-up random" name="button"></div>
           <div class="triangle-down random" name="button"></div>
         </td>
@@ -193,6 +218,13 @@
         <div class="up-down">
           <div class="triangle-up black" name="button"></div>
           <div class="triangle-down black" name="button"></div>
+        </div>
+      </td>
+      <td class="b-row">
+        <button class="b-but grey" color="grey" name="button"></button>
+        <div class="up-down">
+          <div class="triangle-up grey" name="button"></div>
+          <div class="triangle-down grey" name="button"></div>
         </div>
       </td>
       <td class="b-row">
@@ -210,9 +242,9 @@
         </div>
       </td>
       <td class="b-row">
-        <button class="b-but red" color="red" name="button"></button>
+        <button class="b-but red" name="button"></button>
         <div class="up-down">
-          <div class="triangle-up red" name="button"></div>
+          <div class="triangle-up red" r="255" g="0" b="0" name="button"></div>
           <div class="triangle-down red" name="button"></div>
         </div>
       </td>
@@ -250,7 +282,7 @@
         <div class="triangle-down violet" name="button"></div>
       </td>
       <td class="b-row">
-        <button class="b-but random" color="" name="button"></button>
+        <button class="b-random" color="" name="button"></button>
         <div class="triangle-up random" name="button"></div>
         <div class="triangle-down random" name="button"></div>
       </td>
@@ -262,6 +294,13 @@
       <div class="up-down">
         <div class="triangle-up black" name="button"></div>
         <div class="triangle-down black" name="button"></div>
+      </div>
+    </td>
+    <td class="c-row">
+      <button class="c-but grey" color="grey" name="button"></button>
+      <div class="up-down">
+        <div class="triangle-up grey" name="button"></div>
+        <div class="triangle-down grey" name="button"></div>
       </div>
     </td>
     <td class="c-row">
@@ -279,9 +318,9 @@
       </div>
     </td>
     <td class="c-row">
-      <button class="c-but red" color="red" name="button"></button>
+      <button class="c-but red" color="red"name="button"></button>
       <div class="up-down">
-        <div class="triangle-up red" name="button"></div>
+        <div class="triangle-up red"   r="255" g="0" b="0" name="button"></div>
         <div class="triangle-down red" name="button"></div>
       </div>
     </td>
@@ -319,7 +358,7 @@
       <div class="triangle-down violet" name="button"></div>
     </td>
     <td class="c-row">
-      <button class="c-but random" color="" name="button"></button>
+      <button class="c-random" color="" name="button"></button>
       <div class="triangle-up random" name="button"></div>
       <div class="triangle-down random" name="button"></div>
     </td>
@@ -334,6 +373,70 @@
       <div class="floor"></div>
     </main>
     <script type="text/javascript">
+var redr = 255;
+var redg = 0;
+var redb = 0;
+
+var greenr = 0;
+var greeng = 255;
+var greenb = 0;
+
+var bluer = 0;
+var blueg = 0;
+var blueb = 255;
+
+//increment up red
+var divUp = document.querySelectorAll(".triangle-up");
+for (var i = 0; i < divUp.length; i++) {
+  divUp[i].addEventListener("click", increm);
+  function increm(event){
+    event.preventDefault();
+    var clickedUpA = event.target;
+
+redg = redg + 10;
+redb = redb + 10;
+
+    var rgb = "rgb("+ redr +","+ redg + ","+ redb +")";
+
+    console.log(redr);
+    console.log(redg);
+    console.log(redb);
+
+    var left = document.querySelector(".a-wall");
+    var back = document.querySelector(".back-wall");
+    var floor = document.querySelector(".floor");
+    $(left).css("background", rgb);
+    $(back).css("background", rgb);
+    $(floor).css("background", rgb);
+  }
+}
+
+//increment down red
+//increment up red
+var divDown = document.querySelectorAll(".triangle-down");
+for (var i = 0; i < divDown.length; i++) {
+  divDown[i].addEventListener("click", decrem);
+  function decrem(event){
+    event.preventDefault();
+    var clickedDown = event.target;
+
+redr = redr - 10;
+
+    var rgb = "rgb("+ redr +","+ redg + ","+ redb +")";
+
+    console.log(redr);
+    console.log(redg);
+    console.log(redb);
+
+    var left = document.querySelector(".a-wall");
+    var back = document.querySelector(".back-wall");
+    var floor = document.querySelector(".floor");
+    $(left).css("background", rgb);
+    $(back).css("background", rgb);
+    $(floor).css("background", rgb);
+  }
+}
+
     var button = document.querySelectorAll(".top-but");
     for (var i = 0; i < button.length; i++) {
       button[i].addEventListener("click", primary);
@@ -380,28 +483,21 @@
         }
       }
 
-          var buttonC = document.querySelectorAll(".c-but");
-          for (var i = 0; i < button.length; i++) {
-            buttonC[i].addEventListener("click", primary);
-            function primary(event){
-              event.preventDefault();
-              var clickedButtC = event.target;
-              console.log(clickedButtC.getAttribute("color"));
-              var colorC = clickedButtC.getAttribute("color");
-              var bottom = document.querySelector(".floor");
-              $(bottom).css("background", colorC);
-              console.log(bottom);
-            }
-          }
-
-      var divUp = document.querySelectorAll(".triangle-up");
-      for (var i = 0; i < divUp.length; i++) {
-        divUp[i].addEventListener("click", increm);
-        function increm(event){
+      var buttonC = document.querySelectorAll(".c-but");
+      for (var i = 0; i < button.length; i++) {
+        buttonC[i].addEventListener("click", primary);
+        function primary(event){
           event.preventDefault();
-          console.log("up!");
+          var clickedButtC = event.target;
+          console.log(clickedButtC.getAttribute("color"));
+          var colorC = clickedButtC.getAttribute("color");
+          var bottom = document.querySelector(".floor");
+          $(bottom).css("background", colorC);
+          console.log(bottom);
         }
       }
+
+
 
       var divDown = document.querySelectorAll(".triangle-down");
       for (var i = 0; i < divDown.length; i++) {
@@ -411,6 +507,63 @@
           console.log("down!");
         }
       }
+
+      $(".top-random").click(function() {
+      //Assign each named color a random number 0 - 255
+      var red = Math.floor(Math.random() * 255);
+      var green = Math.floor(Math.random() * 255);
+      var blue = Math.floor(Math.random() * 255);
+      var trans = Math.random();
+
+      //Display the three values in an alert window
+      var randomRGBA = "rgba("+ red +","+ green +","+ blue +","+ trans +")";
+      var left = document.querySelector(".a-wall");
+      var back = document.querySelector(".back-wall");
+      var floor = document.querySelector(".floor");
+      $(left).css("background", randomRGBA);
+      $(back).css("background", randomRGBA);
+      $(floor).css("background", randomRGBA);
+    })
+
+    $(".a-random").click(function() {
+    //Assign each named color a random number 0 - 255
+    var red = Math.floor(Math.random() * 255);
+    var green = Math.floor(Math.random() * 255);
+    var blue = Math.floor(Math.random() * 255);
+    var trans = Math.random();
+    //Display the three values in an alert window
+    var randomRGBA = "rgba("+ red +","+ green +","+ blue +","+ trans +")";
+    var left = document.querySelector(".a-wall");
+    var back = document.querySelector(".back-wall");
+    var floor = document.querySelector(".floor");
+    $(left).css("background", randomRGBA);
+    })
+
+    $(".b-random").click(function() {
+    //Assign each named color a random number 0 - 255
+    var red = Math.floor(Math.random() * 255);
+    var green = Math.floor(Math.random() * 255);
+    var blue = Math.floor(Math.random() * 255);
+    var trans = Math.random();
+    //Display the three values in an alert window
+    var randomRGBA = "rgba("+ red +","+ green +","+ blue +","+ trans +")";
+    var back = document.querySelector(".back-wall");
+    $(back).css("background", randomRGBA);
+    })
+
+    $(".c-random").click(function() {
+    //Assign each named color a random number 0 - 255
+    var red = Math.floor(Math.random() * 255);
+    var green = Math.floor(Math.random() * 255);
+    var blue = Math.floor(Math.random() * 255);
+    var trans = Math.random();
+
+    //Display the three values in an alert window
+    var randomRGBA = "rgba("+ red +","+ green +","+ blue +","+ trans +")";
+    var floor = document.querySelector(".floor");
+    $(floor).css("background", randomRGBA);
+    })
+
     </script>
   </body>
 </html>
