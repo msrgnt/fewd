@@ -26,7 +26,6 @@
           display: inline-block;
           border: 1px dashed red;
 
-
     }
 
     .floor {
@@ -165,6 +164,10 @@
         <div class="v-triangle-up"></div>
         <div class="v-triangle-down"></div>
       </div>
+    </div>
+
+    <div class="all-buttons">
+      <button type="button" class="ran-button">?</button>
     </div>
 
     <main>
@@ -746,9 +749,28 @@ $(".floor").css("background", rgbBNew);
                 $(".back-wall").css("background", rgbCNew);
 $(".a-wall").css("background", rgbCNew);
 $(".floor").css("background", rgbCNew);
+}
 
-                $(".v-triangle-up").css("visibility", "hidden");
-              }
+  var random = document.querySelector(".ran-button");
+  random.addEventListener("click", randy);
+  function randy(event){
+
+              //Assign each named color a random number 0 - 255
+              var red = Math.floor(Math.random() * 255);
+              var green = Math.floor(Math.random() * 255);
+              var blue = Math.floor(Math.random() * 255);
+              var trans = Math.random();
+              //Display the three values in an alert window
+              var randomRGBA = "rgba("+ red +","+ green +","+ blue +","+ trans +")";
+              var back = document.querySelector(".back-wall");
+              var floor = document.querySelector(".floor");
+              var left = document.querySelector(".a-wall");
+              console.log(randomRGBA);
+              $(back).css("background", randomRGBA);
+              $(floor).css("background", randomRGBA);
+              $(left).css("background", randomRGBA);
+}
+
   </script>
   </body>
 </html>
