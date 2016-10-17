@@ -6,7 +6,73 @@
     <script src="jquery.js"></script>
     <style media="screen">
 
-    .triangle-up {
+    .back-wall {
+         width: 200px;
+          height: 200px;
+          border: 1px dashed red;
+          margin-left: auto;
+          margin-right: auto;
+          position: relative;
+          display: inline-block;
+
+    }
+
+    .right-wall {
+         width: 70px;
+          height: 200px;
+           -webkit-transform: skewY(-20deg);
+           -moz-transform: skewY(-20deg);
+           -o-transform: skewY(-20deg);
+          display: inline-block;
+          border: 1px dashed red;
+
+
+    }
+
+    .floor {
+        width: 200px;
+        height: 25px;
+           -webkit-transform: skew(-70deg);
+           -moz-transform: skew(-70deg);
+           -o-transform: skew(-70deg);
+          border: 1px dashed red;
+
+    }
+
+
+    .chimney {
+      height: 40px;
+      width: 20px;
+      border: red 1px solid;
+      margin-left: 150px;
+    }
+
+    .floor, .top-wall {
+      margin-left: 100px;
+    }
+
+    .top-wall {
+         width: 200px;
+          height: 25px;
+           -webkit-transform: skew(-70deg);
+           -moz-transform: skew(-70deg);
+           -o-transform: skew(-70deg);
+          border: 1px dashed red;
+    }
+
+    .a-wall {
+         width: 68px;
+          height: 200px;
+           -webkit-transform: skewY(-20deg);
+           -moz-transform: skewY(-20deg);
+           -o-transform: skewY(-20deg);
+          border: 1px dashed red;
+          display: inline-block;
+    }
+
+
+
+    .r-triangle-up, .g-triangle-up, .b-triangle-up, .w-triangle-up, .o-triangle-up, .y-triangle-up, .i-triangle-up, .v-triangle-up  {
     width: 0;
     height: 0;
     border-left: 5px solid transparent;
@@ -15,7 +81,7 @@
     margin-bottom: 1px;
     }
 
-    .triangle-down {
+    .r-triangle-down, .g-triangle-down, .b-triangle-down, .bl-triangle-down, .o-triangle-down, .y-triangle-down, .i-triangle-down, .v-triangle-down {
     width: 0;
     height: 0;
     border-left: 5px solid transparent;
@@ -31,14 +97,119 @@
     </style>
   </head>
   <body>
+
     <div class="all-buttons">
-      <button type="button" name="button">Red</button>
+      <button type="button" class="bl-button">B</button>
       <div class="up-down">
-        <div class="triangle-up"></div>
-        <div class="triangle-down"></div>
+        <div class="bl-triangle-down"></div>
       </div>
     </div>
+
+    <div class="all-buttons">
+      <button type="button" class="w-button">W</button>
+      <div class="up-down">
+        <div class="w-triangle-up"></div>
+      </div>
+    </div>
+    <div class="all-buttons">
+      <button type="button" class="r-button">R</button>
+      <div class="up-down">
+        <div class="r-triangle-up"></div>
+        <div class="r-triangle-down"></div>
+      </div>
+    </div>
+
+    <div class="all-buttons">
+      <button type="button" class="o-button">O</button>
+      <div class="up-down">
+        <div class="o-triangle-up"></div>
+        <div class="o-triangle-down"></div>
+      </div>
+    </div>
+
+    <div class="all-buttons">
+      <button type="button" class="y-button">Y</button>
+      <div class="up-down">
+        <div class="y-triangle-up"></div>
+        <div class="y-triangle-down"></div>
+      </div>
+    </div>
+
+    <div class="all-buttons">
+      <button type="button" class="g-button">G</button>
+      <div class="up-down">
+        <div class="g-triangle-up"></div>
+        <div class="g-triangle-down"></div>
+      </div>
+    </div>
+
+    <div class="all-buttons">
+      <button type="button" class="b-button">B</button>
+      <div class="up-down">
+        <div class="b-triangle-up"></div>
+        <div class="b-triangle-down"></div>
+      </div>
+    </div>
+
+    <div class="all-buttons">
+      <button type="button" class="i-button">I</button>
+      <div class="up-down">
+        <div class="i-triangle-up"></div>
+        <div class="i-triangle-down"></div>
+      </div>
+    </div>
+
+    <div class="all-buttons">
+      <button type="button" class="v-button">V</button>
+      <div class="up-down">
+        <div class="v-triangle-up"></div>
+        <div class="v-triangle-down"></div>
+      </div>
+    </div>
+
+    <main>
+      <div class="chimney"></div>
+      <div class="top-wall"></div>
+      <div class="a-wall"></div>
+      <div class="back-wall"></div>
+      <div class="right-wall"></div>
+      <div class="floor"></div>
+    </main>
   <script type="text/javascript">
+
+function resetAll(){
+resetblack()
+resetwhite()
+resetred()
+resetorange()
+resetyellow()
+resetgreen()
+resetblue()
+resetindigo()
+resetviolet()
+}
+
+function resetTris(){
+  $(".r-triangle-down").css("visibility", "visible");
+  $(".o-triangle-down").css("visibility", "visible");
+  $(".y-triangle-down").css("visibility", "visible");
+  $(".g-triangle-down").css("visibility", "visible");
+  $(".b-triangle-down").css("visibility", "visible");
+  $(".i-triangle-down").css("visibility", "visible");
+  $(".v-triangle-down").css("visibility", "visible");
+  $(".bl-triangle-down").css("visibility", "visible");
+  $(".w-triangle-down").css("visibility", "visible");
+  $(".r-triangle-up").css("visibility", "visible");
+  $(".o-triangle-up").css("visibility", "visible");
+  $(".y-triangle-up").css("visibility", "visible");
+  $(".g-triangle-up").css("visibility", "visible");
+  $(".b-triangle-up").css("visibility", "visible");
+  $(".i-triangle-up").css("visibility", "visible");
+  $(".v-triangle-up").css("visibility", "visible");
+  $(".bl-triangle-up").css("visibility", "visible");
+  $(".w-triangle-up").css("visibility", "visible");
+}
+
   redrA = 255;
   redgA = 0;
   redbA = 0;
@@ -48,45 +219,536 @@
   redrC = 255;
   redgC = 0;
   redbC = 0;
-  var rgbReset = "rgb("+ 255 +","+ 0 + ","+ 0 +")";
+  var rgbRed = "rgb("+ 255 +","+ 0 + ","+ 0 +")";
 
-  function resetRed() {
+  function resetred() {
+    redrA = 255;
+    redgA = 0;
+    redbA = 0;
     redrB = 255;
+    redgB = 0;
+    redbB = 0;
+    redrC = 255;
     redgC = 0;
     redbC = 0;
   }
-    var button = document.querySelector("button");
-      button.addEventListener("click", primary);
-    function primary(event){
-      $("body").css("background", rgbReset);
-      console.log(rgbReset);
-      resetRed()
-      $(".triangle-up").css("visibility", "visible");
-      $(".triangle-down").css("visibility", "visible");
+    var button = document.querySelector(".r-button");
+      button.addEventListener("click", rPrimary);
+    function rPrimary(event){
+      $(".back-wall").css("background", rgbRed);
+      $(".a-wall").css("background", rgbRed);
+      $(".floor").css("background", rgbRed);
+      console.log(rgbRed);
+      resetAll()
+resetTris()
+      $(".r-triangle-up").css("visibility", "visible");
+      $(".r-triangle-down").css("visibility", "visible");
       }
 
-    var divUp = document.querySelector(".triangle-up");
-      divUp.addEventListener("click", increm);
-      function increm(event){
+    var divUp = document.querySelector(".r-triangle-up");
+      divUp.addEventListener("click", rIncrem);
+      function rIncrem(event){
         event.preventDefault();
         redrB = redrB - 5;
         var rgbBNew = "rgb("+ redrB +","+ redgB + ","+ redbB +")";
         console.log(rgbBNew);
-        $("body").css("background", rgbBNew);
-        $(".triangle-down").css("visibility", "hidden");
+        $(".back-wall").css("background", rgbBNew);
+$(".a-wall").css("background", rgbBNew);
+$(".floor").css("background", rgbBNew);
+        $(".r-triangle-down").css("visibility", "hidden");
       }
 
-      var divDown = document.querySelector(".triangle-down");
-        divDown.addEventListener("click", decrem);
-        function decrem(event){
+      var divDown = document.querySelector(".r-triangle-down");
+        divDown.addEventListener("click", rDecrem);
+        function rDecrem(event){
           event.preventDefault();
           redgC = redgC + 5;
           redbC = redbC + 5;
           var rgbCNew = "rgb("+ redrC +","+ redgC + ","+ redbC +")";
           console.log(rgbCNew);
-          $("body").css("background", rgbCNew);
-          $(".triangle-up").css("visibility", "hidden");
+          $(".back-wall").css("background", rgbCNew);
+$(".a-wall").css("background", rgbCNew);
+$(".floor").css("background", rgbCNew);
+
+          $(".r-triangle-up").css("visibility", "hidden");
         }
+    greenrA = 0;
+    greengA = 255;
+    greenbA = 0;
+    greenrB = 0;
+    greengB = 255;
+    greenbB = 0;
+    greenrC = 0;
+    greengC = 255;
+    greenbC = 0;
+    var rgbGreen = "rgb("+ 0 +","+ 255 + ","+ 0 +")";
+
+    function resetgreen() {
+      greenrA = 0;
+      greengA = 255;
+      greenbA = 0;
+      greenrB = 0;
+      greengB = 255;
+      greenbB = 0;
+      greenrC = 0;
+      greengC = 255;
+      greenbC = 0;
+    }
+      var button = document.querySelector(".g-button");
+        button.addEventListener("click", gPrimary);
+      function gPrimary(event){
+        $(".back-wall").css("background", rgbGreen);
+        $(".a-wall").css("background", rgbGreen);
+        $(".floor").css("background", rgbGreen);
+
+        console.log(rgbGreen);
+        resetAll()
+        resetTris()
+        $(".g-triangle-up").css("visibility", "visible");
+        $(".g-triangle-down").css("visibility", "visible");
+        }
+
+      var divUp = document.querySelector(".g-triangle-up");
+        divUp.addEventListener("click", gIncrem);
+        function gIncrem(event){
+          event.preventDefault();
+          greengB = greengB - 5;
+            var rgbBNew = "rgb("+ greenrB +","+ greengB + ","+ greenbB +")";
+            console.log(rgbBNew);
+            $(".back-wall").css("background", rgbBNew);
+$(".a-wall").css("background", rgbBNew);
+$(".floor").css("background", rgbBNew);
+            $(".a-wall").css("background", rgbBNew);
+            $(".floor").css("background", rgbBNew);
+
+            $(".g-triangle-down").css("visibility", "hidden");
+          }
+
+          var divDown = document.querySelector(".g-triangle-down");
+            divDown.addEventListener("click", gDecrem);
+            function gDecrem(event){
+              event.preventDefault();
+              greenrC = greenrC + 5;
+              greenbC = greenbC + 5;
+              var rgbCNew = "rgb("+ greenrC +","+ greengC + ","+ greenbC +")";
+              console.log(rgbCNew);
+              $(".back-wall").css("background", rgbCNew);
+$(".a-wall").css("background", rgbCNew);
+$(".floor").css("background", rgbCNew);
+
+              $(".g-triangle-up").css("visibility", "hidden");
+            }
+
+    bluerA = 0;
+    bluegA = 0;
+    bluebA = 255;
+    bluerB = 0;
+    bluegB = 0;
+    bluebB = 255;
+    bluerC = 0;
+    bluegC = 0;
+    bluebC = 255;
+    var rgbBlue = "rgb("+ 0 +","+ 0 + ","+ 255 +")";
+
+    function resetblue() {
+      bluerA = 0;
+      bluegA = 0;
+      bluebA = 255;
+      bluerB = 0;
+      bluegB = 0;
+      bluebB = 255;
+      bluerC = 0;
+      bluegC = 0;
+      bluebC = 255;
+    }
+      var button = document.querySelector(".b-button");
+        button.addEventListener("click", bPrimary);
+      function bPrimary(event){
+        $(".back-wall").css("background", rgbBlue);
+        $(".a-wall").css("background", rgbBlue);
+        $(".floor").css("background", rgbBlue);
+        console.log(rgbBlue);
+        resetAll()
+        resetTris()
+        $(".b-triangle-up").css("visibility", "visible");
+        $(".b-triangle-down").css("visibility", "visible");
+        }
+
+      var divUp = document.querySelector(".b-triangle-up");
+        divUp.addEventListener("click", bIncrem);
+        function bIncrem(event){
+          event.preventDefault();
+          bluebB = bluebB - 5;
+          var rgbBNew = "rgb("+ bluerB +","+ bluegB + ","+ bluebB +")";
+          console.log(rgbBNew);
+          $(".back-wall").css("background", rgbBNew);
+$(".a-wall").css("background", rgbBNew);
+$(".floor").css("background", rgbBNew);
+          $(".b-triangle-down").css("visibility", "hidden");
+        }
+
+        var divDown = document.querySelector(".b-triangle-down");
+          divDown.addEventListener("click", bDecrem);
+          function bDecrem(event){
+            event.preventDefault();
+            bluegC = bluegC + 5;
+            bluerC = bluerC + 5;
+            var rgbCNew = "rgb("+ bluerC +","+ bluegC + ","+ bluebC +")";
+            console.log(rgbCNew);
+            $(".back-wall").css("background", rgbCNew);
+$(".a-wall").css("background", rgbCNew);
+$(".floor").css("background", rgbCNew);
+
+            $(".b-triangle-up").css("visibility", "hidden");
+          }
+    blackrA = 0;
+    blackgA = 0;
+    blackbA = 0;
+    blackrB = 0;
+    blackgB = 0;
+    blackbB = 0;
+    blackrC = 0;
+    blackgC = 0;
+    blackbC = 0;
+    var rgbBlack = "rgb("+ 0 +","+ 0 + ","+ 0 +")";
+
+    function resetblack() {
+      blackrB = 0;
+      blackgB = 0;
+      blackbB = 0;
+      blackrC = 0;
+      blackgC = 0;
+      blackbC = 0;
+    }
+      var button = document.querySelector(".bl-button");
+        button.addEventListener("click", blPrimary);
+      function blPrimary(event){
+        $(".back-wall").css("background", rgbBlack);
+        $(".a-wall").css("background", rgbBlack);
+        $(".floor").css("background", rgbBlack);
+        console.log(rgbBlack);
+        resetAll()
+        resetTris()
+        $(".bl-triangle-down").css("visibility", "visible");
+        }
+
+          var divDown = document.querySelector(".bl-triangle-down");
+            divDown.addEventListener("click", blIncrem);
+            function blIncrem(event){
+              event.preventDefault();
+              blackrC = blackrC + 5;
+              blackgC = blackgC + 5;
+              blackbC = blackbC + 5;
+              var rgbCNew = "rgb("+ blackrC +","+ blackgC + ","+ blackbC +")";
+              console.log(rgbCNew);
+              $(".back-wall").css("background", rgbCNew);
+$(".a-wall").css("background", rgbCNew);
+$(".floor").css("background", rgbCNew);
+
+              $(".bl-triangle-up").css("visibility", "hidden");
+            }
+    whiterA = 255;
+    whitegA = 255;
+    whitebA = 255;
+    whiterB = 255;
+    whitegB = 255;
+    whitebB = 255;
+    whiterC = 255;
+    whitegC = 255;
+    whitebC = 255;
+    var rgbWhite = "rgb("+ 255 +","+ 255 + ","+ 255 +")";
+
+    function resetwhite() {
+      whiterB = 255;
+      whitegB = 255;
+      whitebB = 255;
+      whiterC = 255;
+      whitegC = 255;
+      whitebC = 255;
+    }
+      var button = document.querySelector(".w-button");
+        button.addEventListener("click", wPrimary);
+      function wPrimary(event){
+        $(".back-wall").css("background", rgbWhite);
+        $(".a-wall").css("background", rgbWhite);
+        $(".floor").css("background", rgbWhite);
+        console.log(rgbWhite);
+        resetAll()
+        resetTris()
+        $(".w-triangle-down").css("visibility", "visible");
+        }
+
+          var divDown = document.querySelector(".w-triangle-up");
+            divDown.addEventListener("click", wDecrem);
+            function wDecrem(event){
+              event.preventDefault();
+              whiterC = whiterC - 5;
+              whitegC = whitegC - 5;
+              whitebC = whitebC - 5;
+              var rgbCNew = "rgb("+ whiterC +","+ whitegC + ","+ whitebC +")";
+              console.log(rgbCNew);
+              $(".back-wall").css("background", rgbCNew);
+$(".a-wall").css("background", rgbCNew);
+$(".floor").css("background", rgbCNew);
+
+            }
+    orangerA = 255;
+    orangegA = 165;
+    orangebA = 0;
+    orangerB = 255;
+    orangegB = 165;
+    orangebB = 0;
+    orangerC = 255;
+    orangegC = 165;
+    orangebC = 0;
+    var rgbOrange = "rgb("+ 255 +","+ 165 + ","+ 0 +")";
+
+    function resetorange() {
+      orangerA = 255;
+      orangegA = 165;
+      orangebA = 0;
+      orangerB = 255;
+      orangegB = 165;
+      orangebB = 0;
+      orangerC = 255;
+      orangegC = 165;
+      orangebC = 0;
+    }
+      var button = document.querySelector(".o-button");
+        button.addEventListener("click", oPrimary);
+      function oPrimary(event){
+        $(".back-wall").css("background", rgbOrange);
+        $(".a-wall").css("background", rgbOrange);
+        $(".floor").css("background", rgbOrange);
+        console.log(rgbOrange);
+        resetAll()
+        resetTris()
+        $(".o-triangle-up").css("visibility", "visible");
+        $(".o-triangle-down").css("visibility", "visible");        }
+
+          var divDown = document.querySelector(".o-triangle-up");
+            divDown.addEventListener("click", oIncrem);
+            function oIncrem(event){
+              event.preventDefault();
+              orangebB = orangebB - 5;
+              orangerB = orangerB - 5;
+              orangegB = orangegB - 5;
+              var rgbBNew = "rgb("+ orangerB +","+ orangegB + ","+ orangebB +")";
+              console.log(rgbBNew);
+              $(".back-wall").css("background", rgbBNew);
+$(".a-wall").css("background", rgbBNew);
+$(".floor").css("background", rgbBNew);
+              $(".o-triangle-down").css("visibility", "hidden");
+            }
+
+            var divDown = document.querySelector(".o-triangle-down");
+              divDown.addEventListener("click", oDecrem);
+              function oDecrem(event){
+                event.preventDefault();
+                orangegC = orangegC + 5;
+                orangerC = orangerC + 5;
+                orangebC = orangebC + 5;
+                var rgbCNew = "rgb("+ orangerC +","+ orangegC + ","+ orangebC +")";
+                console.log(rgbCNew);
+                $(".back-wall").css("background", rgbCNew);
+$(".a-wall").css("background", rgbCNew);
+$(".floor").css("background", rgbCNew);
+
+                $(".o-triangle-up").css("visibility", "hidden");
+              }
+
+    yellowrA = 255;
+    yellowgA = 255;
+    yellowbA = 0;
+    yellowrB = 255;
+    yellowgB = 255;
+    yellowbB = 0;
+    yellowrC = 255;
+    yellowgC = 255;
+    yellowbC = 0;
+    var rgbYellow = "rgb("+ 255 +","+ 255 + ","+ 0 +")";
+
+    function resetyellow() {
+      yellowrA = 255;
+      yellowgA = 255;
+      yellowbA = 0;
+      yellowrB = 255;
+      yellowgB = 255;
+      yellowbB = 0;
+      yellowrC = 255;
+      yellowgC = 255;
+      yellowbC = 0;
+    }
+      var button = document.querySelector(".y-button");
+        button.addEventListener("click", yPrimary);
+      function yPrimary(event){
+        $(".back-wall").css("background", rgbYellow);
+        $(".a-wall").css("background", rgbYellow);
+        $(".floor").css("background", rgbYellow);
+        console.log(rgbYellow);
+        resetAll()
+        resetTris()
+        $(".y-triangle-up").css("visibility", "visible");
+        $(".y-triangle-down").css("visibility", "visible");        }
+
+          var divDown = document.querySelector(".y-triangle-up");
+            divDown.addEventListener("click", yIncrem);
+            function yIncrem(event){
+              event.preventDefault();
+              yellowbB = yellowbB - 5;
+              yellowrB = yellowrB - 5;
+              yellowgB = yellowgB - 5;
+              var rgbBNew = "rgb("+ yellowrB +","+ yellowgB + ","+ yellowbB +")";
+              console.log(rgbBNew);
+              $(".back-wall").css("background", rgbBNew);
+$(".a-wall").css("background", rgbBNew);
+$(".floor").css("background", rgbBNew);
+              $(".y-triangle-down").css("visibility", "hidden");
+            }
+
+            var divDown = document.querySelector(".y-triangle-down");
+              divDown.addEventListener("click", yDecrem);
+              function yDecrem(event){
+                event.preventDefault();
+                yellowgC = yellowgC + 5;
+                yellowrC = yellowrC + 5;
+                yellowbC = yellowbC + 5;
+                var rgbCNew = "rgb("+ yellowrC +","+ yellowgC + ","+ yellowbC +")";
+                console.log(rgbCNew);
+                $(".back-wall").css("background", rgbCNew);
+$(".a-wall").css("background", rgbCNew);
+$(".floor").css("background", rgbCNew);
+
+                $(".y-triangle-up").css("visibility", "hidden");
+              }
+    indigorA = 75;
+    indigogA = 0;
+    indigobA = 130;
+    indigorB = 75;
+    indigogB = 0;
+    indigobB = 130;
+    indigorC = 75;
+    indigogC = 0;
+    indigobC = 130;
+    var rgbIndigo = "rgb("+ 75 +","+ 0 + ","+ 130 +")";
+
+    function resetindigo() {
+      indigorA = 75;
+      indigogA = 0;
+      indigobA = 130;
+      indigorB = 75;
+      indigogB = 0;
+      indigobB = 130;
+      indigorC = 75;
+      indigogC = 0;
+      indigobC = 130;
+    }
+      var button = document.querySelector(".i-button");
+        button.addEventListener("click", iPrimary);
+      function iPrimary(event){
+        $(".back-wall").css("background", rgbIndigo);
+        $(".a-wall").css("background", rgbIndigo);
+        $(".floor").css("background", rgbIndigo);
+        console.log(rgbIndigo);
+        resetAll()
+        resetTris()
+        $(".i-triangle-up").css("visibility", "visible");
+        $(".i-triangle-down").css("visibility", "visible");        }
+
+          var divDown = document.querySelector(".i-triangle-up");
+            divDown.addEventListener("click", iIncrem);
+            function iIncrem(event){
+              event.preventDefault();
+              indigobB = indigobB - 5;
+              indigorB = indigorB - 5;
+              indigogB = indigogB - 5;
+              var rgbBNew = "rgb("+ indigorB +","+ indigogB + ","+ indigobB +")";
+              console.log(rgbBNew);
+              $(".back-wall").css("background", rgbBNew);
+$(".a-wall").css("background", rgbBNew);
+$(".floor").css("background", rgbBNew);
+              $(".i-triangle-down").css("visibility", "hidden");
+            }
+
+            var divDown = document.querySelector(".i-triangle-down");
+              divDown.addEventListener("click", iDecrem);
+              function iDecrem(event){
+                event.preventDefault();
+                indigogC = indigogC + 5;
+                indigorC = indigorC + 5;
+                indigobC = indigobC + 5;
+                var rgbCNew = "rgb("+ indigorC +","+ indigogC + ","+ indigobC +")";
+                console.log(rgbCNew);
+                $(".back-wall").css("background", rgbCNew);
+$(".a-wall").css("background", rgbCNew);
+$(".floor").css("background", rgbCNew);
+
+                $(".i-triangle-up").css("visibility", "hidden");
+              }
+    violetrA = 238;
+    violetgA = 130;
+    violetbA =  238;
+    violetrB = 238;
+    violetgB = 130;
+    violetbB =  238;
+    violetrC = 238;
+    violetgC = 130;
+    violetbC =  238;
+    var rgbViolet = "rgb("+ 238 +","+ 130 + ","+ 238 +")";
+
+    function resetviolet() {
+      violetrA = 238;
+      violetgA = 130;
+      violetbA =  238;
+      violetrB = 238;
+      violetgB = 130;
+      violetbB =  238;
+      violetrC = 238;
+      violetgC = 130;
+      violetbC =  238;
+    }
+      var button = document.querySelector(".v-button");
+        button.addEventListener("click", vPrimary);
+      function vPrimary(event){
+        $(".back-wall").css("background", rgbViolet);
+        $(".a-wall").css("background", rgbViolet);
+        $(".floor").css("background", rgbViolet);
+        console.log(rgbViolet);
+        resetAll()
+        resetTris()
+        $(".v-triangle-up").css("visibility", "visible");
+        $(".v-triangle-down").css("visibility", "visible");        }
+
+          var divDown = document.querySelector(".v-triangle-up");
+            divDown.addEventListener("click", vIncrem);
+            function vIncrem(event){
+              event.preventDefault();
+              violetbB = violetbB - 5;
+              violetrB = violetrB - 5;
+              violetgB = violetgB - 5;
+              var rgbBNew = "rgb("+ violetrB +","+ violetgB + ","+ violetbB +")";
+              console.log(rgbBNew);
+              $(".back-wall").css("background", rgbBNew);
+$(".a-wall").css("background", rgbBNew);
+$(".floor").css("background", rgbBNew);
+              $(".v-triangle-down").css("visibility", "hidden");
+            }
+
+            var divDown = document.querySelector(".v-triangle-down");
+              divDown.addEventListener("click", vDecrem);
+              function vDecrem(event){
+                event.preventDefault();
+              violetgC =violetgC + 5;
+              violetrC =violetrC + 5;
+              violetbC =violetbC + 5;
+                var rgbCNew = "rgb("+ violetrC +","+ violetgC + ","+ violetbC +")";
+                console.log(rgbCNew);
+                $(".back-wall").css("background", rgbCNew);
+$(".a-wall").css("background", rgbCNew);
+$(".floor").css("background", rgbCNew);
+
+                $(".v-triangle-up").css("visibility", "hidden");
+              }
   </script>
   </body>
 </html>
