@@ -48,6 +48,9 @@
       left: 100px;
     }
 
+.mona {
+  width: 50px;
+}
 
         .r-triangle-up, .g-triangle-up, .b-triangle-up, .w-triangle-up, .o-triangle-up, .y-triangle-up, .i-triangle-up, .v-triangle-up  {
         width: 0;
@@ -70,6 +73,24 @@
         .all-buttons {
           display: flex;
         }
+
+        .r-triangle-right {
+  width: 0;
+  height: 0;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+
+  border-left: 10px solid grey;
+}
+
+.r-triangle-left {
+  width: 0;
+  height: 0;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+
+  border-right:10px solid grey;
+}
     </style>
   </head>
   <body>
@@ -92,6 +113,10 @@
       <div class="up-down">
         <div class="r-triangle-up"></div>
         <div class="r-triangle-down"></div>
+        <div class="r-triangle-left"></div>
+        <div class="r-triangle-right"></div>
+
+
       </div>
     </div>
 
@@ -160,8 +185,18 @@
         Content
       </div>
     </div>
-
+    <button class="decorate" name="button"></button>
+    <img src="" class="mona" alt="" />
     <script type="text/javascript">
+
+var deco = document.querySelector(".decorate");
+var image = document.querySelector(".mona");
+
+deco.addEventListener("click", deck);
+function deck(event) {
+  image.setAttribute("src", "rich-chair.png");
+}
+
     function resetAll(){
     resetblack()
     resetwhite()
@@ -237,6 +272,29 @@
             $(".leftFace").css("background", hslRedNew);
             $(".rightFace").css("background", hslRedNew);
             $(".topFace").css("background", hslRedNew);
+}
+
+var divLeft = document.querySelector(".r-triangle-left");
+  divLeft.addEventListener("click", rLeft);
+  function rLeft(event){
+    event.preventDefault();
+    redgB = redgB - 1;
+    var hslRedNew = "hsl("+ redrB +","+ redgB + "%" + ","+ redbB + "%" + ")";
+    console.log(hslRedNew);
+    $(".leftFace").css("background", hslRedNew);
+    $(".rightFace").css("background", hslRedNew);
+    $(".topFace").css("background", hslRedNew);
+}
+var divRight = document.querySelector(".r-triangle-right");
+  divRight.addEventListener("click", rRight);
+  function rRight(event){
+    event.preventDefault();
+    redgB = redgB + 1;
+    var hslRedNew = "hsl("+ redrB +","+ redgB + "%" + ","+ redbB + "%" + ")";
+    console.log(hslRedNew);
+    $(".leftFace").css("background", hslRedNew);
+    $(".rightFace").css("background", hslRedNew);
+    $(".topFace").css("background", hslRedNew);
 }
 
 
