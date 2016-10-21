@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script src="jquery.js"></script>
+    <style media="screen">
+
+      img {
+        height: 40px;
+        margin-top: 40px;
+        margin-right: 20px;
+      }
+
+      main {
+        background: white;
+        height: 300px;
+        width: 500px;
+        padding-top: 15px;
+        margin-bottom: 15px;
+        margin-top: 40px;
+        border-radius: 5px;
+        box-shadow: 0 0 7px -1px rgb(199, 199, 199);
+      }
+    </style>
+  </head>
+  <body>
+<div id='clock'></div>
+<div class="thought">
+  <p>
+    Thought of the day:
+  </p>
+  <p class="new-thought">
+    You are going to die.
+  </p>
+</div>
+<main>
+
+</main>
+<footer>
+  <img src="img/reddit.png" class="reddit" alt="" />
+  <img src="img/news.png" class="news" alt="" />
+  <img src="img/insta.png" class="insta" alt="" />
+  <img src="img/tw.png" class="twitter" alt="" />
+  <img src="img/yt.png" class="youtube" alt="" />
+</footer>
+<div class="" id="time">
+
+</div>
+
+    <script type="text/javascript">
+
+    var button = document.querySelector(".reddit");
+      button.addEventListener("click", reddit);
+    function reddit () {
+      var one = 5,
+          display = document.querySelector('#time');
+      startTimer(one, display);
+      $(display).css("visibility", "visible");
+      $(".reddit").css("visibility", "hidden");
+    }
+
+    var button = document.querySelector(".news");
+      button.addEventListener("click", news);
+    function news () {
+      var one = 5,
+          display = document.querySelector('#time');
+      startTimer(one, display);
+      $(display).css("visibility", "visible");
+      $(".news").css("visibility", "hidden");
+    }
+
+    var button = document.querySelector(".insta");
+      button.addEventListener("click", insta);
+    function insta () {
+      var one = 5,
+          display = document.querySelector('#time');
+      startTimer(one, display);
+      $(display).css("visibility", "visible");
+      $(".insta").css("visibility", "hidden");
+    }
+
+    var button = document.querySelector(".twitter");
+      button.addEventListener("click", twitter);
+    function twitter () {
+      var one = 5,
+          display = document.querySelector('#time');
+      startTimer(one, display);
+      $(display).css("visibility", "visible");
+      $(".twitter").css("visibility", "hidden");
+    }
+
+    var button = document.querySelector(".youtube");
+      button.addEventListener("click", youtube);
+    function youtube () {
+      var one = 5,
+          display = document.querySelector('#time');
+      startTimer(one, display);
+      $(display).css("visibility", "visible");
+      $(".youtube").css("visibility", "hidden");
+    }
+
+    function startTimer(duration, display) {
+      var timer = duration, minutes, seconds;
+      setInterval(function () {
+        minutes = parseInt(timer / 60, 10);
+        seconds = parseInt(timer % 60, 10);
+
+        minutes = minutes < 10 ? "0" + minutes : minutes;
+        seconds = seconds < 10 ? "0" + seconds : seconds;
+
+      display.textContent = minutes + ":" + seconds;
+
+      if (--timer < 0) {
+          timer = duration;
+          console.log("hello");
+          $(display).css("visibility", "hidden");
+          $(".reddit").css("visibility", "visible");
+          $(".news").css("visibility", "visible");
+          $(".insta").css("visibility", "visible");
+          $(".twitter").css("visibility", "visible");
+          $(".youtube").css("visibility", "visible");
+
+
+      }
+  }, 1000);
+}
+
+
+
+$(document).ready( function() {
+
+    // With this function we will assemble our clock,
+    // calling up whole date and then hours, minutes,
+    // and seconds individually.
+
+    function displayTime() {
+        var currentTime = new Date();
+        var hours = currentTime.getHours();
+        var minutes = currentTime.getMinutes();
+        var seconds = currentTime.getSeconds();
+
+
+        // Let's set the AM and PM meridiem and
+        // 12-hour format
+        var meridiem = "AM";  // Default is AM
+
+        // If hours is greater than 12
+        if (hours > 12) {
+            hours = hours - 12; // Convert to 12-hour format
+            meridiem = "PM"; // Keep track of the meridiem
+        }
+        // 0 AM and 0 PM should read as 12
+        if (hours === 0) {
+            hours = 12;
+        }
+
+
+        // If the hours digit is less than 10
+        if(hours < 10) {
+            // Add the "0" digit to the front
+            // so 9 becomes "09"
+            hours = "0" + hours;
+        }
+        // Format minutes and seconds the same way
+        if(minutes < 10) {
+            minutes = "0" + minutes;
+        }
+        if(seconds < 10) {
+            seconds = "0" + seconds;
+        }
+
+        // This gets a "handle" to the clock div in our HTML
+        var clockDiv = document.getElementById('clock');
+
+        // Then we set the text inside the clock div
+        // to the hours, minutes, and seconds of the current time
+        clockDiv.innerText = hours + ":" + minutes + ":" + seconds + " " + meridiem;
+    }
+
+    // This runs the displayTime function the first time
+    displayTime();
+
+    // This makes our clock 'tick' by repeatedly
+    // running the displayTime function every second.
+    setInterval(displayTime, 1000);
+
+});
+
+    </script>
+  </body>
+</html>

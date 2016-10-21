@@ -67,6 +67,7 @@
            -o-transform: skewY(-20deg);
           border: 1px dashed red;
           display: inline-block;
+          top: 10;
     }
 
 
@@ -259,6 +260,7 @@ resetTris()
 $(".a-wall").css("background", rgbBNew);
 $(".floor").css("background", rgbBNew);
         $(".r-triangle-down").css("visibility", "hidden");
+
       }
 
       var divDown = document.querySelector(".r-triangle-down");
@@ -274,6 +276,7 @@ $(".a-wall").css("background", rgbCNew);
 $(".floor").css("background", rgbCNew);
 
           $(".r-triangle-up").css("visibility", "hidden");
+
         }
     greenrA = 0;
     greengA = 255;
@@ -735,6 +738,7 @@ $(".floor").css("background", rgbCNew);
 $(".a-wall").css("background", rgbBNew);
 $(".floor").css("background", rgbBNew);
               $(".v-triangle-down").css("visibility", "hidden");
+
             }
 
             var divDown = document.querySelector(".v-triangle-down");
@@ -749,6 +753,7 @@ $(".floor").css("background", rgbBNew);
                 $(".back-wall").css("background", rgbCNew);
 $(".a-wall").css("background", rgbCNew);
 $(".floor").css("background", rgbCNew);
+$(".v-triangle-up").css("visibility", "hidden");
 }
 
   var random = document.querySelector(".ran-button");
@@ -769,6 +774,8 @@ $(".floor").css("background", rgbCNew);
               $(back).css("background", randomRGBA);
               $(floor).css("background", randomRGBA);
               $(left).css("background", randomRGBA);
+              resetAll();
+              resetTris();
 }
 
   </script>
