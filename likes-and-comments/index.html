@@ -2,74 +2,49 @@
 <html>
   <head>
     <title>Blog</title>
-    <style media="screen">
-    div {
-      display: inline-block;
-    }
-
-    .room {
-        display: inline-block;
-        margin: 100px;
-    }
-
-      .left-wall {
-      border-left: 300px solid grey;
-      border-top: 100px solid transparent;
-      border-bottom: 100px solid transparent;
-      width: 0;
-      margin-left: 1px;
-      height: 200px;
-      position: absolute;
-      top: 130px;
-      left: 111px;
-      }
-
-    .main-wall {
-      box-shadow: 0 5px 30px rgba(0, 0, 0, 0.2);
-      background: red;
-      width: 200px;
-      height: 200px;
-      margin-bottom: 100px;
-      position: absolute;
-      top: 230px;
-      left: 415px;
-    }
-    .right-wall {
-      border-right: 300px solid grey;
-      border-top: 100px solid transparent;
-      border-bottom: 100px solid transparent;
-      width: 0;
-      height: 200px;
-      position: absolute;
-      top: 130px;
-      left: 618px;
-    }
-
-
-        .floor {
-    	border-bottom: 100px solid brown;
-    	border-left: 300px solid transparent;
-    	border-right: 300px solid transparent;
-    	height: 0;
-    	width: 200px;
-      position: absolute;
-      top: 432px;
-      left: 115px;
-    }
-    </style>
+    <link rel="stylesheet" href="css/style.css" media="screen" charset="utf-8">
   </head>
   <body>
-      <div class="room">
-        <div class="left-wall">
-        </div>
-        <div class="main-wall">
-        </div>
-        <div class="right-wall">
-        </div>
-        <div class="floor">
-        </div>
+    <main class="main">
+      <article>
+        <h1>The Challenges of Programming</h1>
+
+        <p>
+          Programming can be tough...
+          lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
+          incididunt ut labore et dolore magna aliqua.
+        </p>
+
+        <ul>
+          <li>lorem</li>
+          <li>ipsum</li>
+          <li>dolor</li>
+        </ul>
+
+        <p>
+          Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
+          mollit anim id est laborum.
+        </p>
+      </article>
+
+      <div class="like">
+        <a href="#" class="like-link">Like</a>
+        (<span class="like-count">0</span>)
       </div>
 
+      <div id="comments">
+        <!--
+        <div class="comment">
+          You're looking good!
+        </div>
+        -->
+      </div>
+
+      <form id="new-comment">
+        <textarea id="new-comment-body" class="new-comment-box" placeholder="Leave a comment..."></textarea>
+        <button type="submit" class="button">Comment</button>
+      </form>
+    </main>
 
     <script src="js/script.js">
     </script>
