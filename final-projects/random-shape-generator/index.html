@@ -5,66 +5,200 @@
     <meta charset="utf-8">
     <title></title>
     <style media="screen">
-div{
-  display: inline;
-}
+
+      div {
+        display: inline;
+      }
+
+      .button {
+        background: white;
+        padding: 20px;
+        margin-left: auto;
+        margin-right: auto;
+        border-radius: 5px;
+      }
+
+      main {
+        background: white;
+        width: 80%;
+        height: 500px;
+        max-width: 800px;
+        padding-top: 15px;
+        padding-bottom: 15px;
+        position: relative;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 40px;
+        border-radius: 5px;
+        box-shadow: 0 0 7px -1px rgb(199, 199, 199);
+      }
+
     </style>
   </head>
   <body>
-    <button class="color">change color!</button>
-    <button class="shape" name="button">create a shape!</button>
+    <button class="color button" name="button"></button>
+    <button class="shape button" name="button"></button>
+    <button class ="button" type="button" value="Refresh Page" onClick="window.location.reload()" name="button"></button>
+    <main class="box">
 
-    <div class="place">
+    <div class="place"></div>
 
-    </div>
-<script type="text/javascript">
-  $(".color").click(function() {
-  //Assign each named color a random number 0 - 255
-  var red = Math.floor(Math.random() * 255);
-  var green = Math.floor(Math.random() * 255);
-  var blue = Math.floor(Math.random() * 255);
-  var trans = Math.random();
+    </main>
+    <script type="text/javascript">
+      $(".color").click(function() {
+      //Assign each named color a random number 0 - 255
+      var red = Math.floor(Math.random() * 255);
+      var green = Math.floor(Math.random() * 255);
+      var blue = Math.floor(Math.random() * 255);
+      var trans = Math.random();
 
-  //Display the three values in an alert window
-  var randomRGBA = "rgba("+ red +","+ green +","+ blue +","+ trans +")";
-  //alert(randomRGBA);
-  $("body").css("background", randomRGBA);
-  console.log(document.body);
+      //Display the three values in an alert window
+      var randomRGBA = "rgba("+ red +","+ green +","+ blue +","+ trans +")";
+      //alert(randomRGBA);
+      $(".box").css("background", randomRGBA);
+      console.log(document.body);
 
-  });
+      });
 
-  $(".shape").click(function() {
-    //Assign each named color a random number 0 - 255
-    var red = Math.floor(Math.random() * 255);
-    var green = Math.floor(Math.random() * 255);
-    var blue = Math.floor(Math.random() * 255);
-    var trans = Math.random();
-    var randomRGBA = "rgba("+ red +","+ green +","+ blue +","+ trans +")";
-    var border = red + "solid" + "transparent";
+        $(".shape").click(function() {
 
-    var body = document.querySelector(".place");
-    var newP = document.createElement("p");
 
-    $(newP).css("background", randomRGBA)
-    $(newP).css("height", Math.floor(Math.random() * 300))
-    $(newP).css("width", Math.floor(Math.random() * 300))
-    $(newP).css("border-radius", Math.floor(Math.random() * 200))
+          var red = Math.floor(Math.random() * 255);
+          var green = Math.floor(Math.random() * 255);
+          var blue = Math.floor(Math.random() * 255);
+          var trans = Math.random();
+          var value = Math.floor(Math.random() * 101);
+          console.log(value);
+          var randomRGBA = "rgba("+ red +","+ green +","+ blue +","+ trans +")";
+          var border = red + "solid" + "transparent";
+          var body = document.querySelector(".box");
+          var newP = document.createElement("p");
+          if (value >= 0 && value <= 40) {
+
+          $(newP).css("background", randomRGBA)
+          $(newP).css("height", Math.floor(Math.random() * 300))
+          $(newP).css("width", Math.floor(Math.random() * 300))
+          $(newP).css("border-radius", Math.floor(Math.random() * 200))
+          //random positioning!!!
+          $(newP).css("position", "absolute")
+          $(newP).css("top", Math.floor(Math.random() * 100) + "%")
+          $(newP).css("left", Math.floor(Math.random() * 100) + "%")
+          $(newP).css("class", "fadeIn")
+
+          console.log("block")
+
+      }
+
+      else if (value > 40 && value <= 50) {
+      $(newP).css("height", 0)
+      $(newP).css("width", 0)
+      $(newP).css("border-left", "10px solid transparent")
+      $(newP).css("border-right", "10px solid transparent")
+      $(newP).css("border-bottom", Math.floor(Math.random() * 100) + "px" + " " + "solid" + " " +  randomRGBA)
+      $(newP).css("position", "absolute")
+      $(newP).css("top", Math.floor(Math.random() * 100) + "%")
+      $(newP).css("left", Math.floor(Math.random() * 100) + "%")
+      console.log("tri-up")
+}
+
+      else if (value > 50 && value <= 60) {
+      $(newP).css("height", 0)
+      $(newP).css("width", 0)
+      $(newP).css("border-left", "10px solid transparent")
+      $(newP).css("border-right", "10px solid transparent")
+      $(newP).css("border-top", Math.floor(Math.random() * 100) + "px" + " " + "solid" + " " +  randomRGBA)
+      $(newP).css("position", "absolute")
+      $(newP).css("top", Math.floor(Math.random() * 100) + "%")
+      $(newP).css("left", Math.floor(Math.random() * 100) + "%")
+      console.log("tri-down")
+      }
+
+    else if (value > 60 && value <= 65) {
+
+      $(newP).css("height", 0)
+      $(newP).css("width", 0)
+      $(newP).css("border-top", "10px solid transparent")
+      $(newP).css("border-right", "20px solid transparent")
+      $(newP).css("border-bottom", Math.floor(Math.random() * 30) + "px" + " " + "solid" + " " +  randomRGBA)
+      $(newP).css("position", "absolute")
+      $(newP).css("top", Math.floor(Math.random() * 100) + "%")
+      $(newP).css("left", Math.floor(Math.random() * 100) + "%")
+      console.log("tri-left")
+
+    }
+
+    else if (value > 65 && value <= 70) {
+
+      $(newP).css("height", 0)
+      $(newP).css("width", 0)
+      $(newP).css("border-top", "10px solid transparent")
+      $(newP).css("border-left", "20px solid transparent")
+      $(newP).css("border-bottom", Math.floor(Math.random() * 30) + "px" + " " + "solid" + " " +  randomRGBA)
+      $(newP).css("position", "absolute")
+      $(newP).css("top", Math.floor(Math.random() * 100) + "%")
+      $(newP).css("left", Math.floor(Math.random() * 100) + "%")
+      console.log("tri-right")
+
+    }
+
+    else if (value > 70 && value <= 75) {
+
+      $(newP).css("height", 0)
+      $(newP).css("width", 0)
+      $(newP).css("border-top", Math.floor(Math.random() * 30) + "px" + " " + "solid" + " " +  randomRGBA)
+      $(newP).css("border-right", Math.floor(Math.random() * 30) + "px" + " " + "solid" + " " +  "transparent")
+      $(newP).css("position", "absolute")
+      $(newP).css("top", Math.floor(Math.random() * 100) + "%")
+      $(newP).css("left", Math.floor(Math.random() * 100) + "%")
+      console.log("tri-topright")
+
+    }
+
+    else if (value > 70 && value <= 75) {
+
+      $(newP).css("height", 0)
+      $(newP).css("width", 0)
+      $(newP).css("border-top", Math.floor(Math.random() * 30) + "px" + " " + "solid" + " " +  randomRGBA)
+      $(newP).css("border-left", Math.floor(Math.random() * 30) + "px" + " " + "solid" + " " +  "transparent")
+      $(newP).css("position", "absolute")
+      $(newP).css("top", Math.floor(Math.random() * 100) + "%")
+      $(newP).css("left", Math.floor(Math.random() * 100) + "%")
+      console.log("tri-topleft")
+
+
+}
+  else if (value > 75 && value <= 78) {
+    $(newP).css("width", "80px")
+    $(newP).css("height", "80px")
+    $(newP).css("border-radius", 50 + "%")
+    $(newP).css("box-shadow",  15 + "px" + " " + 15 + "px" + " " + 0 + " " + 0 + " " + randomRGBA)
+    $(newP).css("top", Math.floor(Math.random() * 100) + "%")
+    $(newP).css("left", Math.floor(Math.random() * 100) + "%")
     $(newP).css("position", "absolute")
-    //random positioning!!!
+
+    console.log("moon");
+  }
+
+  else if (value > 78 && value <= 100) {
+    $(newP).css("height", 0)
+    $(newP).css("width", 0)
+    $(newP).css("border-left", Math.floor(Math.random() * 100) + "px" + " " + "solid" + " " + "transparent")
+    $(newP).css("border-right", Math.floor(Math.random() * 100) + "px" + " " + "solid" + " " + "transparent")
+    $(newP).css("border-top", Math.floor(Math.random() * 150) + "px" + " " + "solid" + " " +  randomRGBA)
+    $(newP).css("border-radius", 50 + "%")
+    $(newP).css("position", "absolute")
     $(newP).css("top", Math.floor(Math.random() * 100) + "%")
     $(newP).css("left", Math.floor(Math.random() * 100) + "%")
 
-
-
+    console.log("cone");
+  }
 
 
     //this isn't working. The p exists but it won't append.
     body.appendChild(newP);
     //the newP shows up in console log, looking perfect
     console.log(newP);
-
-  });
-
+})
 
 </script>
   </body>
