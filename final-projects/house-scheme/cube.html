@@ -1,0 +1,923 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script src="jquery.js"></script>
+    <style media="screen">
+    .cube {
+      position: relative;
+      top: 200px;
+    }
+
+    .rightFace,
+    .leftFace,
+    .topFace div {
+      padding: 10px;
+      width: 180px;
+      height: 180px;
+    }
+
+    .rightFace,
+    .leftFace,
+    .topFace {
+      position: absolute;
+    }
+
+    .leftFace {
+      -webkit-transform: skewY(30deg);
+      -moz-transform: skewY(30deg);
+    }
+
+    .rightFace {
+      -webkit-transform: skewY(-30deg);
+      -moz-transform: skewY(-30deg);
+      left: 200px;
+    }
+
+    .topFace div {
+      -webkit-transform: skewY(-30deg) scaleY(1.16);
+      -moz-transform: skewY(-30deg) scaleY(1.16);
+      font-size: 0.862em;
+    }
+
+    .topFace {
+      -webkit-transform: rotate(60deg);
+      -moz-transform: rotate(60deg);
+      top: -158px;
+      left: 100px;
+    }
+
+.mona {
+  width: 50px;
+}
+
+        .r-triangle-up, .g-triangle-up, .b-triangle-up, .w-triangle-up, .o-triangle-up, .y-triangle-up, .i-triangle-up, .v-triangle-up  {
+        width: 0;
+        height: 0;
+        border-left: 5px solid transparent;
+        border-right: 5px solid transparent;
+        border-bottom: 10px solid grey;
+        margin-bottom: 1px;
+        }
+
+        .r-triangle-down, .g-triangle-down, .b-triangle-down, .bl-triangle-down, .o-triangle-down, .y-triangle-down, .i-triangle-down, .v-triangle-down {
+        width: 0;
+        height: 0;
+        border-left: 5px solid transparent;
+        border-right: 5px solid transparent;
+        border-top: 10px solid grey;
+        margin-top: 1px;
+        }
+
+        .all-buttons {
+          display: flex;
+        }
+
+      .v-triangle-right,  .i-triangle-right, .r-triangle-right, .g-triangle-right, .b-triangle-right, .o-triangle-right, .y-triangle-right{
+  width: 0;
+  height: 0;
+  border-top: 5px solid transparent;
+  border-bottom: 5px solid transparent;
+
+  border-left: 5px solid grey;
+}
+
+  .v-triangle-right, .i-triangle-left, .r-triangle-left, .g-triangle-left, .b-triangle-left, .o-triangle-left, .y-triangle-left {
+  width: 0;
+  height: 0;
+  border-top: 5px solid transparent;
+  border-bottom: 5px solid transparent;
+
+  border-right:5px solid grey;
+}
+    </style>
+  </head>
+  <body>
+
+    <div class="all-buttons">
+      <button type="button" class="bl-button">B</button>
+      <div class="up-down">
+        <div class="bl-triangle-down"></div>
+      </div>
+    </div>
+
+    <div class="all-buttons">
+      <button type="button" class="w-button">W</button>
+      <div class="up-down">
+        <div class="w-triangle-up"></div>
+      </div>
+    </div>
+    <div class="all-buttons">
+      <button type="button" class="r-button">R</button>
+      <div class="up-down">
+        <div class="r-triangle-up"></div>
+        <div class="r-triangle-down"></div>
+        <div class="r-triangle-left"></div>
+        <div class="r-triangle-right"></div>
+
+
+      </div>
+    </div>
+
+    <div class="all-buttons">
+      <button type="button" class="o-button">O</button>
+      <div class="up-down">
+        <div class="o-triangle-up"></div>
+        <div class="o-triangle-down"></div>
+        <div class="o-triangle-left"></div>
+        <div class="o-triangle-right"></div>
+      </div>
+    </div>
+
+    <div class="all-buttons">
+      <button type="button" class="y-button">Y</button>
+      <div class="up-down">
+        <div class="y-triangle-up"></div>
+        <div class="y-triangle-down"></div>
+        <div class="y-triangle-left"></div>
+        <div class="y-triangle-right"></div>
+      </div>
+    </div>
+
+    <div class="all-buttons">
+      <button type="button" class="g-button">G</button>
+      <div class="up-down">
+        <div class="g-triangle-up"></div>
+        <div class="g-triangle-down"></div>
+        <div class="g-triangle-left"></div>
+        <div class="g-triangle-right"></div>
+      </div>
+    </div>
+
+    <div class="all-buttons">
+      <button type="button" class="b-button">B</button>
+      <div class="up-down">
+        <div class="b-triangle-up"></div>
+        <div class="b-triangle-down"></div>
+        <div class="b-triangle-left"></div>
+        <div class="b-triangle-right"></div>
+      </div>
+    </div>
+
+    <div class="all-buttons">
+      <button type="button" class="i-button">I</button>
+      <div class="up-down">
+        <div class="i-triangle-up"></div>
+        <div class="i-triangle-down"></div>
+        <div class="i-triangle-left"></div>
+        <div class="i-triangle-right"></div>
+      </div>
+    </div>
+
+    <div class="all-buttons">
+      <button type="button" class="v-button">V</button>
+      <div class="up-down">
+        <div class="v-triangle-up"></div>
+        <div class="v-triangle-down"></div>
+        <div class="v-triangle-left"></div>
+        <div class="v-triangle-right"></div>
+      </div>
+    </div>
+
+    <div class="all-buttons">
+      <button type="button" class="ran-button">?</button>
+    </div>
+
+    <div class="cube">
+
+      <div class="leftFace">
+        Content
+      </div>
+      <div class="rightFace">
+        Content
+      </div>
+    </div>
+    <button class="decorate" name="button"></button>
+    <img src="" class="mona" alt="" />
+    <script type="text/javascript">
+
+var deco = document.querySelector(".decorate");
+var image = document.querySelector(".mona");
+
+deco.addEventListener("click", deck);
+function deck(event) {
+  image.setAttribute("src", "rich-chair.png");
+}
+
+    function resetAll(){
+    resetblack()
+    resetwhite()
+    resetred()
+    resetorange()
+    resetyellow()
+    resetgreen()
+    resetblue()
+    resetindigo()
+    resetviolet()
+    }
+
+    function resetTris(){
+      $(".r-triangle-down").css("visibility", "visible");
+      $(".o-triangle-down").css("visibility", "visible");
+      $(".y-triangle-down").css("visibility", "visible");
+      $(".g-triangle-down").css("visibility", "visible");
+      $(".b-triangle-down").css("visibility", "visible");
+      $(".i-triangle-down").css("visibility", "visible");
+      $(".v-triangle-down").css("visibility", "visible");
+      $(".bl-triangle-down").css("visibility", "visible");
+      $(".w-triangle-down").css("visibility", "visible");
+      $(".r-triangle-up").css("visibility", "visible");
+      $(".o-triangle-up").css("visibility", "visible");
+      $(".y-triangle-up").css("visibility", "visible");
+      $(".g-triangle-up").css("visibility", "visible");
+      $(".b-triangle-up").css("visibility", "visible");
+      $(".i-triangle-up").css("visibility", "visible");
+      $(".v-triangle-up").css("visibility", "visible");
+      $(".bl-triangle-up").css("visibility", "visible");
+      $(".w-triangle-up").css("visibility", "visible");
+    }
+
+    redrA = 3;
+    redgA = 79;
+    redbA = 50;
+    redrB = 3;
+    redgB = 79;
+    redbB = 50;
+    redrC = 3;
+    redgC = 79;
+    redbC = 50;
+      var hslRed = "hsl("+ 3 +","+ 79 + "%" +","+ 50 + "%" +")";
+
+      function resetred() {
+        redrA = 3;
+        redgA = 79;
+        redbA = 50;
+        redrB = 3;
+        redgB = 79;
+        redbB = 50;
+        redrC = 3;
+        redgC = 79;
+        redbC = 50;
+      }
+        var button = document.querySelector(".r-button");
+          button.addEventListener("click", rPrimary);
+        function rPrimary(event){
+          $(".rightFace").css("background", hslRed);
+          $(".leftFace").css("background", hslRed);
+          $(".topFace").css("background", hslRed);
+          console.log(hslRed);
+          resetred()
+          }
+
+        var divUp = document.querySelector(".r-triangle-up");
+          divUp.addEventListener("click", rIncrem);
+          function rIncrem(event){
+            event.preventDefault();
+            redbB = redbB - 1;
+            var hslRedNew = "hsl("+ redrB +","+ redgB + "%" + ","+ redbB + "%" + ")";
+            console.log(hslRedNew);
+            $(".leftFace").css("background", hslRedNew);
+            $(".rightFace").css("background", hslRedNew);
+            $(".topFace").css("background", hslRedNew);
+            }
+
+            var divLeft = document.querySelector(".r-triangle-left");
+              divLeft.addEventListener("click", rLeft);
+              function rLeft(event){
+                event.preventDefault();
+                redgB = redgB - 1;
+                var hslRedNew = "hsl("+ redrB +","+ redgB + "%" + ","+ redbB + "%" + ")";
+                console.log(hslRedNew);
+                $(".leftFace").css("background", hslRedNew);
+                $(".rightFace").css("background", hslRedNew);
+                $(".topFace").css("background", hslRedNew);
+            }
+            var divRight = document.querySelector(".r-triangle-right");
+              divRight.addEventListener("click", rRight);
+              function rRight(event){
+                event.preventDefault();
+                redgB = redgB + 1;
+                var hslRedNew = "hsl("+ redrB +","+ redgB + "%" + ","+ redbB + "%" + ")";
+                console.log(hslRedNew);
+                $(".leftFace").css("background", hslRedNew);
+                $(".rightFace").css("background", hslRedNew);
+                $(".topFace").css("background", hslRedNew);
+              }
+
+          var divDown = document.querySelector(".r-triangle-down");
+            divDown.addEventListener("click", rDecrem);
+            function rDecrem(event){
+              event.preventDefault();
+              redbB = redbB + 1;
+              var hslRedNew = "hsl("+ redrC +","+ redgC + "%" + ","+ redbB + "%" +")";
+              console.log(hslRedNew);
+              $(".leftFace").css("background", hslRedNew);
+              $(".rightFace").css("background", hslRedNew);
+              $(".topFace").css("background", hslRedNew);
+            }
+        greenrA = 127;
+        greengA = 63;
+        greenbA = 49;
+        greenrB = 127;
+        greengB = 63;
+        greenbB = 49;
+        greenrC = 127;
+        greengC = 63;
+        greenbC = 49;
+        var hslGreen = "hsl("+ 127 +","+ 63 + "%" +","+ 49 + "%" +")";
+
+        function resetgreen() {
+          greenrA = 127;
+          greengA = 63;
+          greenbA = 49;
+          greenrB = 127;
+          greengB = 63;
+          greenbB = 49;
+          greenrC = 127;
+          greengC = 63;
+          greenbC = 49;
+        }
+
+
+        var button = document.querySelector(".g-button");
+          button.addEventListener("click", gPrimary);
+        function gPrimary(event){
+          $(".rightFace").css("background", hslGreen);
+          $(".leftFace").css("background", hslGreen);
+          $(".topFace").css("background", hslGreen);
+          console.log(hslGreen);
+          resetgreen()
+          }
+
+        var divUp = document.querySelector(".g-triangle-up");
+          divUp.addEventListener("click", gIncrem);
+          function gIncrem(event){
+            event.preventDefault();
+            greenbB = greenbB - 1;
+            var hslGreenNew = "hsl("+ greenrB +","+ greengB + "%" + ","+ greenbB + "%" + ")";
+            console.log(hslGreenNew);
+            $(".leftFace").css("background", hslGreenNew);
+            $(".rightFace").css("background", hslGreenNew);
+            $(".topFace").css("background", hslGreenNew);
+            }
+
+            var divLeft = document.querySelector(".g-triangle-left");
+              divLeft.addEventListener("click", gLeft);
+              function gLeft(event){
+                event.preventDefault();
+                greengB = greengB - 1;
+                var hslGreenNew = "hsl("+ greenrB +","+ greengB + "%" + ","+ greenbB + "%" + ")";
+                console.log(hslGreenNew);
+                $(".leftFace").css("background", hslGreenNew);
+                $(".rightFace").css("background", hslGreenNew);
+                $(".topFace").css("background", hslGreenNew);
+            }
+            var divRight = document.querySelector(".g-triangle-right");
+              divRight.addEventListener("click", gRight);
+              function gRight(event){
+                event.preventDefault();
+                greengB = greengB + 1;
+                var hslGreenNew = "hsl("+ greenrB +","+ greengB + "%" + ","+ greenbB + "%" + ")";
+                console.log(hslGreenNew);
+                $(".leftFace").css("background", hslGreenNew);
+                $(".rightFace").css("background", hslGreenNew);
+                $(".topFace").css("background", hslGreenNew);
+              }
+
+          var divDown = document.querySelector(".g-triangle-down");
+            divDown.addEventListener("click", gDecrem);
+            function gDecrem(event){
+              event.preventDefault();
+              greenbB = greenbB + 1;
+              var hslGreenNew = "hsl("+ greenrC +","+ greengC + "%" + ","+ greenbB + "%" +")";
+              console.log(hslGreenNew);
+              $(".leftFace").css("background", hslGreenNew);
+              $(".rightFace").css("background", hslGreenNew);
+              $(".topFace").css("background", hslGreenNew);
+            }
+            bluerA = 208;
+            bluegA = 100;
+            bluebA = 43;
+            bluerB = 208;
+            bluegB = 100;
+            bluebB = 43;
+            bluerC = 208;
+            bluegC = 100;
+            bluebC = 43;
+            var hslBlue = "hsl("+ 208 +","+ 100 + "%" +","+ 43 + "%" +")";
+
+            function resetblue() {
+              bluerA = 208;
+              bluegA = 100;
+              bluebA = 43;
+              bluerB = 208;
+              bluegB = 100;
+              bluebB = 43;
+              bluerC = 208;
+              bluegC = 100;
+              bluebC = 43;
+            }
+
+
+            var button = document.querySelector(".b-button");
+              button.addEventListener("click", bPrimary);
+            function bPrimary(event){
+              $(".rightFace").css("background", hslBlue);
+              $(".leftFace").css("background", hslBlue);
+              $(".topFace").css("background", hslBlue);
+              console.log("hslBlue" + hslBlue);
+              resetblue()
+              }
+
+            var divUp = document.querySelector(".b-triangle-up");
+              divUp.addEventListener("click", bIncrem);
+              function bIncrem(event){
+                event.preventDefault();
+                bluebB = bluebB - 1;
+                var hslBlueNew = "hsl("+ bluerB +","+ bluegB + "%" + ","+ bluebB + "%" + ")";
+                console.log(hslBlueNew);
+                $(".leftFace").css("background", hslBlueNew);
+                $(".rightFace").css("background", hslBlueNew);
+                $(".topFace").css("background", hslBlueNew);
+                }
+
+                var divLeft = document.querySelector(".b-triangle-left");
+                  divLeft.addEventListener("click", bLeft);
+                  function bLeft(event){
+                    event.preventDefault();
+                    bluegB = bluegB - 1;
+                    var hslBlueNew = "hsl("+ bluerB +","+ bluegB + "%" + ","+ bluebB + "%" + ")";
+                    console.log(hslBlueNew);
+                    $(".leftFace").css("background", hslBlueNew);
+                    $(".rightFace").css("background", hslBlueNew);
+                    $(".topFace").css("background", hslBlueNew);
+                }
+                var divRight = document.querySelector(".b-triangle-right");
+                  divRight.addEventListener("click", bRight);
+                  function bRight(event){
+                    event.preventDefault();
+                    bluegB = bluegB + 1;
+                    var hslBlueNew = "hsl("+ bluerB +","+ bluegB + "%" + ","+ bluebB + "%" + ")";
+                    console.log(hslBlueNew);
+                    $(".leftFace").css("background", hslBlueNew);
+                    $(".rightFace").css("background", hslBlueNew);
+                    $(".topFace").css("background", hslBlueNew);
+                  }
+
+              var divDown = document.querySelector(".b-triangle-down");
+                divDown.addEventListener("click", bDecrem);
+                function bDecrem(event){
+                  event.preventDefault();
+                  bluebB = bluebB + 1;
+                  var hslBlueNew = "hsl("+ bluerC +","+ bluegC + "%" + ","+ bluebB + "%" +")";
+                  console.log(hslBlueNew);
+                  $(".leftFace").css("background", hslBlueNew);
+                  $(".rightFace").css("background", hslBlueNew);
+                  $(".topFace").css("background", hslBlueNew);
+                }
+
+        blackrA = 0;
+        blackgA = 0;
+        blackbA = 0;
+        blackrB = 0;
+        blackgB = 0;
+        blackbB = 0;
+        blackrC = 0;
+        blackgC = 0;
+        blackbC = 0;
+        var rgbBlack = "rgb("+ 0 +","+ 0 + ","+ 0 +")";
+
+        function resetblack() {
+          blackrB = 0;
+          blackgB = 0;
+          blackbB = 0;
+          blackrC = 0;
+          blackgC = 0;
+          blackbC = 0;
+        }
+          var button = document.querySelector(".bl-button");
+            button.addEventListener("click", blPrimary);
+          function blPrimary(event){
+            $(".leftFace").css("background", rgbBlack);
+            $(".rightFace").css("background", rgbBlack);
+            $(".topFace").css("background", rgbBlack);
+            console.log(rgbBlack);
+            resetAll()
+            resetTris()
+            $(".bl-triangle-down").css("visibility", "visible");
+            }
+
+              var divDown = document.querySelector(".bl-triangle-down");
+                divDown.addEventListener("click", blIncrem);
+                function blIncrem(event){
+                  event.preventDefault();
+                  blackrC = blackrC + 5;
+                  blackgC = blackgC + 5;
+                  blackbC = blackbC + 5;
+                  var rgbCNew = "rgb("+ blackrC +","+ blackgC + ","+ blackbC +")";
+                  console.log(rgbCNew);
+                  $(".leftFace").css("background", rgbCNew);
+    $(".rightFace").css("background", rgbCNew);
+    $(".topFace").css("background", rgbCNew);
+
+                  $(".bl-triangle-up").css("visibility", "hidden");
+                }
+        whiterA = 255;
+        whitegA = 255;
+        whitebA = 255;
+        whiterB = 255;
+        whitegB = 255;
+        whitebB = 255;
+        whiterC = 255;
+        whitegC = 255;
+        whitebC = 255;
+        var rgbWhite = "rgb("+ 255 +","+ 255 + ","+ 255 +")";
+
+        function resetwhite() {
+          whiterB = 255;
+          whitegB = 255;
+          whitebB = 255;
+          whiterC = 255;
+          whitegC = 255;
+          whitebC = 255;
+        }
+          var button = document.querySelector(".w-button");
+            button.addEventListener("click", wPrimary);
+          function wPrimary(event){
+            $(".leftFace").css("background", rgbWhite);
+            $(".rightFace").css("background", rgbWhite);
+            $(".topFace").css("background", rgbWhite);
+            console.log(rgbWhite);
+            resetAll()
+            resetTris()
+            $(".w-triangle-down").css("visibility", "visible");
+            }
+
+              var divDown = document.querySelector(".w-triangle-up");
+                divDown.addEventListener("click", wDecrem);
+                function wDecrem(event){
+                  event.preventDefault();
+                  whiterC = whiterC - 5;
+                  whitegC = whitegC - 5;
+                  whitebC = whitebC - 5;
+                  var rgbCNew = "rgb("+ whiterC +","+ whitegC + ","+ whitebC +")";
+                  console.log(rgbCNew);
+                  $(".leftFace").css("background", rgbCNew);
+                  $(".rightFace").css("background", rgbCNew);
+                  $(".topFace").css("background", rgbCNew);
+                }
+
+                orangerA = 28;
+                orangegA = 100;
+                orangebA = 55;
+                orangerB = 28;
+                orangegB = 100;
+                orangebB = 55;
+                orangerC = 28;
+                orangegC = 100;
+                orangebC = 55;
+                var hslOrange = "hsl("+ 28 +","+ 100+ "%" +","+ 55 + "%" +")";
+
+                function resetorange() {
+
+                  orangerA = 28;
+                  orangegA = 100;
+                  orangebA = 55;
+                  orangerB = 28;
+                  orangegB = 100;
+                  orangebB = 55;
+                  orangerC = 28;
+                  orangegC = 100;
+                  orangebC = 55;
+                  orangebC = 0;
+                }
+
+                  var button = document.querySelector(".o-button");
+                    button.addEventListener("click", oPrimary);
+                  function oPrimary(event){
+                    $(".rightFace").css("background", hslOrange);
+                    $(".leftFace").css("background", hslOrange);
+                    $(".topFace").css("background", hslOrange);
+                    console.log(hslOrange);
+                    resetorange()
+                    }
+
+                  var divUp = document.querySelector(".o-triangle-up");
+                    divUp.addEventListener("click", oIncrem);
+                    function oIncrem(event){
+                      event.preventDefault();
+                      orangebB = orangebB - 1;
+                      var hslOrangeNew = "hsl("+ orangerB +","+ orangegB + "%" + ","+ orangebB + "%" + ")";
+                      console.log(hslOrangeNew);
+                      $(".leftFace").css("background", hslOrangeNew);
+                      $(".rightFace").css("background", hslOrangeNew);
+                      $(".topFace").css("background", hslOrangeNew);
+                      }
+
+                      var divLeft = document.querySelector(".o-triangle-left");
+                        divLeft.addEventListener("click", oLeft);
+                        function oLeft(event){
+                          event.preventDefault();
+                          orangegB = orangegB - 1;
+                          var hslOrangeNew = "hsl("+ orangerB +","+ orangegB + "%" + ","+ orangebB + "%" + ")";
+                          console.log(hslOrangeNew);
+                          $(".leftFace").css("background", hslOrangeNew);
+                          $(".rightFace").css("background", hslOrangeNew);
+                          $(".topFace").css("background", hslOrangeNew);
+                      }
+                      var divRight = document.querySelector(".o-triangle-right");
+                        divRight.addEventListener("click", oRight);
+                        function oRight(event){
+                          event.preventDefault();
+                          orangegB = orangegB + 1;
+                          var hslOrangeNew = "hsl("+ orangerB +","+ orangegB + "%" + ","+ orangebB + "%" + ")";
+                          console.log(hslOrangeNew);
+                          $(".leftFace").css("background", hslOrangeNew);
+                          $(".rightFace").css("background", hslOrangeNew);
+                          $(".topFace").css("background", hslOrangeNew);
+                        }
+
+                    var divDown = document.querySelector(".o-triangle-down");
+                      divDown.addEventListener("click", oDecrem);
+                      function oDecrem(event){
+                        event.preventDefault();
+                        orangebB = orangebB + 1;
+                        var hslOrangeNew = "hsl("+ orangerC +","+ orangegC + "%" + ","+ orangebB + "%" +")";
+                        console.log(hslOrangeNew);
+                        $(".leftFace").css("background", hslOrangeNew);
+                        $(".rightFace").css("background", hslOrangeNew);
+                        $(".topFace").css("background", hslOrangeNew);
+
+                  }
+
+                  yellowrA = 52;
+                  yellowgA = 100;
+                  yellowbA = 50;
+                  yellowrB = 52;
+                  yellowgB = 100;
+                  yellowbB = 50;
+                  yellowrC = 52;
+                  yellowgC = 100;
+                  yellowbC = 50;
+                  var hslYellow = "hsl("+ 52 +","+ 100+ "%" +","+ 50 + "%" +")";
+
+                  function resetyellow() {
+
+                    yellowrA = 52;
+                    yellowgA = 100;
+                    yellowbA = 50;
+                    yellowrB = 52;
+                    yellowgB = 100;
+                    yellowbB = 50;
+                    yellowrC = 52;
+                    yellowgC = 100;
+                    yellowbC = 50;
+                  }
+
+                    var button = document.querySelector(".y-button");
+                      button.addEventListener("click", yPrimary);
+                    function yPrimary(event){
+                      $(".rightFace").css("background", hslYellow);
+                      $(".leftFace").css("background", hslYellow);
+                      $(".topFace").css("background", hslYellow);
+                      console.log("hslYellow" + hslYellow);
+                      resetyellow()
+                      }
+
+                    var divUp = document.querySelector(".y-triangle-up");
+                      divUp.addEventListener("click", yIncrem);
+                      function yIncrem(event){
+                        event.preventDefault();
+                        yellowbB = yellowbB - 1;
+                        var hslYellowNew = "hsl("+ yellowrB +","+ yellowgB + "%" + ","+ yellowbB + "%" + ")";
+                        console.log(hslYellowNew);
+                        $(".leftFace").css("background", hslYellowNew);
+                        $(".rightFace").css("background", hslYellowNew);
+                        $(".topFace").css("background", hslYellowNew);
+                        }
+
+                        var divLeft = document.querySelector(".y-triangle-left");
+                          divLeft.addEventListener("click", yLeft);
+                          function yLeft(event){
+                            event.preventDefault();
+                            yellowgB = yellowgB - 1;
+                            var hslYellowNew = "hsl("+ yellowrB +","+ yellowgB + "%" + ","+ yellowbB + "%" + ")";
+                            console.log(hslYellowNew);
+                            $(".leftFace").css("background", hslYellowNew);
+                            $(".rightFace").css("background", hslYellowNew);
+                            $(".topFace").css("background", hslYellowNew);
+                        }
+                        var divRight = document.querySelector(".y-triangle-right");
+                          divRight.addEventListener("click", yRight);
+                          function yRight(event){
+                            event.preventDefault();
+                            yellowgB = yellowgB + 1;
+                            var hslYellowNew = "hsl("+ yellowrB +","+ yellowgB + "%" + ","+ yellowbB + "%" + ")";
+                            console.log(hslYellowNew);
+                            $(".leftFace").css("background", hslYellowNew);
+                            $(".rightFace").css("background", hslYellowNew);
+                            $(".topFace").css("background", hslYellowNew);
+                          }
+
+                      var divDown = document.querySelector(".y-triangle-down");
+                        divDown.addEventListener("click", yDecrem);
+                        function yDecrem(event){
+                          event.preventDefault();
+                          yellowbB = yellowbB + 1;
+                          var hslYellowNew = "hsl("+ yellowrC +","+ yellowgC + "%" + ","+ yellowbB + "%" +")";
+                          console.log(hslYellowNew);
+                          $(".leftFace").css("background", hslYellowNew);
+                          $(".rightFace").css("background", hslYellowNew);
+                          $(".topFace").css("background", hslYellowNew);
+
+                  }
+
+                  indigorA = 262;
+                  indigogA = 88;
+                  indigobA = 42;
+                  indigorB = 262;
+                  indigogB = 88;
+                  indigobB = 42;
+                  indigorC = 262;
+                  indigogC = 88;
+                  indigobC = 42;
+                  var hslIndigo = "hsl("+ 262 +","+ 88 + "%" +","+ 42 + "%" +")";
+
+                  function resetindigo() {
+
+                    indigorA = 262;
+                    indigogA = 88;
+                    indigobA = 42;
+                    indigorB = 262;
+                    indigogB = 88;
+                    indigobB = 42;
+                    indigorC = 262;
+                    indigogC = 88;
+                    indigobC = 42;
+                  }
+
+                    var button = document.querySelector(".i-button");
+                      button.addEventListener("click", iPrimary);
+                    function iPrimary(event){
+                      $(".rightFace").css("background", hslIndigo);
+                      $(".leftFace").css("background", hslIndigo);
+                      $(".topFace").css("background", hslIndigo);
+                      console.log("hslIndigo" + hslIndigo);
+                      resetindigo()
+                      }
+
+                    var divUp = document.querySelector(".i-triangle-up");
+                      divUp.addEventListener("click", iIncrem);
+                      function iIncrem(event){
+                        event.preventDefault();
+                        indigobB = indigobB - 1;
+                        var hslIndigoNew = "hsl("+ indigorB +","+ indigogB + "%" + ","+ indigobB + "%" + ")";
+                        console.log(hslIndigoNew);
+                        $(".leftFace").css("background", hslIndigoNew);
+                        $(".rightFace").css("background", hslIndigoNew);
+                        $(".topFace").css("background", hslIndigoNew);
+                        }
+
+                        var divLeft = document.querySelector(".i-triangle-left");
+                          divLeft.addEventListener("click", iLeft);
+                          function iLeft(event){
+                            event.preventDefault();
+                            indigogB = indigogB - 1;
+                            var hslIndigoNew = "hsl("+ indigorB +","+ indigogB + "%" + ","+ indigobB + "%" + ")";
+                            console.log(hslIndigoNew);
+                            $(".leftFace").css("background", hslIndigoNew);
+                            $(".rightFace").css("background", hslIndigoNew);
+                            $(".topFace").css("background", hslIndigoNew);
+                        }
+                        var divRight = document.querySelector(".i-triangle-right");
+                          divRight.addEventListener("click", iRight);
+                          function iRight(event){
+                            event.preventDefault();
+                            indigogB = indigogB + 1;
+                            var hslIndigoNew = "hsl("+ indigorB +","+ indigogB + "%" + ","+ indigobB + "%" + ")";
+                            console.log(hslIndigoNew);
+                            $(".leftFace").css("background", hslIndigoNew);
+                            $(".rightFace").css("background", hslIndigoNew);
+                            $(".topFace").css("background", hslIndigoNew);
+                          }
+
+                      var divDown = document.querySelector(".i-triangle-down");
+                        divDown.addEventListener("click", iDecrem);
+                        function iDecrem(event){
+                          event.preventDefault();
+                          indigobB = indigobB + 1;
+                          var hslIndigoNew = "hsl("+ indigorC +","+ indigogC + "%" + ","+ indigobB + "%" +")";
+                          console.log(hslIndigoNew);
+                          $(".leftFace").css("background", hslIndigoNew);
+                          $(".rightFace").css("background", hslIndigoNew);
+                          $(".topFace").css("background", hslIndigoNew);
+
+                  }
+                  violetrA = 314;
+                  violetgA = 88;
+                  violetbA = 51;
+                  violetrB = 314;
+                  violetgB = 88;
+                  violetbB = 51;
+                  violetrC = 314;
+                  violetgC = 88;
+                  violetbC = 51;
+                  var hslViolet = "hsl("+ 314 +","+ 88 + "%" +","+ 51 + "%" +")";
+
+                  function resetviolet() {
+
+                    violetrA = 314;
+                    violetgA = 88;
+                    violetbA = 51;
+                    violetrB = 314;
+                    violetgB = 88;
+                    violetbB = 51;
+                    violetrC = 314;
+                    violetgC = 88;
+                    violetbC = 51;
+                  }
+
+                    var button = document.querySelector(".v-button");
+                      button.addEventListener("click", vPrimary);
+                    function vPrimary(event){
+                      $(".rightFace").css("background", hslViolet);
+                      $(".leftFace").css("background", hslViolet);
+                      $(".topFace").css("background", hslViolet);
+                      console.log("hslViolet" + hslViolet);
+                      resetviolet()
+                      }
+
+                    var divUp = document.querySelector(".v-triangle-up");
+                      divUp.addEventListener("click", vIncrem);
+                      function vIncrem(event){
+                        event.preventDefault();
+                        violetbB = violetbB - 1;
+                        var hslVioletNew = "hsl("+ violetrB +","+ violetgB + "%" + ","+ violetbB + "%" + ")";
+                        console.log(hslVioletNew);
+                        $(".leftFace").css("background", hslVioletNew);
+                        $(".rightFace").css("background", hslVioletNew);
+                        $(".topFace").css("background", hslVioletNew);
+                        }
+
+                        var divLeft = document.querySelector(".v-triangle-left");
+                          divLeft.addEventListener("click", vLeft);
+                          function vLeft(event){
+                            event.preventDefault();
+                            violetgB = violetgB - 1;
+                            var hslVioletNew = "hsl("+ violetrB +","+ violetgB + "%" + ","+ violetbB + "%" + ")";
+                            console.log(hslVioletNew);
+                            $(".leftFace").css("background", hslVioletNew);
+                            $(".rightFace").css("background", hslVioletNew);
+                            $(".topFace").css("background", hslVioletNew);
+                        }
+                        var divRight = document.querySelector(".v-triangle-right");
+                          divRight.addEventListener("click", vRight);
+                          function vRight(event){
+                            event.preventDefault();
+                            violetgB = violetgB + 1;
+                            var hslVioletNew = "hsl("+ violetrB +","+ violetgB + "%" + ","+ violetbB + "%" + ")";
+                            console.log(hslVioletNew);
+                            $(".leftFace").css("background", hslVioletNew);
+                            $(".rightFace").css("background", hslVioletNew);
+                            $(".topFace").css("background", hslVioletNew);
+                          }
+
+                      var divDown = document.querySelector(".v-triangle-down");
+                        divDown.addEventListener("click", vDecrem);
+                        function vDecrem(event){
+                          event.preventDefault();
+                          violetbB = violetbB + 1;
+                          var hslVioletNew = "hsl("+ violetrC +","+ violetgC + "%" + ","+ violetbB + "%" +")";
+                          console.log(hslVioletNew);
+                          $(".leftFace").css("background", hslVioletNew);
+                          $(".rightFace").css("background", hslVioletNew);
+                          $(".topFace").css("background", hslVioletNew);
+                        }
+
+
+      var random = document.querySelector(".ran-button");
+      random.addEventListener("click", randy);
+      function randy(event){
+
+                  //Assign each named color a random number 0 - 255
+                  var red = Math.topFace(Math.random() * 255);
+                  var green = Math.topFace(Math.random() * 255);
+                  var blue = Math.topFace(Math.random() * 255);
+                  var trans = Math.random();
+                  //Display the three values in an alert window
+                  var randomRGBA = "rgba("+ red +","+ green +","+ blue +","+ trans +")";
+                  var back = document.querySelector(".leftFace");
+                  var floor = document.querySelector(".topFace");
+                  var left = document.querySelector(".rightFace");
+                  console.log(randomRGBA);
+                  $(back).css("background", randomRGBA);
+                  $(floor).css("background", randomRGBA);
+                  $(left).css("background", randomRGBA);
+                  resetAll();
+                  resetTris();
+    }
+
+    </script>
+  </body>
+</html>
