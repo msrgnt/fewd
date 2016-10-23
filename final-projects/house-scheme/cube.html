@@ -5,6 +5,25 @@
     <title></title>
     <script src="jquery.js"></script>
     <style media="screen">
+
+    table {
+      width: 90%;
+      margin-left: auto;
+      margin-right: auto;
+      border: 1px dashed grey;
+    }
+
+    th, td {
+      border: 1px dashed grey;
+    }
+    .button {
+      background: white;
+      padding: 12px;
+      display: inline-block;
+      border-radius: 5px;
+
+    }
+
     .cube {
       position: relative;
       top: 200px;
@@ -52,137 +71,63 @@
   width: 50px;
 }
 
-        .r-triangle-up, .g-triangle-up, .b-triangle-up, .w-triangle-up, .o-triangle-up, .y-triangle-up, .i-triangle-up, .v-triangle-up  {
+  .w-triangle-up, .bl-triangle-up, .ra-triangle-up, .r-triangle-up, .g-triangle-up, .b-triangle-up, .w-triangle-up, .o-triangle-up, .y-triangle-up, .i-triangle-up, .v-triangle-up  {
+        width: 0;
+        height: 0;
+        margin-left: auto;
+        margin-right: auto;
+        border-left: 5px solid transparent;
+        border-right: 5px solid transparent;
+        border-bottom: 10px solid white;
+
+        display:block;
+
+        }
+
+  .w-triangle-down, .bl-triangle-down, .ra-triangle-down, .r-triangle-down, .g-triangle-down, .b-triangle-down, .bl-triangle-down, .o-triangle-down, .y-triangle-down, .i-triangle-down, .v-triangle-down {
+    margin-left: auto;
+    margin-right: auto;
         width: 0;
         height: 0;
         border-left: 5px solid transparent;
         border-right: 5px solid transparent;
-        border-bottom: 10px solid grey;
-        margin-bottom: 1px;
+
+        border-top: 10px solid white;
+        display: block;
         }
 
-        .r-triangle-down, .g-triangle-down, .b-triangle-down, .bl-triangle-down, .o-triangle-down, .y-triangle-down, .i-triangle-down, .v-triangle-down {
-        width: 0;
-        height: 0;
-        border-left: 5px solid transparent;
-        border-right: 5px solid transparent;
-        border-top: 10px solid grey;
-        margin-top: 1px;
-        }
 
-        .all-buttons {
-          display: flex;
-        }
+  .w-triangle-right,  .bl-triangle-right, .ra-triangle-right,  .v-triangle-right,  .i-triangle-right, .r-triangle-right, .g-triangle-right, .b-triangle-right, .o-triangle-right, .y-triangle-right{
 
-      .v-triangle-right,  .i-triangle-right, .r-triangle-right, .g-triangle-right, .b-triangle-right, .o-triangle-right, .y-triangle-right{
   width: 0;
   height: 0;
   border-top: 5px solid transparent;
   border-bottom: 5px solid transparent;
+  border-left: 10px solid white;
 
-  border-left: 5px solid grey;
+
+  display: inline-block;
+  position: absolute;
+  top: 30px;
 }
 
-  .v-triangle-right, .i-triangle-left, .r-triangle-left, .g-triangle-left, .b-triangle-left, .o-triangle-left, .y-triangle-left {
+.w-triangle-left,   .bl-triangle-left, .ra-triangle-left, .v-triangle-left, .i-triangle-left, .r-triangle-left, .g-triangle-left, .b-triangle-left, .o-triangle-left, .y-triangle-left {
+
   width: 0;
   height: 0;
+margin: 0 -10px;
   border-top: 5px solid transparent;
   border-bottom: 5px solid transparent;
+  border-right: 10px solid white;
 
-  border-right:5px solid grey;
+  display: inline-block;
+  position: absolute;
+  top: 30px;
+
 }
     </style>
   </head>
   <body>
-
-    <div class="all-buttons">
-      <button type="button" class="bl-button">B</button>
-      <div class="up-down">
-        <div class="bl-triangle-down"></div>
-      </div>
-    </div>
-
-    <div class="all-buttons">
-      <button type="button" class="w-button">W</button>
-      <div class="up-down">
-        <div class="w-triangle-up"></div>
-      </div>
-    </div>
-    <div class="all-buttons">
-      <button type="button" class="r-button">R</button>
-      <div class="up-down">
-        <div class="r-triangle-up"></div>
-        <div class="r-triangle-down"></div>
-        <div class="r-triangle-left"></div>
-        <div class="r-triangle-right"></div>
-
-
-      </div>
-    </div>
-
-    <div class="all-buttons">
-      <button type="button" class="o-button">O</button>
-      <div class="up-down">
-        <div class="o-triangle-up"></div>
-        <div class="o-triangle-down"></div>
-        <div class="o-triangle-left"></div>
-        <div class="o-triangle-right"></div>
-      </div>
-    </div>
-
-    <div class="all-buttons">
-      <button type="button" class="y-button">Y</button>
-      <div class="up-down">
-        <div class="y-triangle-up"></div>
-        <div class="y-triangle-down"></div>
-        <div class="y-triangle-left"></div>
-        <div class="y-triangle-right"></div>
-      </div>
-    </div>
-
-    <div class="all-buttons">
-      <button type="button" class="g-button">G</button>
-      <div class="up-down">
-        <div class="g-triangle-up"></div>
-        <div class="g-triangle-down"></div>
-        <div class="g-triangle-left"></div>
-        <div class="g-triangle-right"></div>
-      </div>
-    </div>
-
-    <div class="all-buttons">
-      <button type="button" class="b-button">B</button>
-      <div class="up-down">
-        <div class="b-triangle-up"></div>
-        <div class="b-triangle-down"></div>
-        <div class="b-triangle-left"></div>
-        <div class="b-triangle-right"></div>
-      </div>
-    </div>
-
-    <div class="all-buttons">
-      <button type="button" class="i-button">I</button>
-      <div class="up-down">
-        <div class="i-triangle-up"></div>
-        <div class="i-triangle-down"></div>
-        <div class="i-triangle-left"></div>
-        <div class="i-triangle-right"></div>
-      </div>
-    </div>
-
-    <div class="all-buttons">
-      <button type="button" class="v-button">V</button>
-      <div class="up-down">
-        <div class="v-triangle-up"></div>
-        <div class="v-triangle-down"></div>
-        <div class="v-triangle-left"></div>
-        <div class="v-triangle-right"></div>
-      </div>
-    </div>
-
-    <div class="all-buttons">
-      <button type="button" class="ran-button">?</button>
-    </div>
 
     <div class="cube">
 
@@ -193,6 +138,142 @@
         Content
       </div>
     </div>
+
+    <table>
+      <tr>
+      <th>
+        <div class="all-buttons">
+            <div class="bl-triangle-up"></div>
+            <div class="bl-triangle-left"></div>
+            <button type="button" class="bl-button button"></button>
+            <div class="bl-triangle-right"></div>
+            <div class="bl-triangle-down"></div>
+        </div>
+      </th>
+      <th>
+        <div class="all-buttons">
+            <div class="w-triangle-up"></div>
+            <div class="w-triangle-left"></div>
+            <button type="button" class="w-button button"></button>
+            <div class="w-triangle-right"></div>
+            <div class="w-triangle-down"></div>
+        </div>
+      </th>
+    <th>
+
+        <div class="all-buttons">
+            <div class="r-triangle-up"></div>
+            <div class="r-triangle-left"></div>
+            <button type="button" class="r-button button"></button>
+            <div class="r-triangle-right"></div>
+            <div class="r-triangle-down"></div>
+        </div>
+      </th>
+      <th>
+        <div class="all-buttons">
+            <div class="o-triangle-up"></div>
+            <div class="o-triangle-left"></div>
+            <button type="button" class="o-button button"></button>
+            <div class="o-triangle-right"></div>
+            <div class="o-triangle-down"></div>
+        </div>
+      </th>
+      <th>
+        <div class="all-buttons">
+            <div class="y-triangle-up"></div>
+            <div class="y-triangle-left"></div>
+            <button type="button" class="y-button button"></button>
+            <div class="y-triangle-right"></div>
+            <div class="y-triangle-down"></div>
+        </div>
+      </th>
+    <th>
+        <div class="all-buttons">
+            <div class="g-triangle-up"></div>
+            <div class="g-triangle-left"></div>
+            <button type="button" class="g-button button"></button>
+            <div class="g-triangle-right"></div>
+            <div class="g-triangle-down"></div>
+        </div>
+    </th>
+    <th>
+        <div class="all-buttons">
+            <div class="b-triangle-up"></div>
+            <div class="b-triangle-left"></div>
+            <button type="button" class="b-button button"></button>
+            <div class="b-triangle-right"></div>
+            <div class="b-triangle-down"></div>
+        </div>
+    </th>
+    <th>
+        <div class="all-buttons">
+            <div class="i-triangle-up"></div>
+            <div class="i-triangle-left"></div>
+            <button type="button" class="i-button button"></button>
+            <div class="i-triangle-right"></div>
+            <div class="i-triangle-down"></div>
+            </div>
+        </div>
+    </th>
+    <th>
+        <div class="all-buttons">
+            <div class="v-triangle-up"></div>
+            <div class="v-triangle-left"></div>
+            <button type="button" class="v-button button"></button>
+            <div class="v-triangle-right"></div>
+            <div class="v-triangle-down"></div>
+          </div>
+    </th>
+    <th>
+        <div class="all-buttons">
+          <button type="button" class="ra-button button"></button>
+        </div>
+        </th>
+      </tr>
+        <tr>
+
+        <td>
+          <div class="bl-color-info">
+
+        </td>
+        <td>
+          <div class="w-color-info">
+
+        </td>
+        <td>
+          <div class="r-color-info">
+
+        </td>
+        <td>
+          <div class="o-color-info">
+
+        </td>
+        <td>
+          <div class="y-color-info">
+
+        </td>
+        <td>
+          <div class="g-color-info">
+
+        </td>
+        <td>
+          <div class="b-color-info">
+
+        </td>
+        <td>
+          <div class="i-color-info">
+
+        </td>
+        <td>
+          <div class="v-color-info">
+
+        </td>
+        <td>
+          <div class="ra-color-info">
+
+        </td>
+</tr>
+    </table>
     <button class="decorate" name="button"></button>
     <img src="" class="mona" alt="" />
     <script type="text/javascript">
@@ -266,8 +347,15 @@ function deck(event) {
           $(".rightFace").css("background", hslRed);
           $(".leftFace").css("background", hslRed);
           $(".topFace").css("background", hslRed);
-          console.log(hslRed);
+          $(".r-button").css("background", hslRed);
+          $(".r-triangle-left").css("border-right", "10px" + " " + "solid" + " " + hslRed);
+          $(".r-triangle-right").css("border-left", "10px" + " " + "solid" + " " + hslRed);
+          $(".r-triangle-down").css("border-top", "10px" + " " + "solid" + " " + hslRed);
+          $(".r-triangle-up").css("border-bottom", "10px" + " " + "solid" + " " + hslRed);
+          var rColor = document.querySelector(".r-color-info");
           resetred()
+          rColor.textContent = hslRed;
+          console.log(hslRed);
           }
 
         var divUp = document.querySelector(".r-triangle-up");
@@ -280,6 +368,13 @@ function deck(event) {
             $(".leftFace").css("background", hslRedNew);
             $(".rightFace").css("background", hslRedNew);
             $(".topFace").css("background", hslRedNew);
+            $(".r-triangle-left").css("border-right", "10px" + " " + "solid" + " " + hslRedNew);
+            $(".r-triangle-right").css("border-left", "10px" + " " + "solid" + " " + hslRedNew);
+            $(".r-triangle-down").css("border-top", "10px" + " " + "solid" + " " + hslRedNew);
+            $(".r-triangle-up").css("border-bottom", "10px" + " " + "solid" + " " + hslRedNew);
+            var rColor = document.querySelector(".r-color-info");
+            rColor.textContent = hslRedNew;
+
             }
 
             var divLeft = document.querySelector(".r-triangle-left");
@@ -292,6 +387,13 @@ function deck(event) {
                 $(".leftFace").css("background", hslRedNew);
                 $(".rightFace").css("background", hslRedNew);
                 $(".topFace").css("background", hslRedNew);
+                $(".r-triangle-left").css("border-right", "10px" + " " + "solid" + " " + hslRedNew);
+                $(".r-triangle-right").css("border-left", "10px" + " " + "solid" + " " + hslRedNew);
+                $(".r-triangle-down").css("border-top", "10px" + " " + "solid" + " " + hslRedNew);
+                $(".r-triangle-up").css("border-bottom", "10px" + " " + "solid" + " " + hslRedNew);
+                var rColor = document.querySelector(".r-color-info");
+                rColor.textContent = hslRedNew;
+
             }
             var divRight = document.querySelector(".r-triangle-right");
               divRight.addEventListener("click", rRight);
@@ -303,6 +405,13 @@ function deck(event) {
                 $(".leftFace").css("background", hslRedNew);
                 $(".rightFace").css("background", hslRedNew);
                 $(".topFace").css("background", hslRedNew);
+                $(".r-triangle-left").css("border-right", "10px" + " " + "solid" + " " + hslRedNew);
+                $(".r-triangle-right").css("border-left", "10px" + " " + "solid" + " " + hslRedNew);
+                $(".r-triangle-down").css("border-top", "10px" + " " + "solid" + " " + hslRedNew);
+                $(".r-triangle-up").css("border-bottom", "10px" + " " + "solid" + " " + hslRedNew);
+                var rColor = document.querySelector(".r-color-info");
+                rColor.textContent = hslRedNew;
+
               }
 
           var divDown = document.querySelector(".r-triangle-down");
@@ -315,6 +424,14 @@ function deck(event) {
               $(".leftFace").css("background", hslRedNew);
               $(".rightFace").css("background", hslRedNew);
               $(".topFace").css("background", hslRedNew);
+              $(".r-triangle-left").css("border-right", "10px" + " " + "solid" + " " + hslRedNew);
+              $(".r-triangle-right").css("border-left", "10px" + " " + "solid" + " " + hslRedNew);
+              $(".r-triangle-down").css("border-top", "10px" + " " + "solid" + " " + hslRedNew);
+              $(".r-triangle-up").css("border-bottom", "10px" + " " + "solid" + " " + hslRedNew);
+              var rColor = document.querySelector(".r-color-info");
+              rColor.textContent = hslRedNew;
+
+
             }
         greenrA = 127;
         greengA = 63;
@@ -346,20 +463,51 @@ function deck(event) {
           $(".rightFace").css("background", hslGreen);
           $(".leftFace").css("background", hslGreen);
           $(".topFace").css("background", hslGreen);
+          $(".g-button").css("background", hslGreen);
+          $(".g-triangle-left").css("border-right", "10px" + " " + "solid" + " " + hslGreen);
+          $(".g-triangle-right").css("border-left", "10px" + " " + "solid" + " " + hslGreen);
+          $(".g-triangle-down").css("border-top", "10px" + " " + "solid" + " " + hslGreen);
+          $(".g-triangle-up").css("border-bottom", "10px" + " " + "solid" + " " + hslGreen);
+          var gColor = document.querySelector(".g-color-info");
+          resetgreen();
+          gColor.textContent = hslGreen;
           console.log(hslGreen);
-          resetgreen()
-          }
 
-        var divUp = document.querySelector(".g-triangle-up");
-          divUp.addEventListener("click", gIncrem);
-          function gIncrem(event){
-            event.preventDefault();
-            greenbB = greenbB - 1;
-            var hslGreenNew = "hsl("+ greenrB +","+ greengB + "%" + ","+ greenbB + "%" + ")";
-            console.log(hslGreenNew);
-            $(".leftFace").css("background", hslGreenNew);
-            $(".rightFace").css("background", hslGreenNew);
-            $(".topFace").css("background", hslGreenNew);
+          }
+          var divDown = document.querySelector(".g-triangle-down");
+            divDown.addEventListener("click", gDecrem);
+            function gDecrem(event){
+              event.preventDefault();
+              greenbB = greenbB + 1;
+              var hslGreenNew = "hsl("+ greenrC +","+ greengC + "%" + ","+ greenbB + "%" +")";
+              console.log(hslGreenNew);
+              $(".leftFace").css("background", hslGreenNew);
+              $(".rightFace").css("background", hslGreenNew);
+              $(".topFace").css("background", hslGreenNew);
+              $(".g-triangle-down").css("border-top", "10px" + " " + "solid" + " " + hslGreenNew);
+              $(".g-triangle-up").css("border-bottom", "10px" + " " + "solid" + " " + hslGreenNew);
+              $(".g-triangle-left").css("border-right", "10px" + " " + "solid" + " " + hslGreenNew);
+              $(".g-triangle-right").css("border-left", "10px" + " " + "solid" + " " + hslGreenNew);
+              var gColor = document.querySelector(".g-color-info");
+              gColor.textContent = hslGreenNew;
+            }
+            var divUp = document.querySelector(".g-triangle-up");
+              divUp.addEventListener("click", gIncrem);
+              function gIncrem(event){
+                event.preventDefault();
+                greenbB = greenbB - 1;
+                var hslGreenNew = "hsl("+ greenrB +","+ greengB + "%" + ","+ greenbB + "%" + ")";
+                console.log(hslGreenNew);
+                $(".leftFace").css("background", hslGreenNew);
+                $(".rightFace").css("background", hslGreenNew);
+                $(".topFace").css("background", hslGreenNew);
+                $(".g-button").css("background", hslGreenNew);
+                $(".g-triangle-down").css("border-top", "10px" + " " + "solid" + " " + hslGreenNew);
+                $(".g-triangle-up").css("border-bottom", "10px" + " " + "solid" + " " + hslGreenNew);
+                $(".g-triangle-left").css("border-right", "10px" + " " + "solid" + " " + hslGreenNew);
+                $(".g-triangle-right").css("border-left", "10px" + " " + "solid" + " " + hslGreenNew);
+                var gColor = document.querySelector(".g-color-info");
+                gColor.textContent = hslGreenNew;
             }
 
             var divLeft = document.querySelector(".g-triangle-left");
@@ -372,6 +520,12 @@ function deck(event) {
                 $(".leftFace").css("background", hslGreenNew);
                 $(".rightFace").css("background", hslGreenNew);
                 $(".topFace").css("background", hslGreenNew);
+                $(".g-triangle-down").css("border-top", "10px" + " " + "solid" + " " + hslGreenNew);
+                $(".g-triangle-up").css("border-bottom", "10px" + " " + "solid" + " " + hslGreenNew);
+                $(".g-triangle-left").css("border-right", "10px" + " " + "solid" + " " + hslGreenNew);
+                $(".g-triangle-right").css("border-left", "10px" + " " + "solid" + " " + hslGreenNew);
+                var gColor = document.querySelector(".g-color-info");
+                gColor.textContent = hslGreenNew;
             }
             var divRight = document.querySelector(".g-triangle-right");
               divRight.addEventListener("click", gRight);
@@ -383,19 +537,15 @@ function deck(event) {
                 $(".leftFace").css("background", hslGreenNew);
                 $(".rightFace").css("background", hslGreenNew);
                 $(".topFace").css("background", hslGreenNew);
+                $(".g-triangle-down").css("border-top", "10px" + " " + "solid" + " " + hslGreenNew);
+                $(".g-triangle-up").css("border-bottom", "10px" + " " + "solid" + " " + hslGreenNew);
+                $(".g-triangle-left").css("border-right", "10px" + " " + "solid" + " " + hslGreenNew);
+                $(".g-triangle-right").css("border-left", "10px" + " " + "solid" + " " + hslGreenNew);
+                var gColor = document.querySelector(".g-color-info");
+                gColor.textContent = hslGreenNew;
               }
 
-          var divDown = document.querySelector(".g-triangle-down");
-            divDown.addEventListener("click", gDecrem);
-            function gDecrem(event){
-              event.preventDefault();
-              greenbB = greenbB + 1;
-              var hslGreenNew = "hsl("+ greenrC +","+ greengC + "%" + ","+ greenbB + "%" +")";
-              console.log(hslGreenNew);
-              $(".leftFace").css("background", hslGreenNew);
-              $(".rightFace").css("background", hslGreenNew);
-              $(".topFace").css("background", hslGreenNew);
-            }
+
             bluerA = 208;
             bluegA = 100;
             bluebA = 43;
@@ -426,8 +576,16 @@ function deck(event) {
               $(".rightFace").css("background", hslBlue);
               $(".leftFace").css("background", hslBlue);
               $(".topFace").css("background", hslBlue);
-              console.log("hslBlue" + hslBlue);
+              $(".b-button").css("background", hslBlue);
+              $(".b-triangle-left").css("border-right", "10px" + " " + "solid" + " " + hslBlue);
+              $(".b-triangle-right").css("border-left", "10px" + " " + "solid" + " " + hslBlue);
+              $(".b-triangle-down").css("border-top", "10px" + " " + "solid" + " " + hslBlue);
+              $(".b-triangle-up").css("border-bottom", "10px" + " " + "solid" + " " + hslBlue);
+              var bColor = document.querySelector(".b-color-info");
               resetblue()
+
+              bColor.textContent = hslBlue;
+              console.log("hslBlue" + hslBlue);
               }
 
             var divUp = document.querySelector(".b-triangle-up");
@@ -440,6 +598,12 @@ function deck(event) {
                 $(".leftFace").css("background", hslBlueNew);
                 $(".rightFace").css("background", hslBlueNew);
                 $(".topFace").css("background", hslBlueNew);
+                $(".b-triangle-left").css("border-right", "10px" + " " + "solid" + " " + hslBlueNew);
+                $(".b-triangle-right").css("border-left", "10px" + " " + "solid" + " " + hslBlueNew);
+                $(".b-triangle-down").css("border-top", "10px" + " " + "solid" + " " + hslBlueNew);
+                $(".b-triangle-up").css("border-bottom", "10px" + " " + "solid" + " " + hslBlueNew);
+                var bColor = document.querySelector(".b-color-info");
+                bColor.textContent = hslBlueNew;
                 }
 
                 var divLeft = document.querySelector(".b-triangle-left");
@@ -452,6 +616,12 @@ function deck(event) {
                     $(".leftFace").css("background", hslBlueNew);
                     $(".rightFace").css("background", hslBlueNew);
                     $(".topFace").css("background", hslBlueNew);
+                    $(".b-triangle-left").css("border-right", "10px" + " " + "solid" + " " + hslBlueNew);
+                    $(".b-triangle-right").css("border-left", "10px" + " " + "solid" + " " + hslBlueNew);
+                    $(".b-triangle-down").css("border-top", "10px" + " " + "solid" + " " + hslBlueNew);
+                    $(".b-triangle-up").css("border-bottom", "10px" + " " + "solid" + " " + hslBlueNew);
+                    var bColor = document.querySelector(".b-color-info");
+                    bColor.textContent = hslBlueNew;
                 }
                 var divRight = document.querySelector(".b-triangle-right");
                   divRight.addEventListener("click", bRight);
@@ -463,6 +633,12 @@ function deck(event) {
                     $(".leftFace").css("background", hslBlueNew);
                     $(".rightFace").css("background", hslBlueNew);
                     $(".topFace").css("background", hslBlueNew);
+                    $(".b-triangle-left").css("border-right", "10px" + " " + "solid" + " " + hslBlueNew);
+                    $(".b-triangle-right").css("border-left", "10px" + " " + "solid" + " " + hslBlueNew);
+                    $(".b-triangle-down").css("border-top", "10px" + " " + "solid" + " " + hslBlueNew);
+                    $(".b-triangle-up").css("border-bottom", "10px" + " " + "solid" + " " + hslBlueNew);
+                    var bColor = document.querySelector(".b-color-info");
+                    bColor.textContent = hslBlueNew;
                   }
 
               var divDown = document.querySelector(".b-triangle-down");
@@ -475,98 +651,241 @@ function deck(event) {
                   $(".leftFace").css("background", hslBlueNew);
                   $(".rightFace").css("background", hslBlueNew);
                   $(".topFace").css("background", hslBlueNew);
+                  $(".b-triangle-left").css("border-right", "10px" + " " + "solid" + " " + hslBlueNew);
+                  $(".b-triangle-right").css("border-left", "10px" + " " + "solid" + " " + hslBlueNew);
+                  $(".b-triangle-down").css("border-top", "10px" + " " + "solid" + " " + hslBlueNew);
+                  $(".b-triangle-up").css("border-bottom", "10px" + " " + "solid" + " " + hslBlueNew);
+                  var bColor = document.querySelector(".b-color-info");
+                  bColor.textContent = hslBlueNew;
                 }
 
-        blackrA = 0;
-        blackgA = 0;
-        blackbA = 0;
-        blackrB = 0;
-        blackgB = 0;
-        blackbB = 0;
-        blackrC = 0;
-        blackgC = 0;
-        blackbC = 0;
-        var rgbBlack = "rgb("+ 0 +","+ 0 + ","+ 0 +")";
+                blackrA = 0;
+                blackgA = 0;
+                blackbA = 7;
+                blackrB = 0;
+                blackgB = 0;
+                blackbB = 7;
+                blackrC = 0;
+                blackgC = 0;
+                blackbC = 7;
+                var hslBlack = "hsl("+ 0 +","+ 0 + "%" +","+ 7 + "%" +")";
 
-        function resetblack() {
-          blackrB = 0;
-          blackgB = 0;
-          blackbB = 0;
-          blackrC = 0;
-          blackgC = 0;
-          blackbC = 0;
-        }
-          var button = document.querySelector(".bl-button");
-            button.addEventListener("click", blPrimary);
-          function blPrimary(event){
-            $(".leftFace").css("background", rgbBlack);
-            $(".rightFace").css("background", rgbBlack);
-            $(".topFace").css("background", rgbBlack);
-            console.log(rgbBlack);
-            resetAll()
-            resetTris()
-            $(".bl-triangle-down").css("visibility", "visible");
-            }
-
-              var divDown = document.querySelector(".bl-triangle-down");
-                divDown.addEventListener("click", blIncrem);
-                function blIncrem(event){
-                  event.preventDefault();
-                  blackrC = blackrC + 5;
-                  blackgC = blackgC + 5;
-                  blackbC = blackbC + 5;
-                  var rgbCNew = "rgb("+ blackrC +","+ blackgC + ","+ blackbC +")";
-                  console.log(rgbCNew);
-                  $(".leftFace").css("background", rgbCNew);
-    $(".rightFace").css("background", rgbCNew);
-    $(".topFace").css("background", rgbCNew);
-
-                  $(".bl-triangle-up").css("visibility", "hidden");
+                function resetblack() {
+                  blackrA = 0;
+                  blackgA = 0;
+                  blackbA = 7;
+                  blackrB = 0;
+                  blackgB = 0;
+                  blackbB = 7;
+                  blackrC = 0;
+                  blackgC = 0;
+                  blackbC = 7;
                 }
-        whiterA = 255;
-        whitegA = 255;
-        whitebA = 255;
-        whiterB = 255;
-        whitegB = 255;
-        whitebB = 255;
-        whiterC = 255;
-        whitegC = 255;
-        whitebC = 255;
-        var rgbWhite = "rgb("+ 255 +","+ 255 + ","+ 255 +")";
 
-        function resetwhite() {
-          whiterB = 255;
-          whitegB = 255;
-          whitebB = 255;
-          whiterC = 255;
-          whitegC = 255;
-          whitebC = 255;
-        }
-          var button = document.querySelector(".w-button");
-            button.addEventListener("click", wPrimary);
-          function wPrimary(event){
-            $(".leftFace").css("background", rgbWhite);
-            $(".rightFace").css("background", rgbWhite);
-            $(".topFace").css("background", rgbWhite);
-            console.log(rgbWhite);
-            resetAll()
-            resetTris()
-            $(".w-triangle-down").css("visibility", "visible");
-            }
 
-              var divDown = document.querySelector(".w-triangle-up");
-                divDown.addEventListener("click", wDecrem);
-                function wDecrem(event){
-                  event.preventDefault();
-                  whiterC = whiterC - 5;
-                  whitegC = whitegC - 5;
-                  whitebC = whitebC - 5;
-                  var rgbCNew = "rgb("+ whiterC +","+ whitegC + ","+ whitebC +")";
-                  console.log(rgbCNew);
-                  $(".leftFace").css("background", rgbCNew);
-                  $(".rightFace").css("background", rgbCNew);
-                  $(".topFace").css("background", rgbCNew);
-                }
+                var button = document.querySelector(".bl-button");
+                  button.addEventListener("click", blPrimary);
+                function blPrimary(event){
+                  $(".rightFace").css("background", hslBlack);
+                  $(".leftFace").css("background", hslBlack);
+                  $(".topFace").css("background", hslBlack);
+                  $(".bl-button").css("background", hslBlack);
+                  $(".bl-triangle-left").css("border-right", "10px" + " " + "solid" + " " + hslBlack);
+                  $(".bl-triangle-right").css("border-left", "10px" + " " + "solid" + " " + hslBlack);
+                  $(".bl-triangle-down").css("border-top", "10px" + " " + "solid" + " " + hslBlack);
+                  $(".bl-triangle-up").css("border-bottom", "10px" + " " + "solid" + " " + hslBlack);
+                  var blColor = document.querySelector(".bl-color-info");
+                  resetblack()
+
+                  blColor.textContent = hslBlack;
+
+                  console.log("hslBlack" + hslBlack);
+                  }
+
+                var divUp = document.querySelector(".bl-triangle-up");
+                  divUp.addEventListener("click", blIncrem);
+                  function blIncrem(event){
+                    event.preventDefault();
+                    blackbB = blackbB - 1;
+                    var hslBlackNew = "hsl("+ blackrB +","+ blackgB + "%" + ","+ blackbB + "%" + ")";
+                    console.log(hslBlackNew);
+                    $(".leftFace").css("background", hslBlackNew);
+                    $(".rightFace").css("background", hslBlackNew);
+                    $(".topFace").css("background", hslBlackNew);
+                    $(".bl-triangle-left").css("border-right", "10px" + " " + "solid" + " " + hslBlackNew);
+                    $(".bl-triangle-right").css("border-left", "10px" + " " + "solid" + " " + hslBlackNew);
+                    $(".bl-triangle-down").css("border-top", "10px" + " " + "solid" + " " + hslBlackNew);
+                    $(".bl-triangle-up").css("border-bottom", "10px" + " " + "solid" + " " + hslBlackNew);
+                    var blColor = document.querySelector(".bl-color-info");
+                    blColor.textContent = hslBlackNew;
+                    }
+
+                    var divLeft = document.querySelector(".bl-triangle-left");
+                      divLeft.addEventListener("click", blLeft);
+                      function blLeft(event){
+                        event.preventDefault();
+                        blackgB = blackgB - 1;
+                        var hslBlackNew = "hsl("+ blackrB +","+ blackgB + "%" + ","+ blackbB + "%" + ")";
+                        console.log(hslBlackNew);
+                        $(".leftFace").css("background", hslBlackNew);
+                        $(".rightFace").css("background", hslBlackNew);
+                        $(".topFace").css("background", hslBlackNew);
+                        $(".bl-triangle-left").css("border-right", "10px" + " " + "solid" + " " + hslBlackNew);
+                        $(".bl-triangle-right").css("border-left", "10px" + " " + "solid" + " " + hslBlackNew);
+                        $(".bl-triangle-down").css("border-top", "10px" + " " + "solid" + " " + hslBlackNew);
+                        $(".bl-triangle-up").css("border-bottom", "10px" + " " + "solid" + " " + hslBlackNew);
+                        var blColor = document.querySelector(".bl-color-info");
+                        blColor.textContent = hslBlackNew;
+                    }
+                    var divRight = document.querySelector(".bl-triangle-right");
+                      divRight.addEventListener("click", blRight);
+                      function blRight(event){
+                        event.preventDefault();
+                        blackgB = blackgB + 1;
+                        var hslBlackNew = "hsl("+ blackrB +","+ blackgB + "%" + ","+ blackbB + "%" + ")";
+                        console.log(hslBlackNew);
+                        $(".leftFace").css("background", hslBlackNew);
+                        $(".rightFace").css("background", hslBlackNew);
+                        $(".topFace").css("background", hslBlackNew);
+                        $(".bl-triangle-left").css("border-right", "10px" + " " + "solid" + " " + hslBlackNew);
+                        $(".bl-triangle-right").css("border-left", "10px" + " " + "solid" + " " + hslBlackNew);
+                        $(".bl-triangle-down").css("border-top", "10px" + " " + "solid" + " " + hslBlackNew);
+                        $(".bl-triangle-up").css("border-bottom", "10px" + " " + "solid" + " " + hslBlackNew);
+                        var blColor = document.querySelector(".bl-color-info");
+                        blColor.textContent = hslBlackNew;
+                      }
+
+                  var divDown = document.querySelector(".bl-triangle-down");
+                    divDown.addEventListener("click", blDecrem);
+                    function blDecrem(event){
+                      event.preventDefault();
+                      blackbB = blackbB + 1;
+                      var hslBlackNew = "hsl("+ blackrC +","+ blackgC + "%" + ","+ blackbB + "%" +")";
+                      console.log(hslBlackNew);
+                      $(".leftFace").css("background", hslBlackNew);
+                      $(".rightFace").css("background", hslBlackNew);
+                      $(".topFace").css("background", hslBlackNew);
+                      $(".bl-triangle-left").css("border-right", "10px" + " " + "solid" + " " + hslBlackNew);
+                      $(".bl-triangle-right").css("border-left", "10px" + " " + "solid" + " " + hslBlackNew);
+                      $(".bl-triangle-down").css("border-top", "10px" + " " + "solid" + " " + hslBlackNew);
+                      $(".bl-triangle-up").css("border-bottom", "10px" + " " + "solid" + " " + hslBlackNew);
+                      var blColor = document.querySelector(".bl-color-info");
+                      blColor.textContent = hslBlackNew;
+                    }
+                    whiterA = 0;
+                    whitegA = 0;
+                    whitebA = 100;
+                    whiterB = 0;
+                    whitegB = 0;
+                    whitebB = 100;
+                    whiterC = 0;
+                    whitegC = 0;
+                    whitebC = 100;
+                    var hslWhite = "hsl("+ 0 +","+ 0 + "%" +","+ 100 + "%" +")";
+
+                    function resetwhite() {
+                      whiterA = 0;
+                      whitegA = 0;
+                      whitebA = 100;
+                      whiterB = 0;
+                      whitegB = 0;
+                      whitebB = 100;
+                      whiterC = 0;
+                      whitegC = 0;
+                      whitebC = 100;
+                    }
+
+
+                    var button = document.querySelector(".w-button");
+                      button.addEventListener("click", wPrimary);
+                    function wPrimary(event){
+                      $(".rightFace").css("background", hslWhite);
+                      $(".leftFace").css("background", hslWhite);
+                      $(".topFace").css("background", hslWhite);
+                      $(".w-button").css("background", hslWhite);
+                      $(".w-triangle-left").css("border-right", "10px" + " " + "solid" + " " + hslWhite);
+                      $(".w-triangle-right").css("border-left", "10px" + " " + "solid" + " " + hslWhite);
+                      $(".w-triangle-down").css("border-top", "10px" + " " + "solid" + " " + hslWhite);
+                      $(".w-triangle-up").css("border-bottom", "10px" + " " + "solid" + " " + hslWhite);
+                      var wColor = document.querySelector(".w-color-info");
+                      resetwhite()
+
+                      wColor.textContent = hslWhite;
+
+                      console.log("hslWhite" + hslWhite);
+                      }
+
+                    var divUp = document.querySelector(".w-triangle-up");
+                      divUp.addEventListener("click", wIncrem);
+                      function wIncrem(event){
+                        event.preventDefault();
+                        whitebB = whitebB - 1;
+                        var hslWhiteNew = "hsl("+ whiterB +","+ whitegB + "%" + ","+ whitebB + "%" + ")";
+                        console.log(hslWhiteNew);
+                        $(".leftFace").css("background", hslWhiteNew);
+                        $(".rightFace").css("background", hslWhiteNew);
+                        $(".topFace").css("background", hslWhiteNew);
+                        $(".w-triangle-left").css("border-right", "10px" + " " + "solid" + " " + hslWhiteNew);
+                        $(".w-triangle-right").css("border-left", "10px" + " " + "solid" + " " + hslWhiteNew);
+                        $(".w-triangle-down").css("border-top", "10px" + " " + "solid" + " " + hslWhiteNew);
+                        $(".w-triangle-up").css("border-bottom", "10px" + " " + "solid" + " " + hslWhiteNew);
+                        var wColor = document.querySelector(".w-color-info");
+                        wColor.textContent = hslWhiteNew;
+                        }
+
+                        var divLeft = document.querySelector(".w-triangle-left");
+                          divLeft.addEventListener("click", wLeft);
+                          function wLeft(event){
+                            event.preventDefault();
+                            whitegB = whitegB - 1;
+                            var hslWhiteNew = "hsl("+ whiterB +","+ whitegB + "%" + ","+ whitebB + "%" + ")";
+                            console.log(hslWhiteNew);
+                            $(".leftFace").css("background", hslWhiteNew);
+                            $(".rightFace").css("background", hslWhiteNew);
+                            $(".topFace").css("background", hslWhiteNew);
+                            $(".w-triangle-left").css("border-right", "10px" + " " + "solid" + " " + hslWhiteNew);
+                            $(".w-triangle-right").css("border-left", "10px" + " " + "solid" + " " + hslWhiteNew);
+                            $(".w-triangle-down").css("border-top", "10px" + " " + "solid" + " " + hslWhiteNew);
+                            $(".w-triangle-up").css("border-bottom", "10px" + " " + "solid" + " " + hslWhiteNew);
+                            var wColor = document.querySelector(".w-color-info");
+                            wColor.textContent = hslWhiteNew;
+                        }
+                        var divRight = document.querySelector(".w-triangle-right");
+                          divRight.addEventListener("click", wRight);
+                          function wRight(event){
+                            event.preventDefault();
+                            whitegB = whitegB + 1;
+                            var hslWhiteNew = "hsl("+ whiterB +","+ whitegB + "%" + ","+ whitebB + "%" + ")";
+                            console.log(hslWhiteNew);
+                            $(".leftFace").css("background", hslWhiteNew);
+                            $(".rightFace").css("background", hslWhiteNew);
+                            $(".topFace").css("background", hslWhiteNew);
+                            $(".w-triangle-left").css("border-right", "10px" + " " + "solid" + " " + hslWhiteNew);
+                            $(".w-triangle-right").css("border-left", "10px" + " " + "solid" + " " + hslWhiteNew);
+                            $(".w-triangle-down").css("border-top", "10px" + " " + "solid" + " " + hslWhiteNew);
+                            $(".w-triangle-up").css("border-bottom", "10px" + " " + "solid" + " " + hslWhiteNew);
+                            var wColor = document.querySelector(".w-color-info");
+                            wColor.textContent = hslWhiteNew;
+                          }
+
+                      var divDown = document.querySelector(".w-triangle-down");
+                        divDown.addEventListener("click", wDecrem);
+                        function wDecrem(event){
+                          event.preventDefault();
+                          whitebB = whitebB + 1;
+                          var hslWhiteNew = "hsl("+ whiterC +","+ whitegC + "%" + ","+ whitebB + "%" +")";
+                          console.log(hslWhiteNew);
+                          $(".leftFace").css("background", hslWhiteNew);
+                          $(".rightFace").css("background", hslWhiteNew);
+                          $(".topFace").css("background", hslWhiteNew);
+                          $(".w-triangle-left").css("border-right", "10px" + " " + "solid" + " " + hslWhiteNew);
+                          $(".w-triangle-right").css("border-left", "10px" + " " + "solid" + " " + hslWhiteNew);
+                          $(".w-triangle-down").css("border-top", "10px" + " " + "solid" + " " + hslWhiteNew);
+                          $(".w-triangle-up").css("border-bottom", "10px" + " " + "solid" + " " + hslWhiteNew);
+                          var wColor = document.querySelector(".w-color-info");
+
+                          wColor.textContent = hslWhiteNew;
+                        }
 
                 orangerA = 28;
                 orangegA = 100;
@@ -599,8 +918,15 @@ function deck(event) {
                     $(".rightFace").css("background", hslOrange);
                     $(".leftFace").css("background", hslOrange);
                     $(".topFace").css("background", hslOrange);
-                    console.log(hslOrange);
+                    $(".o-button").css("background", hslOrange);
+                    $(".o-triangle-left").css("border-right", "10px" + " " + "solid" + " " + hslOrange);
+                    $(".o-triangle-right").css("border-left", "10px" + " " + "solid" + " " + hslOrange);
+                    $(".o-triangle-down").css("border-top", "10px" + " " + "solid" + " " + hslOrange);
+                    $(".o-triangle-up").css("border-bottom", "10px" + " " + "solid" + " " + hslOrange);
+                    var oColor = document.querySelector(".o-color-info");
                     resetorange()
+                    oColor.textContent = hslOrange;
+                    console.log(hslOrange);
                     }
 
                   var divUp = document.querySelector(".o-triangle-up");
@@ -613,6 +939,12 @@ function deck(event) {
                       $(".leftFace").css("background", hslOrangeNew);
                       $(".rightFace").css("background", hslOrangeNew);
                       $(".topFace").css("background", hslOrangeNew);
+                      $(".o-triangle-left").css("border-right", "10px" + " " + "solid" + " " + hslOrangeNew);
+                      $(".o-triangle-right").css("border-left", "10px" + " " + "solid" + " " + hslOrangeNew);
+                      $(".o-triangle-down").css("border-top", "10px" + " " + "solid" + " " + hslOrangeNew);
+                      $(".o-triangle-up").css("border-bottom", "10px" + " " + "solid" + " " + hslOrangeNew);
+                      var oColor = document.querySelector(".o-color-info");
+                      oColor.textContent = hslOrangeNew;
                       }
 
                       var divLeft = document.querySelector(".o-triangle-left");
@@ -625,6 +957,12 @@ function deck(event) {
                           $(".leftFace").css("background", hslOrangeNew);
                           $(".rightFace").css("background", hslOrangeNew);
                           $(".topFace").css("background", hslOrangeNew);
+                          $(".o-triangle-left").css("border-right", "10px" + " " + "solid" + " " + hslOrangeNew);
+                          $(".o-triangle-right").css("border-left", "10px" + " " + "solid" + " " + hslOrangeNew);
+                          $(".o-triangle-down").css("border-top", "10px" + " " + "solid" + " " + hslOrangeNew);
+                          $(".o-triangle-up").css("border-bottom", "10px" + " " + "solid" + " " + hslOrangeNew);
+                          var oColor = document.querySelector(".o-color-info");
+                          oColor.textContent = hslOrangeNew;
                       }
                       var divRight = document.querySelector(".o-triangle-right");
                         divRight.addEventListener("click", oRight);
@@ -636,6 +974,12 @@ function deck(event) {
                           $(".leftFace").css("background", hslOrangeNew);
                           $(".rightFace").css("background", hslOrangeNew);
                           $(".topFace").css("background", hslOrangeNew);
+                          $(".o-triangle-left").css("border-right", "10px" + " " + "solid" + " " + hslOrangeNew);
+                          $(".o-triangle-right").css("border-left", "10px" + " " + "solid" + " " + hslOrangeNew);
+                          $(".o-triangle-down").css("border-top", "10px" + " " + "solid" + " " + hslOrangeNew);
+                          $(".o-triangle-up").css("border-bottom", "10px" + " " + "solid" + " " + hslOrangeNew);
+                          var oColor = document.querySelector(".o-color-info");
+                          oColor.textContent = hslOrangeNew;
                         }
 
                     var divDown = document.querySelector(".o-triangle-down");
@@ -648,7 +992,12 @@ function deck(event) {
                         $(".leftFace").css("background", hslOrangeNew);
                         $(".rightFace").css("background", hslOrangeNew);
                         $(".topFace").css("background", hslOrangeNew);
-
+                        $(".o-triangle-left").css("border-right", "10px" + " " + "solid" + " " + hslOrangeNew);
+                        $(".o-triangle-right").css("border-left", "10px" + " " + "solid" + " " + hslOrangeNew);
+                        $(".o-triangle-down").css("border-top", "10px" + " " + "solid" + " " + hslOrangeNew);
+                        $(".o-triangle-up").css("border-bottom", "10px" + " " + "solid" + " " + hslOrangeNew);
+                        var oColor = document.querySelector(".o-color-info");
+                        oColor.textContent = hslOrangeNew;
                   }
 
                   yellowrA = 52;
@@ -681,8 +1030,18 @@ function deck(event) {
                       $(".rightFace").css("background", hslYellow);
                       $(".leftFace").css("background", hslYellow);
                       $(".topFace").css("background", hslYellow);
-                      console.log("hslYellow" + hslYellow);
+                      $(".y-button").css("background", hslYellow);
+                      $(".y-triangle-left").css("border-right", "10px" + " " + "solid" + " " + hslYellow);
+                      $(".y-triangle-right").css("border-left", "10px" + " " + "solid" + " " + hslYellow);
+                      $(".y-triangle-down").css("border-top", "10px" + " " + "solid" + " " + hslYellow);
+                      $(".y-triangle-up").css("border-bottom", "10px" + " " + "solid" + " " + hslYellow);
+                      var yColor = document.querySelector(".y-color-info");
                       resetyellow()
+
+                      yColor.textContent = hslYellow;
+
+                      console.log("hslYellow" + hslYellow);
+
                       }
 
                     var divUp = document.querySelector(".y-triangle-up");
@@ -695,6 +1054,12 @@ function deck(event) {
                         $(".leftFace").css("background", hslYellowNew);
                         $(".rightFace").css("background", hslYellowNew);
                         $(".topFace").css("background", hslYellowNew);
+                        $(".y-triangle-left").css("border-right", "10px" + " " + "solid" + " " + hslYellowNew);
+                        $(".y-triangle-right").css("border-left", "10px" + " " + "solid" + " " + hslYellowNew);
+                        $(".y-triangle-down").css("border-top", "10px" + " " + "solid" + " " + hslYellowNew);
+                        $(".y-triangle-up").css("border-bottom", "10px" + " " + "solid" + " " + hslYellowNew);
+                        var yColor = document.querySelector(".y-color-info");
+                        yColor.textContent = hslYellowNew;
                         }
 
                         var divLeft = document.querySelector(".y-triangle-left");
@@ -707,6 +1072,12 @@ function deck(event) {
                             $(".leftFace").css("background", hslYellowNew);
                             $(".rightFace").css("background", hslYellowNew);
                             $(".topFace").css("background", hslYellowNew);
+                            $(".y-triangle-left").css("border-right", "10px" + " " + "solid" + " " + hslYellowNew);
+                            $(".y-triangle-right").css("border-left", "10px" + " " + "solid" + " " + hslYellowNew);
+                            $(".y-triangle-down").css("border-top", "10px" + " " + "solid" + " " + hslYellowNew);
+                            $(".y-triangle-up").css("border-bottom", "10px" + " " + "solid" + " " + hslYellowNew);
+                            var yColor = document.querySelector(".y-color-info");
+                            yColor.textContent = hslYellowNew;
                         }
                         var divRight = document.querySelector(".y-triangle-right");
                           divRight.addEventListener("click", yRight);
@@ -718,6 +1089,12 @@ function deck(event) {
                             $(".leftFace").css("background", hslYellowNew);
                             $(".rightFace").css("background", hslYellowNew);
                             $(".topFace").css("background", hslYellowNew);
+                            $(".y-triangle-left").css("border-right", "10px" + " " + "solid" + " " + hslYellowNew);
+                            $(".y-triangle-right").css("border-left", "10px" + " " + "solid" + " " + hslYellowNew);
+                            $(".y-triangle-down").css("border-top", "10px" + " " + "solid" + " " + hslYellowNew);
+                            $(".y-triangle-up").css("border-bottom", "10px" + " " + "solid" + " " + hslYellowNew);
+                            var yColor = document.querySelector(".y-color-info");
+                            yColor.textContent = hslYellowNew;
                           }
 
                       var divDown = document.querySelector(".y-triangle-down");
@@ -730,6 +1107,12 @@ function deck(event) {
                           $(".leftFace").css("background", hslYellowNew);
                           $(".rightFace").css("background", hslYellowNew);
                           $(".topFace").css("background", hslYellowNew);
+                          $(".y-triangle-left").css("border-right", "10px" + " " + "solid" + " " + hslYellowNew);
+                          $(".y-triangle-right").css("border-left", "10px" + " " + "solid" + " " + hslYellowNew);
+                          $(".y-triangle-down").css("border-top", "10px" + " " + "solid" + " " + hslYellowNew);
+                          $(".y-triangle-up").css("border-bottom", "10px" + " " + "solid" + " " + hslYellowNew);
+                          var yColor = document.querySelector(".y-color-info");
+                          yColor.textContent = hslYellowNew;
 
                   }
 
@@ -763,8 +1146,15 @@ function deck(event) {
                       $(".rightFace").css("background", hslIndigo);
                       $(".leftFace").css("background", hslIndigo);
                       $(".topFace").css("background", hslIndigo);
-                      console.log("hslIndigo" + hslIndigo);
+                      $(".i-button").css("background", hslIndigo);
+                      $(".i-triangle-left").css("border-right", "10px" + " " + "solid" + " " + hslIndigo);
+                      $(".i-triangle-right").css("border-left", "10px" + " " + "solid" + " " + hslIndigo);
+                      $(".i-triangle-down").css("border-top", "10px" + " " + "solid" + " " + hslIndigo);
+                      $(".i-triangle-up").css("border-bottom", "10px" + " " + "solid" + " " + hslIndigo);
+                      var iColor = document.querySelector(".i-color-info");
                       resetindigo()
+
+                      iColor.textContent = hslIndigo;
                       }
 
                     var divUp = document.querySelector(".i-triangle-up");
@@ -777,6 +1167,12 @@ function deck(event) {
                         $(".leftFace").css("background", hslIndigoNew);
                         $(".rightFace").css("background", hslIndigoNew);
                         $(".topFace").css("background", hslIndigoNew);
+                        $(".i-triangle-left").css("border-right", "10px" + " " + "solid" + " " + hslIndigoNew);
+                        $(".i-triangle-right").css("border-left", "10px" + " " + "solid" + " " + hslIndigoNew);
+                        $(".i-triangle-down").css("border-top", "10px" + " " + "solid" + " " + hslIndigoNew);
+                        $(".i-triangle-up").css("border-bottom", "10px" + " " + "solid" + " " + hslIndigoNew);
+                        var iColor = document.querySelector(".i-color-info");
+                        iColor.textContent = hslIndigoNew;
                         }
 
                         var divLeft = document.querySelector(".i-triangle-left");
@@ -789,6 +1185,12 @@ function deck(event) {
                             $(".leftFace").css("background", hslIndigoNew);
                             $(".rightFace").css("background", hslIndigoNew);
                             $(".topFace").css("background", hslIndigoNew);
+                            $(".i-triangle-left").css("border-right", "10px" + " " + "solid" + " " + hslIndigoNew);
+                            $(".i-triangle-right").css("border-left", "10px" + " " + "solid" + " " + hslIndigoNew);
+                            $(".i-triangle-down").css("border-top", "10px" + " " + "solid" + " " + hslIndigoNew);
+                            $(".i-triangle-up").css("border-bottom", "10px" + " " + "solid" + " " + hslIndigoNew);
+                            var iColor = document.querySelector(".i-color-info");
+                            iColor.textContent = hslIndigoNew;
                         }
                         var divRight = document.querySelector(".i-triangle-right");
                           divRight.addEventListener("click", iRight);
@@ -800,6 +1202,12 @@ function deck(event) {
                             $(".leftFace").css("background", hslIndigoNew);
                             $(".rightFace").css("background", hslIndigoNew);
                             $(".topFace").css("background", hslIndigoNew);
+                            $(".i-triangle-left").css("border-right", "10px" + " " + "solid" + " " + hslIndigoNew);
+                            $(".i-triangle-right").css("border-left", "10px" + " " + "solid" + " " + hslIndigoNew);
+                            $(".i-triangle-down").css("border-top", "10px" + " " + "solid" + " " + hslIndigoNew);
+                            $(".i-triangle-up").css("border-bottom", "10px" + " " + "solid" + " " + hslIndigoNew);
+                            var iColor = document.querySelector(".i-color-info");
+                            iColor.textContent = hslIndigoNew;
                           }
 
                       var divDown = document.querySelector(".i-triangle-down");
@@ -812,6 +1220,12 @@ function deck(event) {
                           $(".leftFace").css("background", hslIndigoNew);
                           $(".rightFace").css("background", hslIndigoNew);
                           $(".topFace").css("background", hslIndigoNew);
+                          $(".i-triangle-left").css("border-right", "10px" + " " + "solid" + " " + hslIndigoNew);
+                          $(".i-triangle-right").css("border-left", "10px" + " " + "solid" + " " + hslIndigoNew);
+                          $(".i-triangle-down").css("border-top", "10px" + " " + "solid" + " " + hslIndigoNew);
+                          $(".i-triangle-up").css("border-bottom", "10px" + " " + "solid" + " " + hslIndigoNew);
+                          var iColor = document.querySelector(".i-color-info");
+                          iColor.textContent = hslIndigoNew;
 
                   }
                   violetrA = 314;
@@ -844,8 +1258,16 @@ function deck(event) {
                       $(".rightFace").css("background", hslViolet);
                       $(".leftFace").css("background", hslViolet);
                       $(".topFace").css("background", hslViolet);
-                      console.log("hslViolet" + hslViolet);
+                      $(".v-button").css("background", hslViolet);
+                      $(".v-triangle-left").css("border-right", "10px" + " " + "solid" + " " + hslViolet);
+                      $(".v-triangle-right").css("border-left", "10px" + " " + "solid" + " " + hslViolet);
+                      $(".v-triangle-down").css("border-top", "10px" + " " + "solid" + " " + hslViolet);
+                      $(".v-triangle-up").css("border-bottom", "10px" + " " + "solid" + " " + hslViolet);
+                      var vColor = document.querySelector(".v-color-info");
                       resetviolet()
+
+                      vColor.textContent = hslViolet;
+                      console.log("hslViolet" + hslViolet);
                       }
 
                     var divUp = document.querySelector(".v-triangle-up");
@@ -858,6 +1280,12 @@ function deck(event) {
                         $(".leftFace").css("background", hslVioletNew);
                         $(".rightFace").css("background", hslVioletNew);
                         $(".topFace").css("background", hslVioletNew);
+                        $(".v-triangle-left").css("border-right", "10px" + " " + "solid" + " " + hslVioletNew);
+                        $(".v-triangle-right").css("border-left", "10px" + " " + "solid" + " " + hslVioletNew);
+                        $(".v-triangle-down").css("border-top", "10px" + " " + "solid" + " " + hslVioletNew);
+                        $(".v-triangle-up").css("border-bottom", "10px" + " " + "solid" + " " + hslVioletNew);
+                        var vColor = document.querySelector(".v-color-info");
+                        vColor.textContent = hslVioletNew;
                         }
 
                         var divLeft = document.querySelector(".v-triangle-left");
@@ -870,6 +1298,12 @@ function deck(event) {
                             $(".leftFace").css("background", hslVioletNew);
                             $(".rightFace").css("background", hslVioletNew);
                             $(".topFace").css("background", hslVioletNew);
+                            $(".v-triangle-left").css("border-right", "10px" + " " + "solid" + " " + hslVioletNew);
+                            $(".v-triangle-right").css("border-left", "10px" + " " + "solid" + " " + hslVioletNew);
+                            $(".v-triangle-down").css("border-top", "10px" + " " + "solid" + " " + hslVioletNew);
+                            $(".v-triangle-up").css("border-bottom", "10px" + " " + "solid" + " " + hslVioletNew);
+                            var vColor = document.querySelector(".v-color-info");
+                            vColor.textContent = hslVioletNew;
                         }
                         var divRight = document.querySelector(".v-triangle-right");
                           divRight.addEventListener("click", vRight);
@@ -881,6 +1315,12 @@ function deck(event) {
                             $(".leftFace").css("background", hslVioletNew);
                             $(".rightFace").css("background", hslVioletNew);
                             $(".topFace").css("background", hslVioletNew);
+                            $(".v-triangle-left").css("border-right", "10px" + " " + "solid" + " " + hslVioletNew);
+                            $(".v-triangle-right").css("border-left", "10px" + " " + "solid" + " " + hslVioletNew);
+                            $(".v-triangle-down").css("border-top", "10px" + " " + "solid" + " " + hslVioletNew);
+                            $(".v-triangle-up").css("border-bottom", "10px" + " " + "solid" + " " + hslVioletNew);
+                            var vColor = document.querySelector(".v-color-info");
+                            vColor.textContent = hslVioletNew;
                           }
 
                       var divDown = document.querySelector(".v-triangle-down");
@@ -893,30 +1333,36 @@ function deck(event) {
                           $(".leftFace").css("background", hslVioletNew);
                           $(".rightFace").css("background", hslVioletNew);
                           $(".topFace").css("background", hslVioletNew);
+                          $(".v-triangle-left").css("border-right", "10px" + " " + "solid" + " " + hslVioletNew);
+                          $(".v-triangle-right").css("border-left", "10px" + " " + "solid" + " " + hslVioletNew);
+                          $(".v-triangle-down").css("border-top", "10px" + " " + "solid" + " " + hslVioletNew);
+                          $(".v-triangle-up").css("border-bottom", "10px" + " " + "solid" + " " + hslVioletNew);
+                          var vColor = document.querySelector(".v-color-info");
+                          vColor.textContent = hslVioletNew;
                         }
 
+    var button = document.querySelector(".ra-button");
+    button.addEventListener("click", raPrimary);
+    function raPrimary(event){
 
-      var random = document.querySelector(".ran-button");
-      random.addEventListener("click", randy);
-      function randy(event){
+      var h = Math.floor(Math.random() * 361);
+      var s = Math.floor(Math.random() * 100);
+      var l = Math.floor(Math.random() * 100);
+      var hslRandom = "hsl("+ h +","+ s + "%" + ","+ l + "%" +")";
+      $(".rightFace").css("background", "hsl("+ h +","+ s + "%" + ","+ l + "%" +")");
+      $(".leftFace").css("background", "hsl("+ h +","+ s + "%" + ","+ l + "%" +")");
+      $(".topFace").css("background", "hsl("+ h +","+ s + "%" + ","+ l + "%" +")");
+      $(".ra-button").css("background", "hsl("+ h +","+ s + "%" + ","+ l + "%" +")");
+      var raColor = document.querySelector(".ra-color-info");
+      raColor.textContent = hslRandom;
 
-                  //Assign each named color a random number 0 - 255
-                  var red = Math.topFace(Math.random() * 255);
-                  var green = Math.topFace(Math.random() * 255);
-                  var blue = Math.topFace(Math.random() * 255);
-                  var trans = Math.random();
-                  //Display the three values in an alert window
-                  var randomRGBA = "rgba("+ red +","+ green +","+ blue +","+ trans +")";
-                  var back = document.querySelector(".leftFace");
-                  var floor = document.querySelector(".topFace");
-                  var left = document.querySelector(".rightFace");
-                  console.log(randomRGBA);
-                  $(back).css("background", randomRGBA);
-                  $(floor).css("background", randomRGBA);
-                  $(left).css("background", randomRGBA);
-                  resetAll();
-                  resetTris();
-    }
+      console.log(h);
+      console.log(s);
+      console.log(l);
+
+
+}
+
 
     </script>
   </body>

@@ -1,0 +1,57 @@
+}
+  var button = document.querySelector(".r-button");
+    button.addEventListener("click", rPrimary);
+  function rPrimary(event){
+    $(".rightFace").css("background", hslRed);
+    $(".leftFace").css("background", hslRed);
+    $(".topFace").css("background", hslRed);
+    console.log(hslRed);
+    resetred()
+    }
+
+  var divUp = document.querySelector(".r-triangle-up");
+    divUp.addEventListener("click", rIncrem);
+    function rIncrem(event){
+      event.preventDefault();
+      redbB = redbB - 1;
+      var hslRedNew = "hsl("+ redrB +","+ redgB + "%" + ","+ redbB + "%" + ")";
+      console.log(hslRedNew);
+      $(".leftFace").css("background", hslRedNew);
+      $(".rightFace").css("background", hslRedNew);
+      $(".topFace").css("background", hslRedNew);
+      }
+
+      var divLeft = document.querySelector(".r-triangle-left");
+        divLeft.addEventListener("click", rLeft);
+        function rLeft(event){
+          event.preventDefault();
+          redgB = redgB - 1;
+          var hslRedNew = "hsl("+ redrB +","+ redgB + "%" + ","+ redbB + "%" + ")";
+          console.log(hslRedNew);
+          $(".leftFace").css("background", hslRedNew);
+          $(".rightFace").css("background", hslRedNew);
+          $(".topFace").css("background", hslRedNew);
+      }
+      var divRight = document.querySelector(".r-triangle-right");
+        divRight.addEventListener("click", rRight);
+        function rRight(event){
+          event.preventDefault();
+          redgB = redgB + 1;
+          var hslRedNew = "hsl("+ redrB +","+ redgB + "%" + ","+ redbB + "%" + ")";
+          console.log(hslRedNew);
+          $(".leftFace").css("background", hslRedNew);
+          $(".rightFace").css("background", hslRedNew);
+          $(".topFace").css("background", hslRedNew);
+        }
+
+    var divDown = document.querySelector(".r-triangle-down");
+      divDown.addEventListener("click", rDecrem);
+      function rDecrem(event){
+        event.preventDefault();
+        redbB = redbB + 1;
+        var hslRedNew = "hsl("+ redrC +","+ redgC + "%" + ","+ redbB + "%" +")";
+        console.log(hslRedNew);
+        $(".leftFace").css("background", hslRedNew);
+        $(".rightFace").css("background", hslRedNew);
+        $(".topFace").css("background", hslRedNew);
+      }
