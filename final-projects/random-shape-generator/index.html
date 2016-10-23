@@ -6,16 +6,34 @@
     <title></title>
     <style media="screen">
 
+    .icon-a {
+      background: rgba(120, 36, 238, 0.4);
+      height: 40px;
+      width: 40px;
+      border-radius: 1px;
+
+    }
+
       div {
         display: inline;
+      }
+
+      .buttons {
+        margin-top: 20px;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+        display: block;
+
       }
 
       .button {
         background: white;
         padding: 20px;
-        margin-left: auto;
-        margin-right: auto;
         border-radius: 5px;
+        margin: 0 10px;
+
+
       }
 
       main {
@@ -28,17 +46,22 @@
         position: relative;
         margin-left: auto;
         margin-right: auto;
-        margin-top: 40px;
+        margin-top: 30px;
         border-radius: 5px;
-        box-shadow: 0 0 7px -1px rgb(199, 199, 199);
+        box-shadow: 0 0 20px 1px rgb(199, 199, 199);
       }
 
     </style>
   </head>
   <body>
-    <button class="color button" name="button"></button>
+
+    <div class="buttons">
+
+    <button class="color button" name="button">  </button>
     <button class="shape button" name="button"></button>
     <button class ="button" type="button" value="Refresh Page" onClick="window.location.reload()" name="button"></button>
+  </div>
+
     <main class="box">
 
     <div class="place"></div>
@@ -60,7 +83,12 @@
 
       });
 
-        $(".shape").click(function() {
+      var shape = document.querySelector(".shape");
+      shape.addEventListener("click", poop);
+      function poop(event){
+        for (var i = 0; i < 20; i++) {
+
+
 
 
           var red = Math.floor(Math.random() * 255);
@@ -193,12 +221,12 @@
     console.log("cone");
   }
 
-
     //this isn't working. The p exists but it won't append.
     body.appendChild(newP);
     //the newP shows up in console log, looking perfect
     console.log(newP);
-})
+}
+    }
 
 </script>
   </body>
