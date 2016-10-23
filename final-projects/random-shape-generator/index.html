@@ -6,7 +6,7 @@
     <title></title>
     <style media="screen">
 
-    .icon-a {
+    .color {
       background: rgba(120, 36, 238, 0.4);
       height: 40px;
       width: 40px;
@@ -32,11 +32,11 @@
         padding: 20px;
         border-radius: 5px;
         margin: 0 10px;
-
-
       }
 
-      main {
+
+
+      article {
         background: white;
         width: 80%;
         height: 500px;
@@ -57,16 +57,17 @@
 
     <div class="buttons">
 
-    <button class="color button" name="button">  </button>
+    <button id="color" class="color button" name="button">  </button>
     <button class="shape button" name="button"></button>
     <button class ="button" type="button" value="Refresh Page" onClick="window.location.reload()" name="button"></button>
   </div>
-
-    <main class="box">
+<main>
+    <article class="box">
 
     <div class="place"></div>
 
-    </main>
+  </article>
+</main>
     <script type="text/javascript">
       $(".color").click(function() {
       //Assign each named color a random number 0 - 255
@@ -109,9 +110,8 @@
           $(newP).css("border-radius", Math.floor(Math.random() * 200))
           //random positioning!!!
           $(newP).css("position", "absolute")
-          $(newP).css("top", Math.floor(Math.random() * 100) + "%")
-          $(newP).css("left", Math.floor(Math.random() * 100) + "%")
-          $(newP).css("class", "fadeIn")
+          $(newP).css("top", Math.floor(Math.random() * 80) + "%")
+          $(newP).css("left", Math.floor(Math.random() * 80) + "%")
 
           console.log("block")
 
@@ -182,7 +182,7 @@
 
     }
 
-    else if (value > 70 && value <= 75) {
+    else if (value > 75 && value <= 80) {
 
       $(newP).css("height", 0)
       $(newP).css("width", 0)
@@ -195,7 +195,7 @@
 
 
 }
-  else if (value > 75 && value <= 78) {
+  else if (value > 80 && value <= 81) {
     $(newP).css("width", "80px")
     $(newP).css("height", "80px")
     $(newP).css("border-radius", 50 + "%")
@@ -207,7 +207,7 @@
     console.log("moon");
   }
 
-  else if (value > 78 && value <= 100) {
+  else if (value > 81 && value <= 100) {
     $(newP).css("height", 0)
     $(newP).css("width", 0)
     $(newP).css("border-left", Math.floor(Math.random() * 100) + "px" + " " + "solid" + " " + "transparent")

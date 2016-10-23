@@ -7,78 +7,91 @@
     <style media="screen">
 
     table {
-      width: 90%;
+      width: 100%;
       margin-left: auto;
       margin-right: auto;
-      border: 1px dashed grey;
+    }
+
+
+.rich-chair {
+  width: 50px;
+  position: relative;
+  top: -400px;
+  left: 150px;
+}
+
+.low-light {
+  width: 50px;
+  position: relative;
+  top: -400px;
+  left: 150px;
+}
+
+.mid-chair {
+  width: 50px;
+  position: relative;
+  top: -400px;
+  left: 150px;
+}
+    #flooring {
+      width: 300px;
+	     height: 80px;
+       border: 1px dashed grey;
+       background: url("dark-wood.png");
+       margin-left: 170px;
+	      -webkit-transform: skew(60deg);
+	       -moz-transform: skew(60deg);
+	     -o-transform: skew(60deg);
+
+}
+.topFace {
+  border: 1px dashed grey;
+  margin-top: 20px;
+  margin-right: auto;
+  margin-bottom: 5px;
+  margin-left: 100px;
+  width: 300px;
+  height: 180px;
+  display: block;
+
+}
+
+
+    .r-color-info,
+    .o-color-info,
+    .y-color-info,
+    .g-color-info,
+    .b-color-info,
+    .i-color-info,
+    .v-color-info,
+    .bl-color-info,
+    .ra-color-info,
+    .w-color-info {
+      font-size: 10px;
+      text-align: center;
     }
 
     th, td {
-      border: 1px dashed grey;
     }
+
     .button {
       background: white;
-      padding: 12px;
       display: inline-block;
-      border-radius: 5px;
-
+      height: 30px;
+      width: 30px;
     }
 
-    .cube {
-      position: relative;
-      top: 200px;
-    }
 
-    .rightFace,
-    .leftFace,
-    .topFace div {
-      padding: 10px;
-      width: 180px;
-      height: 180px;
-    }
-
-    .rightFace,
-    .leftFace,
-    .topFace {
-      position: absolute;
-    }
-
-    .leftFace {
-      -webkit-transform: skewY(30deg);
-      -moz-transform: skewY(30deg);
-    }
-
-    .rightFace {
-      -webkit-transform: skewY(-30deg);
-      -moz-transform: skewY(-30deg);
-      left: 200px;
-    }
-
-    .topFace div {
-      -webkit-transform: skewY(-30deg) scaleY(1.16);
-      -moz-transform: skewY(-30deg) scaleY(1.16);
-      font-size: 0.862em;
-    }
-
-    .topFace {
-      -webkit-transform: rotate(60deg);
-      -moz-transform: rotate(60deg);
-      top: -158px;
-      left: 100px;
-    }
-
-.mona {
-  width: 50px;
-}
 
   .w-triangle-up, .bl-triangle-up, .ra-triangle-up, .r-triangle-up, .g-triangle-up, .b-triangle-up, .w-triangle-up, .o-triangle-up, .y-triangle-up, .i-triangle-up, .v-triangle-up  {
         width: 0;
         height: 0;
         margin-left: auto;
         margin-right: auto;
-        border-left: 5px solid transparent;
-        border-right: 5px solid transparent;
-        border-bottom: 10px solid white;
+        border-left: 10px solid transparent;
+        border-right: 10px solid transparent;
+        border-bottom: 30px solid white;
+        margin-bottom: 10%;
 
         display:block;
 
@@ -89,10 +102,10 @@
     margin-right: auto;
         width: 0;
         height: 0;
-        border-left: 5px solid transparent;
-        border-right: 5px solid transparent;
-
-        border-top: 10px solid white;
+        border-left: 10px solid transparent;
+        border-right: 10px solid transparent;
+margin-top: 10%;
+        border-top: 30px solid white;
         display: block;
         }
 
@@ -101,189 +114,205 @@
 
   width: 0;
   height: 0;
-  border-top: 5px solid transparent;
-  border-bottom: 5px solid transparent;
-  border-left: 10px solid white;
-
-
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  border-left: 30px solid white;
   display: inline-block;
-  position: absolute;
-  top: 30px;
+margin-left: 10%;
 }
 
 .w-triangle-left,   .bl-triangle-left, .ra-triangle-left, .v-triangle-left, .i-triangle-left, .r-triangle-left, .g-triangle-left, .b-triangle-left, .o-triangle-left, .y-triangle-left {
 
   width: 0;
   height: 0;
-margin: 0 -10px;
-  border-top: 5px solid transparent;
-  border-bottom: 5px solid transparent;
-  border-right: 10px solid white;
-
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  border-right: 30px solid white;
   display: inline-block;
-  position: absolute;
-  top: 30px;
+  margin-right: 10%;
+
 
 }
     </style>
   </head>
   <body>
+    <main>
 
-    <div class="cube">
+      <div class="topFace">
+      </div>
+      <div id="flooring">
 
-      <div class="leftFace">
-        Content
       </div>
-      <div class="rightFace">
-        Content
-      </div>
-    </div>
+    </main>
 
     <table>
       <tr>
-      <th>
-        <div class="all-buttons">
-            <div class="bl-triangle-up"></div>
-            <div class="bl-triangle-left"></div>
-            <button type="button" class="bl-button button"></button>
-            <div class="bl-triangle-right"></div>
-            <div class="bl-triangle-down"></div>
-        </div>
-      </th>
-      <th>
-        <div class="all-buttons">
-            <div class="w-triangle-up"></div>
-            <div class="w-triangle-left"></div>
-            <button type="button" class="w-button button"></button>
-            <div class="w-triangle-right"></div>
-            <div class="w-triangle-down"></div>
-        </div>
-      </th>
-    <th>
 
-        <div class="all-buttons">
+
+      <th>
             <div class="r-triangle-up"></div>
             <div class="r-triangle-left"></div>
             <button type="button" class="r-button button"></button>
             <div class="r-triangle-right"></div>
             <div class="r-triangle-down"></div>
-        </div>
       </th>
       <th>
-        <div class="all-buttons">
             <div class="o-triangle-up"></div>
             <div class="o-triangle-left"></div>
             <button type="button" class="o-button button"></button>
             <div class="o-triangle-right"></div>
             <div class="o-triangle-down"></div>
-        </div>
       </th>
       <th>
-        <div class="all-buttons">
             <div class="y-triangle-up"></div>
             <div class="y-triangle-left"></div>
             <button type="button" class="y-button button"></button>
             <div class="y-triangle-right"></div>
             <div class="y-triangle-down"></div>
-        </div>
+      </th>
+      <th>
+              <div class="g-triangle-up"></div>
+              <div class="g-triangle-left"></div>
+              <button type="button" class="g-button button"></button>
+              <div class="g-triangle-right"></div>
+              <div class="g-triangle-down"></div>
+      </th>
+      <th>
+              <div class="b-triangle-up"></div>
+              <div class="b-triangle-left"></div>
+              <button type="button" class="b-button button"></button>
+              <div class="b-triangle-right"></div>
+              <div class="b-triangle-down"></div>
+      </th>
+    </tr>
+
+    <tr>
+      <th>
+            <div class="w-triangle-up"></div>
+            <div class="w-triangle-left"></div>
+            <button type="button" class="w-button button"></button>
+            <div class="w-triangle-right"></div>
+            <div class="w-triangle-down"></div>
       </th>
     <th>
-        <div class="all-buttons">
-            <div class="g-triangle-up"></div>
-            <div class="g-triangle-left"></div>
-            <button type="button" class="g-button button"></button>
-            <div class="g-triangle-right"></div>
-            <div class="g-triangle-down"></div>
-        </div>
-    </th>
-    <th>
-        <div class="all-buttons">
-            <div class="b-triangle-up"></div>
-            <div class="b-triangle-left"></div>
-            <button type="button" class="b-button button"></button>
-            <div class="b-triangle-right"></div>
-            <div class="b-triangle-down"></div>
-        </div>
-    </th>
-    <th>
-        <div class="all-buttons">
             <div class="i-triangle-up"></div>
             <div class="i-triangle-left"></div>
             <button type="button" class="i-button button"></button>
             <div class="i-triangle-right"></div>
             <div class="i-triangle-down"></div>
-            </div>
-        </div>
     </th>
     <th>
-        <div class="all-buttons">
             <div class="v-triangle-up"></div>
             <div class="v-triangle-left"></div>
             <button type="button" class="v-button button"></button>
             <div class="v-triangle-right"></div>
             <div class="v-triangle-down"></div>
-          </div>
     </th>
     <th>
-        <div class="all-buttons">
+          <div class="bl-triangle-up"></div>
+          <div class="bl-triangle-left"></div>
+          <button type="button" class="bl-button button"></button>
+          <div class="bl-triangle-right"></div>
+          <div class="bl-triangle-down"></div>
+    </th>
+    <th>
           <button type="button" class="ra-button button"></button>
-        </div>
         </th>
-      </tr>
-        <tr>
 
-        <td>
-          <div class="bl-color-info">
-
-        </td>
-        <td>
-          <div class="w-color-info">
-
-        </td>
-        <td>
-          <div class="r-color-info">
-
-        </td>
-        <td>
-          <div class="o-color-info">
-
-        </td>
-        <td>
-          <div class="y-color-info">
-
-        </td>
-        <td>
-          <div class="g-color-info">
-
-        </td>
-        <td>
-          <div class="b-color-info">
-
-        </td>
-        <td>
-          <div class="i-color-info">
-
-        </td>
-        <td>
-          <div class="v-color-info">
-
-        </td>
-        <td>
-          <div class="ra-color-info">
-
-        </td>
 </tr>
     </table>
-    <button class="decorate" name="button"></button>
-    <img src="" class="mona" alt="" />
+    <button class="decorate-rich" name="button"></button>
+    <button class="decorate-mid" name="button"></button>
+    <button class="decorate-low" name="button"></button>
+
     <script type="text/javascript">
 
-var deco = document.querySelector(".decorate");
-var image = document.querySelector(".mona");
+var decoRich = document.querySelector(".decorate-rich");
 
-deco.addEventListener("click", deck);
-function deck(event) {
+decoRich.addEventListener("click", deckR);
+function deckR(event) {
+  var image = document.createElement("img");
+  var body = document.querySelector("body");
   image.setAttribute("src", "rich-chair.png");
+  image.setAttribute("class", "rich-chair");
+  body.appendChild(image);
+
+}
+
+var decoMid = document.querySelector(".decorate-mid");
+
+decoMid.addEventListener("click", deckM);
+function deckM(event) {
+  var image = document.createElement("img");
+  var body = document.querySelector("body");
+  image.setAttribute("src", "mid-chair.png");
+  image.setAttribute("class", "mid-chair");
+  body.appendChild(image);
+
+}
+
+var decoLow = document.querySelector(".decorate-low");
+
+decoLow.addEventListener("click", deckL);
+function deckL(event) {
+  var image = document.createElement("img");
+  var body = document.querySelector("body");
+  image.setAttribute("src", "bulb.png");
+  image.setAttribute("class", "low-light");
+  body.appendChild(image);
+
+}
+
+var mainB = document.querySelector(".topFace");
+mainB.addEventListener("click", callAll);
+
+function callAll(event){
+  $(".r-triangle-left").css("border-right", "10px" + " " + "solid" + " " + hslRed);
+  $(".r-triangle-right").css("border-left", "10px" + " " + "solid" + " " + hslRed);
+  $(".r-triangle-down").css("border-top", "10px" + " " + "solid" + " " + hslRed);
+  $(".r-triangle-up").css("border-bottom", "10px" + " " + "solid" + " " + hslRed);
+  $(".r-button").css("background", hslRed);
+  $(".o-triangle-left").css("border-right", "10px" + " " + "solid" + " " + hslOrange);
+  $(".o-triangle-right").css("border-left", "10px" + " " + "solid" + " " + hslOrange);
+  $(".o-triangle-down").css("border-top", "10px" + " " + "solid" + " " + hslOrange);
+  $(".o-triangle-up").css("border-bottom", "10px" + " " + "solid" + " " + hslOrange);
+  $(".o-button").css("background", hslOrange);
+  $(".y-triangle-left").css("border-right", "10px" + " " + "solid" + " " + hslYellow);
+  $(".y-triangle-right").css("border-left", "10px" + " " + "solid" + " " + hslYellow);
+  $(".y-triangle-down").css("border-top", "10px" + " " + "solid" + " " + hslYellow);
+  $(".y-triangle-up").css("border-bottom", "10px" + " " + "solid" + " " + hslYellow);
+  $(".y-button").css("background", hslYellow);
+  $(".g-triangle-left").css("border-right", "10px" + " " + "solid" + " " + hslGreen);
+  $(".g-triangle-right").css("border-left", "10px" + " " + "solid" + " " + hslGreen);
+  $(".g-triangle-down").css("border-top", "10px" + " " + "solid" + " " + hslGreen);
+  $(".g-triangle-up").css("border-bottom", "10px" + " " + "solid" + " " + hslGreen);
+  $(".g-button").css("background", hslGreen);
+  $(".b-triangle-left").css("border-right", "10px" + " " + "solid" + " " + hslBlue);
+  $(".b-triangle-right").css("border-left", "10px" + " " + "solid" + " " + hslBlue);
+  $(".b-triangle-down").css("border-top", "10px" + " " + "solid" + " " + hslBlue);
+  $(".b-triangle-up").css("border-bottom", "10px" + " " + "solid" + " " + hslBlue);
+  $(".b-button").css("background", hslBlue);
+  $(".i-triangle-left").css("border-right", "10px" + " " + "solid" + " " + hslIndigo);
+  $(".i-triangle-right").css("border-left", "10px" + " " + "solid" + " " + hslIndigo);
+  $(".i-triangle-down").css("border-top", "10px" + " " + "solid" + " " + hslIndigo);
+  $(".i-triangle-up").css("border-bottom", "10px" + " " + "solid" + " " + hslIndigo);
+  $(".i-button").css("background", hslIndigo);
+  $(".v-triangle-left").css("border-right", "10px" + " " + "solid" + " " + hslViolet);
+  $(".v-triangle-right").css("border-left", "10px" + " " + "solid" + " " + hslViolet);
+  $(".v-triangle-down").css("border-top", "10px" + " " + "solid" + " " + hslViolet);
+  $(".v-triangle-up").css("border-bottom", "10px" + " " + "solid" + " " + hslViolet);
+  $(".v-button").css("background", hslViolet);
+  $(".bl-triangle-left").css("border-right", "10px" + " " + "solid" + " " + hslBlack);
+  $(".bl-triangle-right").css("border-left", "10px" + " " + "solid" + " " + hslBlack);
+  $(".bl-triangle-down").css("border-top", "10px" + " " + "solid" + " " + hslBlack);
+  $(".bl-triangle-up").css("border-bottom", "10px" + " " + "solid" + " " + hslBlack);
+  $(".bl-button").css("background", hslBlack);
+  $(".w-triangle-left").css("border-right", "10px" + " " + "solid" + " " + hslWhite);
+  $(".w-triangle-right").css("border-left", "10px" + " " + "solid" + " " + hslWhite);
+  $(".w-triangle-down").css("border-top", "10px" + " " + "solid" + " " + hslWhite);
+  $(".w-triangle-up").css("border-bottom", "10px" + " " + "solid" + " " + hslWhite);
+  $(".w-button").css("background", "10px" + " " + "solid" + " " + hslWhite);
+  $(".ra-button").css("background", "grey");
 }
 
     function resetAll(){
