@@ -8,46 +8,185 @@
     <style media="screen">
 
     table {
-      margin-top: 20px;
-      margin-left: 60px;
+      margin-top: 25px;
+      margin-left: 25px;
       margin-bottom: 20px;
     }
 .arrow-1 {
   position: absolute;
   top: 35px;
   left: 120px;
+  visibility: hidden;
 }
 .arrow-2 {
   position: absolute;
-  top: 280px;
-  left: 130px;
+  top: 295px;
+  left: 140px;
+  visibility: hidden;
 }
+
+.decorate {
+  position: absolute;
+  top: 420px;
+  left: 25px;
+  background: white;
+  padding: 20px;
+  border-radius: 5px;
+  visibility: hidden;
+}
+
+.undecorate {
+  position: absolute;
+  top: 420px;
+  left: 25px;
+  background: white;
+  padding: 20px;
+  border-radius: 5px;
+  visibility: hidden;
+}
+
+
+.decorate-2 {
+  position: absolute;
+  top: 420px;
+  left: 25px;
+  background: white;
+  padding: 20px;
+  border-radius: 5px;
+  visibility: hidden;
+}
+
+
+.sparkle {
+
+
+ -webkit-text-fill-color: transparent;
+ background: -webkit-linear-gradient(transparent, transparent),
+             url(http://www.myspacehippo.com/files/glitterbacks/bg345.gif) repeat;
+ background: -o-linear-gradient(transparent, transparent);
+ -webkit-background-clip: text;
+}
+.start-text {
+  font-family: 'Pacifico', cursive;
+  display: block;
+  margin-left: 35px;
+  color: rgb(80,80,80);
+  position: absolute;
+  top: 80px;
+  left: 100px;
+}
+
+.ok-text-1 {
+  font-family: 'Pacifico', cursive;
+  display: block;
+  margin-left: 35px;
+  color: rgb(80,80,80);
+  position: absolute;
+  top: 80px;
+  left: 330px;
+  visibility: hidden;
+}
+
+
+.ok-text-2 {
+  font-family: 'Pacifico', cursive;
+  display: block;
+  margin-left: 35px;
+  color: rgb(80,80,80);
+  position: absolute;
+  top: 380px;
+  left: 50px;
+  visibility: hidden;
+}
+
+.ok-text-3 {
+  font-family: 'Pacifico', cursive;
+  display: block;
+  margin-left: 35px;
+  color: rgb(80,80,80);
+  position: absolute;
+  top: 430px;
+  left: 50px;
+  visibility: hidden;
+}
+
     .intro-text {
       font-family: 'Pacifico', cursive;
       display: block;
       margin-left: 70px;
+      color: rgb(46,202,64);
+      visibility: hidden;
+    }
+
+    .intro-text-2 {
+      font-family: 'Pacifico', cursive;
+      display: block;
+      margin-left: 35px;
+      color: rgb(46,202,64);
+      position: absolute;
+      top: 325px;
+      left: 5px;
+      visibility:hidden;
+    }
+
+    .final-thought {
+      font-family: 'Pacifico', cursive;
+      margin-left: 35px;
+      color: rgb(80,80,80);
 
     }
 
-.mona {
+.chair {
   width: 50px;
-  position: relative;
-  top: -300px;
-  left: 180px;
+  position: absolute;
+  top: 200px;
+  left: 100px;
+}
+.doll {
+  width: 50px;
+  position: absolute;
+  top: 160px;
+  left: 40px;
+  transform: rotate(150deg);
 }
 
-.rich-chair {
-  width: 80px;
-  position: relative;
-  top: -180px;
-  left: 100px;
+.pool {
+  width: 100px;
+  position: absolute;
+  top: 90px;
+  left: 205px;
+  border: 1px solid gold;
+}
+
+.rug {
+  width: 150px;
+  height: 50px;
+  position: absolute;
+  top: 250px;
+  left: 195px;
+  transform: skewX(60deg);
+}
+
+
+.plant {
+  width: 50px;
+  position: absolute;
+  top: 145px;
+  left: 40px;
+}
+
+.desk {
+  width: 160px;
+  position: absolute;
+  top: 130px;
+  left: 175px;
 }
 
 .rich-light {
-  width: 80px;
-  position: relative;
-  top: -305px;
-  left: 20px;
+  width: 40px;
+  position: absolute;
+  top: 50px;
+  left: 120px;
 }
 
 
@@ -80,15 +219,32 @@
   height: 180px;
   margin-left: 35px;
   margin-top: 10px;
+  margin-bottom: 5px;
 
 }
 
-.call-all {
+.start-button {
   position: absolute;
-  top: 200px;
-  left: 200px;
+  top: 115px;
+  left: 170px;
+  background: white;
+  padding: 20px;
+  border-radius: 5px;
 }
 
+.ok-button {
+visibility: hidden;
+  }
+  .ok-button-2 {
+    background: white;
+    position: absolute;
+    top:  370px;
+    left: 25px;
+    padding: 20px;
+    border-radius: 5px;
+  visibility: hidden;
+
+    }
 
     .r-color-info,
     .o-color-info,
@@ -172,11 +328,25 @@ main {
     </style>
   </head>
   <body>
-    <button class="call-all" name="button">Call</button>
-
+    <button class="start-button" name="button"></button>
+    <div class="start-text">
+Let's get started.
+    </div>
+    <div class="ok-text-1">
+Yeah, cool.
+    </div>
+    <div class="ok-text-2">
+Yup, got it.
+    </div>
     <div class="intro-text">
+
       Imagine this is a wall in your home.
     </div>
+    <button class="ok-button" name="button"></button>
+    <button class="decorate" name="button"></button>
+    <button class="undecorate" name="button"></button>
+    <button class="decorate-2" name="button"></button>
+
     <img src="arrow-3.png" class="arrow-1" width="20px" alt="" />
     <main>
 
@@ -184,12 +354,14 @@ main {
       </div>
 
       <div id="flooring">
+      </div>
+      <button class="ok-button-2" name="button"></button>
 
-      </div>
       <img src="arrow-two.png" class="arrow-2" width="40px" alt="" />
-      <div class="intro-text">
-        And this is the flooring.
+      <div class="intro-text-2">
+        Now imagine this is the flooring.
       </div>
+
     </main>
 
     <table>
@@ -268,79 +440,184 @@ main {
 
 </tr>
     </table>
-<article class="deco-buttons">
-  <button class="floor-rich" name="button"></button>
-  <button class="floor-mid" name="button"></button>
-  <button class="floor-low" name="button"></button>
-  <br />
 
-    <button class="decorate-rich" name="button"></button>
-    <button class="decorate-mid" name="button"></button>
-    <button class="decorate-low" name="button"></button>
-</article>
 
+
+<div class="ok-text-3">
+Help! Social media killed my imagination.
+</div>
 
     <script type="text/javascript">
 
-    var buttonAll = document.querySelector(".call-all");
+var broken = document.querySelector(".ok-button-2");
+broken.addEventListener("click", whyGod);
+function whyGod (event) {
+  $(".ok-button-2").css("visibility", "hidden");
+  $(".ok-text-2").css("visibility", "hidden");
+  $(".decorate").css("visibility", "hidden");
+  $(".ok-text-3").css("top", "510px");
+  $(".ok-text-3").css("left", "50px");
+  $(".intro-text-2").css("visibility", "hidden");
+  $(".arrow-2").css("visibility", "hidden");
+  $(".undecorate").css("visibility", "visible");
+  $(".undecorate").css("top", "500px");
+  $(".undecorate").css("left", "25px");
+  $(".decorate-2").css("top", "500px");
+  $(".decorate-2").css("left", "25px");
+
+
+  callAll();
+  console.log("hello");
+}
+
+var ok = document.querySelector(".ok-button");
+ok.addEventListener("click", okOne);
+function okOne (event){
+  $(".arrow-1").css("visibility", "hidden");
+  $(".intro-text").css("visibility", "hidden");
+  $(".start-text").css("visibility", "hidden");
+  $(".arrow-1").css("visibility", "hidden");
+  $(".arrow-2").css("visibility", "visible");
+  $(".intro-text-2").css("visibility", "visible");
+  $(".ok-button").css("visibility", "hidden");
+  $(".ok-text-1").css("visibility", "hidden");
+
+  $(".ok-button-2").css("visibility", "visible");
+  $(".ok-text-2").css("visibility", "visible");
+  $(".decorate").css("visibility", "visible");
+  $(".ok-text-3").css("visibility", "visible");
+
+}
+
+
+
+    var buttonAll = document.querySelector(".start-button");
     buttonAll.addEventListener("click", start)
     function start(event){
-      callAll();
+      $(".start-button").css("visibility", "hidden");
+      $(".start-text").css("visibility", "hidden");
+      $(".ok-button").css("visibility", "visible");
+      $(".ok-text-1").css("visibility", "visible");
+      $(".ok-button").css("background", "white");
+      $(".ok-button").css("position", "absolute");
+      $(".ok-button").css("top", "115px");
+      $(".ok-button").css("left", "380px");
+      $(".ok-button").css("padding", "20px");
+      $(".ok-button").css("border-radius", "20px");
+      $(".ok-button").css("border-radius", "5px");
+      $(".topFace").css("border", "1px" + " " + "dashed" + " " + "grey");
+      $("#flooring").css("border", "1px" + " " + "dashed" + " " + "grey");
+      $(".intro-text").css("visibility", "visible");
+      $(".arrow-1").css("visibility", "visible");
     }
 
 
-var decoRich = document.querySelector(".decorate-rich");
+var decoRich = document.querySelector(".decorate");
 
 decoRich.addEventListener("click", deckR);
 function deckR(event) {
   var rImage = document.createElement("img");
   var rImage2 = document.createElement("img");
   var rImage3 = document.createElement("img");
+  var rImage4 = document.createElement("img");
+  var rImage5 = document.createElement("img");
+  var rImage6 = document.createElement("img");
+  var rImage7 = document.createElement("img");
 
   var body = document.querySelector("body");
-  rImage.setAttribute("src", "rich-chair.png");
-  rImage3.setAttribute("src", "rich-light.png");
-  rImage2.setAttribute("src", "mona.png");
-  rImage2.setAttribute("class", "mona");
-  rImage.setAttribute("class", "rich-chair");
+  rImage.setAttribute("src", "desk-4.png");
+  rImage3.setAttribute("src", "bulb.png");
+  rImage2.setAttribute("src", "chair.png");
+  rImage4.setAttribute("src", "plant.png");
+  rImage5.setAttribute("src", "doll.png");
+  rImage6.setAttribute("src", "rug-2.png");
+  rImage7.setAttribute("src", "pool.png");
+
+
+  rImage2.setAttribute("class", "chair");
+  rImage5.setAttribute("class", "doll");
+  rImage.setAttribute("class", "desk");
   rImage3.setAttribute("class", "rich-light");
+  rImage4.setAttribute("class", "plant");
+  rImage6.setAttribute("class", "rug");
+  rImage7.setAttribute("class", "pool");
+
+
+document.querySelector(".ok-text-3").textContent = "Please don't show anyone how I live."
+
+body.appendChild(rImage5);
 
   body.appendChild(rImage);
   body.appendChild(rImage2);
   body.appendChild(rImage3);
+  body.appendChild(rImage4);
+  body.appendChild(rImage6);
+  body.appendChild(rImage7);
 
 
+  $(".decorate").css("visibility", "hidden");
+  $(".undecorate").css("visibility", "visible");
 }
 
-var decoMid = document.querySelector(".decorate-mid");
+var undec = document.querySelector(".undecorate");
+undec.addEventListener("click", nope);
+function nope(event) {
+  $(".chair").css("visibility", "hidden");
+  $(".doll").css("visibility", "hidden");
+  $(".rug").css("visibility", "hidden");
 
-decoMid.addEventListener("click", deckM);
-function deckM(event) {
-  var image = document.createElement("img");
+  $(".desk").css("visibility", "hidden");
+  $(".rich-light").css("visibility", "hidden");
+  $(".plant").css("visibility", "hidden");
+  $(".decorate-2").css("visibility", "visible");
+  $(".undecorate").css("visibility", "hidden");
+  document.querySelector(".ok-text-3").textContent = "Show furniture."
+
+}
+var decoBack = document.querySelector(".decorate-2");
+
+decoBack.addEventListener("click", deckB);
+function deckB(event) {
+  var rImage = document.createElement("img");
+  var rImage2 = document.createElement("img");
+  var rImage3 = document.createElement("img");
+  var rImage4 = document.createElement("img");
+  var rImage5 = document.createElement("img");
+  var rImage6 = document.createElement("img");
+  var rImage7 = document.createElement("img");
+
   var body = document.querySelector("body");
-  image.setAttribute("src", "mid-chair.png");
-  image.setAttribute("class", "mid-chair");
-    //document(background: url("dark-wood.png");
-    //$(".flooring").css("background", "url("dark-wood.png");
+  rImage.setAttribute("src", "desk-4.png");
+  rImage3.setAttribute("src", "bulb.png");
+  rImage2.setAttribute("src", "chair.png");
+  rImage5.setAttribute("src", "doll.png");
+  rImage6.setAttribute("src", "rug-2.png");
+  rImage4.setAttribute("src", "plant.png");
+  rImage7.setAttribute("src", "pool.png");
 
-  body.appendChild(image);
+  rImage2.setAttribute("class", "chair");
+  rImage5.setAttribute("class", "doll");
+  rImage6.setAttribute("class", "rug");
+  rImage.setAttribute("class", "desk");
+  rImage3.setAttribute("class", "rich-light");
+  rImage4.setAttribute("class", "plant");
+  rImage7.setAttribute("class", "pool");
 
+  document.querySelector(".ok-text-3").textContent = "Unshow furniture."
+
+  body.appendChild(rImage5);
+
+  body.appendChild(rImage);
+  body.appendChild(rImage2);
+  body.appendChild(rImage3);
+  body.appendChild(rImage4);
+  body.appendChild(rImage6);
+  body.appendChild(rImage7);
+
+
+  $(".decorate-2").css("visibility", "hidden");
+  $(".undecorate").css("visibility", "visible");
 }
-
-var decoLow = document.querySelector(".decorate-low");
-
-decoLow.addEventListener("click", deckL);
-function deckL(event) {
-  var image = document.createElement("img");
-  var body = document.querySelector("body");
-  image.setAttribute("src", "bulb.png");
-  image.setAttribute("class", "low-light");
-  body.appendChild(image);
-
-}
-
-var mainB = document.querySelector(".topFace");
-mainB.addEventListener("click", callAll);
 
 function callAll(event){
   $(".r-triangle-left").css("border-right", "10px" + " " + "solid" + " " + hslRed);
@@ -388,9 +665,6 @@ function callAll(event){
   $(".w-triangle-down").css("border-top", "10px" + " " + "solid" + " " + hslWhite);
   $(".w-triangle-up").css("border-bottom", "10px" + " " + "solid" + " " + hslWhite);
   $(".w-button").css("background", "10px" + " " + "solid" + " " + hslWhite);
-  $(".topFace").css("border", "1px" + " " + "dashed" + " " + "grey");
-  $("#flooring").css("border", "1px" + " " + "dashed" + " " + "grey");
-  $(".call-all").css("visibility", "hidden");
   $(".w-button").css("border", "1px" + " " + "dashed" + " " + "rgb(200,200,200)");
   //document(background: url("dark-wood.png");
 
