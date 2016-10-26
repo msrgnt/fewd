@@ -18,6 +18,36 @@
         display: inline;
       }
 
+      p {
+        opacity: 0;
+
+    -webkit-transition: width 2s, height 2s, background-color 2s, -webkit-transform 2s;
+    transition: width 2s, height 2s, background-color 2s, transform 2s;
+
+      }
+
+      p:hover {
+    background-color: #FFCCCC;
+    width: 200px;
+    height: 200px;
+    -webkit-transform: rotate(180deg);
+    transform: rotate(180deg);
+}
+
+.fade {
+   -webkit-animation: fade 5s;
+   animation: fade 5s;
+   opacity: 1;
+}
+
+@-webkit-keyframes fade {
+    from {opacity: 0}
+    to {opacity: 1}
+
+}@keyframes fade {
+    from {opacity: 0}
+    to {opacity: 1}
+}
       .buttons {
         margin-top: 20px;
         margin-left: auto;
@@ -102,6 +132,9 @@
           var border = red + "solid" + "transparent";
           var body = document.querySelector(".box");
           var newP = document.createElement("p");
+          newP.className = "fade";
+
+
           if (value >= 0 && value <= 40) {
 
           $(newP).css("background", randomRGBA)
@@ -227,6 +260,8 @@
     console.log(newP);
 }
     }
+
+
 
 </script>
   </body>
