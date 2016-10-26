@@ -7,7 +7,16 @@
     <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
     <style media="screen">
 
+    .flame {
+         width:50px;
+         height:50px;
+         background-image: url("fire-17.gif");
+         position: absolute;
+         top: -4px;
+         left: 65px;
+         visibility: hidden;
 
+       }
 
 
     table {
@@ -432,6 +441,7 @@ margin-left: 2px;
     </style>
   </head>
   <body>
+    <img src="fire-17.gif" class="flame" alt="" />
     <button class="start-button" name="button"></button>
     <div class="start-text">
 Get started.
@@ -2109,6 +2119,8 @@ woodOne.addEventListener("click", wOPrimary);
 function wOPrimary(event){
   $("#flooring").css("background-image", "url(" + wIOne + ")");
   $("#flooring").css("background-size", "cover");
+  $(".flame").css("visibility", "hidden");
+
 
 console.log("hello");
 }
@@ -2119,6 +2131,8 @@ woodTwo.addEventListener("click", wTPrimary);
 function wTPrimary(event){
   $("#flooring").css("background-image", "url(" + wITwo + ")");
   $("#flooring").css("background-size", "cover");
+  $(".flame").css("visibility", "hidden");
+
 
 console.log("hello");
 }
@@ -2129,6 +2143,8 @@ woodThree.addEventListener("click", wThPrimary);
 function wThPrimary(event){
   $("#flooring").css("background-image", "url(" + wIThree + ")");
   $("#flooring").css("background-size", "tile");
+  $(".flame").css("visibility", "hidden");
+
 
 console.log("hello");
 }
@@ -2139,6 +2155,8 @@ shag.addEventListener("click", shPrimary);
 function shPrimary(event){
   $("#flooring").css("background-image", "url(" + shagO + ")");
   $("#flooring").css("background-size", "cover");
+  $(".flame").css("visibility", "hidden");
+
 
 console.log("hello");
 }
@@ -2149,20 +2167,27 @@ woodFi.addEventListener("click", wFiPrimary);
 function wFiPrimary(event){
   $("#flooring").css("background-image", "url(" + woodFive + ")");
   $("#flooring").css("background-size", "cover");
+  $(".flame").css("visibility", "hidden");
 
 console.log("hello");
 }
 
 var lava = document.querySelector(".la-button");
-var lavaOne = "lava.png";
+var lavaOne = "lava3.gif";
 lava.addEventListener("click", laPrimary);
 function laPrimary(event){
   $("#flooring").css("background-image", "url(" + lavaOne + ")");
   $("#flooring").css("background-size", "cover");
   $(".intro-text-5").css("visibility", "hidden");
   $(".arrow-4").css("visibility", "hidden");
+  $(".flame").css("visibility", "visible");
+
 console.log("hello");
 }
+var recentHsl = document.querySelector(".color-info").textContent;
+console.log(recentHsl);
+console.log(recentHsl.split(","));
+
     </script>
   </body>
 </html>
