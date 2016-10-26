@@ -143,6 +143,8 @@
 
       //Display the three values in an alert window
       var randomRGBA = "rgba("+ red +","+ green +","+ blue +","+ trans +")";
+
+
       //alert(randomRGBA);
       $(".box").css("background", randomRGBA);
       console.log(document.body);
@@ -162,11 +164,13 @@
           var blue = Math.floor(Math.random() * 255);
           var trans = Math.random();
           var value = Math.floor(Math.random() * 101);
+
           console.log(value);
           var randomRGBA = "rgba("+ red +","+ green +","+ blue +","+ trans +")";
           var border = red + "solid" + "transparent";
           var body = document.querySelector(".box");
           var newP = document.createElement("p");
+
           newP.className = "fade";
 
 
@@ -180,6 +184,11 @@
           $(newP).css("position", "absolute")
           $(newP).css("top", Math.floor(Math.random() * 80) + "%")
           $(newP).css("left", Math.floor(Math.random() * 80) + "%")
+          var rb = red + 20;
+          var gb = green + 20;
+          var bb = blue + 20;
+          var randomBord = "rgba("+ rb +","+ gb +","+ bb +","+ trans +")";
+          $(newP).css("border", "1px" + " " + "solid" + " " + randomBord);
 
           console.log("block")
 
