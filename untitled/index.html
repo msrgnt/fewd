@@ -69,9 +69,22 @@
         border-radius: 5px;
         margin: 0 10px;
         outline: none;
+        box-shadow: 0 0 5px 1px rgb(230, 230, 230);
       }
 
+      .button:hover, button.hover {
+        box-shadow: 0 5px 10px rgba(0, 0, 0, .5);
+        outline:none;
 
+      }
+      .button:active, button.active {
+        outline:0;
+        box-shadow: none;
+
+      }
+      .button:focus, button.focus {
+      outline:none;
+      }
 
       article {
         background: white;
