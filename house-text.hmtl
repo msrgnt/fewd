@@ -12,13 +12,13 @@
 
     table {
       margin-top: 50px;
-      margin-left: 18px;
+      margin-left: 25px;
       margin-bottom: 20px;
     }
 .arrow-1 {
   position: absolute;
-  top: 33px;
-  left: 148px;
+  top: 35px;
+  left: 120px;
   visibility: hidden;
 }
 .arrow-2 {
@@ -99,12 +99,6 @@
 }
 .button:focus, button.focus {
 outline:none;
-}
-
-.ra-triangle-down:hover, .ra-triangle-down:active, .ra-triangle-up:hover, .ra-triangle-up:active, .ra-triangle-left:hover, .ra-triangle-left:active, .ra-triangle-right:hover, .ra-triangle-right:active {
-  outline: none;
-  border: none;
-  box-shadow: none;
 }
 
 
@@ -224,7 +218,7 @@ outline:none;
   width: 50px;
   position: absolute;
   top: 160px;
-  left: 50px;
+  left: 40px;
   transform: rotate(150deg);
 }
 
@@ -250,7 +244,7 @@ outline:none;
   width: 50px;
   position: absolute;
   top: 145px;
-  left: 50px;
+  left: 40px;
 }
 
 .desk {
@@ -450,7 +444,6 @@ Yup, got it.
       <div id="flooring">
       </div>
       <button class="ok-button-2" name="button"></button>
-      <img src="arrow-9.png" class="arrow-1" width="30px" alt="" />
 
       <img src="arrow-two.png" class="arrow-2" width="40px" alt="" />
       <div class="intro-text-2">
@@ -620,6 +613,7 @@ function okOne (event){
   $(".arrow-1").css("visibility", "hidden");
   $(".intro-text").css("visibility", "hidden");
   $(".start-text").css("visibility", "hidden");
+  $(".arrow-1").css("visibility", "hidden");
   $(".arrow-2").css("visibility", "visible");
   $(".intro-text-2").css("visibility", "visible");
   $(".ok-button").css("visibility", "hidden");
@@ -989,7 +983,7 @@ function callAll(event){
   $(".ra-triangle-right").css("background", hslWhite);
   $(".ra-triangle-right").css("border", "1px" + " " + "dashed" + " " + "rgb(200,200,200)");
 
-  $(".ra-button").css("border", "1px" + " " + "solid" + " " + "rgb(200,200,200)");
+  $(".ra-button").css("border", "1px" + " " + "dashed" + " " + "rgb(200,200,200)");
   $(".w1-button").css("border", "1px" + " " + "solid" + " " + "rgb(200,200,200)");
   $(".w1-button").css("background-image", "url(" + wIOne + ")");
   $(".w3-button").css("background-image", "url(" + wIThree + ")");
