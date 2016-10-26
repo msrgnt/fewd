@@ -1113,7 +1113,7 @@ function callAll(event){
           divUp.addEventListener("click", rIncrem);
           function rIncrem(event){
             event.preventDefault();
-            redbB = redbB - 1;
+            redbB = redbB + 1;;
             var hslRedNew = "hsl("+ redrB +","+ redgB + "%" + ","+ redbB + "%" + ")";
             console.log(hslRedNew);
             $(".leftFace").css("background", hslRedNew);
@@ -1132,7 +1132,7 @@ function callAll(event){
               divLeft.addEventListener("click", rLeft);
               function rLeft(event){
                 event.preventDefault();
-                redgB = redgB - 1;
+                redgB = redgB + 1;;
                 var hslRedNew = "hsl("+ redrB +","+ redgB + "%" + ","+ redbB + "%" + ")";
                 console.log(hslRedNew);
                 $(".leftFace").css("background", hslRedNew);
@@ -1169,7 +1169,7 @@ function callAll(event){
             divDown.addEventListener("click", rDecrem);
             function rDecrem(event){
               event.preventDefault();
-              redbB = redbB + 1;
+              redbB = redbB - 1;
               var hslRedNew = "hsl("+ redrC +","+ redgC + "%" + ","+ redbB + "%" +")";
               console.log(hslRedNew);
               $(".leftFace").css("background", hslRedNew);
@@ -1221,7 +1221,6 @@ function callAll(event){
           $(".g-triangle-up").css("background", hslGreen);
           var gColor = document.querySelector(".color-info");
           resetgreen();
-          callAll()
 
           gColor.textContent = hslGreen;
           console.log(hslGreen);
@@ -1231,8 +1230,8 @@ function callAll(event){
             divDown.addEventListener("click", gDecrem);
             function gDecrem(event){
               event.preventDefault();
-              greenbB = greenbB + 1;
-              var hslGreenNew = "hsl("+ greenrC +","+ greengC + "%" + ","+ greenbB + "%" +")";
+              greenbB = greenbB - 1;
+              var hslGreenNew = "hsl("+ greenrB +","+ greengB + "%" + ","+ greenbB + "%" +")";
               console.log(hslGreenNew);
               $(".leftFace").css("background", hslGreenNew);
               $(".rightFace").css("background", hslGreenNew);
@@ -1248,7 +1247,7 @@ function callAll(event){
               divUp.addEventListener("click", gIncrem);
               function gIncrem(event){
                 event.preventDefault();
-                greenbB = greenbB - 1;
+                greenbB = greenbB + 1;;
                 var hslGreenNew = "hsl("+ greenrB +","+ greengB + "%" + ","+ greenbB + "%" + ")";
                 console.log(hslGreenNew);
                 $(".leftFace").css("background", hslGreenNew);
@@ -1266,7 +1265,7 @@ function callAll(event){
               divLeft.addEventListener("click", gLeft);
               function gLeft(event){
                 event.preventDefault();
-                greengB = greengB - 1;
+                greengB = greengB - 1;;
                 var hslGreenNew = "hsl("+ greenrB +","+ greengB + "%" + ","+ greenbB + "%" + ")";
                 console.log(hslGreenNew);
                 $(".leftFace").css("background", hslGreenNew);
@@ -1344,7 +1343,7 @@ function callAll(event){
               divUp.addEventListener("click", bIncrem);
               function bIncrem(event){
                 event.preventDefault();
-                bluebB = bluebB - 1;
+                bluebB = bluebB + 1;;
                 var hslBlueNew = "hsl("+ bluerB +","+ bluegB + "%" + ","+ bluebB + "%" + ")";
                 console.log(hslBlueNew);
                 $(".leftFace").css("background", hslBlueNew);
@@ -1362,7 +1361,7 @@ function callAll(event){
                   divLeft.addEventListener("click", bLeft);
                   function bLeft(event){
                     event.preventDefault();
-                    bluegB = bluegB - 1;
+                    bluegB = bluegB - 1;;
                     var hslBlueNew = "hsl("+ bluerB +","+ bluegB + "%" + ","+ bluebB + "%" + ")";
                     console.log(hslBlueNew);
                     $(".leftFace").css("background", hslBlueNew);
@@ -1397,8 +1396,8 @@ function callAll(event){
                 divDown.addEventListener("click", bDecrem);
                 function bDecrem(event){
                   event.preventDefault();
-                  bluebB = bluebB + 1;
-                  var hslBlueNew = "hsl("+ bluerC +","+ bluegC + "%" + ","+ bluebB + "%" +")";
+                  bluebB = bluebB - 1;
+                  var hslBlueNew = "hsl("+ bluerB +","+ bluegB + "%" + ","+ bluebB + "%" +")";
                   console.log(hslBlueNew);
                   $(".leftFace").css("background", hslBlueNew);
                   $(".rightFace").css("background", hslBlueNew);
@@ -1458,7 +1457,7 @@ function callAll(event){
                   divUp.addEventListener("click", blIncrem);
                   function blIncrem(event){
                     event.preventDefault();
-                    blackbB = blackbB - 1;
+                    blackbB = blackbB + 1;;
                     var hslBlackNew = "hsl("+ blackrB +","+ blackgB + "%" + ","+ blackbB + "%" + ")";
                     console.log(hslBlackNew);
                     $(".leftFace").css("background", hslBlackNew);
@@ -1476,7 +1475,7 @@ function callAll(event){
                       divLeft.addEventListener("click", blLeft);
                       function blLeft(event){
                         event.preventDefault();
-                        blackgB = blackgB - 1;
+                        blackgB = blackgB - 1;;
                         var hslBlackNew = "hsl("+ blackrB +","+ blackgB + "%" + ","+ blackbB + "%" + ")";
                         console.log(hslBlackNew);
                         $(".leftFace").css("background", hslBlackNew);
@@ -1511,8 +1510,8 @@ function callAll(event){
                     divDown.addEventListener("click", blDecrem);
                     function blDecrem(event){
                       event.preventDefault();
-                      blackbB = blackbB + 1;
-                      var hslBlackNew = "hsl("+ blackrC +","+ blackgC + "%" + ","+ blackbB + "%" +")";
+                      blackbB = blackbB - 1;
+                      var hslBlackNew = "hsl("+ blackrB +","+ blackgB + "%" + ","+ blackbB + "%" +")";
                       console.log(hslBlackNew);
                       $(".leftFace").css("background", hslBlackNew);
                       $(".rightFace").css("background", hslBlackNew);
@@ -1571,7 +1570,7 @@ function callAll(event){
                       divUp.addEventListener("click", wIncrem);
                       function wIncrem(event){
                         event.preventDefault();
-                        whitebB = whitebB - 1;
+                        whitebB = whitebB + 1;;
                         var hslWhiteNew = "hsl("+ whiterB +","+ whitegB + "%" + ","+ whitebB + "%" + ")";
                         console.log(hslWhiteNew);
                         $(".leftFace").css("background", hslWhiteNew);
@@ -1589,7 +1588,7 @@ function callAll(event){
                           divLeft.addEventListener("click", wLeft);
                           function wLeft(event){
                             event.preventDefault();
-                            whitegB = whitegB - 1;
+                            whitegB = whitegB - 1;;
                             var hslWhiteNew = "hsl("+ whiterB +","+ whitegB + "%" + ","+ whitebB + "%" + ")";
                             console.log(hslWhiteNew);
                             $(".leftFace").css("background", hslWhiteNew);
@@ -1624,8 +1623,8 @@ function callAll(event){
                         divDown.addEventListener("click", wDecrem);
                         function wDecrem(event){
                           event.preventDefault();
-                          whitebB = whitebB + 1;
-                          var hslWhiteNew = "hsl("+ whiterC +","+ whitegC + "%" + ","+ whitebB + "%" +")";
+                          whitebB = whitebB - 1;
+                          var hslWhiteNew = "hsl("+ whiterB +","+ whitegB + "%" + ","+ whitebB + "%" +")";
                           console.log(hslWhiteNew);
                           $(".leftFace").css("background", hslWhiteNew);
                           $(".rightFace").css("background", hslWhiteNew);
@@ -1685,7 +1684,7 @@ function callAll(event){
                     divUp.addEventListener("click", oIncrem);
                     function oIncrem(event){
                       event.preventDefault();
-                      orangebB = orangebB - 1;
+                      orangebB = orangebB + 1;;
                       var hslOrangeNew = "hsl("+ orangerB +","+ orangegB + "%" + ","+ orangebB + "%" + ")";
                       console.log(hslOrangeNew);
                       $(".leftFace").css("background", hslOrangeNew);
@@ -1703,7 +1702,7 @@ function callAll(event){
                         divLeft.addEventListener("click", oLeft);
                         function oLeft(event){
                           event.preventDefault();
-                          orangegB = orangegB - 1;
+                          orangegB = orangegB - 1;;
                           var hslOrangeNew = "hsl("+ orangerB +","+ orangegB + "%" + ","+ orangebB + "%" + ")";
                           console.log(hslOrangeNew);
                           $(".leftFace").css("background", hslOrangeNew);
@@ -1738,8 +1737,8 @@ function callAll(event){
                       divDown.addEventListener("click", oDecrem);
                       function oDecrem(event){
                         event.preventDefault();
-                        orangebB = orangebB + 1;
-                        var hslOrangeNew = "hsl("+ orangerC +","+ orangegC + "%" + ","+ orangebB + "%" +")";
+                        orangebB = orangebB - 1;
+                        var hslOrangeNew = "hsl("+ orangerB +","+ orangegB + "%" + ","+ orangebB + "%" +")";
                         console.log(hslOrangeNew);
                         $(".leftFace").css("background", hslOrangeNew);
                         $(".rightFace").css("background", hslOrangeNew);
@@ -1800,7 +1799,7 @@ function callAll(event){
                       divUp.addEventListener("click", yIncrem);
                       function yIncrem(event){
                         event.preventDefault();
-                        yellowbB = yellowbB - 1;
+                        yellowbB = yellowbB + 1;;
                         var hslYellowNew = "hsl("+ yellowrB +","+ yellowgB + "%" + ","+ yellowbB + "%" + ")";
                         console.log(hslYellowNew);
                         $(".leftFace").css("background", hslYellowNew);
@@ -1818,7 +1817,7 @@ function callAll(event){
                           divLeft.addEventListener("click", yLeft);
                           function yLeft(event){
                             event.preventDefault();
-                            yellowgB = yellowgB - 1;
+                            yellowgB = yellowgB - 1;;
                             var hslYellowNew = "hsl("+ yellowrB +","+ yellowgB + "%" + ","+ yellowbB + "%" + ")";
                             console.log(hslYellowNew);
                             $(".leftFace").css("background", hslYellowNew);
@@ -1853,8 +1852,8 @@ function callAll(event){
                         divDown.addEventListener("click", yDecrem);
                         function yDecrem(event){
                           event.preventDefault();
-                          yellowbB = yellowbB + 1;
-                          var hslYellowNew = "hsl("+ yellowrC +","+ yellowgC + "%" + ","+ yellowbB + "%" +")";
+                          yellowbB = yellowbB - 1;
+                          var hslYellowNew = "hsl("+ yellowrB +","+ yellowgB + "%" + ","+ yellowbB + "%" +")";
                           console.log(hslYellowNew);
                           $(".leftFace").css("background", hslYellowNew);
                           $(".rightFace").css("background", hslYellowNew);
@@ -1913,7 +1912,7 @@ function callAll(event){
                       divUp.addEventListener("click", iIncrem);
                       function iIncrem(event){
                         event.preventDefault();
-                        indigobB = indigobB - 1;
+                        indigobB = indigobB + 1;;
                         var hslIndigoNew = "hsl("+ indigorB +","+ indigogB + "%" + ","+ indigobB + "%" + ")";
                         console.log(hslIndigoNew);
                         $(".leftFace").css("background", hslIndigoNew);
@@ -1931,7 +1930,7 @@ function callAll(event){
                           divLeft.addEventListener("click", iLeft);
                           function iLeft(event){
                             event.preventDefault();
-                            indigogB = indigogB - 1;
+                            indigogB = indigogB - 1;;
                             var hslIndigoNew = "hsl("+ indigorB +","+ indigogB + "%" + ","+ indigobB + "%" + ")";
                             console.log(hslIndigoNew);
                             $(".leftFace").css("background", hslIndigoNew);
@@ -1966,8 +1965,8 @@ function callAll(event){
                         divDown.addEventListener("click", iDecrem);
                         function iDecrem(event){
                           event.preventDefault();
-                          indigobB = indigobB + 1;
-                          var hslIndigoNew = "hsl("+ indigorC +","+ indigogC + "%" + ","+ indigobB + "%" +")";
+                          indigobB = indigobB - 1;
+                          var hslIndigoNew = "hsl("+ indigorB +","+ indigogB + "%" + ","+ indigobB + "%" +")";
                           console.log(hslIndigoNew);
                           $(".leftFace").css("background", hslIndigoNew);
                           $(".rightFace").css("background", hslIndigoNew);
@@ -2026,7 +2025,7 @@ function callAll(event){
                       divUp.addEventListener("click", vIncrem);
                       function vIncrem(event){
                         event.preventDefault();
-                        violetbB = violetbB - 1;
+                        violetbB = violetbB + 1;;
                         var hslVioletNew = "hsl("+ violetrB +","+ violetgB + "%" + ","+ violetbB + "%" + ")";
                         console.log(hslVioletNew);
                         $(".leftFace").css("background", hslVioletNew);
@@ -2044,7 +2043,7 @@ function callAll(event){
                           divLeft.addEventListener("click", vLeft);
                           function vLeft(event){
                             event.preventDefault();
-                            violetgB = violetgB - 1;
+                            violetgB = violetgB - 1;;
                             var hslVioletNew = "hsl("+ violetrB +","+ violetgB + "%" + ","+ violetbB + "%" + ")";
                             console.log(hslVioletNew);
                             $(".leftFace").css("background", hslVioletNew);
@@ -2079,8 +2078,8 @@ function callAll(event){
                         divDown.addEventListener("click", vDecrem);
                         function vDecrem(event){
                           event.preventDefault();
-                          violetbB = violetbB + 1;
-                          var hslVioletNew = "hsl("+ violetrC +","+ violetgC + "%" + ","+ violetbB + "%" +")";
+                          violetbB = violetbB - 1;
+                          var hslVioletNew = "hsl("+ violetrB +","+ violetgB + "%" + ","+ violetbB + "%" +")";
                           console.log(hslVioletNew);
                           $(".leftFace").css("background", hslVioletNew);
                           $(".rightFace").css("background", hslVioletNew);
