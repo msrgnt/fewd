@@ -13,8 +13,9 @@
       height: 40px;
       width: 40px;
       border-radius: 1px;
-
     }
+
+
 
       div {
         display: inline;
@@ -50,6 +51,9 @@
     from {opacity: 0}
     to {opacity: 1}
 }
+
+
+
       .buttons {
         margin-top: 20px;
         margin-left: auto;
@@ -109,7 +113,7 @@
 
     <button id="color" class="color button" name="button">  </button>
     <button class="shape button" name="button"></button>
-    <button class ="button" type="button" value="Refresh Page" onClick="window.location.reload()" name="button"></button>
+    <button class ="clear-button button" type="button" name="button"></button>
   </div>
 <main>
     <article class="box">
@@ -119,6 +123,13 @@
   </article>
 </main>
     <script type="text/javascript">
+
+    $(".clear-button").click(function() {
+
+      $("p").css("visibility", "hidden");
+
+})
+
       $(".color").click(function() {
       //Assign each named color a random number 0 - 255
       var red = Math.floor(Math.random() * 255);
