@@ -489,7 +489,7 @@ Yup, got it.
       <div class="intro-text-5">
         Yes, that's liquid hot magma.
         <br />
-        Becuase one day the sun, along with your treasured possessions, will burn.
+        Becuase one day the sun will explode.
       </div>
       <img src="arrow-3.png" class="arrow-4" width="20px" alt="" />
 
@@ -661,13 +661,18 @@ function okOne (event){
 
 
 
-    var buttonAll = document.querySelector(".start-button");
-    buttonAll.addEventListener("click", start)
-    function start(event){
+    var buttonBegin = document.querySelector(".start-button");
+    buttonBegin.addEventListener("click", getStart)
+    function getStart(event){
+      // hide start button after first click
       $(".start-button").css("visibility", "hidden");
       $(".start-text").css("visibility", "hidden");
+      // expose next button, arrow img, and green text after first click
       $(".ok-button").css("visibility", "visible");
       $(".ok-text-1").css("visibility", "visible");
+      $(".intro-text").css("visibility", "visible");
+      $(".arrow-1").css("visibility", "visible");
+      // could/should have put the below bit in css
       $(".ok-button").css("background", "white");
       $(".ok-button").css("position", "absolute");
       $(".ok-button").css("top", "115px");
@@ -675,10 +680,10 @@ function okOne (event){
       $(".ok-button").css("padding", "20px");
       $(".ok-button").css("border-radius", "20px");
       $(".ok-button").css("border-radius", "5px");
+      // outlines diorama after first click
       $(".topFace").css("border", "1px" + " " + "dashed" + " " + "grey");
       $("#flooring").css("border", "1px" + " " + "dashed" + " " + "grey");
-      $(".intro-text").css("visibility", "visible");
-      $(".arrow-1").css("visibility", "visible");
+      // hide skip button and skip text after first click
       $(".skip-button").css("visibility", "hidden");
       $(".skip-text").css("visibility", "hidden");
     }
@@ -696,9 +701,9 @@ function okOne (event){
        document.querySelector(".ok-text-3").textContent = "Show furniture.";
        $(".decorate-2").css("visibility", "visible");
        $(".ok-text-3").css("visibility", "visible");
-
        $(".undecorate").css("visibility", "hidden");
     }
+
 var decoRich = document.querySelector(".decorate");
 
 decoRich.addEventListener("click", deckR);

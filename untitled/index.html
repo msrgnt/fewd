@@ -147,7 +147,6 @@
 
       //alert(randomRGBA);
       $(".box").css("background", randomRGBA);
-      console.log(document.body);
 
       });
 
@@ -165,7 +164,6 @@
           var trans = Math.random();
           var value = Math.floor(Math.random() * 101);
 
-          console.log(value);
           var randomRGBA = "rgba("+ red +","+ green +","+ blue +","+ trans +")";
           var border = red + "solid" + "transparent";
           var body = document.querySelector(".box");
@@ -174,7 +172,7 @@
           newP.className = "fade";
 
 
-          if (value >= 0 && value <= 40) {
+          if (value >= 0 && value <= 30) {
 
           $(newP).css("background", randomRGBA)
           $(newP).css("height", Math.floor(Math.random() * 300))
@@ -190,9 +188,28 @@
           var randomBord = "rgba("+ rb +","+ gb +","+ bb +","+ trans +")";
           $(newP).css("border", "1px" + " " + "solid" + " " + randomBord);
 
-          console.log("block")
 
       }
+
+      else if (value > 30 && value <= 40) {
+
+
+        $(newP).css("background-image", "linear-gradient(" + randomRGBA + "," + randomBord + ")")
+        $(newP).css("height", Math.floor(Math.random() * 300))
+        $(newP).css("width", Math.floor(Math.random() * 300))
+        $(newP).css("border-radius", Math.floor(Math.random() * 200))
+        //random positioning!!!
+        $(newP).css("position", "absolute")
+        $(newP).css("top", Math.floor(Math.random() * 80) + "%")
+        $(newP).css("left", Math.floor(Math.random() * 80) + "%")
+        var rb = red + 20;
+        var gb = green + 20;
+        var bb = blue + 20;
+        var randomBord = "rgba("+ rb +","+ gb +","+ bb +","+ trans +")";
+        $(newP).css("border", "1px" + " " + "solid" + " " + randomBord);
+
+          console.log(newP)
+}
 
       else if (value > 40 && value <= 50) {
       $(newP).css("height", 0)
@@ -203,7 +220,6 @@
       $(newP).css("position", "absolute")
       $(newP).css("top", Math.floor(Math.random() * 100) + "%")
       $(newP).css("left", Math.floor(Math.random() * 100) + "%")
-      console.log("tri-up")
 }
 
       else if (value > 50 && value <= 60) {
@@ -215,7 +231,6 @@
       $(newP).css("position", "absolute")
       $(newP).css("top", Math.floor(Math.random() * 100) + "%")
       $(newP).css("left", Math.floor(Math.random() * 100) + "%")
-      console.log("tri-down")
       }
 
     else if (value > 60 && value <= 65) {
@@ -228,7 +243,6 @@
       $(newP).css("position", "absolute")
       $(newP).css("top", Math.floor(Math.random() * 100) + "%")
       $(newP).css("left", Math.floor(Math.random() * 100) + "%")
-      console.log("tri-left")
 
     }
 
@@ -242,7 +256,6 @@
       $(newP).css("position", "absolute")
       $(newP).css("top", Math.floor(Math.random() * 100) + "%")
       $(newP).css("left", Math.floor(Math.random() * 100) + "%")
-      console.log("tri-right")
 
     }
 
@@ -255,7 +268,6 @@
       $(newP).css("position", "absolute")
       $(newP).css("top", Math.floor(Math.random() * 100) + "%")
       $(newP).css("left", Math.floor(Math.random() * 100) + "%")
-      console.log("tri-topright")
 
     }
 
@@ -268,7 +280,6 @@
       $(newP).css("position", "absolute")
       $(newP).css("top", Math.floor(Math.random() * 100) + "%")
       $(newP).css("left", Math.floor(Math.random() * 100) + "%")
-      console.log("tri-topleft")
 
 
 }
@@ -281,7 +292,6 @@
     $(newP).css("left", Math.floor(Math.random() * 100) + "%")
     $(newP).css("position", "absolute")
 
-    console.log("moon");
   }
 
   else if (value > 81 && value <= 100) {
@@ -295,13 +305,11 @@
     $(newP).css("top", Math.floor(Math.random() * 100) + "%")
     $(newP).css("left", Math.floor(Math.random() * 100) + "%")
 
-    console.log("cone");
   }
 
     //this isn't working. The p exists but it won't append.
     body.appendChild(newP);
     //the newP shows up in console log, looking perfect
-    console.log(newP);
 }
     }
 
