@@ -972,8 +972,6 @@
     var button = document.querySelector(".r-button");
     button.addEventListener("click", rPrimary);
     function rPrimary(event){
-      // $(".rightFace").css("background", hslRed);
-      // $(".leftFace").css("background", hslRed);
       $(".topFace").css("background", hslRed);
       $(".r-button").css("background", hslRed);
       $(".r-triangle-left").css("background", hslRed);
@@ -991,9 +989,6 @@
     event.preventDefault();
       redbB = redbB + 1;;
       var hslRedNew = "hsl("+ redrB +","+ redgB + "%" + ","+ redbB + "%" + ")";
-      console.log(hslRedNew);
-      // // $(".leftFace").css("background", hslRedNew);
-      // $(".rightFace").css("background", hslRedNew);
       $(".topFace").css("background", hslRedNew);
       $(".r-triangle-left").css("background", hslRedNew);
       $(".r-triangle-right").css("background", hslRedNew);

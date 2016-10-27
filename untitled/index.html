@@ -162,27 +162,19 @@
           // This will be used below
           var value = Math.floor(Math.random() * 101);
 
-          // So if value is 0 -30, we get a rectangle with:
         if (value >= 0 && value <= 30) {
-          // random color
           $(newP).css("background", randomRGBA)
-          // random px height
           $(newP).css("height", Math.floor(Math.random() * 300))
-          // random px width
           $(newP).css("width", Math.floor(Math.random() * 300))
-          // random border radius
           $(newP).css("border-radius", Math.floor(Math.random() * 200))
-          // random absolute position
           $(newP).css("position", "absolute")
           $(newP).css("top", Math.floor(Math.random() * 80) + "%")
           $(newP).css("left", Math.floor(Math.random() * 80) + "%")
-          // and randome border color!
           var rb = red + 20;
           var gb = green + 20;
           var bb = blue + 20;
           var randomBord = "rgba("+ rb +","+ gb +","+ bb +","+ trans +")";
           $(newP).css("border", "1px" + " " + "solid" + " " + randomBord);
-
         }
           // Same as above but rectangle has linear gradient!
         else if (value > 30 && value <= 40) {
@@ -199,7 +191,6 @@
           var bb = blue + 20;
           var randomBord = "rgba("+ rb +","+ gb +","+ bb +","+ trans +")";
           $(newP).css("border", "1px" + " " + "solid" + " " + randomBord);
-
         }
           // upward triangle (?)
         else if (value > 40 && value <= 50) {
