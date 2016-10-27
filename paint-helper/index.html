@@ -563,6 +563,9 @@
     // hide start button after first click
     $(".start-button").css("visibility", "hidden");
     $(".start-text").css("visibility", "hidden");
+    // hide skip button and skip text after first click
+    $(".skip-button").css("visibility", "hidden");
+    $(".skip-text").css("visibility", "hidden");
     // expose next button, arrow img, and green text after first click
     $(".ok-button").css("visibility", "visible");
     $(".ok-text-1").css("visibility", "visible");
@@ -579,9 +582,6 @@
     // outlines diorama after first click
     $(".topFace").css("border", "1px" + " " + "dashed" + " " + "grey");
     $("#flooring").css("border", "1px" + " " + "dashed" + " " + "grey");
-    // hide skip button and skip text after first click
-    $(".skip-button").css("visibility", "hidden");
-    $(".skip-text").css("visibility", "hidden");
   }
 
   var ok = document.querySelector(".ok-button");
@@ -589,11 +589,11 @@
   function okOne (event){
     $(".arrow-1").css("visibility", "hidden");
     $(".intro-text").css("visibility", "hidden");
+    $(".ok-button").css("visibility", "hidden");
+    $(".ok-text-1").css("visibility", "hidden");
     $(".start-text").css("visibility", "hidden");
     $(".arrow-2").css("visibility", "visible");
     $(".intro-text-2").css("visibility", "visible");
-    $(".ok-button").css("visibility", "hidden");
-    $(".ok-text-1").css("visibility", "hidden");
     $(".ok-button-2").css("visibility", "visible");
     $(".ok-text-2").css("visibility", "visible");
     $(".decorate").css("visibility", "visible");
@@ -606,15 +606,15 @@
     $(".ok-button-2").css("visibility", "hidden");
     $(".ok-text-2").css("visibility", "hidden");
     $(".decorate").css("visibility", "hidden");
-    $(".ok-text-3").css("top", "510px");
-    $(".ok-text-3").css("left", "50px");
     $(".intro-text-2").css("visibility", "hidden");
     $(".arrow-2").css("visibility", "hidden");
-    $(".undecorate").css("visibility", "visible");
+    $(".ok-text-3").css("top", "510px");
+    $(".ok-text-3").css("left", "50px");
     $(".undecorate").css("top", "500px");
     $(".undecorate").css("left", "35px");
     $(".decorate-2").css("top", "500px");
     $(".decorate-2").css("left", "35px");
+    $(".undecorate").css("visibility", "visible");
     $(".intro-text-3").css("visibility", "visible");
     $(".intro-text-4").css("visibility", "visible");
     $(".intro-text-5").css("visibility", "visible");
@@ -636,13 +636,13 @@
     whyGod()
     $(".topFace").css("border", "1px" + " " + "dashed" + " " + "grey");
     $("#flooring").css("border", "1px" + " " + "dashed" + " " + "grey");
+    document.querySelector(".ok-text-3").textContent = "Show furniture.";
+    $(".decorate-2").css("visibility", "visible");
+    $(".ok-text-3").css("visibility", "visible");
     $(".skip-button").css("visibility", "hidden");
     $(".skip-text").css("visibility", "hidden");
     $(".start-button").css("visibility", "hidden");
     $(".start-text").css("visibility", "hidden");
-    document.querySelector(".ok-text-3").textContent = "Show furniture.";
-    $(".decorate-2").css("visibility", "visible");
-    $(".ok-text-3").css("visibility", "visible");
     $(".undecorate").css("visibility", "hidden");
   }
 
