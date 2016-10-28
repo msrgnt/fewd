@@ -128,9 +128,9 @@
   // color button, when clicked:
   $(".color-button").click(function() {
     // randomly generates values for rgb and a
-    var red = Math.floor(Math.random() * 255);
-    var green = Math.floor(Math.random() * 255);
-    var blue = Math.floor(Math.random() * 255);
+    var red = Math.floor(Math.random() * 256);
+    var green = Math.floor(Math.random() * 256);
+    var blue = Math.floor(Math.random() * 256);
     var trans = Math.random();
     // variable randomRGBA gets values, is ready to go in element's css
     var randomRGBA = "rgba("+ red +","+ green +","+ blue +","+ trans +")";
@@ -145,9 +145,9 @@
       // 20 loops, which in this case:
       for (var i = 0; i < 20; i++) {
           // randomly generate values for rgb and a (20x)
-          var red = Math.floor(Math.random() * 255);
-          var green = Math.floor(Math.random() * 255);
-          var blue = Math.floor(Math.random() * 255);
+          var red = Math.floor(Math.random() * 256);
+          var green = Math.floor(Math.random() * 256);
+          var blue = Math.floor(Math.random() * 256);
           var trans = Math.random();
           // these go into randomRGBA (20x); ready to go in elements' css
           var randomRGBA = "rgba("+ red +","+ green +","+ blue +","+ trans +")";
