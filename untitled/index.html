@@ -24,6 +24,14 @@
       transition: width 2s, height 2s, background-color 2s, transform 2s;
     }
 
+    @keyframes example {
+      0%   {background-color: white; left:0px; top:0px;}
+      25%  {background-color: red; left:80%; top:0px;}
+      50%  {background-color: blue; left:80%; top:80%;}
+      75%  {background-color: black; left:0px; top:80%;}
+      100% {background-color: white; left:0px; top:0px;}
+    }
+
     p:hover {
       background-color: #FFCCCC;
       width: 200px;
@@ -279,7 +287,7 @@
 
         }
 
-        else if (value > 81 && value <= 100) {
+        else if (value > 81 && value <= 99) {
           $(newP).css("height", 0)
           $(newP).css("width", 0)
           $(newP).css("border-left", Math.floor(Math.random() * 100) + "px" + " " + "solid" + " " + "transparent")
@@ -292,6 +300,19 @@
 
         }
 
+        else if (value > 99 && value <= 101) {
+          $(newP).css("background", randomRGBA)
+          $(newP).css("height", Math.floor(Math.random() * 300))
+          $(newP).css("width", Math.floor(Math.random() * 300))
+          $(newP).css("border-radius", Math.floor(Math.random() * 200))
+          $(newP).css("position", "absolute")
+          $(newP).css("animation-name", "example")
+          $(newP).css("animation-name", "example")
+          $(newP).css("animation-iteration-count", "infinite")
+          $(newP).css("animation-duration", "50s")
+          $(newP).css("animation-delay", "2s")
+        }
+console.log(value);
       body.appendChild(newP);
 
     }
