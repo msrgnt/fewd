@@ -7,19 +7,29 @@
 
     <style media="screen">
 
+    footer {
+      margin-left: auto;
+      margin-right: auto;
+      width: 80%;
+      text-align: center;
+    }
+
       img {
         height: 40px;
         margin-top: 40px;
         margin-right: 20px;
+        margin-left: 20px;
       }
 
       main {
         background: white;
         height: 300px;
-        width: 500px;
+        width: 80%;
         padding-top: 15px;
         margin-bottom: 15px;
         margin-top: 40px;
+        margin-left: auto;
+        margin-right: auto;
         border-radius: 5px;
         box-shadow: 0 0 7px -1px rgb(199, 199, 199);
       }
@@ -29,9 +39,7 @@
     <body>
         <div id='clock'></div>
     </body>
-    <main>
-
-    </main>
+    <main></main>
     <footer>
       <img src="img/reddit.png" alt="" />
       <img src="img/news.png" alt="" />
@@ -42,10 +50,14 @@
     <script type="text/javascript">
 
     var buttons = document.querySelectorAll("img");
+    var currentTime = new Date();
+    var seconds = currentTime.getSeconds();
+
     for (var i = 0; i < buttons.length; i++) {
       buttons[i].addEventListener("click", media);
       function media(event){
-        console.log("hello");
+        var hours = currentTime.getHours();
+        console.log(seconds);
       }
     }
 
@@ -60,6 +72,8 @@
             var hours = currentTime.getHours();
             var minutes = currentTime.getMinutes();
             var seconds = currentTime.getSeconds();
+
+
 
 
             // Let's set the AM and PM meridiem and
@@ -107,6 +121,7 @@
         setInterval(displayTime, 1000);
 
     });
+
     </script>
   </body>
 </html>

@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <script src="jquery.js"></script>
+    <title>Game of LIfe</title>
+    <style media="screen">
+
+        button {
+          background: white;
+          padding: 20px;
+          border-radius: 5px;
+          outline: none;
+          box-shadow: 0 0 5px 1px rgb(230, 230, 230);
+          margin-top: 30px;
+          margin-left: auto;
+          margin-right: auto;
+          text-align: center;
+          display: inline-block;
+          visibility: hidden;
+        }
+
+        .start {
+          visibility: visible;
+          margin-left: auto;
+          margin-right: auto;
+          display:block;
+        }
+
+        button.active {
+          outline:0;
+          box-shadow: none;
+        }
+
+        .button:focus, button.focus {
+          outline:none;
+        }
+
+        @media (max-width: 400px) {
+
+          button {
+            margin-top: 20px;
+            margin-left: auto;
+            margin-right: auto;
+            display: block;
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+            outline: none;
+            box-shadow:none;
+          }
+        }
+
+    </style>
+  </head>
+  <body>
+    <button class="start"></button>
+    <button class="button-1 button"></button>
+    <button class="button-2 button"></button>
+    <button class="button-3 button"></button>
+    <button class="button-4 button"></button>
+    <button class="button-5 button"></button>
+    <button class="button-6 button"></button>
+    <button class="button-7 button"></button>
+    <button class="button-8 button"></button>
+    <button class="button-9 button"></button>
+    <button class="button-10 button"></button>
+    <button class="button-11 button"></button>
+    <button class="button-12 button"></button>
+    <button class="button-13 button"></button>
+    <button class="button-14 button"></button>
+    <button class="button-15 button"></button>
+    <button class="button-16 button"></button>
+    <button class="button-17 button"></button>
+    <button class="button-18 button"></button>
+    <button class="button-19 button"></button>
+    <button class="button-20 button"></button>
+    <button class="button-21 button"></button>
+    <button class="button-22 button"></button>
+    <button class="button-23 button"></button>
+    <button class="button-24 button"></button>
+    <button class="button-25 button"></button>
+    <button class="button-26 button"></button>
+    <button class="button-27 button"></button>
+    <button class="button-28 button"></button>
+    <button class="button-29 button"></button>
+    <button class="button-30 button"></button>
+    <button class="button-31 button"></button>
+    <button class="button-32 button"></button>
+    <button class="button-33 button"></button>
+    <button class="button-34 button"></button>
+    <button class="button-35 button"></button>
+    <button class="button-36 button"></button>
+    <button class="button-37 button"></button>
+    <button class="button-38 button"></button>
+    <button class="button-39 button"></button>
+    <button class="button-40 button"></button>
+    <button class="button-41 button"></button>
+    <button class="button-42 button"></button>
+    <button class="button-43 button"></button>
+    <button class="button-44 button"></button>
+    <button class="button-45 button"></button>
+    <button class="button-46 button"></button>
+    <button class="button-47 button"></button>
+    <button class="button-48 button"></button>
+    <button class="button-49 button"></button>
+    <button class="button-50 button"></button>
+    <button class="button-51 button"></button>
+    <button class="button-52 button"></button>
+    <button class="button-53 button"></button>
+    <button class="button-54 button"></button>
+    <button class="button-55 button"></button>
+    <button class="button-56 button"></button>
+    <button class="button-57 button"></button>
+    <button class="button-58 button"></button>
+    <button class="button-59 button"></button>
+    <button class="button-60 button"></button>
+    <button class="button-61 button"></button>
+    <button class="button-62 button"></button>
+    <button class="button-63 button"></button>
+    <button class="button-64 button"></button>
+    <button class="button-65 button"></button>
+    <button class="button-66 button"></button>
+    <button class="button-67 button"></button>
+    <button class="button-68 button"></button>
+    <button class="button-69 button"></button>
+    <button class="button-70 button"></button>
+    <button class="button-71 button"></button>
+    <button class="button-72 button"></button>
+    <button class="button-73 button"></button>
+    <button class="button-74 button"></button>
+    <button class="button-75 button"></button>
+    <button class="button-76 button"></button>
+    <button class="button-77 button"></button>
+    <button class="button-78 button"></button>
+    <button class="button-79 button"></button>
+    <button class="button-80 button"></button>
+    <button class="button-81 button"></button>
+    <button class="button-82 button"></button>
+    <button class="button-83 button"></button>
+    <button class="button-84 button"></button>
+    <button class="button-85 button"></button>
+    <button class="button-86 button"></button>
+    <button class="button-87 button"></button>
+    <button class="button-88 button"></button>
+    <button class="button-89 button"></button>
+    <button class="button-90 button"></button>
+    <button class="button-91 button"></button>
+    <button class="button-92 button"></button>
+    <button class="button-93 button"></button>
+    <button class="button-94 button"></button>
+    <button class="button-95 button"></button>
+    <button class="button-96 button"></button>
+    <button class="button-97 button"></button>
+    <button class="button-98 button"></button>
+    <button class="button-99 button"></button>
+    <button class="button-100 button"></button>
+  <script type="text/javascript">
+
+    var buttonBegin = document.querySelector(".start");
+    var value = Math.floor(Math.random() * 10) + 1;
+    var valueTwo = Math.floor(Math.random() * 10) + 1;
+
+    buttonBegin.addEventListener("click", getStart);
+    function getStart(event){
+
+      for (var i = 0; i < value; i++) {
+
+      $(".start").css("visibility", "hidden");
+      buttonShow = Math.floor(Math.random() * 100) + 1;
+      $(".button-" + buttonShow + "").css("visibility", "visible");
+      console.log(".button-" + buttonShow + "")
+
+      }
+    }
+
+    var buttons = document.querySelectorAll(".button");
+    for (var i = 0; i < buttons.length; i++) {
+      buttons[i].addEventListener("click", buttonFunk);
+    }
+
+    function buttonFunk (event) {
+      var clickedButton = event.target;
+      for (var i = 0; i < valueTwo; i++) {
+        buttonShowB = Math.floor(Math.random() * 100) + 1;
+        $(".button-" + buttonShowB + "").css("visibility", "visible");
+        $(".button-" + buttonShow + "").css("visibility", "hidden");
+
+        console.log(".button-" + buttonShowB + "")
+        console.log(clickedButton);
+      }
+    }
+    </script>
+  </body>
+</html>
