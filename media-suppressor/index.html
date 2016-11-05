@@ -13,16 +13,24 @@
       width: 80%;
       text-align: center;
     }
+    table {
+      margin-left: auto;
+      margin-right: auto;
+      width: 50%;
+      text-align: center;
+    }
 
-      img {
+      div, img {
         height: 40px;
         margin-top: 40px;
-        margin-right: 20px;
-        margin-left: 20px;
+        margin-right: 10px;
+        margin-left: 10px;
         visibility: visible;
-      }
-      .image {
         display: inline;
+      }
+
+      #image-0 {
+        visibility: visible;
       }
       main {
         background: white;
@@ -39,44 +47,43 @@
     </style>
   </head>
   <body>
-    <body>
-        <div id="clock"></div>
-    </body>
     <main></main>
-    <footer>
-      <div class="image" id="div-0">
-        <img src="img/reddit.png" id="image-0" alt="" />
-      </div>
-      <div class="image">
-        <img src="img/news.png" id="image-1" alt="" />
-      </div>
-      <div class="image">
-        <img src="img/insta.png" id="image-2" alt="" />
-      </div>
-      <div class="image">
-        <img src="img/tw.png" id="image-3" alt="" />
-      </div>
-      <div class="image">
-        <img src="img/yt.png" id="image-4" alt="" />
-      </div>
-    </footer>
+  <table>
+    <tr>
+      <td><img src="img/reddit.png" id="image-0" alt="" /></td>
+      <td><img src="img/news.png" id="image-1" alt="" /></td>
+      <td><img src="img/insta.png" id="image-2" alt="" /></td>
+      <td><img src="img/tw.png" id="image-3" alt="" /></td>
+      <td><img src="img/yt.png" id="image-4" alt="" /></td>
+    </tr>
+    <tr>
+      <td><div class="image" id="div-0"></div></td>
+      <td><div class="image" id="div-1"></div></td>
+      <td><div class="image" id="div-2"></div></td>
+      <td><div class="image" id="div-3"></div></td>
+      <td><div class="image" id="div-4"></div></td>
+    </tr>
+  </table>
+
     <script type="text/javascript">
 
-    var buttons = document.querySelectorAll("img");
+    var buttons = document.querySelector("#image-0");
     var currentTime = new Date();
     var hours = currentTime.getHours();
     var minutes = currentTime.getMinutes();
     var seconds = currentTime.getSeconds();
 
-    for (var i = 0; i < buttons.length; i++) {
-      buttons[i].addEventListener("click", media);
+      buttons.addEventListener("click", media);
       function media(event){
 
         var clickedButton = event.target;
         var elId = clickedButton.getAttribute("id")
         var clockDiv = document.getElementById(elId);
+        $("#image-0").css("visibility", "hidden");
+        $("#div-0").css("visibility", "visible");
 
-        console.log(elId);
+
+        console.log(clickedButton);
             function displayTime() {
                 var currentTime = new Date();
                 var hours = currentTime.getHours();
@@ -115,10 +122,17 @@
                 //if(hours == 7 && minutes == 10) {
                 //clockDiv.innerText = "poop";
                 //}
+                if (seconds == 10) {
+                  $("#image-0").css("visibility", "visible");
+                  $("#div-0").css("visibility", "hidden");
+
+                }
 
                 var clockDiv = document.getElementById("div-0");
 
-                clockDiv.innerText = (12 - hours) + ":" + (60 - minutes) + ":" + (60 - seconds);
+                clockDiv.textContent = (12 - hours) + ":" + (60 - minutes) + ":" + (60 - seconds);
+                clockDiv.textContent = (12 - hours) + ":" + (60 - minutes) + ":" + (60 - seconds);
+
             }
 
             // This runs the displayTime function the first time
@@ -127,16 +141,7 @@
             // This makes our clock 'tick' by repeatedly
             // running the displayTime function every second.
             setInterval(displayTime, 1000);
-
         }
-
-
-        console.log(hours);
-
-    }
-
-
-
     </script>
   </body>
 </html>
