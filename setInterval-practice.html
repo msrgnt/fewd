@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <button type="button" name="button"></button>
+    <div id="clock" class="clock">
+
+    </div>
+    <script type="text/javascript">
+      var button = document.querySelector("button");
+      button.addEventListener("click", count);
+      var clockDiv = document.getElementById("clock");
+      second = 0;
+      function count(event) {
+
+        setInterval(function() {
+          second = second + 1;
+          console.log(second);
+          clockDiv.textContent = second;}, 1000);
+        }
+
+
+
+    </script>
+  </body>
+</html>
