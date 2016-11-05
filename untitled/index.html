@@ -170,22 +170,68 @@
           // This will be used below
           var value = Math.floor(Math.random() * 101);
 
-        if (value >= 0 && value <= 30) {
+        if (value >= 0 && value <= 7) {
           $(newP).css("background", randomRGBA)
           $(newP).css("height", Math.floor(Math.random() * 300))
           $(newP).css("width", Math.floor(Math.random() * 300))
           $(newP).css("border-radius", Math.floor(Math.random() * 200))
           $(newP).css("position", "absolute")
-          $(newP).css("top", Math.floor(Math.random() * 80) + "%")
-          $(newP).css("left", Math.floor(Math.random() * 80) + "%")
+          $(newP).css("top", Math.floor(Math.random() * 60) + "%")
+          $(newP).css("left", Math.floor(Math.random() * 60) + "%")
           var rb = red + 20;
           var gb = green + 20;
           var bb = blue + 20;
           var randomBord = "rgba("+ rb +","+ gb +","+ bb +","+ trans +")";
           $(newP).css("border", "1px" + " " + "solid" + " " + randomBord);
         }
+
+        else if (value >= 7 && value <= 14) {
+          $(newP).css("background", randomRGBA)
+          $(newP).css("height", Math.floor(Math.random() * 300))
+          $(newP).css("width", Math.floor(Math.random() * 300))
+          $(newP).css("border-radius", Math.floor(Math.random() * 200))
+          $(newP).css("position", "absolute")
+          $(newP).css("top", Math.floor(Math.random() * 60) + "%")
+          $(newP).css("right", Math.floor(Math.random() * 60) + "%")
+          var rb = red + 20;
+          var gb = green + 20;
+          var bb = blue + 20;
+          var randomBord = "rgba("+ rb +","+ gb +","+ bb +","+ trans +")";
+          $(newP).css("border", "1px" + " " + "solid" + " " + randomBord);
+        }
+
+        else if (value >= 14 && value <= 21) {
+          $(newP).css("background", randomRGBA)
+          $(newP).css("height", Math.floor(Math.random() * 300))
+          $(newP).css("width", Math.floor(Math.random() * 300))
+          $(newP).css("border-radius", Math.floor(Math.random() * 200))
+          $(newP).css("position", "absolute")
+          $(newP).css("bottom", Math.floor(Math.random() * 60) + "%")
+          $(newP).css("right", Math.floor(Math.random() * 60) + "%")
+          var rb = red + 20;
+          var gb = green + 20;
+          var bb = blue + 20;
+          var randomBord = "rgba("+ rb +","+ gb +","+ bb +","+ trans +")";
+          $(newP).css("border", "1px" + " " + "solid" + " " + randomBord);
+        }
+        else if (value >= 21 && value <= 28) {
+          $(newP).css("background", randomRGBA)
+          $(newP).css("height", Math.floor(Math.random() * 300))
+          $(newP).css("width", Math.floor(Math.random() * 300))
+          $(newP).css("border-radius", Math.floor(Math.random() * 200))
+          $(newP).css("position", "absolute")
+          $(newP).css("bottom", Math.floor(Math.random() * 60) + "%")
+          $(newP).css("left", Math.floor(Math.random() * 60) + "%")
+          var rb = red + 20;
+          var gb = green + 20;
+          var bb = blue + 20;
+          var randomBord = "rgba("+ rb +","+ gb +","+ bb +","+ trans +")";
+          $(newP).css("border", "1px" + " " + "solid" + " " + randomBord);
+        }
+
+
           // Same as above but rectangle has linear gradient!
-        else if (value > 30 && value <= 40) {
+        else if (value > 28 && value <= 40) {
 
           $(newP).css("background-image", "linear-gradient(" + randomRGBA + "," + randomBord + ")")
           $(newP).css("height", Math.floor(Math.random() * 300))
