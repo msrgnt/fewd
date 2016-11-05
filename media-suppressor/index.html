@@ -13,6 +13,7 @@
       width: 80%;
       text-align: center;
     }
+
     table {
       margin-left: auto;
       margin-right: auto;
@@ -20,29 +21,30 @@
       text-align: center;
     }
 
-      div, img {
-        height: 40px;
-        margin-top: 40px;
-        margin-right: 10px;
-        margin-left: 10px;
-        visibility: visible;
-        display: inline;
-      }
+    div, img {
+      height: 40px;
+      margin-top: 40px;
+      margin-right: 10px;
+      margin-left: 10px;
+      visibility: visible;
+      display: inline;
+    }
 
-      #image-0 {
-        visibility: visible;
-      }
-      main {
-        background: white;
-        height: 300px;
-        width: 80%;
-        padding-top: 15px;
-        margin-bottom: 15px;
-        margin-top: 40px;
-        margin-left: auto;
-        margin-right: auto;
-        border-radius: 5px;
-        box-shadow: 0 0 7px -1px rgb(199, 199, 199);
+    #image-0 {
+      visibility: visible;
+    }
+
+    main {
+      background: white;
+      height: 300px;
+      width: 80%;
+      padding-top: 15px;
+      margin-bottom: 15px;
+      margin-top: 40px;
+      margin-left: auto;
+      margin-right: auto;
+      border-radius: 5px;
+      box-shadow: 0 0 7px -1px rgb(199, 199, 199);
       }
     </style>
   </head>
@@ -50,67 +52,47 @@
     <main></main>
   <table>
     <tr>
-      <td><img src="img/reddit.png" id="image-0" alt="" /></td>
-      <td><img src="img/news.png" id="image-1" alt="" /></td>
-      <td><img src="img/insta.png" id="image-2" alt="" /></td>
-      <td><img src="img/tw.png" id="image-3" alt="" /></td>
-      <td><img src="img/yt.png" id="image-4" alt="" /></td>
+      <td><img src="img/reddit.png" id="image-0" grab="div-0" alt="" /></td>
+      <td><img src="img/news.png" id="image-1" grab="div-1"  alt="" /></td>
+      <td><img src="img/insta.png" id="image-2" grab="div-2"  alt="" /></td>
+      <td><img src="img/tw.png" id="image-3" grab="div-3"  alt="" /></td>
+      <td><img src="img/yt.png" id="image-4" grab="div-4"  alt="" /></td>
     </tr>
     <tr>
-      <td><div class="image" id="div-0"></div></td>
-      <td><div class="image" id="div-1"></div></td>
-      <td><div class="image" id="div-2"></div></td>
-      <td><div class="image" id="div-3"></div></td>
-      <td><div class="image" id="div-4"></div></td>
+      <td><p class="p-0" id="div-0"></p></td>
+      <td><p class="p-1" id="div-1"></p></td>
+      <td><p class="p-2" id="div-2"></p></td>
+      <td><p class="p-3" id="div-3"></p></td>
+      <td><p class="p-4" id="div-4"></p></td>
     </tr>
   </table>
 
     <script type="text/javascript">
 
-    var buttons = document.querySelector("#image-0");
+    var buttons = document.querySelectorAll("img");
     var currentTime = new Date();
     var hours = currentTime.getHours();
     var minutes = currentTime.getMinutes();
     var seconds = currentTime.getSeconds();
 
-      buttons.addEventListener("click", media);
+    for (var i = 0; i < buttons.length; i++) {
+      buttons[i].addEventListener("click", media);
+
       function media(event){
 
         var clickedButton = event.target;
-        var elId = clickedButton.getAttribute("id")
+        var elId = clickedButton.getAttribute("grab")
         var clockDiv = document.getElementById(elId);
-        $("#image-0").css("visibility", "hidden");
-        $("#div-0").css("visibility", "visible");
 
-
-        console.log(clickedButton);
+        $(clickedButton).css("visibility", "hidden");
+        $(clockDiv).css("visibility", "visible");
+        console.log(clockDiv);
             function displayTime() {
                 var currentTime = new Date();
                 var hours = currentTime.getHours();
                 var minutes = currentTime.getMinutes();
                 var seconds = currentTime.getSeconds();
 
-                // Let's set the AM and PM meridiem and
-                // 12-hour format
-                var meridiem = "AM";  // Default is AM
-
-                // If hours is greater than 12
-                if (hours > 12) {
-                    hours = hours - 12; // Convert to 12-hour format
-                    meridiem = "PM"; // Keep track of the meridiem
-                }
-                // 0 AM and 0 PM should read as 12
-                if (hours === 0) {
-                    hours = 12;
-                }
-
-
-                // If the hours digit is less than 10
-                if(hours < 10) {
-                    // Add the "0" digit to the front
-                    // so 9 becomes "09"
-                    hours = "0" + hours;
-                }
                 // Format minutes and seconds the same way
                 if(minutes < 10) {
                     minutes = "0" + minutes;
@@ -118,21 +100,11 @@
                 if(seconds < 10) {
                     seconds = "0" + seconds;
                 }
-                //if this is set, clock stops at 5:50
-                //if(hours == 7 && minutes == 10) {
-                //clockDiv.innerText = "poop";
-                //}
                 if (seconds == 10) {
-                  $("#image-0").css("visibility", "visible");
-                  $("#div-0").css("visibility", "hidden");
-
+                  $(clickedButton).css("visibility", "visible");
+                  $(clockDiv).css("visibility", "hidden");
                 }
-
-                var clockDiv = document.getElementById("div-0");
-
-                clockDiv.textContent = (12 - hours) + ":" + (60 - minutes) + ":" + (60 - seconds);
-                clockDiv.textContent = (12 - hours) + ":" + (60 - minutes) + ":" + (60 - seconds);
-
+                clockDiv.textContent = (hours) + ":" + (minutes) + ":" + (seconds);
             }
 
             // This runs the displayTime function the first time
@@ -142,6 +114,7 @@
             // running the displayTime function every second.
             setInterval(displayTime, 1000);
         }
+      }
     </script>
   </body>
 </html>
