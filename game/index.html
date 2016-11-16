@@ -164,14 +164,11 @@
     buttonBegin.addEventListener("click", getStart);
     function getStart(event){
 
-      for (var i = 0; i < value; i++) {
-
       $(".start").css("visibility", "hidden");
       buttonShow = Math.floor(Math.random() * 100) + 1;
       $(".button-" + buttonShow + "").css("visibility", "visible");
       console.log(".button-" + buttonShow + "")
 
-      }
     }
 
     var buttons = document.querySelectorAll(".button");
@@ -186,8 +183,6 @@
         $(".button-" + buttonShowB + "").css("visibility", "visible");
         $(".button-" + buttonShow + "").css("visibility", "hidden");
 
-        console.log(".button-" + buttonShowB + "")
-        console.log(clickedButton);
       }
     }
     </script>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style media="screen">
+
+    button {
+      margin-top: 20px;
+      margin-left: auto;
+      margin-right: auto;
+      display: block;
+      background: white;
+      padding: 40px;
+      border-radius: 10px;
+      outline: none;
+      box-shadow:none;
+    }
+
+    .start {
+      visibility: visible;
+      margin-left: auto;
+      margin-right: auto;
+      display:block;
+    }
+
+    button.active {
+      outline:0;
+      box-shadow: none;
+    }
+
+    .button:focus, button.focus {
+      outline:none;
+    }
+
+  }
+    </style>
+  </head>
+  <body>
+    <button class="start"></button>
+    <script type="text/javascript">
+      var buttonBegin = document.querySelector(".start");
+      var value = Math.floor(Math.random() * 10) + 1;
+      var valueTwo = Math.floor(Math.random() * 10) + 1;
+
+      buttonBegin.addEventListener("click", getStart);
+      function getStart(event){
+
+        $(".start").css("visibility", "hidden");
+
+        var newP = document.createElement("p");
+        newP.className = "button";
+
+        $(newP).css("position", "absolute")
+        $(newP).css("top", Math.floor(Math.random() * 60) + "%")
+        $(newP).css("left", Math.floor(Math.random() * 60) + "%")
+
+      }
+    </script>
+  </body>
+</html>
