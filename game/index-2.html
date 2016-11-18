@@ -2,10 +2,12 @@
 <html>
   <head>
     <meta charset="utf-8">
+    <script src="jquery.js"></script>
+
     <title></title>
     <style media="screen">
 
-    button {
+    button, .button {
       margin-top: 20px;
       margin-left: auto;
       margin-right: auto;
@@ -15,6 +17,7 @@
       border-radius: 10px;
       outline: none;
       box-shadow:none;
+      border: 1px solid grey;
     }
 
     .start {
@@ -39,9 +42,10 @@
   <body>
     <button class="start"></button>
     <script type="text/javascript">
-      var buttonBegin = document.querySelector(".start");
+      var buttonBegin = document.querySelector("button");
       var value = Math.floor(Math.random() * 10) + 1;
       var valueTwo = Math.floor(Math.random() * 10) + 1;
+      var body = document.querySelector("body");
 
       buttonBegin.addEventListener("click", getStart);
       function getStart(event){
@@ -50,7 +54,9 @@
 
         var newP = document.createElement("p");
         newP.className = "button";
+        body.appendChild(newP);
 
+        $(newP).css("visibility", "visible");
         $(newP).css("position", "absolute")
         $(newP).css("top", Math.floor(Math.random() * 60) + "%")
         $(newP).css("left", Math.floor(Math.random() * 60) + "%")
