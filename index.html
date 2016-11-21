@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style media="screen">
+
+    div:hover {
+      background-color: #FFCCCC;
+      -webkit-transform: rotate(180deg);
+      transform: rotate(180deg);
+    }
+
+    section {
+      margin: 100px auto;
+      text-align: center;
+    }
+
+    .albers {
+      width: 350px;
+      height: 700px;
+      position: relative;
+      display: inline-block;
+      margin-right: 50px;
+
+    }
+
+    .dark-purple {
+      background: hsl(262, 78%, 23%);
+      height: 100px;
+      width: 350px;
+      position: relative;
+    }
+
+    .charcoal {
+      background: hsl(0, 0%, 23%);
+      height: 50px;
+      width: 350px;
+      position: absolute;
+      top: 100px;
+    }
+
+    .light-purple {
+      height: 100px;
+      width: 0;
+      background: hsl(262, 54%, 63%);
+      height: 400px;
+      width: 230px;
+      position: absolute;
+      top: 50px;
+      left: 60px;
+      transform: skew(-3deg, 185deg);
+    }
+
+    .orange {
+      background: hsl(28, 70%, 46%);
+      height: 250px;
+      width: 350px;
+      position: absolute;
+      top: 150px;
+    }
+
+    .pink {
+      background: hsl(270, 70%, 70%);
+      height: 100px;
+      width: 350px;
+      position: absolute;
+      top: 400px;
+    }
+
+    .albers-2 {
+      width: 350px;
+      height: 700px;
+      position: relative;
+      display: inline-block;
+      -webkit-transition: width 2s, height 2s, background-color 2s, -webkit-transform 2s;
+      transition: width 2s, height 2s, background-color 2s, transform 2s;
+      margin-left: 25px;
+    }
+
+    .black {
+      background: hsl(0, 0%, 0%);
+      height: 500px;
+      width: 350px;
+      position: relative;
+    }
+
+    .brown {
+      background: hsl(50, 20%, 12%);
+      height: 120px;
+      width: 250px;
+      position: relative;
+      top: -450px;
+      left: 50px;
+    }
+
+    .maroon {
+      background: rgb(50, 30, 33);
+      height: 120px;
+      width: 250px;
+      position: relative;
+      top: -450px;
+      left: 50px;
+    }
+    .pink-2 {
+      background: hsl(314, 70%, 20%);
+      height: 120px;
+      width: 250px;
+      position: relative;
+      top: -450px;
+      left: 50px;
+    }
+
+    </style>
+  </head>
+  <body>
+    <section>
+
+    <main class="albers">
+      <div class="dark-purple">
+      </div>
+      <div class="pink">
+      </div>
+      <div class="light-purple">
+      </div>
+      <div class="charcoal">
+      </div>
+      <div class="orange">
+      </div>
+      <div class="light-purple-2">
+    </div>
+  </main>
+
+<main class="albers-2">
+  <div class="black">
+  </div>
+  <div class="brown">
+  </div>
+  <div class="maroon">
+  </div>
+  <div class="pink-2">
+  </div>
+</main>
+</section>
+
+  </body>
+</html>
