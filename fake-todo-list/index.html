@@ -74,6 +74,13 @@
         left: 407px;
       }
 
+      #todo-num-2 {
+        position: absolute;
+        top: 35px;
+        left: 390px;
+
+      }
+
       .top {
         font-size: 32px;
         font-family: "Times";
@@ -156,7 +163,6 @@
           "Stop reading the news",
           "Pet a dog",
           "Read Rumi",
-          "Listen to Magical Cloudz",
           "Listen to Curtis Mayfield",
           "Visit a park",
           "Do 10 squat-thrusts",
@@ -172,11 +178,10 @@
           "Accept the emptiness you feel",
           "Delete Facebook",
           "Renounce validation from others",
-          "Tell 'the Joneses' to fuck off.",
+          "Ignore the Joneses.",
           "Write a thank you note",
           "Tell someone you love them",
           "Look at the moon",
-          "Listen to Drake",
           "Throw out three items of clothing you don't love",
           "Read something about a country you know little about",
           "Research global warming",
@@ -239,8 +244,14 @@
         span = parseInt(span);
         document.querySelector("#todo-num").textContent = items.length;
         document.querySelector("#new-item-input").value = "";
+        if (items.length > 9) {
+          document.querySelector("#todo-num").setAttribute("id", "todo-num-2");
+
+        }
         }
       }
+
+
     </script>
   </body>
 </html>
