@@ -242,7 +242,17 @@
         background: rgba(240, 237, 230, 1);
         height: 30px;
       }
+      .info-a {
+        visibility: hidden;
 
+      }
+      .info-b {
+        visibility: visible;
+        position: fixed;
+        font-size: 24px;
+        margin-left: 200px;
+
+      }
     </style>
   </head>
   <body>
@@ -260,6 +270,9 @@
       <div class="sixth one">
       </div>
     </main>
+<div id="info-test" class="info-a" >
+  Untitled #4
+</div>
 
     <main class="agnes-2">
       <div class="blue two">
@@ -378,14 +391,20 @@
     </div>
   </main>
   <script type="text/javascript">
-    var button = document.querySelector(".yellowtri1");
-    button.addEventListener("click", info);
-    function info (event) {
-      grabbedDiv = document.querySelector(".ghost");
-      grabbedDiv.textContent = "Mile high club?";
 
-      console.log(grabbedDiv);
-    }
+  window.onscroll = function() {myFunction()};
+
+  function myFunction() {
+      if (document.body.scrollTop > 50 && document.body.scrollTop < 450 || document.documentElement.scrollTop > 50 && document.documentElement.scrollTop < 450 ) {
+          document.getElementById("info-test").className = "info-b";
+
+      } else {
+        document.getElementById("info-test").className = "info-a";
+
+
+      }
+  }
+
   </script>
   </body>
 </html>

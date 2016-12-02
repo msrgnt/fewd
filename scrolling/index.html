@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+    .test {
+      background-color: yellow;
+    }
+
+    div {
+      margin: 10px;
+    }
+    .one {
+      background-color: red;
+      height: 100px;
+    }
+    .two {
+      background-color: green;
+      height: 100px;
+    }
+    .three {
+      background-color: blue;
+      height: 100px;
+    }
+
+    </style>
+  </head>
+<body style="height:1500px">
+
+<p>Scroll down this page</p>
+
+<div id="uno" class="one">
+
+</div>
+
+<div id="dos" class="two">
+
+</div>
+
+<div id="tres" class="three">
+
+</div>
+
+
+<script>
+window.onscroll = function() {myFunction()};
+
+function myFunction() {
+    if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
+        document.getElementById("uno").className = "two";
+        document.getElementById("dos").className = "three";
+        document.getElementById("tres").className = "one";
+
+    } else {
+        document.getElementById("uno").className = "one";
+        document.getElementById("dos").className = "two";
+        document.getElementById("tres").className = "three";
+
+    }
+}
+</script>
+
+</body>
+</html>
