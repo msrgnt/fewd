@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>SRGNT</title>
+    <script src="jquery.js"></script>
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
+    <link href="https://fonts.googleapis.com/css?family=Bree+Serif" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Arimo" rel="stylesheet">
+    <style media="screen">
+    body {
+      background-color: rgb(246, 246, 246);
+    }
+
+    .name {
+      font-family: 'Arimo', sans-serif;
+      font-size: 24px;
+      margin: 20px auto;
+
+    }
+
+    .home-button {
+      background-color: rgb(0, 230, 117);
+      padding: 60px 65px;
+      margin: 10px 10px;
+      border: 1px solid rgb(234, 233, 231);
+      outline: none;
+      font-family: 'Arimo', sans-serif;
+      font-size: 24px;
+      position: relative;
+
+    }
+
+
+
+
+
+}
+
+    .go-button:hover {
+      background-color: rgb(100, 230, 217);
+    }
+
+
+
+
+    .box {
+      background-color: rgb(234, 233, 231);
+      width: 425px;
+      height: 435px;
+      margin: 10px;
+      display: inline-block;
+    }
+
+    .poem-box {
+      background-color: rgb(234, 233, 231);
+      width: 425px;
+      margin: 10px;
+      display: inline-block;
+      margin-left: 45px;
+    }
+
+
+
+    header {
+      margin: 30px auto;
+      text-align: center;
+    }
+
+    main {
+      margin: 0 auto;
+      border-top: 1px solid rgb(234, 233, 231);
+      max-width: 1000px;
+      padding-top: 35px;
+    }
+
+    .poem-name {
+      font-family: 'Arimo', sans-serif;
+      color: rgb(144, 143, 141);
+      font-size: 24px;
+      display: block;
+      margin: 10px 0;
+      padding-left: 5px;
+    }
+
+
+
+    .preview-button {
+      margin: 20px 10px;
+      padding: 10px 15px;
+      border: 1px solid rgb(234, 233, 231);
+      outline: none;
+      border-radius: 3px;
+      color: rgb(100, 100, 100);
+      font-family: 'Arimo', sans-serif;
+    }
+
+    .go-button {
+      margin: 20px 0;
+      padding: 10px 10px;
+      border: 1px solid rgb(234, 233, 231);
+      outline: none;
+      border-radius: 10px;
+      color: rgb(100, 100, 100);
+      font-family: 'Arimo', sans-serif;
+    }
+
+    .preview-window {
+      margin-top: 10px;
+      margin-left: auto;
+      margin-right: auto;
+      width: 350px;
+      height: 250px;
+      border: 1px dashed rgb(192, 192, 192);
+      text-align: center;
+      border-radius: 15px;
+    }
+
+    .letter {
+      font-size: 170px;
+      position: absolute;
+      color: rgb(0, 260, 147);
+      left: -12px;
+      top: -38px;
+
+    }
+
+    .triangle {
+      height: 0;
+      width: 0;
+      border-left: 10px solid transparent;
+      border-right: 10px solid transparent;
+      border-top: 20px solid rgb(200, 230, 217);
+      position: absolute;
+
+      left: 0px;
+      top: -20px;
+    }
+
+    .letter-m {
+      font-size: 170px;
+      position: absolute;
+      color: rgb(0, 260, 147);
+      left: -14px;
+      top: -38px;
+      -ms-transform: rotate(180deg); /* IE 9 */
+      -webkit-transform: rotate(180deg); /* Chrome, Safari, Opera */
+      transform: rotate(180deg);
+
+    }
+
+    .letters {
+      position: absolute;
+      color: rgb(0, 230, 117);
+      left: 20px;
+      bottom: 0;
+      visibility: hidden;
+    }
+
+    .home-button:hover, .poem-name:hover, .preview-button:hover {
+      background-color: rgb(100, 230, 217);
+    }
+
+    p {
+      height: 20px;
+      transition: height .5s;
+      -webkit-transition: height .5s;
+      -moz-transition: height .5s;
+    }
+
+    small {
+      opacity: 0;
+
+
+    }
+    .show-description p {
+      height: 250px;
+    }
+    .show-description small {
+      transition: opacity 1s;
+      -webkit-transition: opacity 1s;
+      -moz-transition: opacity 1s;
+      opacity: 1;
+    }
+
+    .first, .second, .third, .fourth {
+      font-family: 'Arimo', sans-serif;
+      margin-left: 45px;
+    }
+    </style>
+  </head>
+  <body>
+
+    <header>
+    <a href="https://msrgnt.github.io/fewd/msrgnt/"><button type="button" class="home-button" name="button">
+        <span class="letter">H</span><span class="letters">OME</span></button></a>
+      <button type="button" class="home-button" name="button"><span class="letter">P</span><span class="letters">HOTOS</span></button>
+      <button type="button" class="home-button" name="button"><span class="letter-m">M</span><span class="letters">RITING</span></button>
+<a href="https://msrgnt.github.io/fewd/msrgnt/poems"><button type="button" class="home-button" title="Poems" name="button"><span class="letter">P</span></button></a>
+<button type="button" class="home-button" name="button"><span class="letter">D</span><span class="letters">RAWINGS</span></button>
+      <button type="button" class="home-button" name="button"><span class="letter">M</span><span class="letters">USIC</span></button>
+    </header>
+    <main>
+      <div class="first">
+        <p>
+          <span class="poem-name">
+          GOWN OF HAIR</span><br />
+        <small>
+          Everything connects
+          Like the trails of tiny hairs
+          That cover your skin.
+
+          In a current dream
+          Your whole body disappears
+          But your hairs hang there
+
+
+          As if placed to show
+          In a fine arts museum
+          On de la Renta.
+
+
+          My memory’s bad
+          So I can’t recall your eyes
+          Nor how your nose turns
+
+
+          But your upper lip
+          Had these tiny darkened hairs
+          And I can picture those
+
+
+          ...
+
+
+        I once photographed
+        You standing by a white wall
+        In sunglasses.
+
+
+        Though your lip hairs
+        Aren’t visible in the
+        picture I took
+
+
+        I can imagine
+        A thread that follows those hairs
+        To ones on your nape.
+        <br />
+
+        That's clear to me now
+        Because it's my most recent
+        memory of us.
+
+
+        ...
+
+
+
+        It's a gown really.
+        Now that I think about it.
+        It's a gown of hairs.
+
+
+        ...
+
+
+        It just isn't true
+        That a dead body will keep
+        On producing hairs
+
+        It’s actually
+        The process of retreating
+        Like skin in my dream
+
+        Please, if in yours
+        You lament what we had/lost
+        Think of bowls of fruit
+
+        Because what I see
+        Is what one sees when the
+        They knew how to love</small></p>
+      </div>
+      <div class="second">
+        <p>
+          <span class="poem-name">VALLEY OF PEARLS</span><br />
+        <small>
+
+
+        In this valley of pearls
+Surrounded by better mountains
+Black blue west and golden east
+Palm trees stretch and cacti branch
+
+
+There’s just not much winter here
+Only evergreen, the devil, is loose
+Undone buildings, unmanned cranes
+Goat on two legs, breaking to but
+
+
+Someone owns that mountain there
+Jade plant, flower bed, patch of lawn
+So they started, I restart
+Cradled in violets, arbitrary dreams
+
+
+A procession stops us
+Empty cars pass in parade
+Parking lots and lonely flies
+Like me on a windy beach
+</small>
+          </div>
+
+          <div class="third">
+            <p>
+              <span class="poem-name">OLD MOON</span><br />
+            <small>
+
+              I reach up to the moon
+              With one pale hand
+              And realize that we are not attune
+              I drop into a hole
+              And slowly stand
+              To spare my mud wall etchings: they’ll dry soon
+
+
+              I bend to ingest salts
+              Then eye my glyphs
+              And feel new neurotransmitters fill faults
+              I’ve drawn things to control
+              A God whose cliffs
+              Are more than fractured limestones and basalts
+
+
+              I know my moon God sins
+              But I still pray
+              By ordering my soldier Egyptians
+              To line up crown to sole
+              The ancient way
+              Until, in Rah’s tall tales, my figure wins
+
+
+              Now groans the moon’s dark side
+              That I can’t see
+              Though others from another earth have spied
+              The crafted circle’s toll
+              On Gods and me
+              Imperfect beings weakened as they’ve lied
+
+
+              Anubis, now I start
+              On muddied bed
+              So crowded I can’t draw his legs apart
+              From my still hero’s stroll
+              A jackal’s head
+              Now on my own neck, weighing my own heart
+
+
+              An honorable fear
+              Is not a boon
+              Unlike a crescent made of newness near
+              Which negates the black soul
+              Of an old moon
+              I crawl up to view my new God from here
+    </small>
+              </div>
+
+              <div class="fourth">
+                <p>
+                  <span class="poem-name">DANCING WITH MY GHOSTS</span><br />
+                <small>
+
+                  Walked further than I usually do
+                  On ushering of a ghoulish man
+                  Night promenade towards windows through
+                  Which I would gaze a staged élan
+
+
+                  The hall was dressed with ambers, brown
+                  But empty… ‘cept then I did find
+                  A girl who held up one coal crown
+                  To ashen dreams did bow my mind
+
+
+                  Perhaps the idea of a ghost
+                  Accepting offered arm on street
+                  Was too expectant of this host
+                  But hadn't she foretold we'd meet?
+
+
+                  When I was young, oh Natalie
+                  She lived not near, but miles away
+                  I held her then returned to see
+                  If she’d appear there the next day
+
+
+                  So summers of my youth are gone
+                  These winters of my passing years
+                  Are darker than that late June lawn
+                  A clearing made of woodened fears
+
+
+                  I'm on a bus but barely there
+                  She’s sirened sorry, spectrally!
+                  Mind floats away to court its pair
+                  Rejecting old dichotomy
+
+
+                  Left suit and polished shoes accept
+                  New invitation perfumed so
+                  They navigate down steps inept
+                  To watch another’s bones regrow
+
+
+                  The caller rises from a soil
+                  Compressing, sounds of xylophone
+                  The smell of whiskey, wet and toil
+                  Its jaw contorts to smile, groan
+
+
+                  This figure lies to body’s ears
+                  And moves towards eyes that will not see
+                  The sooty queen who curtsies years
+                  Nor, now a mother, Natalie
+
+
+                  My ballroom wasn't ever grand
+                  Too touched by misery so fine
+                  I outstretch both a blackened hand
+                  And dance with these three ghosts of mine
+
+
+              </small>
+                  </div>
+      </div>
+    </main>
+    <script type="text/javascript">
+    $('div').on('click', function() {
+$(this).toggleClass('show-description');
+});
+    </script>
+  </body>
+</html>
