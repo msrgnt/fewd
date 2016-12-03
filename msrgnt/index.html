@@ -2,39 +2,54 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Michael S.</title>
+    <title>SRGNT</title>
     <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
     <link href="https://fonts.googleapis.com/css?family=Bree+Serif" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Arimo" rel="stylesheet">
     <style media="screen">
     body {
       background-color: rgb(246, 246, 246);
     }
 
     .name {
-      font-family: 'Bree Serif', serif;
+      font-family: 'Arimo', sans-serif;
       font-size: 24px;
       margin: 20px auto;
       text-align: center;
     }
 
     .home-button {
-      background-color: rgb(255, 100, 100);
-      padding: 90px 90px;
-      border-radius: 9px;
+      background-color: rgb(0, 230, 117);
+      padding: 60px 65px;
       margin: 10px 10px;
       border: 1px solid rgb(234, 233, 231);
       outline: none;
-      font-family: 'Bree Serif', serif;
+      font-family: 'Arimo', sans-serif;
       font-size: 24px;
+      position: relative;
+
     }
+
+
+    .home-button:hover, .preview-button:hover {
+      background-color: rgb(100, 230, 217);
+    }
+
+    .go-button:hover {
+      background-color: rgb(100, 230, 217);
+    }
+
+
 
     .box {
       background-color: rgb(234, 233, 231);
       width: 425px;
-      height: 475px;
+      height: 435px;
       margin: 10px;
       display: inline-block;
     }
+
+
 
     header {
       margin: 30px auto;
@@ -50,7 +65,7 @@
     }
 
     .project-name {
-      font-family: 'Bree Serif', serif;
+      font-family: 'Arimo', sans-serif;
       color: rgb(144, 143, 141);
       font-size: 24px;
       display: block;
@@ -58,28 +73,23 @@
     }
 
     .preview-button {
-      margin-top: 20px;
-      margin-bottom: 20px;
-      margin-right: 10px;
+      margin: 20px 10px;
       padding: 10px 15px;
       border: 1px solid rgb(234, 233, 231);
       outline: none;
       border-radius: 3px;
       color: rgb(100, 100, 100);
-      font-family: 'Bree Serif', serif;
-
+      font-family: 'Arimo', sans-serif;
     }
 
     .go-button {
-      margin-top: 20px;
-      margin-right: 35px;
+      margin: 20px 0;
       padding: 10px 10px;
       border: 1px solid rgb(234, 233, 231);
       outline: none;
       border-radius: 10px;
       color: rgb(100, 100, 100);
-      font-family: 'Bree Serif', serif;
-
+      font-family: 'Arimo', sans-serif;
     }
 
     .preview-window {
@@ -93,15 +103,50 @@
       border-radius: 15px;
     }
 
+    .letter {
+      font-size: 170px;
+      position: absolute;
+      color: rgb(0, 260, 147);
+      left: -12px;
+      top: -38px;
+
+    }
+
+    .triangle {
+      height: 0;
+      width: 0;
+      border-left: 10px solid transparent;
+      border-right: 10px solid transparent;
+      border-top: 20px solid rgb(200, 230, 217);
+      position: absolute;
+
+      left: 0px;
+      top: -20px;
+    }
+
+    .letter-m {
+      font-size: 170px;
+      position: absolute;
+      color: rgb(0, 260, 147);
+      left: -14px;
+      top: -38px;
+      -ms-transform: rotate(180deg); /* IE 9 */
+      -webkit-transform: rotate(180deg); /* Chrome, Safari, Opera */
+      transform: rotate(180deg);
+
+    }
+
     </style>
   </head>
   <body>
 
     <header>
-      <button type="button" class="home-button" name="button">H</button>
-      <button type="button" class="home-button" name="button">P</button>
-      <button type="button" class="home-button" name="button">P</button>
-      <button type="button" class="home-button" name="button">W</button>
+      <button type="button" class="home-button" title="Home" name="button"><span class="letter">H</span><div class="triangle"></div></button>
+      <button type="button" class="home-button" title="Photos" name="button"><span class="letter">P</span></button>
+      <button type="button" class="home-button" title="Writing" name="button"><span class="letter-m">M</span></button>
+      <button type="button" class="home-button" title="Poetry" name="button"><span class="letter">P</span></button>
+      <button type="button" class="home-button" title="Drawings" name="button"><span class="letter">D</span></button>
+      <button type="button" class="home-button" title="Music" name="button"><span class="letter">M</span></button>
     </header>
     <main>
       <div class="box">
@@ -130,8 +175,6 @@
         <div class="preview-window"></div>
       </div>
     </main>
-    <article class="name">
-      Michael Sargeant
-    </article>
+
   </body>
 </html>
