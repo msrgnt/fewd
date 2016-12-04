@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>SRGNT</title>
+    <script src="jquery.js"></script>
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
+    <link href="https://fonts.googleapis.com/css?family=Bree+Serif" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Arimo" rel="stylesheet">
+    <style media="screen">
+    body {
+      background-color: rgb(246, 246, 246);
+    }
+
+    .name {
+      font-family: 'Arimo', sans-serif;
+      font-size: 24px;
+      margin: 20px auto;
+
+    }
+
+    .home-button {
+      background-color: rgb(0, 230, 117);
+      padding: 60px 65px;
+      margin: 10px 10px;
+      border: 1px solid rgb(234, 233, 231);
+      outline: none;
+      font-family: 'Arimo', sans-serif;
+      font-size: 24px;
+      position: relative;
+
+    }
+
+
+
+
+
+}
+
+    .go-button:hover {
+      background-color: rgb(100, 230, 217);
+    }
+
+
+
+
+    .box {
+      background-color: rgb(234, 233, 231);
+      width: 425px;
+      height: 435px;
+      margin: 10px;
+      display: inline-block;
+    }
+
+    .poem-box {
+      background-color: rgb(234, 233, 231);
+      width: 425px;
+      margin: 10px;
+      display: inline-block;
+      margin-left: 45px;
+    }
+
+
+
+    header {
+      margin: 30px auto;
+      text-align: center;
+    }
+
+    main {
+      margin: 0 auto;
+      border-top: 1px solid rgb(234, 233, 231);
+      max-width: 1000px;
+      padding-top: 35px;
+    }
+
+    .poem-name {
+      font-family: 'Arimo', sans-serif;
+      color: rgb(144, 143, 141);
+      font-size: 24px;
+      display: block;
+      margin: 10px 0;
+    }
+
+
+
+    .preview-button {
+      margin: 20px 10px;
+      padding: 10px 15px;
+      border: 1px solid rgb(234, 233, 231);
+      outline: none;
+      border-radius: 3px;
+      color: rgb(100, 100, 100);
+      font-family: 'Arimo', sans-serif;
+    }
+
+    .go-button {
+      margin: 20px 0;
+      padding: 10px 10px;
+      border: 1px solid rgb(234, 233, 231);
+      outline: none;
+      border-radius: 10px;
+      color: rgb(100, 100, 100);
+      font-family: 'Arimo', sans-serif;
+    }
+
+    .preview-window {
+      margin-top: 10px;
+      margin-left: auto;
+      margin-right: auto;
+      width: 350px;
+      height: 250px;
+      border: 1px dashed rgb(192, 192, 192);
+      text-align: center;
+      border-radius: 15px;
+    }
+
+    .letter {
+      font-size: 170px;
+      position: absolute;
+      color: rgb(0, 260, 147);
+      left: -12px;
+      top: -38px;
+
+    }
+
+    .triangle {
+      height: 0;
+      width: 0;
+      border-left: 10px solid transparent;
+      border-right: 10px solid transparent;
+      border-top: 20px solid rgb(200, 230, 217);
+      position: absolute;
+
+      left: 0px;
+      top: -20px;
+    }
+
+    .letter-m {
+      font-size: 170px;
+      position: absolute;
+      color: rgb(0, 260, 147);
+      left: -14px;
+      top: -38px;
+      -ms-transform: rotate(180deg); /* IE 9 */
+      -webkit-transform: rotate(180deg); /* Chrome, Safari, Opera */
+      transform: rotate(180deg);
+
+    }
+
+    .letters {
+      position: absolute;
+      color: rgb(0, 230, 117);
+      left: 20px;
+      bottom: 0;
+      visibility: hidden;
+    }
+
+    .home-button:hover, .poem-name:hover, .preview-button:hover {
+      background-color: rgb(100, 230, 217);
+    }
+
+    p {
+      height: 20px;
+      transition: height .5s;
+      -webkit-transition: height .5s;
+      -moz-transition: height .5s;
+    }
+
+    small {
+      opacity: 0;
+      visibility: hidden;
+      color: rgb(100, 100, 100);
+
+    }
+
+
+    .show-description .gown-p {
+      height: 410px;
+    }
+
+    .show-description .valley-p {
+      height: 270px;
+    }
+
+    .show-description .ghosts-p {
+      height: 270px;
+    }
+
+
+        .show-description .moon-p {
+          height: 270px;
+        }
+    .show-description small {
+
+      transition: visibility 1s;
+      visibility: visible;
+      transition: opacity 1s;
+      -webkit-transition: opacity 1s;
+      -moz-transition: opacity 1s;
+      opacity: 1;
+
+    }
+
+
+    .first, .second, .third, .fourth {
+      font-family: 'Arimo', sans-serif;
+      margin: 0 45px;
+    }
+
+    img {
+      height: 130px;
+      width: 130px;
+      margin: 10px 10px;
+
+    }
+
+    .bigger {
+      height: 400px;
+      width: 400px;
+      margin: 10px 10px;
+      border: 3px rgb(170, 170, 190) solid;
+
+    }
+
+    main {
+      margin: 30px auto;
+      text-align: center;
+    }
+    </style>
+  </head>
+  <body>
+
+    <header>
+      <a href="https://msrgnt.github.io/fewd/msrgnt/"><button type="button" class="home-button" name="button">
+      <span class="letter">H</span><span class="letters">OME</span></button></a>
+      <a href="https://msrgnt.github.io/fewd/msrgnt/photos"><button type="button" class="home-button" name="button"><span class="letter">P</span><span class="letters">HOTOS</span><div class="triangle"></div></button></a>
+      <button type="button" class="home-button" name="button"><span class="letter-m">M</span><span class="letters">RITING</span></button>
+      <a href="https://msrgnt.github.io/fewd/msrgnt/poems"><button type="button" class="home-button" title="Poems" name="button"><span class="letter">P</span></button></a>
+      <button type="button" class="home-button" name="button"><span class="letter">D</span><span class="letters">RAWINGS</span></button>
+      <button type="button" class="home-button" name="button"><span class="letter">M</span><span class="letters">USIC</span></button>
+    </header>
+    <main>
+<img src="img/nyc-subway.png" alt="" />
+<img src="img/nyc-jay-myth.png" alt="" />
+<img src="img/whiskey.png" alt="" />
+<img src="img/mx-sky.png" alt="" />
+<img src="img/sf-bum.png" alt="" />
+<img src="img/blaire.png" alt="" />
+<img src="img/i5-powerlines.png" alt="" />
+<img src="img/i5-palms.png" alt="" />
+<img src="img/mom-dad-garden.png" alt="" />
+<img src="img/dad-pool.png" alt="" />
+<img src="img/sf-room-view.png" alt="" />
+<img src="img/rain-man.png" alt="" />
+<img src="img/montana-jay.png" alt="" />
+<img src="img/montana-woman.png" alt="" />
+<img src="img/montana-jay-phone.png" alt="" />
+<img src="img/big-sur.png" alt="" />
+<img src="img/parents-pier.png" alt="" />
+<img src="img/shasta-house.png" alt="" />
+<img src="img/cuba-sky.png" alt="" />
+<img src="img/cuba-yellow-sky.png" alt="" />
+<img src="img/cuba-man.png" alt="" />
+<img src="img/cuba-fishermen.png" alt="" />
+<img src="img/cuba-bucket.png" alt="" />
+<img src="img/cuba-houses.png" alt="" />
+<img src="img/palm-hotel.png" alt="" />
+<img src="img/red-dancers.png" alt="" />
+<img src="img/montana-blur.png" alt="" />
+<img src="img/gas-light.png" alt="" />
+<img src="img/morocco-path.png" alt="" />
+<img src="img/nye-bow.png" alt="" />
+<img src="img/finger-selfie.png" alt="" />
+<img src="img/giraffe-face.png" alt="" />
+<img src="img/wedding-feet.png" alt="" />
+<img src="img/desert-trees.png" alt="" />
+<img src="img/record-face.png" alt="" />
+<img src="img/plane-signs.png" alt="" />
+<img src="img/box-fingers.png" alt="" />
+<img src="img/shadow-people.png" alt="" />
+<img src="img/powerlines.png" alt="" />
+<img src="img/ronnie.png" alt="" />
+<img src="img/jay.png" alt="" />
+<img src="img/jay-myth.png" alt="" />
+<img src="img/william.png" alt="" />
+<img src="img/hbird.png" alt="" />
+<img src="img/justin.png" alt="" />
+<img src="img/fat-fire.png" alt="" />
+<img src="img/watching-fire.png" alt="" />
+<img src="img/spider.png" alt="" />
+
+    </main>
+<script type="text/javascript">
+var clicked =  document.querySelectorAll("img");
+for (var i = 0; i < clicked.length; i++) {
+  clicked[i].addEventListener("click", bigger);
+}
+function bigger (event) {
+  $('img').on('click', function() {
+    $(this).toggleClass('bigger');
+  });
+
+}
+</script>
+  </body>
+</html>
