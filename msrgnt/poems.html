@@ -80,7 +80,6 @@
       font-size: 24px;
       display: block;
       margin: 10px 0;
-      padding-left: 5px;
     }
 
 
@@ -170,22 +169,43 @@
 
     small {
       opacity: 0;
-
+      visibility: hidden;
+      color: rgb(100, 100, 100);
 
     }
-    .show-description p {
-      height: 250px;
+
+
+    .show-description .gown-p {
+      height: 410px;
     }
+
+    .show-description .valley-p {
+      height: 270px;
+    }
+
+    .show-description .ghosts-p {
+      height: 270px;
+    }
+
+
+        .show-description .moon-p {
+          height: 270px;
+        }
     .show-description small {
+
+      transition: visibility 1s;
+      visibility: visible;
       transition: opacity 1s;
       -webkit-transition: opacity 1s;
       -moz-transition: opacity 1s;
       opacity: 1;
+
     }
+
 
     .first, .second, .third, .fourth {
       font-family: 'Arimo', sans-serif;
-      margin-left: 45px;
+      margin: 0 45px;
     }
     </style>
   </head>
@@ -202,144 +222,101 @@
     </header>
     <main>
       <div class="first">
-        <p>
+        <p class="gown-p">
           <span class="poem-name">
           GOWN OF HAIR</span><br />
-        <small>
-          Everything connects
-          Like the trails of tiny hairs
-          That cover your skin.
-
-          In a current dream
-          Your whole body disappears
-          But your hairs hang there
-
-
-          As if placed to show
-          In a fine arts museum
-          On de la Renta.
-
-
-          My memory’s bad
-          So I can’t recall your eyes
-          Nor how your nose turns
-
-
-          But your upper lip
-          Had these tiny darkened hairs
-          And I can picture those
-
-
-          ...
-
-
-        I once photographed
-        You standing by a white wall
-        In sunglasses.
-
-
-        Though your lip hairs
-        Aren’t visible in the
-        picture I took
-
-
-        I can imagine
-        A thread that follows those hairs
-        To ones on your nape.
-        <br />
-
-        That's clear to me now
-        Because it's my most recent
-        memory of us.
-
-
-        ...
-
-
-
-        It's a gown really.
-        Now that I think about it.
-        It's a gown of hairs.
-
-
-        ...
-
-
-        It just isn't true
-        That a dead body will keep
-        On producing hairs
-
-        It’s actually
-        The process of retreating
-        Like skin in my dream
-
-        Please, if in yours
-        You lament what we had/lost
-        Think of bowls of fruit
-
-        Because what I see
-        Is what one sees when the
-        They knew how to love</small></p>
-      </div>
+        <small class="gown-text">
+          Everything connects Like the trails of tiny hairs That cover your skin
+          <br />
+          In my current dream Your whole body disappears But your hairs hang there
+          <br />
+          As if placed to show In a fine arts museum On de la Renta
+          <br />
+          My memory’s bad So I can’t recall your eyes Nor how your nose turns
+          <br />
+          But your upper lip Had these tiny darkened hairs And I can picture those
+          <br />
+          <br />
+          I once photographed You standing by a white wall In sunglasses
+          <br />
+          Though your lip hairs Aren’t visible in the Picture I took
+          <br />
+          I can imagine A thread that follows those hairs To ones on your nape
+          <br />
+          That's clear to me now Because it's my most recent Memory of us
+          <br />
+          <br />
+          It's a gown really
+          <br />
+          Now that I think about it
+          <br />
+          It's a gown of hair
+          <br />
+          <br />
+          It just isn't true That a dead body will keep On producing hairs
+          <br />
+          It’s actually The process of retreating Like skin in my dream
+          <br />
+          Please, if in yours You lament what we had/lost Think of bowls of fruit
+          <br />
+          Because what I see Is what one sees when they wish They knew how to love
+          </small>
+          </p>
+        </div>
       <div class="second">
-        <p>
+        <p class="valley-p">
           <span class="poem-name">VALLEY OF PEARLS</span><br />
-        <small>
-
-
-        In this valley of pearls
-Surrounded by better mountains
-Black blue west and golden east
-Palm trees stretch and cacti branch
-
-
-There’s just not much winter here
-Only evergreen, the devil, is loose
-Undone buildings, unmanned cranes
-Goat on two legs, breaking to but
-
-
-Someone owns that mountain there
-Jade plant, flower bed, patch of lawn
-So they started, I restart
-Cradled in violets, arbitrary dreams
-
-
-A procession stops us
-Empty cars pass in parade
-Parking lots and lonely flies
-Like me on a windy beach
-</small>
-          </div>
-
-          <div class="third">
-            <p>
-              <span class="poem-name">OLD MOON</span><br />
+          <small>
+            In this valley of pearls Surrounded by better mountains
+            <br />
+            Black blue west, gold blue east
+            <br />
+            Palm trees stretch and cactus branches There’s just not much winter here
+            <br />
+            Only evergreen, the devil, is loose
+            <br />
+            Started buildings, unmanned cranes Goats on two legs, breaking to but
+            <br />
+            <br />
+            Someone owns that mountain there Jade plant, flower bed, patch of lawn
+            <br />
+            So they started, I restart Cradled in violets, arbitrary dreams
+            <br />
+            <br />
+            Empty cars ahead stop traffic, Passing procession, a parade
+            <br />
+            Parking lots and flies Find me on a windy beach
+          </small>
+        </p>
+        </div>
+        <div class="third">
+          <p class="moon-p">
+            <span class="poem-name">OLD MOON</span>
+            <br />
             <small>
 
               I reach up to the moon
               With one pale hand
               And realize that we are not attune
-              I drop into a hole
-              And slowly stand
+              I step into my hole
+              Then carefully stand
               To spare my mud wall etchings: they’ll dry soon
-
-
+              <br />
               I bend to ingest salts
               Then eye my glyphs
               And feel new neurotransmitters fill faults
               I’ve drawn things to control
               A God whose cliffs
               Are more than fractured limestones and basalts
+              <br />
 
-
-              I know my moon God sins
+              I know my moon God errs
               But I still pray
-              By ordering my soldier Egyptians
+              Ordering tiny soldier Egyptians
               To line up crown to sole
-              The ancient way
+              That ancient way
               Until, in Rah’s tall tales, my figure wins
-
+              <br />
 
               Now groans the moon’s dark side
               That I can’t see
@@ -347,29 +324,27 @@ Like me on a windy beach
               The crafted circle’s toll
               On Gods and me
               Imperfect beings weakened as they’ve lied
-
-
+              <br />
               Anubis, now I start
               On muddied bed
               So crowded I can’t draw his legs apart
               From my still hero’s stroll
               A jackal’s head
               Now on my own neck, weighing my own heart
-
-
+              <br />
               An honorable fear
               Is not a boon
               Unlike a crescent made of newness near
               Which negates the black soul
               Of an old moon
               I crawl up to view my new God from here
-    </small>
-              </div>
-
-              <div class="fourth">
-                <p>
-                  <span class="poem-name">DANCING WITH MY GHOSTS</span><br />
-                <small>
+            </small>
+          </p>
+        </div>
+        <div class="fourth">
+          <p class="ghosts-p">
+            <span id="dancing-text" class="poem-name">DANCING WITH MY GHOSTS</span><br />
+            <small class="dancing-text">
 
                   Walked further than I usually do
                   On ushering of a ghoulish man
@@ -429,16 +404,15 @@ Like me on a windy beach
                   Too touched by misery so fine
                   I outstretch both a blackened hand
                   And dance with these three ghosts of mine
-
-
-              </small>
-                  </div>
-      </div>
+            </small>
+        </div>
     </main>
     <script type="text/javascript">
+
+
     $('div').on('click', function() {
-$(this).toggleClass('show-description');
-});
+      $(this).toggleClass('show-description');
+    });
     </script>
   </body>
 </html>
