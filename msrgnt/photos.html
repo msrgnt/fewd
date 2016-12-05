@@ -19,18 +19,64 @@
 
     }
 
+
+    .option {
+      border: 1px dashed grey;
+      position: fixed;
+      height: 25px;
+      width: 25px;
+      top: 250px;
+      left: 140px;
+    }
+
+    .optiond {
+      border: 1px dashed grey;
+      position: fixed;
+      height: 57px;
+      width: 57px;
+      top: 250px;
+      left: 140px;
+      visibility: hidden;
+    }
+
+    .optiona {
+      border: 1px dashed grey;
+      position: fixed;
+      height: 25px;
+      width: 25px;
+      top: 250px;
+      left: 172px;
+    }
+
+    .optionb {
+      border: 1px dashed grey;
+      position: fixed;
+      height: 25px;
+      width: 25px;
+      top: 282px;
+      left: 140px;
+    }
+
+    .optionc {
+      border: 1px dashed grey;
+      position: fixed;
+      height: 25px;
+      width: 25px;
+      top: 282px;
+      left: 172px;
+    }
+
     .wrapper {
       position: relative;
     }
 
 
     .float-pic {
-      height: 500px;
-      width: 500px;
-      position: absolute;
-      top: 5px;
-      left: 5px;
-      border: 5px solid grey;
+      height: 435px;
+      width: 435px;
+      position: fixed;
+      top: 238px;
+      left: 50%;
     }
 
 
@@ -84,10 +130,11 @@
     }
 
     main {
-      margin: 0 auto;
+
       border-top: 1px solid rgb(234, 233, 231);
       max-width: 1000px;
       padding-top: 35px;
+
     }
 
     .poem-name {
@@ -248,10 +295,16 @@
     }
 
     img {
-      height: 130px;
-      width: 130px;
+      height: 435px;
+      width: 435px;
       margin: 10px 10px;
 
+    }
+
+    .img-2 {
+      height: 135px;
+      width: 135px;
+      margin: 10px 10px;
     }
 
     .bigger {
@@ -281,102 +334,119 @@
       <button type="button" class="home-button" name="button"><span class="letter">D</span><span class="letters">RAWINGS</span></button>
       <button type="button" class="home-button" name="button"><span class="letter">M</span><span class="letters">USIC</span></button>
     </header>
+    <div class="grid">
+    <div class="option">
+    </div>
+    <div class="optiona">
+    </div>
+    <div class="optionb">
+    </div>
+    <div class="optionc">
+    </div>
+    </div>
+
+    <div class="optiond">
+    </div>
+
     <main>
-      <img src="img/nyc-subway.png" num="1" alt="" />
-      <img src="img/nyc-jay-myth.png" num="2" alt="" />
-      <img src="img/whiskey.png" num="3" alt="" />
-      <img src="img/mx-sky.png" num="4" alt="" />
-      <img src="img/sf-bum.png" num="5" alt="" />
-      <img src="img/blaire.png" num="6" alt="" />
-      <img src="img/i5-powerlines.png" num="7" alt="" />
-      <img src="img/i5-palms.png" num="8" alt="" />
-      <img src="img/mom-dad-garden.png" num="9" alt="" />
-      <img src="img/dad-pool.png" num="10" alt="" />
-      <img src="img/sf-room-view.png" num="11" alt="" />
-      <img src="img/rain-man.png" num="12" alt="" />
-      <img src="img/montana-jay.png" num="13" alt="" />
-      <img src="img/montana-woman.png" num="14" alt="" />
-      <img src="img/montana-jay-phone.png" num="15" alt="" />
-      <img src="img/big-sur.png" num="16" alt="" />
-      <img src="img/parents-pier.png" num="17" alt="" />
-      <img src="img/shasta-house.png" num="18" alt="" />
-      <img src="img/cuba-sky.png" num="19" alt="" />
-      <img src="img/cuba-yellow-sky.png" num="20" alt="" />
-      <img src="img/cuba-man.png" num="21" alt="" />
-      <img src="img/cuba-fishermen.png" num="22" alt="" />
-      <img src="img/cuba-bucket.png" num="23" alt="" />
-      <img src="img/cuba-houses.png" num="24" alt="" />
-      <img src="img/palm-hotel.png" num="25" alt="" />
-      <img src="img/red-dancers.png" num="26" alt="" />
-      <img src="img/montana-blur.png" num="27" alt="" />
-      <img src="img/gas-light.png" num="28" alt="" />
-      <img src="img/morocco-path.png" num="29" alt="" />
-      <img src="img/nye-bow.png" num="30" alt="" />
-      <img src="img/finger-selfie.png" num="31" alt="" />
-      <img src="img/giraffe-face.png" num="32" alt="" />
-      <img src="img/wedding-feet.png" num="33" alt="" />
-      <img src="img/desert-trees.png" num="34" alt="" />
-      <img src="img/record-face.png" num="35" alt="" />
-      <img src="img/plane-signs.png" num="36" alt="" />
-      <img src="img/box-fingers.png" num="37" alt="" />
-      <img src="img/shadow-people.png" num="38" alt="" />
-      <img src="img/powerlines.png" num="39" alt="" />
-      <img src="img/ronnie.png" num="40" alt="" />
-      <img src="img/jay.png" num="41" alt="" />
-      <img src="img/jay-myth.png" num="42" alt="" />
-      <img src="img/william.png" num="43" alt="" />
-      <img src="img/hbird.png" num="44" alt="" />
-      <img src="img/justin.png" num="45" alt="" />
-      <img src="img/fat-fire.png" num="46" alt="" />
-      <img src="img/watching-fire.png" num="47" alt="" />
-      <img src="img/spider.png" num="48" alt="" />
+
+    <img src="img/nyc-subway.png" id="1" alt="" />
+  <img src="img/nyc-jay-myth.png" id="2" alt="" />
+  <img src="img/whiskey.png" id="3" alt="" />
+  <img src="img/mx-sky.png" id="4" alt="" />
+  <img src="img/sf-bum.png" id="5" alt="" />
+  <img src="img/blaire.png" id="6" alt="" />
+  <img src="img/i5-powerlines.png" id="7" alt="" />
+  <img src="img/i5-palms.png" id="8" alt="" />
+  <img src="img/mom-dad-garden.png" id="9" alt="" />
+  <img src="img/dad-pool.png" id="10" alt="" />
+  <img src="img/sf-room-view.png" id="11" alt="" />
+  <img src="img/rain-man.png" id="12" alt="" />
+  <img src="img/montana-jay.png" id="13" alt="" />
+  <img src="img/montana-woman.png" id="14" alt="" />
+  <img src="img/montana-jay-phone.png" id="15" alt="" />
+  <img src="img/big-sur.png" id="16" alt="" />
+  <img src="img/parents-pier.png" id="17" alt="" />
+  <img src="img/shasta-house.png" id="18" alt="" />
+  <img src="img/cuba-sky.png" id="19" alt="" />
+  <img src="img/cuba-yellow-sky.png" id="20" alt="" />
+  <img src="img/cuba-man.png" id="21" alt="" />
+  <img src="img/cuba-fishermen.png" id="22" alt="" />
+  <img src="img/cuba-bucket.png" id="23" alt="" />
+  <img src="img/cuba-houses.png" id="24" alt="" />
+  <img src="img/palm-hotel.png" id="25" alt="" />
+  <img src="img/red-dancers.png" id="26" alt="" />
+  <img src="img/montana-blur.png" id="27" alt="" />
+  <img src="img/gas-light.png" id="28" alt="" />
+  <img src="img/morocco-path.png" id="29" alt="" />
+  <img src="img/nye-bow.png" id="30" alt="" />
+  <img src="img/finger-selfie.png" id="31" alt="" />
+  <img src="img/giraffe-face.png" id="32" alt="" />
+  <img src="img/wedding-feet.png" id="33" alt="" />
+  <img src="img/desert-trees.png" id="34" alt="" />
+  <img src="img/record-face.png" id="35" alt="" />
+  <img src="img/plane-signs.png" id="36" alt="" />
+  <img src="img/box-fingers.png" id="37" alt="" />
+  <img src="img/shadow-people.png" id="38" alt="" />
+  <img src="img/powerlines.png" id="39" alt="" />
+  <img src="img/ronnie.png" id="40" alt="" />
+  <img src="img/jay.png" id="41" alt="" />
+  <img src="img/jay-myth.png" id="42" alt="" />
+  <img src="img/william.png" id="43" alt="" />
+  <img src="img/hbird.png" id="44" alt="" />
+  <img src="img/justin.png" id="45" alt="" />
+  <img src="img/fat-fire.png" id="46" alt="" />
+  <img src="img/watching-fire.png" id="47" alt="" />
+  <img src="img/spider.png" id="48" alt="" />
     </main>
     </div>
 <script type="text/javascript">
-var clicked =  document.querySelectorAll("img");
-for (var i = 0; i < clicked.length; i++) {
-  clicked[i].addEventListener("click", bigger);
-}
-function bigger (event) {
-  var link = event.target.getAttribute("src");
-  console.log(link);
-  var pink = event.target.getAttribute("num");
 
-  var newDiv = document.createElement("img");
-  var newTriR = document.createElement("p");
-  var newTriL = document.createElement("p");
+//var clicked =  document.querySelectorAll("img");
+//for (var i = 0; i < clicked.length; i++) {
+//  clicked[i].addEventListener("click", bigger);
+//}
+//function bigger (event) {
+//  var link = event.target.getAttribute("src");
+//  console.log(link);
+//  var pink = event.target.getAttribute("num");
 
-  newTriR.setAttribute("class", "triangle-right");
-  newTriL.setAttribute("class", "triangle-left");
-  newDiv.setAttribute("class", "float-pic");
-  console.log(pink);
+//  var newDiv = document.createElement("img");
 
-  newDiv.setAttribute("src", link);
+//  newDiv.setAttribute("class", "float-pic");
 
-  var body = document.querySelector(".wrapper")
-  newDiv.textContent = "hello";
-  body.appendChild(newDiv);
-  body.appendChild(newTriL);
-  body.appendChild(newTriR);
-
-  $(".triangle-left").css("visibility", "visible");
-  $(".triangle-right").css("visibility", "visible");
+//  newDiv.setAttribute("src", link);
+//  var body = document.querySelector(".wrapper")
+//  body.appendChild(newDiv);
+//}
 
 
-//  $('img').on('click', function() {
-  //  $(this).toggleClass('bigger');
+  $(".grid").click(function() {
 
 
-  var buttonLeft = document.querySelector(".triangle-left");
-  buttonLeft.addEventListener("click", togLeft);
-  function togLeft (event) {
-    pink = parseInt(pink) + 1;
-    var newDiv = document.createElement("img");
-    newDiv.setAttribute("class", "float-pic");
-    newDiv.setAttribute("num", pink);
-console.log(pink);
-  }
-  };
+    $("img").css("height", "135");
+    $("img").css("width", "135");
+    $(".option").css("visibility", "hidden");
+    $(".optiona").css("visibility", "hidden");
+    $(".optionb").css("visibility", "hidden");
+    $(".optionc").css("visibility", "hidden");
+    $(".optiond").css("visibility", "visible");
+
+
+  })
+
+      $(".optiond").click(function() {
+        $(".grid").css("visibility", "visible");
+
+      $("img").css("height", "435");
+      $("img").css("width", "435");
+      $(".option").css("visibility", "visible");
+      $(".optiona").css("visibility", "visible");
+      $(".optionb").css("visibility", "visible");
+      $(".optionc").css("visibility", "visible");
+      $(".optiond").css("visibility", "hidden");
+
+  })
 
 </script>
   </body>
