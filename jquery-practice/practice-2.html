@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="jquery.js"></script>
+        <style media="screen">
+        div {
+              height:100px;
+              width:100px;
+              display: inline-block;
+            }
+
+            #red {
+              background-color:#FF0000;
+            }
+
+            #blue {
+              background-color:#0000FF;
+            }
+
+            #yellow {
+              background-color:#E2BE22;
+            }
+
+            #green {
+              background-color:#008800;
+            }
+
+            #red-2 {
+              background-color:red;
+            }
+
+            #grey {
+              background-color:grey;
+            }
+            #clicked {
+              background-color:orange;
+              width: 100px;
+              height: 123px;
+              position: relative;
+              left: 10px;
+            }
+
+          #button {
+                height: 60px;
+                width: 100px;
+                border-radius: 5px;
+                background-color: #69D2E7;
+                text-align: center;
+                color: #FFFFFF;
+                font-family: Verdana, Arial, Sans-Serif;
+                opacity: 0.5;
+            }
+            button {
+              font-size: 20px;
+            }
+            .slide {
+              background-color:purple;
+              position: relative;
+              font-size: 20px;
+
+            }
+
+        </style>
+    </head>
+    <body>
+        <div class="div" id="red"></div>
+
+        <div class="slide">Fuck!</div>
+        <div id="grey"></div>
+        <div id="button"><br/><strong>Button
+
+</strong></div>
+  <button type="button" name="button">Button</button>
+        <div id="clickme">
+          Click here!
+        </div>
+        <div id="clicked">
+        </div>
+        <script type="text/javascript">
+        var poop = 200;
+             $('.div').mouseenter(function() {
+                 $(this).animate({
+                     height: '+=10px'
+                 });
+             });
+
+             $('.div').mouseleave(function() {
+                 $(this).animate({
+                   height: '+=10px'
+                 });
+             });
+
+             $('.div').click(function() {
+               $(this).toggle(1000);
+             });
+
+             $(document).ready(function() {
+               $("#grey").fadeOut(1000);
+             });
+
+             $(document).ready(function(){
+               $("#button").mouseenter(function(){
+                 $("#button").fadeTo("fast", 1);
+               });
+               $("#button").mouseleave(function(){
+                 $("#button").fadeTo("fast", .5);
+               });
+             });
+
+             $("#clickme").click(function() {
+                $("#clicked").animate({
+                  opacity: 0.25,
+                  left: "+=" + poop,
+                  height: "toggle"
+                }, 5000, function() {
+                  // Animation complete.
+                });
+              });
+
+              $("button").click(function(){
+                $(".slide").animate({
+                  left: "-=" + poop + "px",
+                  top: "-=30px",
+                  fontSize: "+=2px"
+            });
+  });
+        </script>
+    </body>
+</html>
