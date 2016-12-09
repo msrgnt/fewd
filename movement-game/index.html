@@ -43,22 +43,22 @@
     }
 
     .black {
-      background-color: black;
+      background-color: white;
       height: 10px;
       width: 10px;
       position: absolute;
-      top: 50%;
+      top: 250px;
       border: 1px rgb(199, 199, 199) solid;
       border-radius: 5px;
     }
 
     .white {
-      background-color: white;
+      background-color: black;
       height: 10px;
       width: 10px;
       position: absolute;
       border-radius: 5px;
-      top: 50%;
+      top: 250px;
       left: 700px;
       border: 1px rgb(199, 199, 199) solid;
     }
@@ -70,55 +70,56 @@
       <div class="black" style="left: 100px;">
 
       </div>
-      <div class="white">
+      <div class="white" style="left: 700px;">
 
       </div>
     </article>
 
     <section class="button-section-top">
-      <button id="button-tl" class="button" type="button" name="button"></button>
-      <button id="button-tr" class="button" type="button" name="button"></button>
-    </section>
-    <section class="button-section">
-      <button id="button-bl" class="button" type="button" name="button"></button>
-      <button id="button-br" class="button" type="button" name="button"></button>
+      <button id="button-t" class="button" type="button" name="button"></button>
+      <br>
+      <button id="button-r" class="button" type="button" name="button"></button>
+      <button id="button-l" class="button" type="button" name="button"></button>
+      <br>
+      <button id="button-b" class="button" type="button" name="button"></button>
     </section>
     <script type="text/javascript">
     var position = document.querySelector(".black");
-    console.log(position);
-    var info = position.getAttribute("style");
-    console.log(info);
     $("button").click(function(){
+    var positionA = document.querySelector(".black");
+    var positionB = document.querySelector(".white");
+    var infoA = positionA.getAttribute("style");
+    var infoB = positionB.getAttribute("style");
+    console.log(infoA);
+    console.log(infoB);
 
-    var position = document.querySelector(".black");
-    console.log(position);
-    var info = position.getAttribute("style");
-    console.log(info);
-  });
-        $("#button-br").click(function(){
+        $("#button-t").click(function(){
           $(".black").animate({
-            left: "+=50px",
-            top: "+=50px",
-          });
-        });
-        $("#button-tl").click(function(){
-          $(".black").animate({
-            left: "-=50px",
             top: "-=50px",
           });
         });
-        $("#button-tr").click(function(){
-          $(".black").animate({
-            left: "+=50px",
-            top: "-=50px",
-          });
-        });
-        $("#button-bl").click(function(){
+        $("#button-r").click(function(){
           $(".black").animate({
             left: "-=50px",
+          });
+        });
+        $("#button-l").click(function(){
+          $(".black").animate({
+            left: "+=50px",
+          });
+        });
+        $("#button-b").click(function(){
+          $(".black").animate({
             top: "+=50px",
           });
         });
+
+        if (infoA == "left: 400px;") {
+          alert("hello");
+        }
+
+      });
+
     </script>
   </body>
 </html>
