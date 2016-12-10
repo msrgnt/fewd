@@ -44,20 +44,20 @@
 
     .black {
       background-color: white;
-      height: 10px;
-      width: 10px;
+      height: 40px;
+      width: 40px;
       position: absolute;
       top: 250px;
       border: 1px rgb(199, 199, 199) solid;
-      border-radius: 5px;
+      border-radius: 25px;
     }
 
     .white {
       background-color: black;
-      height: 10px;
-      width: 10px;
+      height: 40px;
+      width: 40px;
       position: absolute;
-      border-radius: 5px;
+      border-radius: 25px;
       top: 250px;
       left: 700px;
       border: 1px rgb(199, 199, 199) solid;
@@ -78,59 +78,61 @@
     <section class="button-section-top">
       <button id="button-t" class="button" type="button" name="button"></button>
       <br>
-      <button id="button-r" class="button" type="button" name="button"></button>
       <button id="button-l" class="button" type="button" name="button"></button>
+      <button id="button-r" class="button" type="button" name="button"></button>
       <br>
       <button id="button-b" class="button" type="button" name="button"></button>
     </section>
     <script type="text/javascript">
-    var position = document.querySelector(".black");
-    $("button").click(function(){
-    var positionA = document.querySelector(".black");
-    var positionB = document.querySelector(".white");
-    var infoA = positionA.getAttribute("style");
-    var infoB = positionB.getAttribute("style");
-    console.log(infoA);
-    console.log(infoB);
 
         $("#button-t").click(function(){
           $(".black").animate({
             top: "-=50px",
           });
           var positionA = document.querySelector(".black");
-          var positionB = document.querySelector(".white");
           var infoA = positionA.getAttribute("style");
-          var infoB = positionB.getAttribute("style");
           console.log(infoA);
-          console.log(infoB);
         });
         $("#button-r").click(function(){
+          $(".black").animate({
+            left: "+=50px",
+          });
+          var positionA = document.querySelector(".black");
+          var infoA = positionA.getAttribute("style");
+          console.log(infoA);
+
+                    if (infoA == "left: 200px;") {
+                      var body = document.querySelector(".white");
+                      var newP = document.createElement("p");
+                      console.log("did it");
+                      $(newP).css("width", 20)
+                      $(newP).css("height", 20)
+                      $(newP).css("background-color", "red")
+                      $(newP).css("position", "absolute")
+                      $(newP).css("top", 0)
+                      $(newP).css("left", 0)
+                      body.appendChild(newP);
+
+                    }
+
+          });
+        $("#button-l").click(function(){
           $(".black").animate({
             left: "-=50px",
           });
           var positionA = document.querySelector(".black");
-          var positionB = document.querySelector(".white");
           var infoA = positionA.getAttribute("style");
-          var infoB = positionB.getAttribute("style");
           console.log(infoA);
-          console.log(infoB);
-        });
-        $("#button-l").click(function(){
-          $(".black").animate({
-            left: "+=50px",
-          });
+
         });
         $("#button-b").click(function(){
           $(".black").animate({
-            top: "+=50px",
+            top: "+=50px"
           });
+          var positionA = document.querySelector(".black");
+          var infoA = positionA.getAttribute("style");
+          console.log(infoA);
         });
-
-        if (infoA == "left: 400px;") {
-          alert("hello");
-        }
-
-      });
 
     </script>
   </body>
