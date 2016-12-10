@@ -97,11 +97,23 @@
           $(".black").animate({
             top: "-=50px",
           });
+          var positionA = document.querySelector(".black");
+          var positionB = document.querySelector(".white");
+          var infoA = positionA.getAttribute("style");
+          var infoB = positionB.getAttribute("style");
+          console.log(infoA);
+          console.log(infoB);
         });
         $("#button-r").click(function(){
           $(".black").animate({
             left: "-=50px",
           });
+          var positionA = document.querySelector(".black");
+          var positionB = document.querySelector(".white");
+          var infoA = positionA.getAttribute("style");
+          var infoB = positionB.getAttribute("style");
+          console.log(infoA);
+          console.log(infoB);
         });
         $("#button-l").click(function(){
           $(".black").animate({
