@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style media="screen">
+      @keyframes moon {
+
+        to {
+          opacity: 0;
+          transform: rotate(10deg);
+        }
+      }
+
+      html {
+      background-image: linear-gradient(black 60%, #041931);
+      height: 100%;
+      }
+
+      .moon {
+      width: 10rem;
+      height: 10rem;
+      opacity: 1;
+      background: #0a0a0a;
+      margin: 1rem auto;
+      animation: moon 20s linear infinite;
+      border-radius: 50%;
+      box-shadow: inset -10rem 0 whitesmoke;
+      transform: rotate(-10deg);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="moon"></div>
+  </body>
+</html>

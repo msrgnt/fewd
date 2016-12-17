@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="jquery.js"></script>
+    <meta charset="utf-8">
+    <title></title>
+    <style media="screen">
+    @keyframes moon {
+      to {
+        box-shadow: inset 10rem 0 whitesmoke;
+        transform: rotate(10deg);
+        left: 300px;
+
+      }
+    }
+
+    article {
+      background: linear-gradient(#FFF0F5, #DFF0F5);
+      width: 80%;
+      height: 500px;
+      max-width: 800px;
+      padding-top: 15px;
+      padding-bottom: 15px;
+      margin-left: auto;
+      margin-right: auto;
+      margin-top: 100px;
+      border-radius: 5px;
+      box-shadow: 0 0 20px 1px rgb(199, 199, 199);
+      position: relative;
+    }
+
+    .moon {
+      width: 10rem;
+      height: 10rem;
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      margin: 1rem auto;
+      border-radius: 50%;
+      box-shadow: inset -10rem 0 white;
+      transform: rotate(-10deg);
+    }
+
+    .button-section-top, .button-section {
+      text-align: center;
+    }
+
+    .button-section-top {
+      margin-top: 15px;
+    }
+
+    .button {
+      background: white;
+      border: 1px white solid;
+      padding: 20px;
+      outline: none;
+      margin-left: auto;
+      margin-right: auto;
+      border-radius: 25px;
+      box-shadow: 0 0 20px 1px rgb(100, 100, 100);
+      margin: 2px;
+      display: inline-block;
+    }
+
+    .black {
+      background-color: white;
+      height: 40px;
+      width: 40px;
+      position: absolute;
+      top: 250px;
+      border: 1px rgb(199, 199, 199) solid;
+      border-radius: 25px;
+    }
+
+    .moon-1 {
+      width: 5rem;
+      height: 5rem;
+      background: linear-gradient(#FFF0F5, #DFF0F5);
+      margin: 1rem auto;
+      border-radius: 50%;
+      box-shadow: inset 1rem 0 whitesmoke;
+      transform: rotate(-10deg);
+      position: absolute;
+      top: 150px;
+      left: 400px;
+    }
+
+    .white {
+      background-color: black;
+      height: 40px;
+      width: 40px;
+      position: absolute;
+      border-radius: 25px;
+      top: 250px;
+      left: 700px;
+      border: 1px rgb(199, 199, 199) solid;
+    }
+
+    </style>
+  </head>
+  <body>
+    <article class="">
+      <div class="black" style="left: 25%">
+
+      </div>
+      <div class="moon-1">
+
+      </div>
+      <div class="moon">
+
+      </div>
+      <div class="white" style="left: 70%">
+
+      </div>
+    </article>
+
+    <section class="button-section-top">
+      <button id="button-r" class="button" type="button" name="button"></button>
+    </section>
+    <script type="text/javascript">
+
+
+        $("#button-r").click(function(){
+          console.log("hello");
+          $(".moon").css("animation", "moon 20s linear infinite")
+          $(".moon-1").css("animation", "moon 20s linear infinite")
+
+        });
+
+
+    </script>
+  </body>
+</html>
