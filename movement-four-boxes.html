@@ -7,9 +7,8 @@
     <style media="screen">
       @keyframes moon {
         to {
-          box-shadow: inset 10rem 0 orange;
-          transform: rotate(90deg);
-          left: 300px;
+          box-shadow: inset 10rem 10px orange;
+          top: 100%;
           opacity: 0;
         }
       }
@@ -35,8 +34,8 @@
       .ball {
         background: white;
         position: absolute;
-        bottom: 10px;
-        left: 10px;
+        top: 10%;
+        left: 50%;
         width: 100px;
         height: 100px;
         border: none;
@@ -44,6 +43,16 @@
         box-shadow: inset -10rem 0 white;
         transform: rotate(-10deg);
       }
+
+      .ocean {
+        width: 100%;
+        height: 40px;
+        background: #DFF0F5;
+        position: absolute;
+        bottom: -16px;
+        left: 0;
+      }
+
       .one {
         width: 560px;
         height: 400px;
@@ -66,43 +75,38 @@
         height: 50px;
         background: linear-gradient(#FFF0F5, #DFF0F5);
         border: 1px dashed rgb(220, 220, 220);
-        position: absolute;
-        top: 2%;
-        left: 1.5%;
         outline: none;
+        margin: 15px auto;
+      }
+      main {
+        text-align: center;
       }
 
       button:active {
         border: none;
       }
-
     </style>
   </head>
   <body>
-    <article class="row-a">
-      <div class="one">
-        <button id="button-1" type="button" name="button"></button>
-        <div class="ball ball-a">
+    <main>
+      <button id="button-1" type="button" name="button"></button>
+      <article class="row-a">
+        <div class="one">
+          <div class="ball ball-a">
+          </div>
+          <p class="ocean ocean-a">
+
+          </p>
         </div>
-      </div>
-      <div class="two">
-        <button id="button-2" type="button" name="button"></button>
-        <div class="ball ball-b">
+        <div class="two">
+          <div class="ball ball-b">
+          </div>
+          <p class="ocean ocean-b">
+
+          </p>
         </div>
-      </div>
-    </article>
-    <article class="row-b">
-      <div class="three">
-        <button id="button-3" type="button" name="button"></button>
-        <div class="ball ball-c">
-        </div>
-      </div>
-      <div class="four">
-        <button id="button-1" type="button" name="button"></button>
-        <div class="ball ball-d">
-        </div>
-      </div>
-    </article>
+      </article>
+    </main>
     <script type="text/javascript">
     $("#button-1").click(function(){
       console.log("hello");

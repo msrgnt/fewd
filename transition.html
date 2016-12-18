@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <script src="jquery.js"></script>
+
+    <title></title>
+    <style media="screen">
+    .trigger {
+      height: 100px;
+      width: 100px;
+      border: 20px solid #999;
+      background: #ddd;
+    }
+      .pink {
+        display: inline-block;
+        height: 100px;
+        width: 100px;
+        background: pink;
+        transition: transform 300ms ease-in-out;
+        pointer-events: none;
+      }
+      .red {
+        display: inline-block;
+        height: 100px;
+        width: 100px;
+        background: red;
+        transition: transform 300ms ease-in-out;
+        pointer-events: none;
+      }
+
+      /*.trigger:hover .pink{
+        transform: translate(200px, 150px) rotate(20deg)
+      }*/
+
+      .trigger.clicked .pink{
+        transform: translate(200px, 150px) rotate(20deg)
+      }
+    </style>
+  </head>
+  <body>
+    <div class="trigger">
+      <div class="pink">
+      </div>
+    </div>
+    <script type="text/javascript">
+      $(".trigger").on("click", function(){
+        $(this).toggleClass("clicked");
+        $(this).append("<div class=red>");
+      });
+    </script>
+  </body>
+</html>
