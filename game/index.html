@@ -37,7 +37,7 @@
       padding: 30px;
     }
 
-    .text, .text2, .text3, .text4 {
+    .text, .text0, .text2, .text3, .text4 {
       text-align: center;
       font-size: 24px;
     }
@@ -47,6 +47,7 @@
   <body>
     <button class="start">Birth</button>
     <div class="text"></div>
+    <div class="text0"></div>
     <div class="text2"></div>
     <div class="text3"></div>
     <div class="text4"></div>
@@ -97,10 +98,11 @@ var button = document.querySelector(".start");
 var newButton = document.querySelector(".next");
 var score = 1;
 var textPlace = document.querySelector(".text");
+var textPlaceZero = document.querySelector(".text0");
 var textPlaceTwo = document.querySelector(".text2");
 var textPlaceThree = document.querySelector(".text3");
 var textPlaceFour = document.querySelector(".text4");
-
+var gender = Math.floor(Math.random() * 2);
 var randomTenNumber = Math.floor(Math.random() * tenYears.length);
 var randomFifteenNumber = Math.floor(Math.random() * fifteenYears.length);
 var randomEighteenNumber = Math.floor(Math.random() * eighteenYears.length);
@@ -116,6 +118,13 @@ var randomEighteenNumber = Math.floor(Math.random() * eighteenYears.length);
         $(".next").css("left", Math.floor(Math.random() * 60) + "%")
         var startValue = Math.floor(Math.random() * 70);
         console.log(score);
+
+        if (gender == 1) {
+          textPlaceZero.textContent = "You are male";
+        }
+        else {
+          textPlaceZero.textContent = "You are female";
+        }
 
         if (startValue == 69) {
           textPlace.textContent = "You died at birth";
@@ -145,37 +154,23 @@ var randomEighteenNumber = Math.floor(Math.random() * eighteenYears.length);
           $(".next").css("visibility", "hidden");
           $(".start").css("visibility", "visible");
           document.querySelector(".start").textContent = "Rebirth";
-
           score = 1;
         }
 
         if (score > 10) {
-
-
           textPlaceTwo.textContent = " " + tenYears[randomTenNumber];
           $(".text2").css("visibility", "visible");
-
-
         }
 
         if (score > 15) {
-
-
-
-
           textPlaceThree.textContent = " " + fifteenYears[randomFifteenNumber];
           $(".text3").css("visibility", "visible");
-
         }
 
         if (score > 18) {
-
-
           textPlaceFour.textContent = " " + eighteenYears[randomEighteenNumber];
           $(".text4").css("visibility", "visible");
-
         }
-
       }
     </script>
   </body>
