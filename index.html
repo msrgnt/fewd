@@ -27,12 +27,29 @@
         border-radius: 0 0 5px 5px;
       }
 
+
+            .sky {
+              background-image: linear-gradient(rgba(119, 11, 219, .1), rgba(11, 19, 99, .1));
+              height: 530px;
+              width: 800px;
+              position: absolute;
+              top: 0px;
+              border-radius: 5px 5px 5px 5px;
+            }
+
        .image-1 {
         height: 150px;
         position: absolute;
         bottom: 50px;
         right: 100px;
       }
+      .image-10 {
+       height: 30px;
+       position: absolute;
+       bottom: 55px;
+       right: 60px;
+
+     }
       .image-3 {
        height: 50px;
        position: absolute;
@@ -62,8 +79,8 @@
  .image-9 {
   height: 100px;
   position: absolute;
-  bottom: 220px;
-  right: 685px;
+  bottom: 90px;
+  right: 370px;
 }
    .image-6 {
     height: 30px;
@@ -77,20 +94,95 @@
        bottom: 50px;
      }
 
+     .image-11 {
+      height: 100px;
+      position: absolute;
+      bottom: 140px;
+      right: 310px;
+    }
+
+    .image-12 {
+     height: 100px;
+     position: absolute;
+     bottom: 90px;
+     right: 320px;
+   }
+
+   .image-13 {
+    height: 30px;
+    position: absolute;
+    top: 25px;
+    right: 145px;
+    transform: rotate(32deg);
+  }
+
+  .image-16 {
+   height: 90px;
+   position: absolute;
+   top: 25px;
+   right: 585px;
+ }
+
+  .image-14 {
+   height: 100px;
+   position: absolute;
+   bottom: 70px;
+   right: 275px;
+ }
+
+ .image-15 {
+  height: 100px;
+  position: absolute;
+  bottom: 70px;
+  right: 445px;
+  -moz-transform: scaleX(-1);
+    -o-transform: scaleX(-1);
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
+    filter: FlipH;
+    -ms-filter: "FlipH";
+}
+
+
+
+   #trapezoid {
+	border-bottom: 100px solid rgba(255, 10, 10, .2);
+	border-left: 100px solid transparent;
+	border-right: 100px solid transparent;
+  position: absolute;
+  right:277px;
+	height: 0;
+	width: 50px;
+}
+
     </style>
   </head>
   <body>
     <main>
+
+      <img src="vulture.png" class="image-13" alt="" />
+      <img src="duck.png" class="image-16" alt="" />
+
             <div class="land">
       <img src="fountain-1.png" class="image-1" alt="" />
       <img src="pleading.png" class="image-3" alt="" />
       <img src="pleading-2.png" class="image-4" alt="" />
       <img src="gas-can-3.png" class="image-8" alt="" />
       <img src="gas-can-1.png" class="image-5" alt="" />
+
       <img src="buddha.png" class="image-6" alt="" />
+      <img src="hose.png" class="image-10" alt="" />
+      <img src="spotlight.png" class="image-14" alt="" />
+      <img src="spotlight.png" class="image-15" alt="" />
+
+      <div id="trapezoid">
+
+      </div>
+      <img src="flame.png" class="image-11" alt="" />
       <img src="doll.png" class="image-9" alt="" />
 
-
+      </div>
+      <div class="sky">
 
       </div>
     </main>
