@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style media="screen">
+
+main {
+  background-image: linear-gradient(rgb(19, 19, 199), whitesmoke);
+  height: 500px;
+  width: 800px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 100px;
+  border-radius: 5px;
+  box-shadow: 0 0 20px 1px rgb(199, 199, 199);
+  position: relative;
+}
+
+.beam {
+  border-bottom: 110px solid rgba(250, 100, 0, .5);
+  border-left: 500px solid transparent;
+  border-right: 20px solid transparent;
+  position: absolute;
+  top: 220px;
+  right: 227px;
+  width: 0px;
+  transform: rotate(231deg);
+}
+
+.beam-1 {
+  border-bottom: 150px solid rgba(250, 100, 0, .5);
+  border-left: 400px solid transparent;
+  border-right: 20px solid transparent;
+  position: absolute;
+  top: 182px;
+  right: 165px;
+  width: 0px;
+  transform: rotate(330deg);
+}
+
+.beam-img {
+    height:150px;
+    position: absolute;
+    top: 200px;
+    right: 619px;
+}
+
+.beam-img-2 {
+    height:350px;
+    position: absolute;
+    top: 130px;
+    right: 310px;
+    transform: rotate(52.5deg);
+}
+
+.beam-spot {
+  height:77px;
+  width:151px;
+  border-radius: 90px 90px 0 0;
+  -moz-border-radius: 90px 90px 0 0;
+  -webkit-border-radius: 90px 90px 0 0;
+  background:rgba(250, 100, 0, .5);;
+  position: absolute;
+  top: 96px;
+  right: 97px;
+  transform: rotate(52.5deg);
+}
+
+.beam-spot-2 {
+  height:65px;
+  width:112px;
+  border-radius: 90px 90px 0 0;
+  -moz-border-radius: 90px 90px 0 0;
+  -webkit-border-radius: 90px 90px 0 0;
+  background:rgba(250, 100, 0, .5);;
+  position: absolute;
+  top: 28px;
+  right: 612px;
+  transform: rotate(310.5deg);
+}
+
+.buddha {
+  height: 30px;
+  position: absolute;
+  bottom: 170px;
+  right: 630px;
+}
+
+.condor {
+  height: 30px;
+  position: absolute;
+  top: 25px;
+  right: 135px;
+  transform: rotate(32deg);
+}
+
+.doll {
+  height: 150px;
+  position: absolute;
+  bottom: 80px;
+  right: 355px;
+}
+
+.duck {
+  height: 90px;
+  position: absolute;
+  top: 25px;
+  right: 605px;
+}
+
+.fountain {
+  height: 150px;
+  position: absolute;
+  bottom: 10px;
+  right: 100px;
+}
+
+
+.flame {
+  height: 117px;
+  position: absolute;
+  bottom: 89px;
+  right: 200px;
+}
+
+
+.gas {
+  height: 140px;
+  position: absolute;
+  bottom: 50px;
+  right: 555px;
+}
+
+.gas-2 {
+  height: 180px;
+  position: absolute;
+  bottom: 50px;
+  right: 630px;
+}
+
+.helicopter {
+  height: 60px;
+  position: absolute;
+  bottom: 218px;
+  right: 610px;
+  transform: rotate(-3deg);
+}
+
+.hose {
+  height: 25px;
+  position: absolute;
+  bottom: 20px;
+  right: 55px;
+}
+
+.iphone-3 {
+  height: 50px;
+  position: absolute;
+  bottom: 85px;
+  right: -7px;
+  transform: rotate(-3deg);
+}
+
+.iphone-5 {
+  height: 45px;
+  position: absolute;
+  bottom: 92px;
+  right: 35px;
+  -moz-transform: scaleX(-1);
+  -o-transform: scaleX(-1);
+  -webkit-transform: scaleX(-1);
+  transform: scaleX(-1);
+  filter: FlipH;
+  -ms-filter: "FlipH";
+}
+
+.stone {
+  height: 70px;
+  position: absolute;
+  bottom: 75px;
+  right: 48px;
+}
+
+.iphone-9 {
+  height: 50px;
+  position: absolute;
+  bottom: 112px;
+  right: 3px;
+  transform: rotate(-90deg);
+}
+
+.land {
+  background-image: linear-gradient(rgb(119, 11, 19), rgb(11, 19, 99));
+  height: 100px;
+  width: 800px;
+  position: absolute;
+  bottom: 0px;
+  border-radius: 0 0 5px 5px;
+}
+
+.moon {
+    width: 100px;
+    height: 100px;
+    background-image: linear-gradient(#FFF0F5, #DFF0F5);
+    border-radius: 500px;
+    margin: 50px;
+    position: absolute;
+    right: 20px;
+    bottom: 350px;
+}
+
+.palm {
+  height: 60px;
+  position: absolute;
+  bottom: 20px;
+  right: 595px;
+}
+
+.palm-2 {
+  height: 60px;
+  position: absolute;
+  bottom: 50px;
+  right: 703px;
+}
+
+.palm-3 {
+  height: 60px;
+  position: absolute;
+  bottom: 30px;
+  right: 645px;
+}
+
+.palm-4 {
+  height: 60px;
+  position: absolute;
+  bottom: 40px;
+  right: 575px;
+}
+
+.palm-5 {
+  height: 60px;
+  position: absolute;
+  bottom: 50px;
+  right: 555px;
+}
+
+.palm-6 {
+  height: 60px;
+  position: absolute;
+  bottom: 30px;
+  right: 685px;
+}
+
+.palm-7 {
+  height: 60px;
+  position: absolute;
+  bottom: 40px;
+  right: 665px;
+}
+
+/*
+.parasol {
+  height: 70px;
+  position: absolute;
+  bottom: 15px;
+  right: 245px;
+  transform: rotate(12deg);
+}
+
+.parasol-2 {
+  height: 30px;
+  position: absolute;
+  bottom: 50px;
+  right: 735px;
+  transform: rotate(12deg);
+}
+*/
+
+.plead {
+  height: 50px;
+  position: absolute;
+  bottom: 10px;
+  right: 110px;
+}
+
+.plead-2 {
+  height: 50px;
+  position: absolute;
+  bottom: 15px;
+  right: 200px;
+}
+
+.spotlight {
+  height: 100px;
+  position: absolute;
+  bottom: 70px;
+  right: 275px;
+}
+
+.spotlight-2 {
+  height: 100px;
+  position: absolute;
+  bottom: 70px;
+  right: 450px;
+  -moz-transform: scaleX(-1);
+  -o-transform: scaleX(-1);
+  -webkit-transform: scaleX(-1);
+  transform: scaleX(-1);
+  filter: FlipH;
+  -ms-filter: "FlipH";
+}
+
+#trapezoid {
+  border-bottom: 100px solid rgba(255, 10, 10, .2);
+  border-left: 100px solid transparent;
+  border-right: 100px solid transparent;
+  position: absolute;
+  right:277px;
+  height: 0;
+  width: 50px;
+}
+
+.vulture {
+  height: 35px;
+  position: absolute;
+  bottom: 215px;
+  right: 660px;
+}
+
+.raven {
+  height: 30px;
+  position: absolute;
+  bottom: 215px;
+  right: 735px;
+}
+
+.vulture-landing {
+  height: 30px;
+  position: absolute;
+  bottom: 260px;
+  right: 625px;
+}
+
+.kingvulture-p {
+  height: 30px;
+  position: absolute;
+  bottom: 223px;
+  right: 710px;
+
+}
+
+.vulture-p {
+  height: 30px;
+  position: absolute;
+  bottom: 170px;
+  right: 620px;
+
+}
+/*
+.tree {
+  height: 120px;
+  position: absolute;
+  bottom: 219px;
+  right: 605px;
+  transform: rotate(10deg);
+}
+
+
+.wrapper {
+  background-image: linear-gradient(rgba(219, 211, 219, .2), rgba(11, 219, 199, .2));
+  height: 530px;
+  width: 800px;
+  position: absolute;
+  top: 0px;
+  border-radius: 5px 5px 5px 5px;
+}
+*/
+    </style>
+  </head>
+  <body>
+    <main>
+      <div class="moon"></div>
+      <img src="vulture.png" class="condor" alt="" />
+      <img src="duck.png" class="duck" alt="" />
+      <img src="spotlight_beam.png" class="beam-img" alt="" />
+      <img src="spotlight_beam.png" class="beam-img-2" alt="" />
+      <!--<div class="beam"></div>
+      <div class="beam-1"></div>
+      <div class="beam-spot"></div>
+      <div class="beam-spot-2"></div>-->
+      <img src="stone.png" class="stone" alt="" />
+
+      <div class="land">
+        <img src="fountain-1.png" class="fountain" alt="" />
+        <img src="pleading.png" class="plead" alt="" />
+        <img src="pleading-2.png" class="plead-2" alt="" />
+        <img src="iphone-3.png" class="iphone-3" alt="" />
+        <img src="iphone-5.png" class="iphone-5" alt="" />
+        <img src="iphone-9.png" class="iphone-9" alt="" />
+        <img src="gas-can-3.png" class="gas-2" alt="" />
+        <img src="gas-can-1.png" class="gas" alt="" />
+        <img src="buddha.png" class="buddha" alt="" />
+        <img src="palm.png" class="palm" alt="" />
+        <img src="palm.png" class="palm-2" alt="" />
+        <img src="palm.png" class="palm-3" alt="" />
+        <img src="palm.png" class="palm-4" alt="" />
+        <img src="palm.png" class="palm-5" alt="" />
+        <img src="palm.png" class="palm-6" alt="" />
+        <img src="palm.png" class="palm-7" alt="" />
+        <img src="vulture-p.png" class="vulture" alt="" />
+        <img src="raven.png" class="raven" alt="" />
+        <img src="vulture-landing.png" class="vulture-landing" alt="" />
+        <img src="kingvulture-p.png" class="kingvulture-p" alt="" />
+        <img src="hose.png" class="hose" alt="" />
+        <img src="spotlight.png" class="spotlight" alt="" />
+        <img src="spotlight.png" class="spotlight-2" alt="" />
+        <div id="trapezoid"></div>
+        <img src="flame.png" class="flame" alt="" />
+        <img src="doll.png" class="doll" alt="" />
+        <!--
+        <img src="parasol.png" class="parasol" alt="" />
+        <img src="parasol.png" class="parasol-2" alt="" />
+        -->
+      </div>
+      <div class="wrapper"></div>
+    </main>
+  </body>
+</html>
