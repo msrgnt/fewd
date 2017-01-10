@@ -444,6 +444,64 @@ main {
   bottom: 60px;
   right: 33px;
 }
+
+@keyframes drone {
+  0%   {left:10px; top:10px;}
+  50%  {
+
+
+        }
+  75%  {
+          left:500px; top:40px;
+          left:700px; top:20px;
+          -moz-transform: scaleX(1);
+          -o-transform: scaleX(1);
+          -webkit-transform: scaleX(1);
+          transform: scaleX(1);
+          filter: FlipH;
+        }
+  100% {left:10px; top:10px;}
+}
+
+@keyframes banner{
+  0%   {left:-50px; top:10px;}
+  50%  {
+
+
+        }
+  75%  {
+          left:400px; top:40px;
+          left:600px; top:20px;
+          -moz-transform: scaleX(1);
+          -o-transform: scaleX(1);
+          -webkit-transform: scaleX(1);
+          transform: scaleX(1);
+          filter: FlipH;
+        }
+  100% {left:80px; top:10px;}
+}
+
+.drone {
+  height: 40px;
+  position: absolute;
+  animation-name: drone;
+  animation-duration: 15s;
+  animation-iteration-count: infinite;
+  -moz-transform: scaleX(-1);
+  -o-transform: scaleX(-1);
+  -webkit-transform: scaleX(-1);
+  transform: scaleX(-1);
+  filter: FlipH;
+  -ms-filter: "FlipH";
+}
+
+.banner {
+  position: relative;
+  animation-name: banner;
+  animation-duration: 15s;
+  animation-iteration-count: infinite;
+}
+
 /*
 .tree {
   height: 120px;
@@ -468,6 +526,10 @@ main {
   <body>
     <main>
       <div class="moon"></div>
+      <img src="drone.png" class="drone" alt="">
+      <div class="banner">
+        FUCK YOU
+      </div>
       <img src="vulture.png" class="condor" alt="" />
       <img src="duck.png" class="duck" alt="" />
 
