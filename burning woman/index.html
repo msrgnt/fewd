@@ -107,7 +107,7 @@ main {
 .duck {
   height: 90px;
   position: absolute;
-  top: 25px;
+  top: 75px;
   right: 605px;
 }
 
@@ -445,48 +445,31 @@ main {
   right: 33px;
 }
 
-@keyframes drone {
-  0%   {left:10px; top:10px;}
-  50%  {
-
-
-        }
-  75%  {
-          left:500px; top:40px;
-          left:700px; top:20px;
-          -moz-transform: scaleX(1);
-          -o-transform: scaleX(1);
-          -webkit-transform: scaleX(1);
-          transform: scaleX(1);
-          filter: FlipH;
-        }
-  100% {left:10px; top:10px;}
+@keyframes drone{
+  0%   {left:100px; top:20px;}
+  50%  {left: 450px; top:5px;}
+  100%  {left:750px; top:20px;}
 }
 
 @keyframes banner{
-  0%   {left:-50px; top:10px;}
-  50%  {
+  0%   {left:0px; top:15px;}
+  50%  {left: 350px; top:0px;}
+  100%  {left:650px; top:15px;}
+}
 
-
-        }
-  75%  {
-          left:400px; top:40px;
-          left:600px; top:20px;
-          -moz-transform: scaleX(1);
-          -o-transform: scaleX(1);
-          -webkit-transform: scaleX(1);
-          transform: scaleX(1);
-          filter: FlipH;
-        }
-  100% {left:80px; top:10px;}
+@keyframes string{
+  0%   {left:85px; top:35px;}
+  50%  {left: 435px; top:20px;}
+  100%  {left:735px; top:35px;}
 }
 
 .drone {
-  height: 40px;
+  height: 50px;
   position: absolute;
   animation-name: drone;
-  animation-duration: 15s;
+  animation-duration: 100s;
   animation-iteration-count: infinite;
+  animation-timing-function: linear;
   -moz-transform: scaleX(-1);
   -o-transform: scaleX(-1);
   -webkit-transform: scaleX(-1);
@@ -495,11 +478,26 @@ main {
   -ms-filter: "FlipH";
 }
 
+.string {
+  height: 10px;
+  position: absolute;
+  animation-name: string;
+  animation-duration: 100s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  transform: rotate(5deg);
+
+}
+
 .banner {
   position: relative;
   animation-name: banner;
-  animation-duration: 15s;
+  animation-duration: 100s;
   animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  border: 1px solid black;
+  background-color: white;
+  display: inline;
 }
 
 /*
@@ -525,11 +523,14 @@ main {
   </head>
   <body>
     <main>
+
+
       <div class="moon"></div>
+      <img src="rope.png" class="string" alt="">
       <img src="drone.png" class="drone" alt="">
+
       <div class="banner">
-        FUCK YOU
-      </div>
+         Hello, world! </div>
       <img src="vulture.png" class="condor" alt="" />
       <img src="duck.png" class="duck" alt="" />
 
@@ -577,10 +578,12 @@ main {
 
         <img src="penguin.png" class="penguin" alt="" />
         <div id="trapezoid"></div>
+          <!--
         <img src="porta-o.png" class="porange" alt="">
         <img src="porta-y.png" class="pyellow" alt="">
         <img src="red.png" class="red" alt="">
         <img src="red-2.png" class="red-2" alt="">
+            -->
         <img src="mannequin.png" class="manny" alt="" />
 
         <img src="flame.png" class="flame" alt="" />
@@ -600,5 +603,8 @@ main {
 
       <div class="wrapper"></div>
     </main>
+    <script type="text/javascript">
+      document.querySelector(".banner").textContent = ;
+    </script>
   </body>
 </html>
