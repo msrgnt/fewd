@@ -484,7 +484,7 @@ opacity:1;
       height: 50px;
       position: absolute;
       animation-name: drone;
-      animation-duration: 25s;
+      animation-duration: 5s;
       animation-iteration-count: infinite;
       animation-timing-function: linear;
     }
@@ -492,10 +492,11 @@ opacity:1;
 
     .drone-2 {
       height: 50px;
+      opacity: 0;
       position: absolute;
       animation-name: drone2;
-      animation-duration: 25s;
-      animation-delay: 25s;
+      animation-duration: 5s;
+      animation-delay: 5s;
       animation-iteration-count: infinite;
       animation-timing-function: linear;
       -moz-transform: scaleX(-1);
@@ -516,22 +517,25 @@ opacity:1;
         0%   {left:500px; top:20px; opacity: 0;}
         49% {left: 100px; top:20px; opacity: 0;}
         50%  {left: 150px; top: 20px;opacity: 1;}
-        100%  {left:500px; top:20px; opacity: 1; }
+        99%  {opacity: 1; }
+        100%  {left:500px; top:20px; opacity: 0; }
     }
 
     @keyframes banner{
-      0%   {left: 573px; top:20px;}
-      49%  {left: 173px; top:20px;}
-      50%  {left: 36px; top:15px;}
-      99%  {left: 385px; top:15px;}
-      100%  {left:425px; top:15px;}
+      0%   {left: 573px; top:17px;}
+      49%  {left: 173px; top:17px;}
+      50%  {left: 36px; top:13px;}
+      99%  {left: 379px; top:13px;}
+      100%  {left:570px; top:17px;}
     }
 
     @keyframes string{
       0%   {left: 547px; top:36px;}
       49%  {left: 147px; top:36px;}
       50%  {left: 125px; top:34px;}
-      100%  {left:485px; top:34px;}
+      99%  {left:483px; top:34px;}
+      100% {left: 547px; top:36px;}
+
     }
 
 
@@ -579,7 +583,7 @@ opacity:1;
   height: 10px;
   position: absolute;
   animation-name: string;
-  animation-duration: 25s;
+  animation-duration: 5s;
   animation-iteration-count: infinite;
   animation-timing-function: linear;
   transform: rotate(5deg);
@@ -598,10 +602,12 @@ input {
 
 .banner {
   position: relative;
-  width: 90px;
+  font-family: helvetica;
+  width: 100px;
+  padding-top: 2px;
   text-align: center;
   animation-name: banner;
-  animation-duration: 25s;
+  animation-duration: 5s;
   animation-iteration-count: infinite;
   animation-timing-function: linear;
   border: 1px solid black;
