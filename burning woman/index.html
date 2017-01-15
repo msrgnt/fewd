@@ -46,6 +46,10 @@ main {
     position: absolute;
     top: 150px;
     right: 619px;
+    animation-name: beam;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
 }
 
 .beam-img-2 {
@@ -53,7 +57,16 @@ main {
     position: absolute;
     top: 130px;
     right: 310px;
+
     transform: rotate(52.5deg);
+}
+
+@keyframes beam {
+  0% {transform: rotateY(52.5deg)}
+  50% {transform: rotateY(75.5deg)}
+  100% {transform: rotateY(52.5deg)}
+
+
 }
 
 .beam-spot {
@@ -88,8 +101,6 @@ main {
   bottom: 220px;
   right: 630px;
 }
-
-
 
 .doll {
   height: 130px;
@@ -161,7 +172,7 @@ main {
   height: 65px;
   position: absolute;
   bottom: 10px;
-  right: 530px;
+  right: 633px;
 }
 
 
@@ -453,68 +464,39 @@ main {
   100%  {left:735px; top:35px;}
 }
 
-@keyframes dance{
-  0%   {-moz-transform: scaleX(1);
-  -o-transform: scaleX(1);
-  -webkit-tranform: scaleX(1);
-  transform: scaleX(1);
-  filter: FlipH;
-  -ms-filter: "FlipH";
-  }
-
-  100%  {-moz-transform: scaleX(-1);
-  -o-transform: scaleX(-1);
-  -webkit-tranform: scaleX(-1);
-  transform: scaleX(-1);
-  filter: FlipH;
-  -ms-filter: "FlipH";
-  }
+@keyframes cf3FadeInOut {
+  0% {
+  opacity:1;
+}
+45% {
+opacity:1;
+}
+55% {
+opacity:0;
+}
+100% {
+opacity:0;
+}
 }
 
-@keyframes condor{
-  0%   {right:200px; top:100px;
-    -moz-transform: scaleX(1);
-    -o-transform: scaleX(1);
-    -webkit-tranform: scaleX(1);
-    transform: rotate(32deg), scaleX(1);
-    filter: FlipH;
-    -ms-filter: "FlipH";
-    }
-
-  25% {right:100px; top:100px;
-    -moz-transform: scaleX(1);
-    -o-transform: scaleX(1);
-    -webkit-transform: scaleX(1);
-    transform: rotate(0deg), scaleX(1);
-    filter: FlipH;
-    -ms-filter: "FlipH";
-  }
-
-  50%  {right:100px; top:100px;
-            -moz-transform: scaleX(-1);
-            -o-transform: scaleX(-1);
-            -webkit-transform: scaleX(-1);
-            transform: rotate(100deg), scaleX(-1);
-            filter: FlipH;
-            -ms-filter: "FlipH";
-  }
-  75%  {right:200px; top:100px;
-            -moz-transform: scaleX(-1);
-            -o-transform: scaleX(-1);
-            -webkit-transform: scaleX(-1);
-            transform: rotate(64deg), scaleX(-1);
-            filter: FlipH;
-            -ms-filter: "FlipH";
-  }
-  100%  {right:200px; top:100px;
-            -moz-transform: scaleX(1);
-            -o-transform: scaleX(1);
-            -webkit-transform: scaleX(1);
-            transform: rotate(32deg), scaleX(1);
-            filter: FlipH;
-            -ms-filter: "FlipH";
-  }
+@keyframes cf2FadeInOut {
+  0% {
+  opacity:0;
 }
+45% {
+opacity:0;
+}
+55% {
+opacity:1;
+}
+100% {
+opacity:1;
+}
+}
+
+
+
+
 
 .drone {
   height: 50px;
@@ -532,28 +514,44 @@ main {
 }
 
 .dance {
-  height: 20px;
+  height: 25px;
   position: absolute;
   bottom: 146px;
   right: 115px;
-  animation-name: dance;
-  animation-duration: .5s;
+  animation-name: cf3FadeInOut;
+  animation-timing-function: ease-in-out;
   animation-iteration-count: infinite;
-  animation-timing-function: linear;
+  animation-duration: .5s;
+  animation-direction: alternate;
+}
+
+.dance-2 {
+  height: 25px;
+  position: absolute;
+  bottom: 146px;
+  right: 115px;
+  -moz-transform: scaleX(-1);
+  -o-transform: scaleX(-1);
+  -webkit-transform: scaleX(-1);
+  transform: scaleX(-1);
+  filter: FlipH;
+  -ms-filter: "FlipH";
+  animation-name: cf2FadeInOut;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  animation-duration: .5s;
+  animation-direction: alternate;
 }
 
 
 .condor {
   height: 30px;
   position: absolute;
-  top: 25px;
+  top: 75px;
   right: 135px;
-  transform: rotate(32deg);
-  animation-name: condor;
-  animation-duration: 6s;
-  animation-iteration-count: infinite;
-  animation-timing-function: linear;
+  transform: rotate(32deg)
 }
+
 
 .string {
   height: 10px;
@@ -564,6 +562,16 @@ main {
   animation-timing-function: linear;
   transform: rotate(5deg);
 
+}
+
+input, button {
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}
+
+input {
+  margin-top: 20px;
 }
 
 .banner {
@@ -610,6 +618,7 @@ main {
 
       <div class="banner">
          Hello, world! </div>
+
       <img src="vulture.png" class="condor" alt="" />
       <img src="duck.png" class="duck" alt="" />
 
@@ -653,6 +662,7 @@ main {
         <img src="kingvulture-p.png" class="kingvulture-p" alt="" />
         -->
         <img src="hose.png" class="hose" alt="" />
+        <img src="dancing.png" class="dance-2" alt="" />
         <img src="dancing.png" class="dance" alt="" />
 
         <img src="penguin.png" class="penguin" alt="" />
@@ -683,6 +693,7 @@ main {
       <div class="wrapper"></div>
     </main>
     <input type="text" name="" class="box" value="">
+    <br>
     <button type="button" class="button"></button>
     <script type="text/javascript">
     var button = document.querySelector(".button")
