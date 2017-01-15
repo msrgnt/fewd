@@ -445,24 +445,7 @@ main {
   right: 33px;
 }
 
-@keyframes drone{
-  0%   {left:100px; top:20px;}
-  50%  {left: 450px; top:5px;}
-  100%  {left:750px; top:20px;}
-}
 
-
-@keyframes banner{
-  0%   {left:0px; top:15px;}
-  50%  {left: 350px; top:0px;}
-  100%  {left:650px; top:15px;}
-}
-
-@keyframes string{
-  0%   {left:85px; top:35px;}
-  50%  {left: 435px; top:20px;}
-  100%  {left:735px; top:35px;}
-}
 
 @keyframes cf3FadeInOut {
   0% {
@@ -497,21 +480,60 @@ opacity:1;
 
 
 
+    .drone {
+      height: 50px;
+      position: absolute;
+      animation-name: drone;
+      animation-duration: 25s;
+      animation-iteration-count: infinite;
+      animation-timing-function: linear;
+    }
 
-.drone {
-  height: 50px;
-  position: absolute;
-  animation-name: drone;
-  animation-duration: 100s;
-  animation-iteration-count: infinite;
-  animation-timing-function: linear;
-  -moz-transform: scaleX(-1);
-  -o-transform: scaleX(-1);
-  -webkit-transform: scaleX(-1);
-  transform: scaleX(-1);
-  filter: FlipH;
-  -ms-filter: "FlipH";
-}
+
+    .drone-2 {
+      height: 50px;
+      position: absolute;
+      animation-name: drone2;
+      animation-duration: 25s;
+      animation-delay: 25s;
+      animation-iteration-count: infinite;
+      animation-timing-function: linear;
+      -moz-transform: scaleX(-1);
+      -o-transform: scaleX(-1);
+      -webkit-transform: scaleX(-1);
+      transform: scaleX(-1);
+      filter: FlipH;
+      -ms-filter: "FlipH";
+    }
+
+    @keyframes drone {
+        0%   {left:500px; top:20px;}
+        49% {left: 100px; top:20px; opacity: 1;}
+        50%  {opacity: 0;}
+        100%  {left:500px; top:20px; opacity: 0;}
+    }
+    @keyframes drone2 {
+        0%   {left:500px; top:20px; opacity: 0;}
+        49% {left: 100px; top:20px; opacity: 0;}
+        50%  {left: 150px; top: 20px;opacity: 1;}
+        100%  {left:500px; top:20px; opacity: 1; }
+    }
+
+    @keyframes banner{
+      0%   {left: 573px; top:20px;}
+      49%  {left: 173px; top:20px;}
+      50%  {left: 36px; top:15px;}
+      99%  {left: 385px; top:15px;}
+      100%  {left:425px; top:15px;}
+    }
+
+    @keyframes string{
+      0%   {left: 547px; top:36px;}
+      49%  {left: 147px; top:36px;}
+      50%  {left: 125px; top:34px;}
+      100%  {left:485px; top:34px;}
+    }
+
 
 .dance {
   height: 25px;
@@ -557,7 +579,7 @@ opacity:1;
   height: 10px;
   position: absolute;
   animation-name: string;
-  animation-duration: 100s;
+  animation-duration: 25s;
   animation-iteration-count: infinite;
   animation-timing-function: linear;
   transform: rotate(5deg);
@@ -579,7 +601,7 @@ input {
   width: 90px;
   text-align: center;
   animation-name: banner;
-  animation-duration: 100s;
+  animation-duration: 25s;
   animation-iteration-count: infinite;
   animation-timing-function: linear;
   border: 1px solid black;
@@ -615,6 +637,7 @@ input {
       <div class="moon"></div>
       <img src="rope.png" class="string" alt="">
       <img src="drone.png" class="drone" alt="">
+      <img src="drone.png" class="drone-2" alt="">
 
       <div class="banner">
          Hello, world! </div>
@@ -702,7 +725,10 @@ input {
       var poo = document.querySelector(".box").value;
       document.querySelector(".banner").textContent = " " + poo + " ";
     }
-    console.log(poo);
+
+    var positionA = document.querySelector(".condor");
+    var infoA = positionA.getAttribute("style");
+    console.log(infoA);
     </script>
   </body>
 </html>

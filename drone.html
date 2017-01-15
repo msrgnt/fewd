@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style media="screen">
+
+    .drone {
+      height: 50px;
+      position: absolute;
+      animation-name: drone;
+      animation-duration: 15s;
+      animation-iteration-count: infinite;
+      animation-timing-function: linear;
+    }
+
+
+        .drone-2 {
+          height: 50px;
+          position: absolute;
+          animation-name: drone2;
+          animation-duration: 15s;
+          animation-delay: 15s;
+          animation-iteration-count: infinite;
+          animation-timing-function: linear;
+          -moz-transform: scaleX(-1);
+          -o-transform: scaleX(-1);
+          -webkit-transform: scaleX(-1);
+          transform: scaleX(-1);
+          filter: FlipH;
+          -ms-filter: "FlipH";
+        }
+
+    @keyframes drone {
+        0%   {left:500px; top:20px;}
+        49% {left: 100px; top:5px; opacity: 1;}
+        50%  {opacity: 0;}
+        100%  {left:750px; top:20px; opacity: 0;}
+
+    }
+
+    @keyframes drone2 {
+        0%   {left:500px; top:20px; opacity: 0;}
+        49% {left: 100px; top:5px; opacity: 0;}
+        50%  {left: 100px; top: 5px;opacity: 1;}
+        100%  {left:500px; top:20px; opacity: 1; }
+
+    }
+
+    </style>
+  </head>
+  <body>
+    <img src="drone.png" class="drone" alt="">
+    <img src="drone.png" class="drone-2" alt="">
+
+  </body>
+</html>
