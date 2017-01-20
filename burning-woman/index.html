@@ -509,7 +509,7 @@ opacity:1;
 
     @keyframes drone {
         0%   {left:500px; top:20px;}
-        49% {left: 100px; top:20px; opacity: 1;}
+        49% {left: -100px; top:20px; opacity: 1;}
         50%  {opacity: 0;}
         100%  {left:500px; top:20px; opacity: 0;}
     }
@@ -634,10 +634,22 @@ input {
   border-radius: 5px 5px 5px 5px;
 }
 */
+
+.test {
+  height:100px;
+  width: 100px;
+  background-color: white;
+  position: absolute;
+  left: -100px;
+  box-shadow: inset -68px 0px 14px -64px rgb(199, 199, 199);
+
+}
     </style>
   </head>
   <body>
+
     <main>
+
 
 
       <div class="moon"></div>
@@ -720,10 +732,14 @@ input {
       <img src="spotlight.png" class="spotlight-2" alt="" />
 
       <div class="wrapper"></div>
+      <div class="test">
+
+      </div>
     </main>
     <input type="text" name="" class="box" value="">
     <br>
     <button type="button" class="button"></button>
+
     <script type="text/javascript">
     var button = document.querySelector(".button")
     button.addEventListener("click", poop);
