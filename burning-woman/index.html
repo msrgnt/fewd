@@ -6,7 +6,7 @@
     <style media="screen">
 
 main {
-  background-image: linear-gradient(rgb(19, 119, 199), whitesmoke);
+  background-image: linear-gradient(rgb(19, 119, 199), grey);
   height: 500px;
   width: 800px;
   padding-top: 15px;
@@ -481,22 +481,21 @@ opacity:1;
 
 
     .drone {
-      height: 50px;
+      height: 70px;
       position: absolute;
       animation-name: drone;
-      animation-duration: 5s;
+      animation-duration: 40s;
       animation-iteration-count: infinite;
       animation-timing-function: linear;
     }
 
 
     .drone-2 {
-      height: 50px;
-      opacity: 0;
+      height: 70px;
       position: absolute;
       animation-name: drone2;
-      animation-duration: 5s;
-      animation-delay: 5s;
+      animation-duration: 40s;
+      animation-delay: 20s;
       animation-iteration-count: infinite;
       animation-timing-function: linear;
       -moz-transform: scaleX(-1);
@@ -507,20 +506,76 @@ opacity:1;
       -ms-filter: "FlipH";
     }
 
-    @keyframes drone {
-        0%   {left:500px; top:20px;}
-        49% {left: -100px; top:20px; opacity: 1;}
-        50%  {opacity: 0;}
-        100%  {left:500px; top:20px; opacity: 0;}
-    }
-    @keyframes drone2 {
-        0%   {left:500px; top:20px; opacity: 0;}
-        49% {left: 100px; top:20px; opacity: 0;}
-        50%  {left: 150px; top: 20px;opacity: 1;}
-        99%  {opacity: 1; }
-        100%  {left:500px; top:20px; opacity: 0; }
+    .string {
+      height: 15px;
+      position: absolute;
+      animation-name: string;
+      animation-duration: 40s;
+      animation-iteration-count: infinite;
+      animation-timing-function: linear;
+      transform: rotate(-12deg);
     }
 
+    .string-2 {
+      height: 15px;
+      position: absolute;
+      animation-name: string2;
+      animation-duration: 40s;
+      animation-delay: 20s;
+      animation-iteration-count: infinite;
+      animation-timing-function: linear;
+      transform: rotate(5deg);
+    }
+
+    @keyframes drone {
+        0%   {left:900px; top:20px;}
+        50%  {left:-250px; top:20px;}
+        100%  {left:-250px; top:20px;}
+
+    }
+    @keyframes drone2 {
+        0%   {left:-125px; top:20px;}
+        50% {left:930px; top:20px;}
+        100%  {left:930px; top:20px;}
+    }
+
+    @keyframes banner {
+      0%   {left:1000px; top:14px;}
+      50%  {left:-150px; top:14px;}
+      100%  {left:-150px; top:14px;}
+
+  }
+
+    @keyframes banner2{
+      0%   {left:-360px; top:19px;}
+      50% {left:695px; top:19px;}
+      100%  {left:695px; top:19px;}
+  }
+
+  @keyframes string {
+    0%   {left:967px; top:37px;}
+    50%  {left:-193px; top:37px;}
+    100%  {left:-193px; top:37px;}
+
+}
+
+  @keyframes string2{
+    0%   {left:-160px; top:39px;}
+    50% {left:895px; top:39px;}
+    100%  {left:895px; top:39px;}
+}
+
+
+
+/*
+
+@keyframes condor{
+  0%   {left:-160px; top:49px;}
+  20%  {left:495px; top:349px;}
+
+  100%  {left:895px; top:249px;}
+
+}
     @keyframes banner{
       0%   {left: 573px; top:17px;}
       49%  {left: 173px; top:17px;}
@@ -537,7 +592,7 @@ opacity:1;
       100% {left: 547px; top:36px;}
 
     }
-
+*/
 
 .dance {
   height: 25px;
@@ -571,24 +626,20 @@ opacity:1;
 
 
 .condor {
-  height: 30px;
+  height: 40px;
   position: absolute;
   top: 75px;
+  animation-name: condor;
+  animation-iteration-count: infinite;
+  animation-delay: 5s;
+  animation-duration: 50s;
+visibility: hidden;
   right: 135px;
   transform: rotate(32deg)
 }
 
 
-.string {
-  height: 10px;
-  position: absolute;
-  animation-name: string;
-  animation-duration: 5s;
-  animation-iteration-count: infinite;
-  animation-timing-function: linear;
-  transform: rotate(5deg);
 
-}
 
 input, button {
   margin-left: auto;
@@ -607,7 +658,23 @@ input {
   padding-top: 2px;
   text-align: center;
   animation-name: banner;
-  animation-duration: 5s;
+  animation-duration: 40s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  border: 1px solid black;
+  background-color: white;
+  display: inline-block;
+}
+
+.banner-2 {
+  position: relative;
+  font-family: helvetica;
+  width: 100px;
+  padding-top: 2px;
+  text-align: center;
+  animation-name: banner2;
+  animation-duration: 40s;
+  animation-delay: 20s;
   animation-iteration-count: infinite;
   animation-timing-function: linear;
   border: 1px solid black;
@@ -636,12 +703,24 @@ input {
 */
 
 .test {
-  height:100px;
-  width: 100px;
+  height:400px;
+  width: 400px;
   background-color: white;
   position: absolute;
-  left: -100px;
-  box-shadow: inset -68px 0px 14px -64px rgb(199, 199, 199);
+  left: -400px;
+  top: 5px;
+  box-shadow: inset -64px 0px 20px -64px rgb(199, 199, 199);
+
+}
+
+.test-2 {
+  height:520px;
+  width: 400px;
+  background-color: white;
+  position: absolute;
+  right: -400px;
+  top: 5px;
+  box-shadow: inset 64px 0px 20px -64px rgb(199, 199, 199);
 
 }
     </style>
@@ -654,16 +733,20 @@ input {
 
       <div class="moon"></div>
       <img src="rope.png" class="string" alt="">
+      <img src="rope.png" class="string-2" alt="">
+
       <img src="drone.png" class="drone" alt="">
       <img src="drone.png" class="drone-2" alt="">
 
       <div class="banner">
          Hello, world! </div>
-
+         <div class="banner-2">
+            Hello, world! </div>
       <img src="vulture.png" class="condor" alt="" />
-      <img src="duck.png" class="duck" alt="" />
 
       <!--<div class="beam"></div>
+      <img src="duck.png" class="duck" alt="" />
+
       <div class="beam-1"></div>
       <div class="beam-spot"></div>
       <div class="beam-spot-2"></div>-->
@@ -735,6 +818,9 @@ input {
       <div class="test">
 
       </div>
+      <div class="test-2">
+
+      </div>
     </main>
     <input type="text" name="" class="box" value="">
     <br>
@@ -746,6 +832,8 @@ input {
     function poop(event){
       var poo = document.querySelector(".box").value;
       document.querySelector(".banner").textContent = " " + poo + " ";
+      document.querySelector(".banner-2").textContent = " " + poo + " ";
+
     }
 
     var positionA = document.querySelector(".condor");
