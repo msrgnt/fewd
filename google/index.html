@@ -88,7 +88,10 @@
     left: 150px;
     height: 40px;
     width: 630px;
+    padding-left: 18px;
+    font: 16px arial,sans-serif;
     border: 1px solid rgb(219, 219, 219);
+    outline: none;
     box-shadow:
     -webkit-box-shadow: 0px 1px 1px 0px rgb(219, 219, 219);
     -moz-box-shadow: 0px 1px 1px 0px rgb(219, 219, 219);
@@ -163,12 +166,32 @@
     left: 180px;
   }
 
-  img {
+  .mic {
     position: absolute;
     top:30px;
-    left: 690px;
+    left: 700px;
     height: 25px;
   }
+
+  .glass {
+    position: absolute;
+    top:23px;
+    left: 732px;
+    height: 35px;
+  }
+
+  .set {
+    position: absolute;
+    top:19px;
+    left: 90%;
+    height: 50px;
+  }
+
+  @media (max-width: 920px) {
+    .set {
+      left: 825px;
+    }
+
 
     </style>
   </head>
@@ -176,7 +199,9 @@
     <header>
       <div class="logo1"><span class="g">G</span><span class="e">o<span class="y">o</span><span class="g">g</span><span class="l">l</span><span class="e">e</span></div>
       <input type="text" class="search-box" value="">
-      <img src="mic-image.png" alt="">
+      <img src="mic-image.png" class="mic" alt="">
+      <img src="img/glass.png" class="glass" alt="">
+      <img src="img/settings.png" class="set" alt="">
 <article class="links">
       <span class="all">All</span>
       <span class="linkys">Images</span>
@@ -244,20 +269,17 @@
       <div class="content">Synonyms for experience at Thesaurus.com with free online thesaurus, antonyms, and definitions. Dictionary and Word of the Day.</div>
     </div>
 
-
       <div class="result-6 results">
         <div class="title">Experience Synonyms, Experience Antonyms | Thesaurus.com</div>
         <div class="link">www.thesaurus.com/browse/experience</div>
         <div class="content">Synonyms for experience at Thesaurus.com with free online thesaurus, antonyms, and definitions. Dictionary and Word of the Day.</div>
       </div>
 
-
       <div class="result-7 results">
         <div class="title">Experience Synonyms, Experience Antonyms | Thesaurus.com</div>
         <div class="link">www.thesaurus.com/browse/experience</div>
         <div class="content">Synonyms for experience at Thesaurus.com with free online thesaurus, antonyms, and definitions. Dictionary and Word of the Day.</div>
       </div>
-
 
       <div class="result-8 results">
         <div class="title">Experience Synonyms, Experience Antonyms | Thesaurus.com</div>
@@ -276,6 +298,8 @@
         <div class="link">www.thesaurus.com/browse/experience</div>
         <div class="content">Synonyms for experience at Thesaurus.com with free online thesaurus, antonyms, and definitions. Dictionary and Word of the Day.</div>
       </div>
-
+<script type="text/javascript">
+  document.querySelector("input").value = "experience";
+</script>
   </body>
 </html>
