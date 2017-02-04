@@ -1,0 +1,740 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="jquery.js"></script>
+    <meta charset="utf-8">
+    <title></title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<style media="screen">
+
+  @-ms-viewport{
+    width: device-width;
+    zoom: 1;
+  }
+
+
+    @-o-viewport{
+      width: device-width;
+      zoom: 1;
+    }
+
+    @viewport{
+      width: device-width;
+      zoom: 1;
+    }
+
+    .color-button {
+      background: rgba(120, 36, 238, 0.4);
+      height: 40px;
+      width: 40px;
+      border-radius: 1px;
+    }
+
+    div {
+      display: inline;
+    }
+
+    p {
+      opacity: 0;
+      -webkit-transition: width 2s, height 2s, background-color 2s, -webkit-transform 2s;
+      transition: width 2s, height 2s, background-color 2s, transform 2s;
+    }
+
+
+
+    p:hover {
+      background-color: #FFCCCC;
+      width: 200px;
+      height: 200px;
+      -webkit-transform: rotate(180deg);
+      transform: rotate(180deg);
+    }
+
+    .fade {
+       -webkit-animation: fade 2s;
+       animation: fade 2s;
+       opacity: 1;
+      }
+
+    @-webkit-keyframes fade {
+        from {opacity: 0}
+        to {opacity: 1}
+
+    }@keyframes fade {
+        from {opacity: 0}
+        to {opacity: 1}
+    }
+
+    .buttons {
+      margin-top: 30px;
+
+      display: block;
+    }
+
+    .button {
+      background: white;
+      padding: 20px;
+      border-radius: 5px;
+      margin: 0 10px;
+      outline: none;
+      box-shadow: 0 0 5px 1px rgb(230, 230, 230);
+    }
+
+    .button:active, button.active {
+      outline:0;
+      box-shadow: none;
+    }
+
+    .button:focus, button.focus {
+      outline:none;
+    }
+
+    article {
+      background: white;
+      width: 80%;
+      height: 500px;
+      max-width: 800px;
+      padding-top: 15px;
+      padding-bottom: 15px;
+      position: relative;
+      margin-left: auto;
+      margin-right: auto;
+      margin-top: 50px;
+      box-shadow: 0 0 20px 1px rgb(199, 199, 199);
+    }
+
+    .test {
+      height:520px;
+      width: 100px;
+      background-color: white;
+      position: absolute;
+      left: -100px;
+      top: 0;
+      box-shadow: inset -64px 0px 30px -64px rgb(199, 199, 199);
+
+
+    }
+
+    .test-2 {
+      height:520px;
+      width: 100px;
+      background-color: white;
+      right: -100px;
+      top: 0;
+      position: absolute;
+      box-shadow: inset 64px 0px 30px -64px rgb(199, 199, 199);
+
+    }
+
+    @media (max-width: 400px) {
+      .buttons {
+        margin-top: 20px;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+        display: block;
+      }
+
+      .button {
+        background: white;
+        padding: 50px;
+        border-radius: 10px;
+        margin: 0 10px;
+        outline: none;
+        box-shadow:none;
+      }
+    }
+
+    </style>
+  </head>
+<body>
+  <div class="buttons">
+    <button class="shape-button button" name="button"></button>
+    <button class="clear-button button" type="button" name="button"></button>
+  </div>
+  <main>
+
+    <article class="box">  <div class="test">
+
+      </div>
+      <div class="test-2">
+
+      </div></article>
+
+  </main>
+<script type="text/javascript">
+
+  // clear button hides all p elements and whites-out the main
+  $(".clear-button").click(function() {
+    $("p").css("visibility", "hidden");
+    $(".box").css("background", "white");
+  })
+
+  // color button, when clicked:
+  $(".color-button").click(function() {
+    // randomly generates values for rgb and a
+    var red = Math.floor(Math.random() * 256);
+    var green = Math.floor(Math.random() * 256);
+    var blue = Math.floor(Math.random() * 256);
+    var trans = Math.random();
+    // variable randomRGBA gets values, is ready to go in element's css
+    var randomRGBA = "rgba("+ red +","+ green +","+ blue +","+ trans +")";
+    // randomRGBA goes to the background of the main, setting the random background color
+    $(".box").css("background", randomRGBA);
+  });
+
+    // shape button, when clicked:
+    var shape = document.querySelector(".shape-button");
+    shape.addEventListener("click", poop);
+    function poop(event){
+
+      // randomly generates values for rgb and a
+      var reda = Math.floor(Math.random() * 256);
+      var greena = Math.floor(Math.random() * 256);
+      var bluea = Math.floor(Math.random() * 256);
+      var transa = Math.random();
+      // variable randomRGBA gets values, is ready to go in element's css
+      var randomRGBAa = "rgba("+ reda +","+ greena +","+ bluea +","+ transa +")";
+      // randomRGBA goes to the background of the main, setting the random background color
+      $(".box").css("background", randomRGBAa);
+
+      // 20 loops, which in this case:
+      for (var i = 0; i < 30; i++) {
+          // randomly generate values for rgb and a (20x)
+          var red = Math.floor(Math.random() * 256);
+          var green = Math.floor(Math.random() * 256);
+          var blue = Math.floor(Math.random() * 256);
+          var trans = Math.random();
+          // these go into randomRGBA (20x); ready to go in elements' css
+          var randomRGBA = "rgba("+ red +","+ green +","+ blue +","+ trans +")";
+          // by grabbing the main (box) and creating new p elements,
+          // we're setting up to put shit on the page.
+          var body = document.querySelector(".box");
+          var newP = document.createElement("p");
+          // this fancy little css class does some fade-in magic
+          // see css .fade for details.
+          newP.className = "fade";
+          // Here we create a value betwen 0 and 100
+          // This will be used below
+          var value = Math.floor(Math.random() * 101);
+          var newP2 = document.createElement("div");
+          var newP3 = document.createElement("div");
+          var newP4 = document.createElement("div");
+          var newP5 = document.createElement("div");
+
+          newP2.className = "fade";
+          newP3.className = "fade";
+          newP4.className = "fade";
+          newP5.className = "fade";
+
+
+function  pop() {
+  $(newP2).css("height", 530)
+  $(newP2).css("width", 400)
+  $(newP2).css("background", "white")
+  $(newP2).css("box-shadow", "inset 64px 0px 20px -64px rgb(199, 199, 199)")
+  $(newP2).css("position", "absolute")
+  $(newP2).css("top", 5)
+  $(newP2).css("right", -400)
+
+  $(newP3).css("height", 100)
+  $(newP3).css("width", 800)
+  $(newP3).css("background", "white")
+  $(newP3).css("box-shadow", "inset 0px -17px 12px -15px  rgb(199, 199, 199)")
+  $(newP3).css("position", "absolute")
+  $(newP3).css("top", -100)
+  $(newP3).css("right", 0)
+
+  $(newP5).css("height", 100)
+  $(newP5).css("width", 100)
+  $(newP5).css("background", "white")
+  $(newP5).css("position", "absolute")
+  $(newP5).css("top", -100)
+  $(newP5).css("right", -100)
+
+  $(newP4).css("height", 200)
+  $(newP4).css("width", 800)
+  $(newP4).css("background", "white")
+  $(newP4).css("box-shadow", "inset 0px 17px 12px -15px  rgb(199, 199, 199)")
+  $(newP4).css("position", "absolute")
+  $(newP4).css("bottom", -200)
+  $(newP4).css("right", 0)
+}
+
+        if (value >= 0 && value <= 7) {
+          $(newP).css("background", randomRGBA)
+          $(newP).css("height", Math.floor(Math.random() * 300))
+          $(newP).css("width", Math.floor(Math.random() * 300))
+          $(newP).css("border-radius", Math.floor(Math.random() * 200))
+          $(newP).css("position", "absolute")
+          $(newP).css("top", Math.floor(Math.random() * 60) + "%")
+          $(newP).css("left", Math.floor(Math.random() * 60) + "%")
+          var rb = red + 20;
+          var gb = green + 20;
+          var bb = blue + 20;
+          var randomBord = "rgba("+ rb +","+ gb +","+ bb +","+ trans +")";
+          $(newP).css("border", "1px" + " " + "solid" + " " + randomBord);
+        function pop(){}
+        }
+
+        else if (value >= 7 && value <= 14) {
+          $(newP).css("background", randomRGBA)
+          $(newP).css("height", Math.floor(Math.random() * 300))
+          $(newP).css("width", Math.floor(Math.random() * 300))
+          $(newP).css("border-radius", Math.floor(Math.random() * 200))
+          $(newP).css("position", "absolute")
+          $(newP).css("top", Math.floor(Math.random() * 60) + "%")
+          $(newP).css("right", Math.floor(Math.random() * 60) + "%")
+          var rb = red + 20;
+          var gb = green + 20;
+          var bb = blue + 20;
+          var randomBord = "rgba("+ rb +","+ gb +","+ bb +","+ trans +")";
+          $(newP).css("border", "1px" + " " + "solid" + " " + randomBord);
+
+          $(newP2).css("height", 520)
+          $(newP2).css("width", 400)
+          $(newP2).css("background", "white")
+          $(newP2).css("box-shadow", "inset 64px 0px 20px -64px rgb(199, 199, 199)")
+          $(newP2).css("position", "absolute")
+          $(newP2).css("top", 5)
+          $(newP2).css("right", -400)
+
+          $(newP3).css("height", 100)
+          $(newP3).css("width", 800)
+          $(newP3).css("background", "white")
+          $(newP3).css("box-shadow", "inset 0px -17px 12px -15px  rgb(199, 199, 199)")
+          $(newP3).css("position", "absolute")
+          $(newP3).css("top", -100)
+          $(newP3).css("right", 0)
+
+          $(newP4).css("height", 200)
+          $(newP4).css("width", 800)
+          $(newP4).css("background", "white")
+          $(newP4).css("box-shadow", "inset 0px 17px 12px -15px  rgb(199, 199, 199)")
+          $(newP4).css("position", "absolute")
+          $(newP4).css("bottom", -200)
+          $(newP4).css("right", 0)
+
+        }
+
+        else if (value >= 14 && value <= 21) {
+          $(newP).css("background", randomRGBA)
+          $(newP).css("height", Math.floor(Math.random() * 300))
+          $(newP).css("width", Math.floor(Math.random() * 300))
+          $(newP).css("border-radius", Math.floor(Math.random() * 200))
+          $(newP).css("position", "absolute")
+          $(newP).css("bottom", Math.floor(Math.random() * 60) + "%")
+          $(newP).css("right", Math.floor(Math.random() * 60) + "%")
+          var rb = red + 20;
+          var gb = green + 20;
+          var bb = blue + 20;
+          var randomBord = "rgba("+ rb +","+ gb +","+ bb +","+ trans +")";
+          $(newP).css("border", "1px" + " " + "solid" + " " + randomBord);
+          $(newP2).css("height", 520)
+          $(newP2).css("width", 400)
+          $(newP2).css("background", "white")
+          $(newP2).css("box-shadow", "inset 64px 0px 20px -64px rgb(199, 199, 199)")
+          $(newP2).css("position", "absolute")
+          $(newP2).css("top", 5)
+          $(newP2).css("right", -400)
+
+          $(newP3).css("height", 100)
+          $(newP3).css("width", 800)
+          $(newP3).css("background", "white")
+          $(newP3).css("box-shadow", "inset 0px -17px 12px -15px  rgb(199, 199, 199)")
+          $(newP3).css("position", "absolute")
+          $(newP3).css("top", -100)
+          $(newP3).css("right", 0)
+
+          $(newP4).css("height", 200)
+          $(newP4).css("width", 800)
+          $(newP4).css("background", "white")
+          $(newP4).css("box-shadow", "inset 0px 17px 12px -15px  rgb(199, 199, 199)")
+          $(newP4).css("position", "absolute")
+          $(newP4).css("bottom", -200)
+          $(newP4).css("right", 0)
+
+        }
+
+        else if (value >= 21 && value <= 28) {
+          $(newP).css("background", randomRGBA)
+          $(newP).css("height", Math.floor(Math.random() * 300))
+          $(newP).css("width", Math.floor(Math.random() * 300))
+          $(newP).css("border-radius", Math.floor(Math.random() * 200))
+          $(newP).css("position", "absolute")
+          $(newP).css("bottom", Math.floor(Math.random() * 60) + "%")
+          $(newP).css("left", Math.floor(Math.random() * 60) + "%")
+          var rb = red + 20;
+          var gb = green + 20;
+          var bb = blue + 20;
+          var randomBord = "rgba("+ rb +","+ gb +","+ bb +","+ trans +")";
+          $(newP).css("border", "1px" + " " + "solid" + " " + randomBord);
+
+          $(newP2).css("height", 520)
+          $(newP2).css("width", 400)
+          $(newP2).css("background", "white")
+          $(newP2).css("box-shadow", "inset 64px 0px 20px -64px rgb(199, 199, 199)")
+          $(newP2).css("position", "absolute")
+          $(newP2).css("top", 5)
+          $(newP2).css("right", -400)
+
+          $(newP3).css("height", 100)
+          $(newP3).css("width", 800)
+          $(newP3).css("background", "white")
+          $(newP3).css("box-shadow", "inset 0px -17px 12px -15px  rgb(199, 199, 199)")
+          $(newP3).css("position", "absolute")
+          $(newP3).css("top", -100)
+          $(newP3).css("right", 0)
+
+          $(newP4).css("height", 200)
+          $(newP4).css("width", 800)
+          $(newP4).css("background", "white")
+          $(newP4).css("box-shadow", "inset 0px 17px 12px -15px  rgb(199, 199, 199)")
+          $(newP4).css("position", "absolute")
+          $(newP4).css("bottom", -200)
+          $(newP4).css("right", 0)
+        }
+
+          // Same as above but rectangle has linear gradient!
+        else if (value > 28 && value <= 40) {
+
+          $(newP).css("background-image", "linear-gradient(" + randomRGBA + "," + randomBord + ")")
+          $(newP).css("height", Math.floor(Math.random() * 300))
+          $(newP).css("width", Math.floor(Math.random() * 300))
+          $(newP).css("border-radius", Math.floor(Math.random() * 200))
+          $(newP).css("position", "absolute")
+          $(newP).css("top", Math.floor(Math.random() * 80) + "%")
+          $(newP).css("left", Math.floor(Math.random() * 80) + "%")
+          var rb = red + 20;
+          var gb = green + 20;
+          var bb = blue + 20;
+          var randomBord = "rgba("+ rb +","+ gb +","+ bb +","+ trans +")";
+          $(newP).css("border", "1px" + " " + "solid" + " " + randomBord);
+
+          $(newP2).css("height", 520)
+          $(newP2).css("width", 400)
+          $(newP2).css("background", "white")
+          $(newP2).css("box-shadow", "inset 64px 0px 20px -64px rgb(199, 199, 199)")
+          $(newP2).css("position", "absolute")
+          $(newP2).css("top", 5)
+          $(newP2).css("right", -400)
+
+          $(newP3).css("height", 100)
+          $(newP3).css("width", 800)
+          $(newP3).css("background", "white")
+          $(newP3).css("box-shadow", "inset 0px -17px 12px -15px  rgb(199, 199, 199)")
+          $(newP3).css("position", "absolute")
+          $(newP3).css("top", -100)
+          $(newP3).css("right", 0)
+
+          $(newP4).css("height", 200)
+          $(newP4).css("width", 800)
+          $(newP4).css("background", "white")
+          $(newP4).css("box-shadow", "inset 0px 17px 12px -15px  rgb(199, 199, 199)")
+          $(newP4).css("position", "absolute")
+          $(newP4).css("bottom", -200)
+          $(newP4).css("right", 0)
+        }
+          // upward triangle (?)
+        else if (value > 40 && value <= 50) {
+
+          $(newP).css("height", 0)
+          $(newP).css("width", 0)
+          $(newP).css("border-left", "10px solid transparent")
+          $(newP).css("border-right", "10px solid transparent")
+          $(newP).css("border-bottom", Math.floor(Math.random() * 100) + "px" + " " + "solid" + " " +  randomRGBA)
+          $(newP).css("position", "absolute")
+          $(newP).css("top", Math.floor(Math.random() * 100) + "%")
+          $(newP).css("left", Math.floor(Math.random() * 100) + "%")
+
+          $(newP2).css("height", 520)
+          $(newP2).css("width", 400)
+          $(newP2).css("background", "white")
+          $(newP2).css("box-shadow", "inset 64px 0px 20px -64px rgb(199, 199, 199)")
+          $(newP2).css("position", "absolute")
+          $(newP2).css("top", 5)
+          $(newP2).css("right", -400)
+
+          $(newP3).css("height", 100)
+          $(newP3).css("width", 800)
+          $(newP3).css("background", "white")
+          $(newP3).css("box-shadow", "inset 0px -17px 12px -15px  rgb(199, 199, 199)")
+          $(newP3).css("position", "absolute")
+          $(newP3).css("top", -100)
+          $(newP3).css("right", 0)
+
+          $(newP4).css("height", 200)
+          $(newP4).css("width", 800)
+          $(newP4).css("background", "white")
+          $(newP4).css("box-shadow", "inset 0px 17px 12px -15px  rgb(199, 199, 199)")
+          $(newP4).css("position", "absolute")
+          $(newP4).css("bottom", -200)
+          $(newP4).css("right", 0)
+        }
+          // downward triangle (?)
+        else if (value > 50 && value <= 60) {
+          $(newP).css("height", 0)
+          $(newP).css("width", 0)
+          $(newP).css("border-left", "10px solid transparent")
+          $(newP).css("border-right", "10px solid transparent")
+          $(newP).css("border-top", Math.floor(Math.random() * 100) + "px" + " " + "solid" + " " +  randomRGBA)
+          $(newP).css("position", "absolute")
+          $(newP).css("top", Math.floor(Math.random() * 100) + "%")
+          $(newP).css("left", Math.floor(Math.random() * 100) + "%")
+
+          $(newP2).css("height", 520)
+          $(newP2).css("width", 400)
+          $(newP2).css("background", "white")
+          $(newP2).css("box-shadow", "inset 64px 0px 20px -64px rgb(199, 199, 199)")
+          $(newP2).css("position", "absolute")
+          $(newP2).css("top", 5)
+          $(newP2).css("right", -400)
+
+          $(newP3).css("height", 100)
+          $(newP3).css("width", 800)
+          $(newP3).css("background", "white")
+          $(newP3).css("box-shadow", "inset 0px -17px 12px -15px  rgb(199, 199, 199)")
+          $(newP3).css("position", "absolute")
+          $(newP3).css("top", -100)
+          $(newP3).css("right", 0)
+
+          $(newP4).css("height", 200)
+          $(newP4).css("width", 800)
+          $(newP4).css("background", "white")
+          $(newP4).css("box-shadow", "inset 0px 17px 12px -15px  rgb(199, 199, 199)")
+          $(newP4).css("position", "absolute")
+          $(newP4).css("bottom", -200)
+          $(newP4).css("right", 0)
+        }
+          // point left triangle
+        else if (value > 60 && value <= 65) {
+          $(newP).css("height", 0)
+          $(newP).css("width", 0)
+          $(newP).css("border-top", "10px solid transparent")
+          $(newP).css("border-right", "20px solid transparent")
+          $(newP).css("border-bottom", Math.floor(Math.random() * 30) + "px" + " " + "solid" + " " +  randomRGBA)
+          $(newP).css("position", "absolute")
+          $(newP).css("top", Math.floor(Math.random() * 100) + "%")
+          $(newP).css("left", Math.floor(Math.random() * 100) + "%")
+
+          $(newP2).css("height", 520)
+          $(newP2).css("width", 400)
+          $(newP2).css("background", "white")
+          $(newP2).css("box-shadow", "inset 64px 0px 20px -64px rgb(199, 199, 199)")
+          $(newP2).css("position", "absolute")
+          $(newP2).css("top", 5)
+          $(newP2).css("right", -400)
+
+          $(newP3).css("height", 100)
+          $(newP3).css("width", 800)
+          $(newP3).css("background", "white")
+          $(newP3).css("box-shadow", "inset 0px -17px 12px -15px  rgb(199, 199, 199)")
+          $(newP3).css("position", "absolute")
+          $(newP3).css("top", -100)
+          $(newP3).css("right", 0)
+
+          $(newP4).css("height", 200)
+          $(newP4).css("width", 800)
+          $(newP4).css("background", "white")
+          $(newP4).css("box-shadow", "inset 0px 17px 12px -15px  rgb(199, 199, 199)")
+          $(newP4).css("position", "absolute")
+          $(newP4).css("bottom", -200)
+          $(newP4).css("right", 0)
+
+        }
+          // point right triangle
+        else if (value > 65 && value <= 70) {
+
+          $(newP).css("height", 0)
+          $(newP).css("width", 0)
+          $(newP).css("border-top", "10px solid transparent")
+          $(newP).css("border-left", "20px solid transparent")
+          $(newP).css("border-bottom", Math.floor(Math.random() * 30) + "px" + " " + "solid" + " " +  randomRGBA)
+          $(newP).css("position", "absolute")
+          $(newP).css("top", Math.floor(Math.random() * 100) + "%")
+          $(newP).css("left", Math.floor(Math.random() * 100) + "%")
+
+          $(newP2).css("height", 520)
+          $(newP2).css("width", 400)
+          $(newP2).css("background", "white")
+          $(newP2).css("box-shadow", "inset 64px 0px 20px -64px rgb(199, 199, 199)")
+          $(newP2).css("position", "absolute")
+          $(newP2).css("top", 5)
+          $(newP2).css("right", -400)
+
+          $(newP3).css("height", 100)
+          $(newP3).css("width", 800)
+          $(newP3).css("background", "white")
+          $(newP3).css("box-shadow", "inset 0px -17px 12px -15px  rgb(199, 199, 199)")
+          $(newP3).css("position", "absolute")
+          $(newP3).css("top", -100)
+          $(newP3).css("right", 0)
+
+          $(newP4).css("height", 200)
+          $(newP4).css("width", 800)
+          $(newP4).css("background", "white")
+          $(newP4).css("box-shadow", "inset 0px 17px 12px -15px  rgb(199, 199, 199)")
+          $(newP4).css("position", "absolute")
+          $(newP4).css("bottom", -200)
+          $(newP4).css("right", 0)
+
+        }
+          // up-left triangle
+        else if (value > 70 && value <= 75) {
+
+          $(newP).css("height", 0)
+          $(newP).css("width", 0)
+          $(newP).css("border-top", Math.floor(Math.random() * 30) + "px" + " " + "solid" + " " +  randomRGBA)
+          $(newP).css("border-right", Math.floor(Math.random() * 30) + "px" + " " + "solid" + " " +  "transparent")
+          $(newP).css("position", "absolute")
+          $(newP).css("top", Math.floor(Math.random() * 100) + "%")
+          $(newP).css("left", Math.floor(Math.random() * 100) + "%")
+
+          $(newP2).css("height", 520)
+          $(newP2).css("width", 400)
+          $(newP2).css("background", "white")
+          $(newP2).css("box-shadow", "inset 64px 0px 20px -64px rgb(199, 199, 199)")
+          $(newP2).css("position", "absolute")
+          $(newP2).css("top", 5)
+          $(newP2).css("right", -400)
+
+          $(newP3).css("height", 100)
+          $(newP3).css("width", 800)
+          $(newP3).css("background", "white")
+          $(newP3).css("box-shadow", "inset 0px -17px 12px -15px  rgb(199, 199, 199)")
+          $(newP3).css("position", "absolute")
+          $(newP3).css("top", -100)
+          $(newP3).css("right", 0)
+
+          $(newP4).css("height", 200)
+          $(newP4).css("width", 800)
+          $(newP4).css("background", "white")
+          $(newP4).css("box-shadow", "inset 0px 17px 12px -15px  rgb(199, 199, 199)")
+          $(newP4).css("position", "absolute")
+          $(newP4).css("bottom", -200)
+          $(newP4).css("right", 0)
+
+        }
+          // up-right triangle
+        else if (value > 75 && value <= 80) {
+
+          $(newP).css("height", 0)
+          $(newP).css("width", 0)
+          $(newP).css("border-top", Math.floor(Math.random() * 30) + "px" + " " + "solid" + " " +  randomRGBA)
+          $(newP).css("border-left", Math.floor(Math.random() * 30) + "px" + " " + "solid" + " " +  "transparent")
+          $(newP).css("position", "absolute")
+          $(newP).css("top", Math.floor(Math.random() * 100) + "%")
+          $(newP).css("left", Math.floor(Math.random() * 100) + "%")
+
+          $(newP2).css("height", 520)
+          $(newP2).css("width", 400)
+          $(newP2).css("background", "white")
+          $(newP2).css("box-shadow", "inset 64px 0px 20px -64px rgb(199, 199, 199)")
+          $(newP2).css("position", "absolute")
+          $(newP2).css("top", 5)
+          $(newP2).css("right", -400)
+
+          $(newP3).css("height", 100)
+          $(newP3).css("width", 800)
+          $(newP3).css("background", "white")
+          $(newP3).css("box-shadow", "inset 0px -17px 12px -15px  rgb(199, 199, 199)")
+          $(newP3).css("position", "absolute")
+          $(newP3).css("top", -100)
+          $(newP3).css("right", 0)
+
+          $(newP4).css("height", 200)
+          $(newP4).css("width", 800)
+          $(newP4).css("background", "white")
+          $(newP4).css("box-shadow", "inset 0px 17px 12px -15px  rgb(199, 199, 199)")
+          $(newP4).css("position", "absolute")
+          $(newP4).css("bottom", -200)
+          $(newP4).css("right", 0)
+        }
+
+        else if (value > 80 && value <= 81) {
+
+          $(newP).css("width", "80px")
+          $(newP).css("height", "80px")
+          $(newP).css("border-radius", 50 + "%")
+          $(newP).css("box-shadow",  15 + "px" + " " + 15 + "px" + " " + 0 + " " + 0 + " " + randomRGBA)
+          $(newP).css("top", Math.floor(Math.random() * 100) + "%")
+          $(newP).css("left", Math.floor(Math.random() * 100) + "%")
+          $(newP).css("position", "absolute")
+
+          $(newP2).css("height", 520)
+          $(newP2).css("width", 400)
+          $(newP2).css("background", "white")
+          $(newP2).css("box-shadow", "inset 64px 0px 20px -64px rgb(199, 199, 199)")
+          $(newP2).css("position", "absolute")
+          $(newP2).css("top", 5)
+          $(newP2).css("right", -400)
+
+          $(newP3).css("height", 100)
+          $(newP3).css("width", 800)
+          $(newP3).css("background", "white")
+          $(newP3).css("box-shadow", "inset 0px -17px 12px -15px  rgb(199, 199, 199)")
+          $(newP3).css("position", "absolute")
+          $(newP3).css("top", -100)
+          $(newP3).css("right", 0)
+
+          $(newP4).css("height", 200)
+          $(newP4).css("width", 800)
+          $(newP4).css("background", "white")
+          $(newP4).css("box-shadow", "inset 0px 17px 12px -15px  rgb(199, 199, 199)")
+          $(newP4).css("position", "absolute")
+          $(newP4).css("bottom", -200)
+          $(newP4).css("right", 0)
+
+        }
+
+        else if (value > 81 && value <= 101) {
+          $(newP).css("height", 0)
+          $(newP).css("width", 0)
+          $(newP).css("border-left", Math.floor(Math.random() * 100) + "px" + " " + "solid" + " " + "transparent")
+          $(newP).css("border-right", Math.floor(Math.random() * 100) + "px" + " " + "solid" + " " + "transparent")
+          $(newP).css("border-top", Math.floor(Math.random() * 150) + "px" + " " + "solid" + " " +  randomRGBA)
+          $(newP).css("border-radius", 50 + "%")
+          $(newP).css("position", "absolute")
+          $(newP).css("top", Math.floor(Math.random() * 100) + "%")
+          $(newP).css("left", Math.floor(Math.random() * 100) + "%")
+
+          $(newP2).css("height", 520)
+          $(newP2).css("width", 400)
+          $(newP2).css("background", "white")
+          $(newP2).css("box-shadow", "inset 64px 0px 20px -64px rgb(199, 199, 199)")
+          $(newP2).css("position", "absolute")
+          $(newP2).css("top", 0)
+          $(newP2).css("right", -400)
+
+          $(newP3).css("height", 100)
+          $(newP3).css("width", 800)
+          $(newP3).css("background", "white")
+          $(newP3).css("box-shadow", "inset 0px -17px 12px -15px  rgb(199, 199, 199)")
+          $(newP3).css("position", "absolute")
+          $(newP3).css("top", -100)
+          $(newP3).css("right", 0)
+
+          $(newP4).css("height", 200)
+          $(newP4).css("width", 800)
+          $(newP4).css("background", "white")
+          $(newP4).css("box-shadow", "inset 0px 17px 12px -15px  rgb(199, 199, 199)")
+          $(newP4).css("position", "absolute")
+          $(newP4).css("bottom", -200)
+          $(newP4).css("right", 0)
+
+        }
+
+
+console.log(value);
+      body.appendChild(newP2);
+      body.appendChild(newP4);
+      body.appendChild(newP5);
+
+      body.appendChild(newP3);
+      body.appendChild(newP);
+
+    }
+  }
+  </script>
+</body>
+</html>
