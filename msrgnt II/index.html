@@ -2,12 +2,62 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>msrgnt</title>
+    <title>MSRGNT</title>
+    <script src="jquery.js"></script>
+    <style media="screen">
+
+      body {
+        font-family: Arial;
+      }
+
+      main {
+        margin-left: auto;
+        margin-right: auto;
+        width: 250px;
+        margin-top: 100px;
+        font-size: 24px;
+      }
+
+      .click {
+        margin-bottom: 15px;
+        width: 250px;
+        display: block;
+        margin-left: 85px;
+      }
+
+      .projects, .photos, .writing {
+        visibility: hidden;
+        margin-bottom: 15px;
+        width: 250px;
+        display: block;
+        margin-left: 85px;
+      }
+
+      .menu-on {
+        visibility: visible;
+        margin-bottom: 15px;
+        width: 250px;
+        display: block;
+        margin-left: 85px;
+      }
+
+    </style>
   </head>
   <body>
-    <header>
-      <h1>msrgnt</h1>
-      <nav>menu</nav>
-    </header>
+    <main>
+      <div class="click">Click</div>
+      <div class="mi projects">Projects</div>
+      <div class="mi photos">Photos</div>
+      <div class="mi writing">Writing</div>
+      <script type="text/javascript">
+
+          $('.click').on('click', function() {
+            console.log("hi");
+
+            $('.mi').toggleClass('menu-on');
+          });
+
+      </script>
+    </main>
   </body>
 </html>
