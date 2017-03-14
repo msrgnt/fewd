@@ -8,23 +8,37 @@
 
       .box-a {
         background: white;
-        height: 300px;
-        width: 300px;
+        height: 100px;
+        width: 500px;
         padding: 0px;
         position: relative;
         text-align: center;
-        display: inline-block;
+        display: block;
+        border: 1px solid pink;
+
       }
 
       .box-b {
         background: white;
-        height: 80px;
-        width: 20px;
+        height: 100px;
+        width: 500px;
+        text-align: center;
+        padding: 0px;
+        margin: 0px;
+        display: block;
+        border: 1px solid pink;
+
+      }
+
+      .box-c {
+        background: white;
+        height: 100px;
+        width: 500px;
         text-align: center;
         padding: 0px;
         margin: 0px;
         border: 1px solid pink;
-        display: inline-block;
+        display: block;
       }
 
     </style>
@@ -32,7 +46,7 @@
   <body>
     <div class="box-a"></div>
     <div class="box-b"></div>
-
+    <div class="box-c"></div>
     <script type="text/javascript">
     function  displaySeconds() {
       var currentTime = new Date();
@@ -56,15 +70,16 @@
       var randomColor = "rgba("+ red +","+ green +","+ blue +","+ trans +")";
       var body = document.querySelector(".box-a");
       var newP = document.createElement("p");
-      $(newP).css("height", 25)
-      $(newP).css("width", 25)
-      $(newP).css("border-radius", 25)
+      $(newP).css("height", 5)
+      $(newP).css("width", 5)
+      $(newP).css("border-radius", 5)
       $(newP).css("display", "inline-block")
       $(newP).css("border", "1px solid " + randomColorB)
       $(newP).css("background-color", "rgba("+ red +","+ green +","+ blue +","+ trans +")")
       body.appendChild(newP);
       if (seconds === 0) {
         removeDots()
+        displayMin()
       }
 
 }
@@ -87,9 +102,9 @@ function displayFirst() {
       var randomColor = "rgba("+ red +","+ green +","+ blue +","+ trans +")";
       var body = document.querySelector(".box-a");
       var newP = document.createElement("p");
-      $(newP).css("height", 25)
-      $(newP).css("width", 25)
-      $(newP).css("border-radius", 25)
+      $(newP).css("height", 5)
+      $(newP).css("width", 5)
+      $(newP).css("border-radius", 5)
       $(newP).css("display", "inline-block")
       $(newP).css("border", "1px solid " + randomColorB)
       $(newP).css("background-color", "rgba("+ red +","+ green +","+ blue +","+ trans +")")
@@ -123,18 +138,77 @@ console.log("hello");
       $(newP).css("border", "1px solid " + randomColorB)
       $(newP).css("background-color", "rgba("+ red +","+ green +","+ blue +","+ trans +")")
       body.appendChild(newP);
-  }
 }
+}
+
+function displayMin() {
+  var currentTime = new Date();
+  var hours = currentTime.getHours();
+  var minutes = currentTime.getMinutes();
+  var seconds = currentTime.getSeconds();
+      var red = Math.floor(Math.random() * 256);
+      var green = Math.floor(Math.random() * 256);
+      var blue = Math.floor(Math.random() * 256);
+      var rad = Math.floor(Math.random() * 75);
+      var trans = Math.random();
+      var redB = red + 10;
+      var greenB = green + 10;
+      var blueB = blue + 10;
+      var randomColorB = "rgba("+ redB +","+ greenB +","+ blueB +","+ trans +")";
+      var randomColor = "rgba("+ red +","+ green +","+ blue +","+ trans +")";
+      var body = document.querySelector(".box-b");
+      var newP = document.createElement("span");
+      $(newP).css("height", 5)
+      $(newP).css("width", 5)
+      $(newP).css("border-radius", 5)
+      $(newP).css("display", "inline-block")
+      $(newP).css("border", "1px solid " + randomColorB)
+      $(newP).css("background-color", "rgba("+ red +","+ green +","+ blue +","+ trans +")")
+      body.appendChild(newP);
+};
+
+function displayFirstHour() {
+  var currentTime = new Date();
+  var hours = currentTime.getHours();
+  var minutes = currentTime.getMinutes();
+  var seconds = currentTime.getSeconds();
+console.log("hello");
+  for (var i = 0; i < hours; i++) {
+      var red = Math.floor(Math.random() * 256);
+      var green = Math.floor(Math.random() * 256);
+      var blue = Math.floor(Math.random() * 256);
+      var rad = Math.floor(Math.random() * 75);
+      var trans = Math.random();
+      var redB = red + 10;
+      var greenB = green + 10;
+      var blueB = blue + 10;
+      var randomColorB = "rgba("+ redB +","+ greenB +","+ blueB +","+ trans +")";
+      var randomColor = "rgba("+ red +","+ green +","+ blue +","+ trans +")";
+      var body = document.querySelector(".box-c");
+      var newP = document.createElement("div");
+      $(newP).css("height", 15)
+      $(newP).css("width", 15)
+      $(newP).css("border-radius", 15)
+      $(newP).css("display", "inline-block")
+      $(newP).css("border", "1px solid " + randomColorB)
+      $(newP).css("background-color", "rgba("+ red +","+ green +","+ blue +","+ trans +")")
+      body.appendChild(newP);
+  }
+};
 
     function removeDots (event) {
       $("p").remove();
       console.log("hello");
     };
+
     displayFirst();
     displayFirstMin();
-
+    displayFirstHour();
     displaySeconds();
+    displayMin();
     setInterval(displaySeconds, 1000);
+    setInterval(displayMin, 60000);
+
 
     </script>
   </body>
