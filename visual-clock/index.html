@@ -7,46 +7,42 @@
     <style media="screen">
 
       .box-a {
-        background: white;
-        height: 100px;
-        width: 500px;
-        padding: 0px;
-        position: relative;
+        margin-top: 50px;
         text-align: center;
         display: block;
-        border: 1px solid pink;
-
       }
 
-      .box-b {
-        background: white;
-        height: 100px;
-        width: 500px;
-        text-align: center;
-        padding: 0px;
-        margin: 0px;
-        display: block;
-        border: 1px solid pink;
+      div, p, span {
+        margin: 0;
+      }
 
+
+      .box-b {
+        margin-top: 50px;
+        display: block;
       }
 
       .box-c {
-        background: white;
-        height: 100px;
-        width: 500px;
-        text-align: center;
-        padding: 0px;
-        margin: 0px;
-        border: 1px solid pink;
+        margin-top: 200px;
         display: block;
+      }
+
+      main {
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+        width: 500px;
       }
 
     </style>
   </head>
   <body>
+    <main>
+      <div class="box-c"></div>
+      <div class="box-b"></div>
+
     <div class="box-a"></div>
-    <div class="box-b"></div>
-    <div class="box-c"></div>
+    </main>
     <script type="text/javascript">
     function  displaySeconds() {
       var currentTime = new Date();
@@ -70,11 +66,12 @@
       var randomColor = "rgba("+ red +","+ green +","+ blue +","+ trans +")";
       var body = document.querySelector(".box-a");
       var newP = document.createElement("p");
-      $(newP).css("height", 5)
-      $(newP).css("width", 5)
-      $(newP).css("border-radius", 5)
+      $(newP).css("height", 25)
+      $(newP).css("width", 25)
+      $(newP).css("border-radius", 25)
       $(newP).css("display", "inline-block")
-      $(newP).css("border", "1px solid " + randomColorB)
+      $(newP).css("border", "1px solid pink")
+
       $(newP).css("background-color", "rgba("+ red +","+ green +","+ blue +","+ trans +")")
       body.appendChild(newP);
       if (seconds === 0) {
@@ -102,11 +99,12 @@ function displayFirst() {
       var randomColor = "rgba("+ red +","+ green +","+ blue +","+ trans +")";
       var body = document.querySelector(".box-a");
       var newP = document.createElement("p");
-      $(newP).css("height", 5)
-      $(newP).css("width", 5)
-      $(newP).css("border-radius", 5)
+      $(newP).css("height", 25)
+      $(newP).css("width", 25)
+      $(newP).css("border-radius", 25)
       $(newP).css("display", "inline-block")
-      $(newP).css("border", "1px solid " + randomColorB)
+      $(newP).css("border", "1px solid pink")
+
       $(newP).css("background-color", "rgba("+ red +","+ green +","+ blue +","+ trans +")")
       body.appendChild(newP);
   }
@@ -131,11 +129,12 @@ console.log("hello");
       var randomColor = "rgba("+ red +","+ green +","+ blue +","+ trans +")";
       var body = document.querySelector(".box-b");
       var newP = document.createElement("span");
-      $(newP).css("height", 5)
-      $(newP).css("width", 5)
-      $(newP).css("border-radius", 5)
+      $(newP).css("height", 25)
+      $(newP).css("width", 25)
+      $(newP).css("border-radius", 25)
       $(newP).css("display", "inline-block")
-      $(newP).css("border", "1px solid " + randomColorB)
+      $(newP).css("border", "1px solid pink")
+
       $(newP).css("background-color", "rgba("+ red +","+ green +","+ blue +","+ trans +")")
       body.appendChild(newP);
 }
@@ -158,13 +157,46 @@ function displayMin() {
       var randomColor = "rgba("+ red +","+ green +","+ blue +","+ trans +")";
       var body = document.querySelector(".box-b");
       var newP = document.createElement("span");
-      $(newP).css("height", 5)
-      $(newP).css("width", 5)
-      $(newP).css("border-radius", 5)
+      $(newP).css("height", 25)
+      $(newP).css("width", 25)
+      $(newP).css("border-radius", 25)
       $(newP).css("display", "inline-block")
-      $(newP).css("border", "1px solid " + randomColorB)
+      $(newP).css("border", "1px solid pink")
+
       $(newP).css("background-color", "rgba("+ red +","+ green +","+ blue +","+ trans +")")
       body.appendChild(newP);
+      if (minutes === 59) {
+        setInterval(displayHour, 60000)
+
+      }
+};
+
+function displayHour() {
+  var currentTime = new Date();
+  var hours = currentTime.getHours();
+  var minutes = currentTime.getMinutes();
+  var seconds = currentTime.getSeconds();
+      var red = Math.floor(Math.random() * 256);
+      var green = Math.floor(Math.random() * 256);
+      var blue = Math.floor(Math.random() * 256);
+      var rad = Math.floor(Math.random() * 75);
+      var trans = Math.random();
+      var redB = red + 10;
+      var greenB = green + 10;
+      var blueB = blue + 10;
+      var randomColorB = "rgba("+ redB +","+ greenB +","+ blueB +","+ trans +")";
+      var randomColor = "rgba("+ red +","+ green +","+ blue +","+ trans +")";
+      var body = document.querySelector(".box-c");
+      var newP = document.createElement("span");
+      $(newP).css("height", 25)
+      $(newP).css("width", 25)
+      $(newP).css("border-radius", 25)
+      $(newP).css("display", "inline-block")
+      $(newP).css("border", "1px solid pink")
+
+      $(newP).css("background-color", "rgba("+ red +","+ green +","+ blue +","+ trans +")")
+      body.appendChild(newP);
+      console.log("oh shit");
 };
 
 function displayFirstHour() {
@@ -186,11 +218,12 @@ console.log("hello");
       var randomColor = "rgba("+ red +","+ green +","+ blue +","+ trans +")";
       var body = document.querySelector(".box-c");
       var newP = document.createElement("div");
-      $(newP).css("height", 15)
-      $(newP).css("width", 15)
-      $(newP).css("border-radius", 15)
+      $(newP).css("height", 25)
+      $(newP).css("width", 25)
+      $(newP).css("border-radius", 25)
       $(newP).css("display", "inline-block")
-      $(newP).css("border", "1px solid " + randomColorB)
+      $(newP).css("border", "1px solid pink")
+
       $(newP).css("background-color", "rgba("+ red +","+ green +","+ blue +","+ trans +")")
       body.appendChild(newP);
   }
