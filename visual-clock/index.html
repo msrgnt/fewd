@@ -34,7 +34,7 @@
       .box-c {
         margin-top: 110px;
         display: block;
-        padding: 0 130px;
+        padding: 0 110px;
 
       }
 
@@ -58,6 +58,7 @@
       <article class="box-a"></article>
 
     </main>
+
     <script type="text/javascript">
 
     var sred = Math.floor(Math.random() * 256);
@@ -69,35 +70,31 @@
     var blue = Math.floor(Math.random() * 256);
 
     function  displaySeconds() {
+
       var currentTime = new Date();
       var hours = currentTime.getHours();
       var minutes = currentTime.getMinutes();
       var seconds = currentTime.getSeconds();
-      console.log(currentTime);
-      console.log(hours);
-      console.log(minutes);
-      console.log(seconds);
-      console.log("hello")
+      console.log(hours, minutes, seconds);
+
       var red = sred - Math.floor(Math.random() * 20);
       var green = sgreen - Math.floor(Math.random() * 20);
       var blue = sblue - Math.floor(Math.random() * 20);
-      var rad = Math.floor(Math.random() * 75);
       var trans = Math.random();
-      var redB = red + 10;
-      var greenB = green + 10;
-      var blueB = blue + 10;
-      var randomColorB = "rgba("+ redB +","+ greenB +","+ blueB +","+ trans +")";
+
       var randomColor = "rgba("+ red +","+ green +","+ blue +","+ trans +")";
       var body = document.querySelector(".box-a");
       var newP = document.createElement("p");
+
       $(newP).css("height", 25)
       $(newP).css("width", 25)
       $(newP).css("border-radius", 25)
       $(newP).css("display", "inline-block")
       $(newP).css("border", "1px solid pink")
-
       $(newP).css("background-color", "rgba("+ red +","+ green +","+ blue +","+ trans +")")
+
       body.appendChild(newP);
+
       if (seconds === 0) {
         removeDots()
         displayMin()
@@ -105,12 +102,10 @@
       if (hours === 23 && minutes === 59) {
         setInterval(removeDiv(), 60000)
       }
+    }
 
-}
 function displayFirst() {
   var currentTime = new Date();
-  var hours = currentTime.getHours();
-  var minutes = currentTime.getMinutes();
   var seconds = currentTime.getSeconds();
   var fred = Math.floor(Math.random() * 256);
   var fgreen = Math.floor(Math.random() * 256);
@@ -119,12 +114,7 @@ function displayFirst() {
       var red = fred + 10;
       var green = fgreen + 10;
       var blue = fblue + 10;
-      var rad = Math.floor(Math.random() * 75);
       var trans = Math.random();
-      var redB = red + 10;
-      var greenB = green + 10;
-      var blueB = blue + 10;
-      var randomColorB = "rgba("+ redB +","+ greenB +","+ blueB +","+ trans +")";
       var randomColor = "rgba("+ red +","+ green +","+ blue +","+ trans +")";
       var body = document.querySelector(".box-a");
       var newP = document.createElement("p");
@@ -151,12 +141,9 @@ function displayFirstMin() {
       var red = fred + 10;
       var green = fgreen + 10;
       var blue = fblue + 10;
-      var rad = Math.floor(Math.random() * 75);
       var trans = Math.random();
       var redB = red + 10;
-      var greenB = green + 10;
-      var blueB = blue + 10;
-      var randomColorB = "rgba("+ redB +","+ greenB +","+ blueB +","+ trans +")";
+
       var randomColor = "rgba("+ red +","+ green +","+ blue +","+ trans +")";
       var body = document.querySelector(".box-b");
       var newP = document.createElement("span");
@@ -179,12 +166,8 @@ function displayMin() {
       var mred = Math.floor(Math.random() * 256);
       var mgreen = Math.floor(Math.random() * 256);
       var mblue = Math.floor(Math.random() * 256);
-      var rad = Math.floor(Math.random() * 75);
       var trans = Math.random();
-      var redB = red + 10;
-      var greenB = green + 10;
-      var blueB = blue + 10;
-      var randomColorB = "rgba("+ redB +","+ greenB +","+ blueB +","+ trans +")";
+
       var randomColor = "rgba("+ red +","+ green +","+ blue +","+ trans +")";
       var body = document.querySelector(".box-b");
       var newP = document.createElement("span");
@@ -210,12 +193,8 @@ function displayHour() {
       var red = Math.floor(Math.random() * 256);
       var green = Math.floor(Math.random() * 256);
       var blue = Math.floor(Math.random() * 256);
-      var rad = Math.floor(Math.random() * 75);
       var trans = Math.random();
-      var redB = red + 10;
-      var greenB = green + 10;
-      var blueB = blue + 10;
-      var randomColorB = "rgba("+ redB +","+ greenB +","+ blueB +","+ trans +")";
+
       var randomColor = "rgba("+ red +","+ green +","+ blue +","+ trans +")";
       var body = document.querySelector(".box-c");
       var newP = document.createElement("div");
@@ -244,12 +223,8 @@ var blue = Math.floor(Math.random() * 256);
       var newRed = red - 20;
       var newBlue = blue - 20;
       var newGreen = green - 20;
-      var rad = Math.floor(Math.random() * 75);
       var trans = Math.random();
-      var redB = red + 10;
-      var greenB = green + 10;
-      var blueB = blue + 10;
-      var randomColorB = "rgba("+ redB +","+ greenB +","+ blueB +","+ trans +")";
+
       var randomColor = "rgba("+ newRed +","+ newGreen +","+ newBlue +","+ trans +")";
       var body = document.querySelector(".box-c");
       var newP = document.createElement("div");
