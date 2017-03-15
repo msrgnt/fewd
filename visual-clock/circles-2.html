@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <script src="jquery.js"></script>
+    <title></title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      for (var i = 0; i < 8000; i++) {
+      var body = document.querySelector("body");
+      var newP = document.createElement("p");
+      $(newP).css("height", 1)
+      $(newP).css("width", 1)
+      $(newP).css("border-radius", 1)
+      $(newP).css("margin", 2)
+      $(body).css("margin", 2)
+      $(newP).css("display", "inline-block")
+      $(newP).css("background-color", "red")
+      body.appendChild(newP);
+    }
+    </script>
+  </body>
+</html>
