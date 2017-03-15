@@ -27,7 +27,7 @@
       }
 
       .box-c {
-        margin-top: 70px;
+        margin-top: 130px;
         display: block;
         padding: 0 130px;
 
@@ -44,12 +44,21 @@
   </head>
   <body>
     <main>
-      <div class="box-c"></div>
-      <div class="box-b"></div>
+      <article class="box-c"></article>
+      <article class="box-b"></article>
 
-    <div class="box-a"></div>
+    <article class="box-a"></article>
     </main>
     <script type="text/javascript">
+
+    var sred = Math.floor(Math.random() * 256);
+    var sgreen = Math.floor(Math.random() * 256);
+    var sblue = Math.floor(Math.random() * 256);
+
+    var red = Math.floor(Math.random() * 256);
+    var green = Math.floor(Math.random() * 256);
+    var blue = Math.floor(Math.random() * 256);
+
     function  displaySeconds() {
       var currentTime = new Date();
       var hours = currentTime.getHours();
@@ -60,9 +69,9 @@
       console.log(minutes);
       console.log(seconds);
       console.log("hello")
-      var red = Math.floor(Math.random() * 256);
-      var green = Math.floor(Math.random() * 256);
-      var blue = Math.floor(Math.random() * 256);
+      var red = sred - Math.floor(Math.random() * 20);
+      var green = sgreen - Math.floor(Math.random() * 20);
+      var blue = sblue - Math.floor(Math.random() * 20);
       var rad = Math.floor(Math.random() * 75);
       var trans = Math.random();
       var redB = red + 10;
@@ -83,6 +92,9 @@
       if (seconds === 0) {
         removeDots()
         displayMin()
+      }
+      if (hours === 23 && minutes === 59) {
+        setInterval(removeDiv(), 60000)
       }
 
 }
@@ -155,9 +167,9 @@ function displayMin() {
   var hours = currentTime.getHours();
   var minutes = currentTime.getMinutes();
   var seconds = currentTime.getSeconds();
-      var red = Math.floor(Math.random() * 256);
-      var green = Math.floor(Math.random() * 256);
-      var blue = Math.floor(Math.random() * 256);
+      var mred = Math.floor(Math.random() * 256);
+      var mgreen = Math.floor(Math.random() * 256);
+      var mblue = Math.floor(Math.random() * 256);
       var rad = Math.floor(Math.random() * 75);
       var trans = Math.random();
       var redB = red + 10;
@@ -177,7 +189,7 @@ function displayMin() {
       body.appendChild(newP);
       if (minutes === 59) {
         setInterval(displayHour(), 60000)
-        removeDots();
+        removeSpan();
       }
 };
 
@@ -207,6 +219,7 @@ function displayHour() {
       $(newP).css("background-color", "rgba("+ red +","+ green +","+ blue +","+ trans +")")
       body.appendChild(newP);
       console.log("oh shit");
+
 };
 
 function displayFirstHour() {
@@ -244,7 +257,17 @@ var blue = Math.floor(Math.random() * 256);
 
     function removeDots (event) {
       $("p").remove();
-      console.log("hello");
+      console.log("remove");
+    };
+
+    function removeSpan (event) {
+      $("span").remove();
+      console.log("remove");
+    };
+
+    function removeDiv (event) {
+      $("div").remove();
+      console.log("remove");
     };
 
     displayFirst();
@@ -252,7 +275,6 @@ var blue = Math.floor(Math.random() * 256);
     displayFirstHour();
     displaySeconds();
     setInterval(displaySeconds, 1000);
-    setInterval(displayMin, 60000);
 
 
     </script>
