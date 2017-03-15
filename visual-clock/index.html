@@ -12,7 +12,7 @@
 
 
       .box-a {
-        margin-top: 50px;
+        margin-top: 25px;
         text-align: center;
         display: block;
         padding: 0 110px;
@@ -25,7 +25,7 @@
 
 
       .box-b {
-        margin-top: 50px;
+        margin-top: 25px;
         display: block;
         padding: 0 110px;
 
@@ -96,15 +96,16 @@
       body.appendChild(newP);
 
       if (seconds === 0) {
-        removeDots()
+        //bug
+        removeSecs()
         displayMin()
       }
       if (hours === 23 && minutes === 59) {
-        setInterval(removeDiv(), 60000)
+        setInterval(removeHours(), 60000)
       }
     }
 
-function displayFirst() {
+function displayFirstSec() {
   var currentTime = new Date();
   var seconds = currentTime.getSeconds();
   var fred = Math.floor(Math.random() * 256);
@@ -181,7 +182,7 @@ function displayMin() {
       body.appendChild(newP);
       if (minutes === 59) {
         setInterval(displayHour(), 60000)
-        removeSpan();
+        removeMins();
       }
 };
 
@@ -239,27 +240,25 @@ var blue = Math.floor(Math.random() * 256);
   }
 };
 
-    function removeDots (event) {
+    function removeSecs (event) {
       $("p").remove();
-      console.log("removedots");
+      console.log("removesec");
     };
 
-    function removeSpan (event) {
+    function removeMins (event) {
       $("span").remove();
-      console.log("remove");
+      console.log("removemin");
     };
 
-    function removeDiv (event) {
+    function removeHours (event) {
       $("div").remove();
-      console.log("remove");
+      console.log("removehour");
     };
 
-    displayFirst();
+    displayFirstSec();
     displayFirstMin();
     displayFirstHour();
-    displaySeconds();
     setInterval(displaySeconds, 1000);
-
 
     </script>
   </body>
