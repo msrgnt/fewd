@@ -70,6 +70,7 @@
     var blue = Math.floor(Math.random() * 256);
 
     function  displaySeconds() {
+      console.log("display seconds")
 
       var currentTime = new Date();
       var hours = currentTime.getHours();
@@ -95,17 +96,18 @@
 
       body.appendChild(newP);
 
-      if (seconds === 0) {
-        //bug
-        removeSecs()
-        displayMin()
+      if (seconds === 55) {
+        setTimeout(removeSecs, 5000);
+        setTimeout(displayMin, 5000);
       }
+
       if (hours === 23 && minutes === 59) {
-        setInterval(removeHours(), 60000)
+        setTimeout(removeHours, 60000)
       }
     }
 
 function displayFirstSec() {
+  console.log("display first sec")
   var currentTime = new Date();
   var seconds = currentTime.getSeconds();
   var fred = Math.floor(Math.random() * 256);
@@ -131,6 +133,8 @@ function displayFirstSec() {
 }
 
 function displayFirstMin() {
+  console.log("display first min")
+
   var currentTime = new Date();
   var hours = currentTime.getHours();
   var minutes = currentTime.getMinutes();
@@ -160,6 +164,8 @@ function displayFirstMin() {
 }
 
 function displayMin() {
+  console.log("display min")
+
   var currentTime = new Date();
   var hours = currentTime.getHours();
   var minutes = currentTime.getMinutes();
@@ -181,12 +187,14 @@ function displayMin() {
       $(newP).css("background-color", "rgba("+ red +","+ green +","+ blue +","+ trans +")")
       body.appendChild(newP);
       if (minutes === 59) {
-        setInterval(displayHour(), 60000)
+        setTimeout(displayHour, 60000)
         removeMins();
       }
 };
 
 function displayHour() {
+  console.log("display hour")
+
   var currentTime = new Date();
   var hours = currentTime.getHours();
   var minutes = currentTime.getMinutes();
@@ -212,14 +220,15 @@ function displayHour() {
 };
 
 function displayFirstHour() {
+  console.log("display first hour")
+
   var currentTime = new Date();
   var hours = currentTime.getHours();
   var minutes = currentTime.getMinutes();
   var seconds = currentTime.getSeconds();
-console.log("hello");
-var red = Math.floor(Math.random() * 256);
-var green = Math.floor(Math.random() * 256);
-var blue = Math.floor(Math.random() * 256);
+  var red = Math.floor(Math.random() * 256);
+  var green = Math.floor(Math.random() * 256);
+  var blue = Math.floor(Math.random() * 256);
   for (var i = 0; i < hours; i++) {
       var newRed = red - 20;
       var newBlue = blue - 20;
@@ -242,17 +251,17 @@ var blue = Math.floor(Math.random() * 256);
 
     function removeSecs (event) {
       $("p").remove();
-      console.log("removesec");
+      console.log("remove sec");
     };
 
     function removeMins (event) {
       $("span").remove();
-      console.log("removemin");
+      console.log("remove min");
     };
 
     function removeHours (event) {
       $("div").remove();
-      console.log("removehour");
+      console.log("remove hour");
     };
 
     displayFirstSec();

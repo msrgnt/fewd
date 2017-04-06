@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <script src="jquery.js"></script>
+    <title>WWS</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <style media="screen">
+      body {
+        font-family: helvetica;
+        background-color: hsl(314,65%,92%);
+
+      }
+
+      .fade {
+         -webkit-animation: fade 1s;
+         animation: fade 1s;
+         opacity: .85;
+        }
+
+        @-webkit-keyframes fade {
+            from {opacity: 0}
+            to {opacity: .85}
+
+        }@keyframes fade {
+            from {opacity: 0}
+            to {opacity: .85}
+        }
+
+      header {
+        margin: 0 auto;
+        text-align: center;
+        position: relative;
+      }
+
+      .head-spans {
+        margin-top: 50px;
+        margin-bottom: 10px;
+        margin-left: 0;
+      }
+
+      .head-span {
+        margin-left: 20px;
+        margin-right: 20px;
+        font-size: 24px;
+      }
+
+      .introPop, .profilePop, .sharePop, .spotPop {
+        opacity: 0.85;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background:  #fff;
+        visibility: hidden;
+        text-align: center;
+        padding-top: 100px;
+        z-index: 1;
+      }
+
+      #map{
+        margin: 0 auto;
+        max-width: 500px;
+        border: 4px solid pink;
+        border-radius: 20px;
+        height: 500px;
+        background:  #fff;
+        z-index: 0;
+      }
+
+      .introText, .spotText {
+        text-align: left;
+        max-width: 600px;
+        margin: 0 auto;
+        border: 10px solid pink;
+        padding: 10px;
+        border-radius: 15px;
+      }
+
+      .introX {
+        font-size: 36px;
+      }
+
+      @media (max-width: 400px) {
+
+        main {
+          max-width: 380px;
+          margin: 0 auto;
+          border: 4px solid pink;
+          border-radius: 20px;
+          height: 420px;
+          background:  #fff;
+        }
+
+        .introX {
+          font-size: 48px;
+        }
+
+        .head-span {
+          font-size: 20px;
+          margin-left: 5px;
+          margin-right: 5px;
+        }
+
+        .spot-row {
+          width: 10px;
+          display: inline;
+        }
+      }
+
+      td {
+        width: 200px;
+      }
+
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="head-spans">
+        <span class="head-span spots">Home</span>
+        <span class="head-span spots">Spots</span>
+        <span class="head-span share">Share</span>
+        <span class="head-span profile">Profile</span>
+      </div>
+    </header>
+    <div class="introPop fade">
+      <div class="introText">
+        <h1>Welcome</h1>
+        <h2>Where do you skate?</h2>
+        <button type="button" name="button">Skip</button>
+      </div>
+      <span class="introX">X</span>
+    </div>
+    <div class="sharePop">
+      <div class="introText">
+        <h1>Share</h1>
+        <h2>Search</h2>
+        <h2>Map</h2>
+      </div>
+      <span class="introX">X</span>
+    </div>
+    <div class="profilePop">
+      <div class="introText">
+        <h1>Name</h1>
+        <h2>Spots</h2>
+        <h2>Social media</h2>
+      </div>
+      <span class="introX">X</span>
+    </div>
+    <div class="spotPop">
+      <div class="spotText">
+        <h4>What's there?</h4>
+        <table>
+          <tr>
+            <td><input type="checkbox" name="ledge" value="ledge"> ledge</td>
+            <td><input type="checkbox" name="curbs" value="curbs"> curbs</td>
+            <td><input type="checkbox" name="manny" value="manny"> manny</td>
+            <td><input type="checkbox" name="hubba" value="hubba"> hubba</td>
+            <td><input type="checkbox" name="banks" value="banks"> bank</td>
+          </tr>
+          <tr>
+            <td><input type="checkbox" name="stairs" value="stairs"> stairs</td>
+            <td><input type="checkbox" name="rails" value="rails"> handrail</td>
+            <td><input type="checkbox" name="wall ride" value="wall ride"> wall ride</td>
+            <td><input type="checkbox" name="flat bar" value="flat bar"> flat bar</td>
+            <td><input type="checkbox" name="h. pipe" value="h. pipe"> h. pipe</td>
+          </tr>
+          <tr>
+            <td><input type="checkbox" name="gap" value="gap"> gap</td>
+            <td><input type="checkbox" name="hips" value="hips"> hip</td>
+            <td><input type="checkbox" name="bowls" value="bowls"> bowls</td>
+            <td><input type="checkbox" name="q. pipe" value="q. pipe"> q. pipe</td>
+            <td><input type="checkbox" name="other" value="other?"> other</td>
+          </tr>
+        </table>
+        <h4>Is it a bust?</h4>
+          <td><input type="radio" name="bust"> Yes</td><br />
+          <td><input type="radio" name="bust"> No</td><br />
+          <td><input type="radio" name="bust"> Hit or miss</td>
+      </div>
+      <span class="introX">X</span>
+    </div>
+    <main>
+      <div id="map"></div>
+    </main>
+
+    <button background-color="red" type="button" class="test" name="button"></button>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAEq9Lblg02E1M8SU5122WHjw79O-gYGKo&callback=initMap"
+  type="text/javascript"></script>
+
+    <script type="text/javascript">
+
+    window.onload = function(){
+      introCall()
+    };
+
+    function introCall() {
+      console.log('introCall');
+      $('.introPop').css("visibility", "visible");
+    }
+
+    $('.introX').click(function() {
+      console.log("close");
+      $(".introPop").css("visibility", "hidden");
+      $(".sharePop").css("visibility", "hidden");
+      $(".sharePop").removeClass("fade");
+      $(".profilePop").css("visibility", "hidden");
+      $(".profilePop").removeClass("fade");
+      $(".spotPop").css("visibility", "hidden");
+      $(".spotPop").removeClass("fade");
+    });
+
+    $('.test').click(function() {
+      console.log("close");
+      $(".spotPop").css("visibility", "visible");
+      $(".spotPop").addClass("fade");
+    });
+
+    $('.share').click(function() {
+      console.log("close");
+      $(".sharePop").css("visibility", "visible");
+      $(".sharePop").addClass("fade");
+    });
+
+    $('.profile').click(function() {
+      console.log("close");
+      $(".profilePop").css("visibility", "visible");
+      $(".profilePop").addClass("fade");
+    });
+
+    //Google Maps shit below
+    //Google Maps CSS:
+        /*
+        html, body {
+          height: 100%;
+          margin: 0;
+        }
+        #map{
+          height: 100%;
+          margin: 0;
+        }
+        */
+
+                function initMap() {
+                  var map = new google.maps.Map(document.getElementById('map'), {
+                    center: {lat: -34.397, lng: 150.644},
+                    zoom: 15
+                  });
+                  var infoWindow = new google.maps.InfoWindow({map: map});
+
+                  // Try HTML5 geolocation.
+                  if (navigator.geolocation) {
+                    navigator.geolocation.getCurrentPosition(function(position) {
+                      var pos = {
+                        lat: position.coords.latitude,
+                        lng: position.coords.longitude
+                      };
+
+                      infoWindow.setPosition(pos);
+                      infoWindow.setContent('Location found.');
+                      map.setCenter(pos);
+                    }, function() {
+                      handleLocationError(true, infoWindow, map.getCenter());
+                    });
+                  } else {
+                    // Browser doesn't support Geolocation
+                    handleLocationError(false, infoWindow, map.getCenter());
+                  }
+                }
+
+                function handleLocationError(browserHasGeolocation, infoWindow, pos) {
+                  infoWindow.setPosition(pos);
+                  infoWindow.setContent(browserHasGeolocation ?
+                                        'Error: The Geolocation service failed.' :
+                                        'Error: Your browser doesn\'t support geolocation.');
+                }
+
+
+    </script>
+  </body>
+</html>
