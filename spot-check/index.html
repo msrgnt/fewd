@@ -406,7 +406,7 @@ function initMap() {
       // and when its data updates
       // https://firebase.google.com/docs/reference/js/firebase.database.Reference
       markerAppReference.ref('spots').on('value', function(results) {
-console.log("spots value cahnge");
+        console.log("spots value change");
           var markerArray = [];
 
           var allMarkers = results.val();
@@ -478,7 +478,6 @@ console.log("spots value cahnge");
 
               // push element to array of messages -- this is pushing to an array, not HTTP push
               markerArray.push($markerInfoRow);
-              console.log(markerArray);
           }
          //map.remove();
 
