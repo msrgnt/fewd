@@ -117,7 +117,6 @@
       }
 
 
-
     button {
       height: 40px;
       text-align: center;
@@ -146,6 +145,9 @@
     </style>
   </head>
   <body>
+    <div class="introPop">
+    </div>
+
     <div class="sharePop">
       <h1>Describe the spot</h1>
       <form id="spot-form" role="search">
@@ -304,15 +306,11 @@ function initMap() {
               return;
           }
 
-          // Clear out the old markers.
-
-          // For each place, get the icon, name and location.
           var bounds = new google.maps.LatLngBounds();
           places.forEach(function(place) {
               if (!place.geometry) {
                   return;
               }
-
 
               if (place.geometry.viewport) {
                   // Only geocodes have viewport.
@@ -327,44 +325,27 @@ function initMap() {
   }
 
   function getPosts() {
-      // retrieve messages data when .on() initially executes
-      // and when its data updates
-      // https://firebase.google.com/docs/reference/js/firebase.database.Reference
+
       markerAppReference.ref('spots').on('value', function (results) {
         var $messageBoard = $('.message-board');
         var messages = [];
-
         var allMsgs = results.val();
-
         // iterate through results coming from database call; messages
         for (var msg in allMsgs) {
           var name = allMsgs[msg].Name;
           var info = allMsgs[msg].Info;
-
-          // create message element
           var $messageListElement = $('<li>');
-          // create delete element
           var $deleteElement = $('<i class="fa fa-trash pull-right delete"></i>');
-
-          // add id as data attribute so we can refer to later for updating
           $messageListElement.attr('data-id', msg);
-
-          // add message to li
           $messageListElement.html(name);
-
-          // add delete element
           $messageListElement.append($deleteElement);
-
-          // push element to array of messages -- this is pushing to an array, not HTTP push
           messages.push($messageListElement);
-
           $deleteElement.on('click', function(e) {
               var id = $(e.target.parentNode).data('id');
               deleteMessage(id);
               //markers[indexOfMarker].setMap(null);
           })
         }
-
         // remove lis to avoid dupes
         // .empty() is a jQuery method to remove all child nodes
         $messageBoard.empty();
@@ -386,14 +367,12 @@ function initMap() {
       // https://firebase.google.com/docs/reference/js/firebase.database.Reference
       markerAppReference.ref('spots').on('value', function(results) {
           var markerArray = [];
-
           var allMarkers = results.val();
 
           var icon = {
               url: "rip.png", // url
               scaledSize: new google.maps.Size(40, 40) // scaled size
           };
-
 
           for (var marker in allMarkers) {
 
@@ -405,18 +384,19 @@ function initMap() {
 
               // create message element
               var $markerInfoRow = $("<div class='row'></div>");
-              var latLng = new google.maps.LatLng(lat, long);
               if (rip === "rip") {
+                console.log("rip");
                 var marker = new google.maps.Marker({
-                    position: latLng,
+                    position: {lat: lat, lng: long},
                     clickable: true,
                     icon: icon,
                     title: name
                 });
               } else {
+                console.log("roop");
 
                 var marker = new google.maps.Marker({
-                    position: latLng,
+                    position: {lat: lat, lng: long},
                     clickable: true,
                     title: name
                 });
@@ -457,7 +437,6 @@ function initMap() {
 
       });
 
-
   }
 
   function deleteMessage(id) {
@@ -489,14 +468,13 @@ function initMap() {
             console.log('2 checked')
             var rip = document.getElementById('r2').value;
           }
+
           var spotName = $('#spot-name').val();
           var spotInfo = $('#spot-info').val();
           $('#spot-name').val('');
           $('#spot-info').val('');
 
           var fuck = markerAppReference.ref("spots");
-
-          //placeMarker(event.latLng);
 
           fuck.push({
               Name: spotName,
@@ -514,15 +492,6 @@ function initMap() {
   var input = document.getElementById('pac-input');
   var searchBox = new google.maps.places.SearchBox(input);
 
-/*
-  function placeMarker(location) {
-
-      var marker = new google.maps.Marker({
-          position: location,
-          map: map
-      });
-
-  }*/
 
   // Try HTML5 geolocation.
   if (navigator.geolocation) {
