@@ -1,23 +1,30 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <link href="https://fonts.googleapis.com/css?family=Oxygen" rel="stylesheet">
     <meta charset="utf-8">
     <title></title>
 
     <style media="screen">
 
     body {
-        font-family: 'sawasdee.tff',serif;
+        font-family: 'Oxygen', sans-serif;
         font-size: 16px;
         font-weight: normal;
         line-height: 1;
         letter-spacing: 0.015em;
         color: #046A38;
-        background: #FEFCF6;
+        background: rgb(240, 250, 250);
     }
 
     #nav {
       z-index: 99999;
+    }
+
+    img {
+        display: block;
+        max-width: 100%;
+        height: auto;
     }
 
     div {
@@ -32,23 +39,23 @@
         margin: 0 auto;
     }
 
-    #footer .inner .table {
+    .footer .inner .table {
         border: 1px solid #046A38;
     }
 
-    #footer .inner .cell {
+    .footer .inner .cell {
         vertical-align: top;
         width: 33.3333%;
         padding: 58px 0;
         text-align: center;
     }
 
-    #footer h3 {
+    .footer h3 {
         padding-top: 10px;
     }
 
     h3 {
-        font-family: 'sawasdee.tff';
+      font-family: 'Oxygen', sans-serif;
         font-weight: normal;
         font-size: 13px;
         line-height: 1;
@@ -70,11 +77,12 @@
         height: 100%;
     }
 
-    #footer .inner {
-        background: #FEFCF6;
+    .footer .inner {
+      background: rgb(240, 250, 250);
         padding: 6px;
         margin: 0 auto;
     }
+
 
     #nav {
         width: 100%;
@@ -82,9 +90,23 @@
         position: fixed;
         top: 0;
         left: 0;
-        background: #FEFCF6;
+        background: rgb(240, 250, 250);
         z-index: 900;
     }
+
+    a, a:link, a:visited, a:active {
+    text-decoration: none;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    color: #046A38;
+}
+
+.footer a.social {
+    font-size: 12px;
+    display: inline-block;
+    margin: 0 10px 10px;
+}
 
     #nav ul {
         list-style: none;
@@ -106,11 +128,11 @@
         line-height: 78px;
     }
 
-    #footer h3 {
+    .footer h3 {
     padding-top: 10px;
     }
 
-    #footer .inner .cell {
+    .footer .inner .cell {
         vertical-align: top;
         width: 33.3333%;
         padding: 58px 0;
@@ -128,7 +150,7 @@
     }
 
     h3 {
-        font-family: 'sawasdee.tff';
+      font-family: 'Oxygen', sans-serif;
         font-weight: normal;
         font-size: 13px;
         line-height: 1;
@@ -137,20 +159,32 @@
         margin-bottom: 22px;
     }
 
-    #footer {
+    .footer {
         width: 100%;
         margin: 100px auto 0;
         padding: 70px 40px;
-        background: url(img/pattern-retina.png) 0 0 repeat;
+        background: url(footer.png) 0 0 repeat;
+        background-image: url(footer.png);
+        background-position-x: 0px;
+        background-position-y: 0px;
         background-size: 95px 44px;
+        background-repeat-x: repeat;
+        background-repeat-y: repeat;
+        background-attachment: initial;
+        background-origin: initial;
+        background-clip: initial;
+        background-color: initial;
     }
+
+
+
     .neutra_bold {
-        font-family: 'sawasdee.tff';
+      font-family: 'Oxygen', sans-serif;
         text-transform: uppercase;
         font-weight: normal;
         letter-spacing: 2px;
     }
-    #outer {
+    .outer {
         padding: 92px 20px 20px;
       }
     div {
@@ -163,25 +197,38 @@
         display: block;
     }
 
-    .footer {
-        width: 100%;
-        margin: 100px auto 0;
-        padding: 70px 40px;
-        background: url(img/pattern-retina.png) 0 0 repeat;
-        background-size: 95px 44px;
+    .footer .dotted {
+        padding: 0 3px;
+        position: relative;
     }
 
-    #footer .dotted:before, #footer .dotted:after {
+    .footer .dotted:before {
+        left: 0;
+    }
+
+    .footer .dotted:after {
+    right: 0;
+}
+
+    .footer .dotted:before, .footer .dotted:after {
         content: '';
         display: block;
         width: 3px;
         height: 100%;
         position: absolute;
         top: 0;
-        background: url(img/dot.png) 0 0 repeat-y;
+        background: url(footer.png) 0 0 repeat-y;
     }
 
-    #footer .inner .cell {
+    .footer p {
+    padding-bottom: 10px;
+}
+p {
+    font-size: 15px;
+    line-height: 23px;
+}
+
+    .footer .inner .cell {
     vertical-align: top;
     width: 33.3333%;
     padding: 58px 0;
@@ -199,6 +246,15 @@
     }
 
 
+    .fa {
+      height: 12px;
+        display: inline-block;
+        font: normal normal normal 14px/1 FontAwesome;
+        font-size: inherit;
+        text-rendering: auto;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
 
     </style>
   </head>
@@ -213,21 +269,39 @@
             <li><a href="#">Contact</a></li>
           </ul>
         </div>
+        <div class="">
+          <img src="main.jpg" alt="">
+        </div>
         <div class="footer">
           <div class="wrapper">
             <div class="inner">
               <div class="table">
                 <div class="cell">
                   <h3>Address</h3>
-                  <p>15 Beaufin Street <br> Charleston, SC 29401</p>
+                  <p>631 Haight Street <br> San Francisco, CA 94117</p>
                 </div>
                 <div class="cell">
                   <div class="dotted">
                     <h3>Follow Us</h3>
+                    <a href="https://www.instagram.com/ghettokitchensf/" target="_blank" class="social">
+                    <img class="fa fa-instagram" src="instagram-6-24.ico">
+                    </a>
+                    <a href="https://www.facebook.com/Ghetto-Kitchen-354096324992320/
+                    "  target="_blank" class="social">
+                    <img src="facebook-24.jpg" class="fa fa-facebook">
+                    </a>
+                    <a href="https://twitter.com/ghettokitchensf
+                    "  target="_blank" class="social">
+                    <img class="fa fa-twitter" src="twitter-24.png" alt="">
+                    </a>
+                    <p>© 2017 Ghetto Kitchen. Site by O&O.</p>
+
                   </div>
                 </div>
                 <div class="cell">
                   <h3>Contact Us</h3>
+                  <p>(415) 364-8646
+<br> info@GhettoK.com</p>
 
                 </div>
               </div>
