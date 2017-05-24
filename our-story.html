@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link href="https://fonts.googleapis.com/css?family=Oxygen" rel="stylesheet">
+    <meta charset="utf-8">
+    <title></title>
+
+    <style media="screen">
+
+    body {
+        font-family: 'Oxygen', sans-serif;
+        font-size: 16px;
+        font-weight: normal;
+        line-height: 1;
+        letter-spacing: 0.015em;
+        color: #046A38;
+        background: rgb(255, 255, 255);
+    }
+
+    #nav {
+      z-index: 99999;
+    }
+
+    img {
+        display: block;
+        max-width: 100%;
+        height: auto;
+    }
+
+    div {
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+
+    .wrapper {
+        width: 100%;
+        max-width: 1080px;
+        margin: 0 auto;
+    }
+
+    .footer .inner .table {
+        border: 1px solid #046A38;
+    }
+
+    .footer .inner .cell {
+        vertical-align: top;
+        width: 33.3333%;
+        padding: 58px 0;
+        text-align: center;
+    }
+
+    .footer h3 {
+        padding-top: 10px;
+    }
+
+    h3 {
+      font-family: 'Oxygen', sans-serif;
+        font-weight: normal;
+        font-size: 13px;
+        line-height: 1;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        margin-bottom: 22px;
+    }
+
+    .table .cell {
+        display: table-cell;
+        vertical-align: middle;
+        text-align: center;
+    }
+
+    .table {
+        display: table;
+        table-layout: fixed;
+        width: 100%;
+        height: 100%;
+    }
+
+    .footer .inner {
+      background: rgb(255, 255, 255);
+;
+        padding: 6px;
+        margin: 0 auto;
+    }
+
+
+    #nav {
+        width: 100%;
+        height: 78px;
+        position: fixed;
+        top: 0;
+        left: 0;
+        background: rgb(255, 255, 255);
+;
+        z-index: 900;
+    }
+
+    .logo {
+      height: 80px;
+      margin: 0 auto 40px auto;
+    }
+
+    a, a:link, a:visited, a:active {
+    text-decoration: none;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    color: #046A38;
+}
+
+.footer a.social {
+    font-size: 12px;
+    display: inline-block;
+    margin: 0 10px 10px;
+}
+
+    #nav ul {
+        list-style: none;
+        display: table;
+        width: 100%;
+        table-layout: fixed;
+    }
+    #nav li {
+      display: table-cell;
+      text-align: center;
+    }
+    * {
+        margin: 0;
+        padding: 0;
+    }
+    #nav li a {
+        font-size: 14px;
+        text-decoration: none;
+        line-height: 78px;
+    }
+
+    .footer h3 {
+    padding-top: 10px;
+    }
+
+    .footer .inner .cell {
+        vertical-align: top;
+        width: 33.3333%;
+        padding: 58px 0;
+        text-align: center;
+    }
+
+    h3 {
+        display: block;
+        font-size: 1.17em;
+        -webkit-margin-before: 1em;
+        -webkit-margin-after: 1em;
+        -webkit-margin-start: 0px;
+        -webkit-margin-end: 0px;
+        font-weight: bold;
+    }
+
+    h3 {
+      font-family: 'Oxygen', sans-serif;
+        font-weight: normal;
+        font-size: 13px;
+        line-height: 1;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        margin-bottom: 22px;
+    }
+
+    .footer {
+        width: 100%;
+        margin: 100px auto 0;
+        padding: 70px 40px;
+        background: url(footer.png) 0 0 repeat;
+        background-image: url(footer.png);
+        background-position-x: 0px;
+        background-position-y: 0px;
+        background-size: 495px 444px;
+        background-repeat-x: repeat;
+        background-repeat-y: repeat;
+        background-attachment: initial;
+        background-origin: initial;
+        background-clip: initial;
+        background-color: initial;
+    }
+
+
+
+    .neutra_bold {
+      font-family: 'Oxygen', sans-serif;
+        text-transform: uppercase;
+        font-weight: normal;
+        letter-spacing: 2px;
+    }
+    .outer {
+        padding: 92px 20px 20px;
+      }
+    div {
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+
+    div {
+        display: block;
+    }
+
+    .footer .dotted {
+        padding: 0 3px;
+        position: relative;
+    }
+
+    .footer .dotted:before {
+        left: 0;
+    }
+
+    .footer .dotted:after {
+    right: 0;
+}
+
+    .footer .dotted:before, .footer .dotted:after {
+        content: '';
+        display: block;
+        width: 3px;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        background: url(footer.png) 0 0 repeat-y;
+    }
+
+    .footer p {
+    padding-bottom: 10px;
+}
+p {
+    font-size: 15px;
+    line-height: 23px;
+}
+
+    .footer .inner .cell {
+    vertical-align: top;
+    width: 33.3333%;
+    padding: 58px 0;
+    text-align: center;
+    }
+
+    .table .cell {
+        display: table-cell;
+        vertical-align: middle;
+    }
+    div {
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+
+
+    .fa {
+      height: 12px;
+        display: inline-block;
+        font: normal normal normal 14px/1 FontAwesome;
+        font-size: inherit;
+        text-rendering: auto;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+
+    </style>
+  </head>
+  <body>
+    <div class="outer">
+        <div class="neutra_bold" id="nav">
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="our-story.html">Our Story</a></li>
+            <li><a href="#">Menu</a></li>
+            <li><a href="#">Events</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </div>
+        <div class="">
+          <img class="logo" src="SignatureLogo1.jpg" alt="">
+          <img src="food.jpg" alt="">
+        </div>
+        <div class="footer">
+          <div class="wrapper">
+            <div class="inner">
+              <div class="table">
+                <div class="cell">
+                  <h3>Address</h3>
+                  <p>Store Front Coming Soon. <br> <a href="https://msrgnt.github.io/fewd/ghetto-kitchen/events">View Our Pop-ups</a></p>
+                </div>
+                <div class="cell">
+                  <div class="dotted">
+                    <h3>Follow Us</h3>
+                    <a href="https://www.instagram.com/ghettokitchensf/" target="_blank" class="social">
+                    <img class="fa fa-instagram" src="instagram-6-24.ico">
+                    </a>
+                    <a href="https://www.facebook.com/Ghetto-Kitchen-354096324992320/
+                    "  target="_blank" class="social">
+                    <img src="facebook-24.jpg" class="fa fa-facebook">
+                    </a>
+                    <a href="https://twitter.com/ghettokitchensf
+                    "  target="_blank" class="social">
+                    <img class="fa fa-twitter" src="twitter-24.png" alt="">
+                    </a>
+                    <p>© 2017 Ghetto Kitchen.</p>
+
+                  </div>
+                </div>
+                <div class="cell">
+                  <h3>Contact Us</h3>
+                  <p>(415) 364-8646
+<br> info@GhettoK.com</p>
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+  </body>
+</html>
