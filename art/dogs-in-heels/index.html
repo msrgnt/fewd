@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Greyhounds</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+    <style media="screen">
+
+      .filler {
+        height: 9px;
+        width: 15px;
+        background: tan;
+        top: 250px;
+        left: 154px;
+        position: relative;
+      }
+
+      .gh1 {
+        height: 300px;
+        position: absolute;
+      }
+
+      .hh-green1 {
+        height: 30px;
+        position: absolute;
+        top: 234px;
+        left: 153px;
+      }
+
+      .hh-green2 {
+        height: 27px;
+        position: absolute;
+        top: 236px;
+        left: 138px;
+        transform: rotate(-5deg);
+      }
+
+      main  {
+        height: 600px;
+        width: 1000px;
+        margin: 75px auto;
+        border: 2px solid rgb(200, 200, 200);
+        border-radius: 5px;
+        position: relative;
+      }
+
+      .musk {
+        height: 100px;
+        position: absolute;
+        left: 500px;
+        top: 400px;
+      }
+
+      .perch {
+      	width: 0;
+      	height: 0;
+      	border-top: 100px dotted tan;
+      	border-right: 240px solid transparent;
+        position: absolute;
+        top: 250px;
+      }
+
+      .sky {
+        background: rgb(110, 170, 200);
+        height: 300px;
+        width: 100%;
+        position: absolute;
+        border-radius: 5px 5px 0 0;
+        top: 0px;
+      }
+
+      .coyote {
+        height: 60px;
+        position: absolute;
+        left: 650px;
+        top: 245px;
+      }
+      .wolf {
+        height: 40px;
+        position: absolute;
+        left: 200px;
+        top: 500px;
+      }
+      .polar-bear {
+        height: 60px;
+        position: absolute;
+        left: 430px;
+        top: 270px;
+      }
+      .hyena {
+        height: 40px;
+        position: absolute;
+        left: 360px;
+        top: 370px;
+      }
+      .hyena2 {
+        height: 50px;
+        position: absolute;
+        left: 750px;
+        top: 455px;
+      }
+      .fox {
+        height: 40px;
+        position: absolute;
+        left: 800px;
+        top: 350px;
+      }
+
+    </style>
+  </head>
+  <body>
+    <main>
+        <div class="sky"></div>
+        <div class="perch"></div>
+        <img src="img/gh1.png" class="gh1" alt="">
+        <div class="filler"></div>
+        <img src="img/hh-green.png" class="hh-green2" alt="">
+        <img src="img/hh-green.png" class="hh-green1" alt="">
+        <img src="img/musk.gif" class="musk" alt="">
+        <img src="img/coyote.png" class="coyote" alt="">
+        <img src="img/wolf.png" class="wolf" alt="">
+        <img src="img/hyena1.png" class="hyena" alt="">
+        <img src="img/hyena2.png" class="hyena2" alt="">
+        <img src="img/polar-bear.png" class="polar-bear" alt="">
+        <img src="img/fox.png" class="fox" alt="">
+
+    </main>
+    <script type="text/javascript">
+      var filler = document.querySelector(".filler");
+      var block = document.querySelector("main");
+      block.addEventListener("click", poop);
+      function poop(event){
+        console.log("hello");
+        var red = Math.floor(Math.random() * 256);
+        var green = Math.floor(Math.random() * 256);
+        var blue = Math.floor(Math.random() * 256);
+        var alpha = Math.random();
+        var randomRGBA = "rgba("+ red +","+ green +","+ blue +","+ alpha +")";
+        $(block).css("background", randomRGBA);
+        $(filler).css("background", randomRGBA);
+      }
+    </script>
+  </body>
+</html>
