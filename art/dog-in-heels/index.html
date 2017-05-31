@@ -76,9 +76,9 @@
         top: 245px;
       }
       .wolf {
-        height: 40px;
+        height: 70px;
         position: absolute;
-        left: 200px;
+        left: 310px;
         top: 500px;
       }
       .polar-bear {
@@ -106,16 +106,54 @@
         top: 350px;
       }
 
+      .mount1 {
+      	width: 0;
+      	height: 0;
+      	border-left: 250px solid transparent;
+      	border-right: 250px solid transparent;
+      	border-bottom: 300px solid rgb(0, 0, 255);
+        position: absolute;
+        top: 0;
+        left: 20px;
+      }
+
+      .mount2 {
+        width: 0;
+        height: 0;
+        border-left: 250px solid transparent;
+        border-right: 250px solid transparent;
+        border-bottom: 300px solid rgb(0, 40, 255);
+        position: absolute;
+        top: 0;
+        left: 250px;
+      }
+
+      .mount3 {
+        width: 0;
+        height: 0;
+        border-left: 250px solid transparent;
+        border-right: 250px solid transparent;
+        border-bottom: 300px solid rgb(40, 40, 255);
+        position: absolute;
+        top: 0;
+        left: 500px;
+      }
+
     </style>
   </head>
   <body>
     <main>
         <div class="sky"></div>
+        <div class="mount1"></div>
+        <div class="mount1"></div>
+        <div class="mount2"></div>
+        <div class="mount3"></div>
         <div class="perch"></div>
         <img src="img/gh1.png" class="gh1" alt="">
         <div class="filler"></div>
         <img src="img/hh-green.png" class="hh-green2" alt="">
         <img src="img/hh-green.png" class="hh-green1" alt="">
+        <!--
         <img src="img/musk.gif" class="musk" alt="">
         <img src="img/coyote.png" class="coyote" alt="">
         <img src="img/wolf.png" class="wolf" alt="">
@@ -123,7 +161,7 @@
         <img src="img/hyena2.png" class="hyena2" alt="">
         <img src="img/polar-bear.png" class="polar-bear" alt="">
         <img src="img/fox.png" class="fox" alt="">
-
+      -->
     </main>
     <script type="text/javascript">
       var filler = document.querySelector(".filler");
@@ -134,8 +172,12 @@
         var red = Math.floor(Math.random() * 256);
         var green = Math.floor(Math.random() * 256);
         var blue = Math.floor(Math.random() * 256);
+        var red2 = Math.floor(Math.random() * 256) -40;
+        var green2 = Math.floor(Math.random() * 256) -40;
+        var blue2 = Math.floor(Math.random() * 256) -40;
         var alpha = Math.random();
-        var randomRGBA = "rgba("+ red +","+ green +","+ blue +","+ alpha +")";
+        var randomRGBA = "linear-gradient(rgba("+ red2 +","+ green2 +","+ blue2 +","+ alpha +"), rgba("+ red +","+ green +","+ blue +","+ alpha +")";
+        console.log(randomRGBA);
         $(block).css("background", randomRGBA);
         $(filler).css("background", randomRGBA);
       }
