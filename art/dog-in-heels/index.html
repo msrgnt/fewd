@@ -10,28 +10,30 @@
         height: 9px;
         width: 15px;
         background: tan;
-        top: 250px;
-        left: 154px;
+        top: 260px;
+        left: 134px;
         position: relative;
       }
 
       .gh1 {
         height: 300px;
         position: absolute;
+        top: 10px;
+        left:-20px;
       }
 
       .hh-green1 {
         height: 30px;
         position: absolute;
-        top: 234px;
-        left: 153px;
+        top: 244px;
+        left: 133px;
       }
 
       .hh-green2 {
         height: 27px;
         position: absolute;
-        top: 236px;
-        left: 138px;
+        top: 246px;
+        left: 118px;
         transform: rotate(-5deg);
       }
 
@@ -47,8 +49,15 @@
       .musk {
         height: 100px;
         position: absolute;
-        left: 500px;
-        top: 400px;
+        left: 560px;
+        top: 360px;
+      }
+
+      .fountain {
+        height: 120px;
+        position: absolute;
+        left: 506px;
+        top: 325px;
       }
 
       .perch {
@@ -57,7 +66,7 @@
       	border-top: 100px dotted tan;
       	border-right: 240px solid transparent;
         position: absolute;
-        top: 250px;
+        top: 260px;
       }
 
       .sky {
@@ -76,34 +85,37 @@
         top: 245px;
       }
       .wolf {
-        height: 70px;
+        height: 165px;
         position: absolute;
-        left: 310px;
-        top: 500px;
+        left: 420px;
+        top: 480px;
       }
       .polar-bear {
         height: 60px;
         position: absolute;
-        left: 430px;
+        left: 340px;
         top: 270px;
       }
       .hyena {
-        height: 40px;
+        height: 60px;
         position: absolute;
-        left: 360px;
+        left: 270px;
         top: 370px;
+        transform: rotate(-5deg);
       }
       .hyena2 {
-        height: 50px;
+        height: 90px;
         position: absolute;
-        left: 750px;
-        top: 455px;
+        left: 790px;
+        top: 495px;
+        transform: rotate(11deg);
       }
       .fox {
-        height: 40px;
+        height: 35px;
         position: absolute;
-        left: 800px;
+        left: 880px;
         top: 350px;
+        transform: rotate(-2deg);
       }
 
       .mount1 {
@@ -111,10 +123,11 @@
       	height: 0;
       	border-left: 250px solid transparent;
       	border-right: 250px solid transparent;
-      	border-bottom: 300px solid rgb(0, 0, 255);
+        border-bottom: 300px solid rgb(40, 40, 255);
+
         position: absolute;
         top: 0;
-        left: 20px;
+        left: 0px;
       }
 
       .mount2 {
@@ -133,7 +146,7 @@
         height: 0;
         border-left: 250px solid transparent;
         border-right: 250px solid transparent;
-        border-bottom: 300px solid rgb(40, 40, 255);
+        border-bottom: 300px solid rgb(0, 0, 255);
         position: absolute;
         top: 0;
         left: 500px;
@@ -144,16 +157,16 @@
   <body>
     <main>
         <div class="sky"></div>
-        <div class="mount1"></div>
-        <div class="mount1"></div>
-        <div class="mount2"></div>
         <div class="mount3"></div>
+        <div class="mount2"></div>
+        <div class="mount1"></div>
         <div class="perch"></div>
+        <div class="river"></div>
         <img src="img/gh1.png" class="gh1" alt="">
         <div class="filler"></div>
         <img src="img/hh-green.png" class="hh-green2" alt="">
         <img src="img/hh-green.png" class="hh-green1" alt="">
-        <!--
+        <img src="img/fountain.png" class="fountain" alt="">
         <img src="img/musk.gif" class="musk" alt="">
         <img src="img/coyote.png" class="coyote" alt="">
         <img src="img/wolf.png" class="wolf" alt="">
@@ -161,25 +174,36 @@
         <img src="img/hyena2.png" class="hyena2" alt="">
         <img src="img/polar-bear.png" class="polar-bear" alt="">
         <img src="img/fox.png" class="fox" alt="">
-      -->
+
     </main>
     <script type="text/javascript">
       var filler = document.querySelector(".filler");
       var block = document.querySelector("main");
+      var sky = document.querySelector(".sky");
       block.addEventListener("click", poop);
       function poop(event){
         console.log("hello");
         var red = Math.floor(Math.random() * 256);
         var green = Math.floor(Math.random() * 256);
         var blue = Math.floor(Math.random() * 256);
-        var red2 = Math.floor(Math.random() * 256) -40;
-        var green2 = Math.floor(Math.random() * 256) -40;
-        var blue2 = Math.floor(Math.random() * 256) -40;
+        var red2 = Math.floor(Math.random() * 256) +40;
+        var green2 = Math.floor(Math.random() * 256) +40;
+        var blue2 = Math.floor(Math.random() * 256) +40;
+
+        var red3 = Math.floor(Math.random() * 256 +70);
+        var green3 = Math.floor(Math.random() * 256 +70);
+        var blue3 = Math.floor(Math.random() * 256 +70);
+        var red4 = Math.floor(Math.random() * 256);
+        var green4 = Math.floor(Math.random() * 256);
+        var blue4 = Math.floor(Math.random() * 256);
+
         var alpha = Math.random();
         var randomRGBA = "linear-gradient(rgba("+ red2 +","+ green2 +","+ blue2 +","+ alpha +"), rgba("+ red +","+ green +","+ blue +","+ alpha +")";
-        console.log(randomRGBA);
+        var randomRGBA2 = "linear-gradient(rgba("+ red3 +","+ green3 +","+ blue3 +","+ alpha +"), rgba("+ red4 +","+ green4 +","+ blue4 +","+ alpha +")";
         $(block).css("background", randomRGBA);
         $(filler).css("background", randomRGBA);
+        $(sky).css("background", randomRGBA2);
+
       }
     </script>
   </body>
