@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style media="screen">
+      .wrapper {
+        position: relative;
+
+      }
+
+      .side {
+        width: 120px;
+      	height: 100px;
+        transform: rotate(20deg) skew(20deg);
+      	background: red;
+        margin: 100px;
+        border-radius: 3px;
+        position: absolute;
+      }
+
+      .top-r {
+        width: 120px;
+        height: 30px;
+        transform: rotate(20deg) skew(-55deg);
+        background: pink;
+        margin: 100px;
+        border-radius: 3px;
+        position: absolute;
+        left: 77px;
+        top: -41px;
+      }
+
+      .top-l {
+        width: 120px;
+        height: 30px;
+        transform: rotate(20deg) skew(-55deg);
+        background: pink;
+        margin: 100px;
+        border-radius: 3px;
+        position: absolute;
+        left: 25px;
+        top: -27px;
+      }
+
+      .front {
+        width: 106px;
+        height: 100px;
+        background: red;
+        margin: 100px;
+        transform: rotate(90deg) skew(15deg);
+        border-radius: 3px;
+        position: absolute;
+        left: 115px;
+        top: 6px;
+      }
+
+      .tape {
+        width: 60px;
+        height: 15px;
+        transform: rotate(20deg) skew(-55deg);
+        background: transparent;
+        border: 1px rgb(150, 150, 150) dotted;
+        margin: 100px;
+        border-radius: 3px;
+        position: absolute;
+        left: 80px;
+        top: -27px;
+      }
+
+      .main {
+        max-width: 1000px;
+        margin: 0 auto;
+        border: 1px grey solid;
+      }
+    </style>
+    <script src="jquery.js"></script>
+
+  </head>
+  <body>
+    <div class="main">
+      <div class="wrapper">
+
+      </div>
+    </div>
+    <script type="text/javascript">
+    var margin = 90;
+    var body = document.querySelector(".main");
+
+    for (var i = 0; i < 9; i++) {
+
+      var redBody = Math.floor(Math.random() * 256);
+      var greenBody = Math.floor(Math.random() * 256);
+      var blueBody = Math.floor(Math.random() * 256);
+      var randomBody = "rgb("+ redBody +","+ greenBody +","+ blueBody + ")";
+
+      var redTop = Math.floor(Math.random() * 256);
+      var greenTop = Math.floor(Math.random() * 256);
+      var blueTop = Math.floor(Math.random() * 256);
+      var randomTop = "rgb("+ redTop +","+ greenTop +","+ blueTop+ ")";
+
+      var wrapper = document.createElement("p");
+      $(wrapper).css("position", "relative")
+      $(wrapper).css("display", "inline-block")
+
+      var side = document.createElement("p");
+      $(side).css("height", 100)
+      $(side).css("width", 120)
+      $(side).css("transform", "rotate(" + 20 + "deg" + ")"  + "skew(" + 20 + "deg" + ")");
+      $(side).css("background", randomBody);
+      $(side).css("margin", margin);
+      $(side).css("border-radius", 3);
+      $(side).css("display", "inline-block");
+
+      //$(side).css("position", "absolute");
+      var front = document.createElement("p");
+      $(front).css("height", 100)
+      $(front).css("width", 106)
+      $(front).css("transform", "rotate(" + 90 + "deg" + ")"  + "skew(" + 15 + "deg" + ")");
+      $(front).css("background", randomBody);
+      $(front).css("margin", margin);
+      $(front).css("border-radius", 3);
+      $(front).css("display", "inline-block");
+      $(front).css("left", 115);
+      $(front).css("top", 6);
+      $(front).css("position", "absolute");
+
+      var topL = document.createElement("p");
+      $(topL).css("height", 30)
+      $(topL).css("width", 120)
+      $(topL).css("transform", "rotate(" + 20 + "deg" + ")"  + "skew(" + -55 + "deg" + ")");
+      $(topL).css("background", randomTop);
+      $(topL).css("margin", margin);
+      $(topL).css("border-radius", 3);
+      $(topL).css("display", "inline-block");
+      $(topL).css("left", 25);
+      $(topL).css("top", -27);
+      $(topL).css("position", "absolute");
+
+      var topR = document.createElement("p");
+      $(topR).css("height", 30)
+      $(topR).css("width", 120)
+      $(topR).css("transform", "rotate(" + 20 + "deg" + ")"  + "skew(" + -55 + "deg" + ")");
+      $(topR).css("background", randomTop);
+      $(topR).css("margin", margin);
+      $(topR).css("border-radius", 3);
+      $(topR).css("display", "inline-block");
+      $(topR).css("left", 77);
+      $(topR).css("top", -41);
+      $(topR).css("position", "absolute");
+
+      var tape = document.createElement("p");
+      $(tape).css("height", 15)
+      $(tape).css("width", 60)
+      $(tape).css("transform", "rotate(" + 20 + "deg" + ")"  + "skew(" + -55 + "deg" + ")");
+      $(tape).css("background", "transparent");
+      $(tape).css("margin", margin);
+      $(tape).css("border-radius", 3);
+      $(tape).css("border", "2px rgb(150, 150, 150) dotted");
+      $(tape).css("display", "inline-block");
+      $(tape).css("left", 80);
+      $(tape).css("top", -27);
+      $(tape).css("position", "absolute");
+
+      wrapper.appendChild(side);
+      wrapper.appendChild(front);
+      wrapper.appendChild(topL);
+      wrapper.appendChild(topR);
+      wrapper.appendChild(tape);
+
+      body.appendChild(wrapper);
+
+    }
+    </script>
+  </body>
+</html>

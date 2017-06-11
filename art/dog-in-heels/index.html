@@ -204,7 +204,26 @@
         $(filler).css("background", randomRGBA);
         $(sky).css("background", randomRGBA2);
 
+        var newP = document.createElement("p");
+        $(newP).css("height", "10px");
+        $(newP).css("width", "10px");
+        $(newP).css("background", "red");
+
+        //$(newP).css("border-left", "10px solid transparent");
+        //$(newP).css("border-right", "10px solid transparent")
+        //$(newP).css("border-bottom", Math.floor(Math.random() * 100) + "px" + " " + "solid" + " " +  randomRGBA);
+        $(newP).css("position", "absolute");
+        $(newP).css("top", Math.floor(Math.random() * 100) + "%");
+        $(newP).css("left", Math.floor(Math.random() * 100) + "%");
+        $(newP).css("z-index", 20);
+
+        block.appendChild(newP);
+
       }
+
+
+
+
     </script>
   </body>
 </html>
