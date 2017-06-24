@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style media="screen">
+      .wrapper {
+        position: relative;
+
+      }
+
+      .side {
+        width: 120px;
+      	height: 100px;
+        transform: rotate(20deg) skew(20deg);
+      	background: red;
+        margin: 100px;
+        border-radius: 3px;
+        position: absolute;
+      }
+
+      .side-b {
+        width: 119px;
+        height: 94px;
+        transform: rotate(20deg) skew(20deg);
+        background: white;
+        border: grey 1px solid;
+        margin: 100px;
+        position: absolute;
+        border-radius: 2px;
+        top: -26px;
+        left: 99px;
+      }
+
+      .left-t {
+        width: 122px;
+        height: 27px;
+        transform: rotate(20deg) skew(60deg);
+        background: pink;
+        margin: 100px;
+        position: absolute;
+        border-radius: 4px;
+        top: -40px;
+        left: -19px;
+      }
+
+      .right-t {
+        width: 120px;
+        height: 50px;
+        transform: rotate(20deg) skew(-15deg);
+        background: pink;
+        margin: 100px;
+        position: absolute;
+        border-radius: 4px;
+        top: -77px;
+        left: 115px;
+      }
+
+      .top-r {
+        width: 120px;
+        height: 30px;
+        transform: rotate(20deg) skew(-55deg);
+        background: pink;
+        margin: 100px;
+        border-radius: 3px;
+        position: absolute;
+        left: 77px;
+        top: -41px;
+      }
+
+      .top-l {
+        width: 120px;
+        height: 30px;
+        transform: rotate(20deg) skew(-55deg);
+        background: pink;
+        margin: 100px;
+        border-radius: 3px;
+        position: absolute;
+        left: 25px;
+        top: -27px;
+      }
+
+      .front {
+        width: 106px;
+        height: 100px;
+        background: red;
+        margin: 100px;
+        transform: rotate(90deg) skew(15deg);
+        border-radius: 3px;
+        position: absolute;
+        left: 115px;
+        top: 6px;
+      }
+
+      .back {
+        width: 101px;
+        height: 96px;
+        background: white;
+        margin: 100px;
+        transform: rotate(90deg) skew(15deg);
+        border: grey 1px solid;
+        position: absolute;
+        border-radius: 2px;
+        left: 1px;
+        top: -34px;
+      }
+
+      .top-f {
+        width: 62px;
+        height: 52px;
+        background: black;
+        margin: 100px;
+        transform: rotate(135deg) skew(60deg) rotateY(50deg);
+        border-radius: 3px;
+        position: absolute;
+        left: 151px;
+        top: -39px;
+      }
+
+      .top-b {
+        width: 98px;
+        height: 52px;
+        background: black;
+        margin: 100px;
+        transform: rotate(-15deg) skew(10deg) ;
+        border-radius: 3px;
+        position: absolute;
+        left: -8px;
+        top: -88px;
+      }
+
+      .tape {
+        width: 60px;
+        height: 15px;
+        transform: rotate(20deg) skew(-55deg);
+        background: transparent;
+        border: 1px rgb(150, 150, 150) dotted;
+        margin: 100px;
+        border-radius: 3px;
+        position: absolute;
+        left: 80px;
+        top: -27px;
+      }
+
+      .main {
+        max-width: 1000px;
+        margin: 0 auto;
+        border: 1px grey solid;
+      }
+
+      .top-r-close {
+        width: 120px;
+        height: 30px;
+        transform: rotate(20deg) skew(-55deg);
+        background: yellow;
+        margin: 100px;
+        border-radius: 3px;
+        position: absolute;
+        left: 77px;
+        top: -41px;
+        display: none;
+      }
+
+      .top-l-close {
+        width: 120px;
+        height: 30px;
+        transform: rotate(20deg) skew(-55deg);
+        background: yellow;
+        margin: 100px;
+        border-radius: 3px;
+        position: absolute;
+        left: 25px;
+        top: -27px;
+        display: none;
+      }
+
+      .tape {
+        width: 60px;
+        height: 15px;
+        transform: rotate(20deg) skew(-55deg);
+        background: transparent;
+        border: 1px rgb(150, 150, 150) dotted;
+        margin: 100px;
+        border-radius: 3px;
+        position: absolute;
+        left: 80px;
+        top: -27px;
+        display: none;
+      }
+
+    </style>
+    <script src="jquery.js"></script>
+
+  </head>
+  <body>
+      <div class="wrapper">
+        <div class="back"></div>
+        <div class="top-b top-1"></div>
+        <div class="side-b"></div>
+        <div class="front"></div>
+        <div class="right-t top-1"></div>
+        <div class="top-f top-1"></div>
+        <div class="side"></div>
+        <div class="left-t top-1"></div>
+        <div class="top-l-close top-2"></div>
+        <div class="top-r-close top-2"></div>
+        <div class="tape top-2"></div>
+    </div>
+
+    <script type="text/javascript">
+      var open = $(".top-1");
+      $(open).click(function(){
+        console.log("1")
+        open.css("display", "none");
+        close.css("display", "block");
+      });
+
+      var close = $(".top-2");
+      $(close).click(function(){
+        console.log("2")
+        close.css("display", "none");
+        open.css("display", "block");
+      });
+
+    </script>
+  </body>
+</html>

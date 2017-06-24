@@ -6,7 +6,6 @@
     <style media="screen">
       .wrapper {
         position: relative;
-
       }
 
       .side {
@@ -124,6 +123,8 @@
       $(front).css("left", 115);
       $(front).css("top", 6);
       $(front).css("position", "absolute");
+      $(front).css("class", "closed");
+
 
       var topL = document.createElement("p");
       $(topL).css("height", 30)
@@ -136,6 +137,8 @@
       $(topL).css("left", 25);
       $(topL).css("top", -27);
       $(topL).css("position", "absolute");
+      $(topL).addClass("closed");
+
 
       var topR = document.createElement("p");
       $(topR).css("height", 30)
@@ -148,6 +151,7 @@
       $(topR).css("left", 77);
       $(topR).css("top", -41);
       $(topR).css("position", "absolute");
+      $(topR).addClass("closed");
 
       var tape = document.createElement("p");
       $(tape).css("height", 15)
@@ -161,16 +165,81 @@
       $(tape).css("left", 80);
       $(tape).css("top", -27);
       $(tape).css("position", "absolute");
+      $(tape).addClass("closed");
+
+
+      var topB = document.createElement("p");
+      $(topB).css("height", 52)
+      $(topB).css("width", 98)
+      $(topB).css("transform", "rotate(" + -15 + "deg" + ")"  + "skew(" + 10 + "deg" + ")");
+      $(topB).css("background", "black");
+      $(topB).css("margin", margin);
+      $(topB).css("border-radius", 3);
+      $(topB).css("display", "inline-block");
+      $(topB).css("left", -8);
+      $(topB).css("top", -88);
+      $(topB).css("position", "absolute");
+      $(topB).css("display", "none");
+      $(topB).addClass("open");
+
+      var topF = document.createElement("p");
+      $(topF).css("height", 62)
+      $(topF).css("width", 52)
+      $(topF).css("transform", "rotate(" + 135 + "deg" + ")"  + "skew(" + 60 + "deg" + ")" + "rotateY(" + 50 + "deg" + ")");
+      $(topF).css("background", "black");
+      $(topF).css("margin", margin);
+      $(topF).css("border-radius", 3);
+      $(topF).css("display", "inline-block");
+      $(topF).css("left", 151);
+      $(topF).css("top", -39);
+      $(topF).css("position", "absolute");
+      $(topF).css("display", "none");
+      $(topF).addClass("open");
+
+
+      var topLa = document.createElement("p");
+      $(topLa).css("height", 27)
+      $(topLa).css("width", 122)
+      $(topLa).css("transform", "rotate(" + 20 + "deg" + ")"  + "skew(" + 60 + "deg" + ")");
+      $(topLa).css("background", "pink");
+      $(topLa).css("margin", margin);
+      $(topLa).css("border-radius", 4);
+      $(topLa).css("display", "inline-block");
+      $(topLa).css("left", 19);
+      $(topLa).css("top", -40);
+      $(topLa).css("position", "absolute");
+      $(topLa).css("display", "none");
+      $(topLa).addClass("open");
+
+      var topRa = document.createElement("p");
+      $(topRa).css("height", 50)
+      $(topRa).css("width", 120)
+      $(topRa).css("transform", "rotate(" + 20 + "deg" + ")"  + "skew(" + -15 + "deg" + ")");
+      $(topRa).css("background", "pink");
+      $(topRa).css("margin", margin);
+      $(topRa).css("border-radius", 4);
+      $(topRa).css("display", "inline-block");
+      $(topRa).css("left", 115);
+      $(topRa).css("top", -77);
+      $(topRa).css("position", "absolute");
+      $(topRa).css("display", "none");
+      $(topRa).addClass("open");
 
       wrapper.appendChild(side);
       wrapper.appendChild(front);
       wrapper.appendChild(topL);
       wrapper.appendChild(topR);
       wrapper.appendChild(tape);
-
+      wrapper.appendChild(topB);
+      wrapper.appendChild(topF);
+      wrapper.appendChild(topLa);
+      wrapper.appendChild(topRa);
       body.appendChild(wrapper);
 
     }
+
+
+
     </script>
   </body>
 </html>
