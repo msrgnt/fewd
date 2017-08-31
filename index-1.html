@@ -179,8 +179,23 @@
         border-radius: 3px;
         position: absolute;
         left: 80px;
-        top: -27px;
+        top: -27px;å
         display: none;
+      }
+
+      .inside {
+        margin: 0 auto;
+        position: absolute;
+        top: 230px;
+        left: 20px;
+        width: 350px;
+        display: inline;
+      }
+      .worry {
+        width: 350px;
+      }
+      .title {
+        display: inline;
       }
     </style>
     <script src="jquery.js"></script>
@@ -204,10 +219,11 @@
       <div class="top-l-close top-2"></div>
       <div class="top-r-close top-2"></div>
       <div class="tape top-2"></div>
-    </div>
-    <div class="inside">
+      <div class="inside">
 
+      </div>
     </div>
+
 <script src="https://www.gstatic.com/firebasejs/4.3.0/firebase.js"></script>
 <script type="text/javascript">
   var open = $(".top-1");
@@ -268,9 +284,9 @@ function getFeeling() {
         var feeling = allFeels[feel].feeling;
 
         // create message element
-        var $feelListElement = $("<div class='col-md-3 book'<div/>");
-        var $feelListTitle = $('<h3 class="title">' + feeling + '</h3>');
-        var $deleteElement = $('<i class="fa fa-trash pull-right delete"></i>');
+        var $feelListElement = $('<div class="col-md-3 worry"></div>');
+        var $feelListTitle = $('<p class="title">' + feeling + '</p>');
+        var $deleteElement = $('<i class="fa fa-trash delete pull-right"></i>');
 
         $feelListElement.attr('data-id', feel);
         //commit test
