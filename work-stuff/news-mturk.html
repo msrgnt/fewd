@@ -1,0 +1,455 @@
+<!--
+  Simple HTML template for evaluating youtube.com/news with
+  Mechanical Turk
+  TODO(remco): Clean this up a little bit.
+ -->
+<p>${dummy}</p>
+<section>
+  <fieldset><strong><label>1. Approximately how often do you check the news?</label></strong>
+    <div class="radio"><label><input name="01_CheckFreq" type="radio" value="1_manyeveryday" />Several times every day</label></div>
+    <div class="radio"><label><input name="01_CheckFreq" type="radio" value="2_onceaday" />Once a day</label></div>
+    <div class="radio"><label><input name="01_CheckFreq" type="radio" value="3_fewtimesaweek" />A few times a week</label></div>
+    <div class="radio"><label><input name="01_CheckFreq" type="radio" value="4_onceaweek" />Once a week</label></div>
+    <div class="radio"><label><input name="01_CheckFreq" type="radio" value="5_basicallynever" />Basically never</label></div>
+  </fieldset>
+
+  <div>
+    <fieldset><strong><label>2. What&#39;s your primary source for news?</label></strong>
+      <div class="radio"><label><input name="02_PrimarySource" type="radio" value="web" />News web site</label></div>
+      <div class="radio"><label><input name="02_PrimarySource" type="radio" value="social" />Social media</label></div>
+      <div class="radio"><label><input name="02_PrimarySource" type="radio" value="tv" />TV</label></div>
+      <div class="radio"><label><input name="02_PrimarySource" type="radio" value="radio" />Radio</label></div>
+      <div class="radio"><label><input name="02_PrimarySource" type="radio" value="newspaper" />Newspaper</label></div>
+      <div class="radio"><label><input name="02_PrimarySource" type="radio" value="youtube" />YouTube</label></div>
+      <div class="radio"><label><input name="02_PrimarySource" type="radio" value="other" />Other</label></div>
+      <div class="radio"><label><input name="02_PrimarySource" type="radio" value="na" />N&#47;A</label></div>
+    </fieldset>
+  </div>
+
+  <fieldset>
+    <div class="input-group"><strong><label>3. Visit
+          <a href="https://www.youtube.com/news" target="_blank">this page</a>. Take a moment to evaluate
+          its content. Would you use this as a news source?</label></strong>
+      <div class="q3"><label><input name="03_WouldUse" type="radio" value="1_yes" />Yes</label></div>
+      <div class="q3"><label><input name="03_WouldUse" type="radio" value="2_maybe" />Maybe</label></div>
+      <div class="q3"><label><input name="03_WouldUse" type="radio" value="3_no" />No</label></div>
+    </div>
+
+    <!-- Hide by default -->
+    <div id="when_use_yt_news_question" style="display:none"><br />
+      <strong><label>How or when would you use this page as a news source?</label></strong>
+      <textarea rows="4" style="width:100%" name="04_WhyUseYTNews"></textarea>
+      <br />
+      <br />
+      <strong><label>What is the primary device on which you would use this page as a news source?</label></strong>
+      <textarea rows="4" style="width:100%" name="05_WhichDevice"></textarea>
+    </div>
+  </fieldset>
+
+  <fieldset><strong><label>4. Think about your answer to the above question. How much do you
+        agree or disagree with the following statements?</label></strong>
+    <div><br />
+      <span>I prefer to read the news, not watch it.</span>
+
+      <table>
+        <tbody>
+          <tr>
+            <td><input name="06_ReadNotWatch" type="radio" value="1_strong_agree" /></td>
+            <td><input name="06_ReadNotWatch" type="radio" value="2_agree" /></td>
+            <td><input name="06_ReadNotWatch" type="radio" value="3_neutral" /></td>
+            <td><input name="06_ReadNotWatch" type="radio" value="4_disagree" /></td>
+            <td><input name="06_ReadNotWatch" type="radio" value="5_strong_disagree" /></td>
+          </tr>
+          <tr>
+            <td><label>Strongly agree</label></td>
+            <td><label>Agree</label></td>
+            <td><label>Neutral</label></td>
+            <td><label>Disagree</label></td>
+            <td><label>Strongly disagree</label></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div><br />
+      <span>The selection of news videos is unbiased.</span>
+
+      <table>
+        <tbody>
+          <tr>
+            <td><input name="07_Unbiased" type="radio" value="1_strong_agree" /></td>
+            <td><input name="07_Unbiased" type="radio" value="2_agree" /></td>
+            <td><input name="07_Unbiased" type="radio" value="3_neutral" /></td>
+            <td><input name="07_Unbiased" type="radio" value="4_disagree" /></td>
+            <td><input name="07_Unbiased" type="radio" value="5_strong_disagree" /></td>
+          </tr>
+          <tr>
+            <td><label>Strongly agree</label></td>
+            <td><label>Agree</label></td>
+            <td><label>Neutral</label></td>
+            <td><label>Disagree</label></td>
+            <td><label>Strongly disagree</label></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div><br />
+      <span>The selection of news videos comes from diverse news sources.</span>
+
+      <table>
+        <tbody>
+          <tr>
+            <td><input name="08_Diverse" type="radio" value="1_strong_agree" /></td>
+            <td><input name="08_Diverse" type="radio" value="2_agree" /></td>
+            <td><input name="08_Diverse" type="radio" value="3_neutral" /></td>
+            <td><input name="08_Diverse" type="radio" value="4_disagree" /></td>
+            <td><input name="08_Diverse" type="radio" value="5_strong_disagree" /></td>
+          </tr>
+          <tr>
+            <td><label>Strongly agree</label></td>
+            <td><label>Agree</label></td>
+            <td><label>Neutral</label></td>
+            <td><label>Disagree</label></td>
+            <td><label>Strongly disagree</label></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+     <div><br />
+      <span>I would like to be able to customize my news</span>
+      <table>
+        <tbody>
+          <tr>
+            <td><input name="09_Customize" type="radio" value="1_strong_agree" /></td>
+            <td><input name="09_Customize" type="radio" value="2_agree" /></td>
+            <td><input name="09_Customize" type="radio" value="3_neutral" /></td>
+            <td><input name="09_Customize" type="radio" value="4_disagree" /></td>
+            <td><input name="09_Customize" type="radio" value="5_strong_disagree" /></td>
+          </tr>
+          <tr>
+            <td><label>Strongly agree</label></td>
+            <td><label>Agree</label></td>
+            <td><label>Neutral</label></td>
+            <td><label>Disagree</label></td>
+            <td><label>Strongly disagree</label></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+     <div><br />
+      <span>I would like YouTube to automatically personalize my news for me</span>
+      <table>
+        <tbody>
+          <tr>
+            <td><input name="10_Personalize" type="radio" value="1_strong_agree" /></td>
+            <td><input name="10_Personalize" type="radio" value="2_agree" /></td>
+            <td><input name="10_Personalize" type="radio" value="3_neutral" /></td>
+            <td><input name="10_Personalize" type="radio" value="4_disagree" /></td>
+            <td><input name="10_Personalize" type="radio" value="5_strong_disagree" /></td>
+          </tr>
+          <tr>
+            <td><label>Strongly agree</label></td>
+            <td><label>Agree</label></td>
+            <td><label>Neutral</label></td>
+            <td><label>Disagree</label></td>
+            <td><label>Strongly disagree</label></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+     <div><br />
+      <span>Local news is important to me.</span>
+      <table>
+        <tbody>
+          <tr>
+            <td><input name="11_Local" type="radio" value="1_strong_agree" /></td>
+            <td><input name="11_Local" type="radio" value="2_agree" /></td>
+            <td><input name="11_Local" type="radio" value="3_neutral" /></td>
+            <td><input name="11_Local" type="radio" value="4_disagree" /></td>
+            <td><input name="11_Local" type="radio" value="5_strong_disagree" /></td>
+          </tr>
+          <tr>
+            <td><label>Strongly agree</label></td>
+            <td><label>Agree</label></td>
+            <td><label>Neutral</label></td>
+            <td><label>Disagree</label></td>
+            <td><label>Strongly disagree</label></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div><br />
+      <span>I recognize most of the news sources.</span>
+
+      <table>
+        <tbody>
+          <tr>
+            <td><input name="12_KnownSources" type="radio" value="1_strong_agree" /></td>
+            <td><input name="12_KnownSources" type="radio" value="2_agree" /></td>
+            <td><input name="12_KnownSources" type="radio" value="3_neutral" /></td>
+            <td><input name="12_KnownSources" type="radio" value="4_disagree" /></td>
+            <td><input name="12_KnownSources" type="radio" value="5_strong_disagree" /></td>
+          </tr>
+          <tr>
+            <td><label>Strongly agree</label></td>
+            <td><label>Agree</label></td>
+            <td><label>Neutral</label></td>
+            <td><label>Disagree</label></td>
+            <td><label>Strongly disagree</label></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div><br />
+      <span>I trust that the selected news sources are reliable.</span>
+
+      <table>
+        <tbody>
+          <tr>
+            <td><input name="13_ReliableSources" type="radio" value="1_strong_agree" /></td>
+            <td><input name="13_ReliableSources" type="radio" value="2_agree" /></td>
+            <td><input name="13_ReliableSources" type="radio" value="3_neutral" /></td>
+            <td><input name="13_ReliableSources" type="radio" value="4_disagree" /></td>
+            <td><input name="13_ReliableSources" type="radio" value="5_strong_disagree" /></td>
+          </tr>
+          <tr>
+            <td><label>Strongly agree</label></td>
+            <td><label>Agree</label></td>
+            <td><label>Neutral</label></td>
+            <td><label>Disagree</label></td>
+            <td><label>Strongly disagree</label></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div><br />
+      <span>It is easy to find the news that I&rsquo;m interested in.</span>
+
+      <table>
+        <tbody>
+          <tr>
+            <td><input name="14_EasyFind" type="radio" value="1_strong_agree" /></td>
+            <td><input name="14_EasyFind" type="radio" value="2_agree" /></td>
+            <td><input name="14_EasyFind" type="radio" value="3_neutral" /></td>
+            <td><input name="14_EasyFind" type="radio" value="4_disagree" /></td>
+            <td><input name="14_EasyFind" type="radio" value="5_strong_disagree" /></td>
+          </tr>
+          <tr>
+            <td><label>Strongly agree</label></td>
+            <td><label>Agree</label></td>
+            <td><label>Neutral</label></td>
+            <td><label>Disagree</label></td>
+            <td><label>Strongly disagree</label></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div><br />
+      <span>The news videos shown are up-to-date.</span>
+
+      <table>
+        <tbody>
+          <tr>
+            <td><input name="15_UpToDate" type="radio" value="1_strong_agree" /></td>
+            <td><input name="15_UpToDate" type="radio" value="2_agree" /></td>
+            <td><input name="15_UpToDate" type="radio" value="3_neutral" /></td>
+            <td><input name="15_UpToDate" type="radio" value="4_disagree" /></td>
+            <td><input name="15_UpToDate" type="radio" value="5_strong_disagree" /></td>
+          </tr>
+          <tr>
+            <td><label>Strongly agree</label></td>
+            <td><label>Agree</label></td>
+            <td><label>Neutral</label></td>
+            <td><label>Disagree</label></td>
+            <td><label>Strongly disagree</label></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div><br />
+      <span>I would like to see more live videos.</span>
+
+      <table>
+        <tbody>
+          <tr>
+            <td><input name="16_MoreLive" type="radio" value="1_strong_agree" /></td>
+            <td><input name="16_MoreLive" type="radio" value="2_agree" /></td>
+            <td><input name="16_MoreLive" type="radio" value="3_neutral" /></td>
+            <td><input name="16_MoreLive" type="radio" value="4_disagree" /></td>
+            <td><input name="16_MoreLive" type="radio" value="5_strong_disagree" /></td>
+          </tr>
+          <tr>
+            <td><label>Strongly agree</label></td>
+            <td><label>Agree</label></td>
+            <td><label>Neutral</label></td>
+            <td><label>Disagree</label></td>
+            <td><label>Strongly disagree</label></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div><br />
+      <span>I'd like to see videos from more topics.</span>
+
+      <table>
+        <tbody>
+          <tr>
+            <td><input name="17_MoreTopics" type="radio" value="1_strong_agree" /></td>
+            <td><input name="17_MoreTopics" type="radio" value="2_agree" /></td>
+            <td><input name="17_MoreTopics" type="radio" value="3_neutral" /></td>
+            <td><input name="17_MoreTopics" type="radio" value="4_disagree" /></td>
+            <td><input name="17_MoreTopics" type="radio" value="5_strong_disagree" /></td>
+          </tr>
+          <tr>
+            <td><label>Strongly agree</label></td>
+            <td><label>Agree</label></td>
+            <td><label>Neutral</label></td>
+            <td><label>Disagree</label></td>
+            <td><label>Strongly disagree</label></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div><br />
+      <span>I'd like to see videos grouped by topic.</span>
+
+      <table>
+        <tbody>
+          <tr>
+            <td><input name="18_TopicGroups" type="radio" value="1_strong_agree" /></td>
+            <td><input name="18_TopicGroups" type="radio" value="2_agree" /></td>
+            <td><input name="18_TopicGroups" type="radio" value="3_neutral" /></td>
+            <td><input name="18_TopicGroups" type="radio" value="4_disagree" /></td>
+            <td><input name="18_TopicGroups" type="radio" value="5_strong_disagree" /></td>
+          </tr>
+          <tr>
+            <td><label>Strongly agree</label></td>
+            <td><label>Agree</label></td>
+            <td><label>Neutral</label></td>
+            <td><label>Disagree</label></td>
+            <td><label>Strongly disagree</label></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </fieldset>
+  <fieldset>
+    <div class="input-group"><strong><label>5. Did you know about the
+          <a href="https://www.youtube.com/news" target="_blank">page</a>
+          before you saw it in this or another HIT?</label></strong>
+      <div class="q3 radio"><label><input name="19_SeenPageBefore" type="radio" value="1_yes" />Yes</label></div>
+      <div class="q3 radio"><label><input name="19_SeenPageBefore" type="radio" value="3_no" />No</label></div>
+      <div class="q3 radio"><label><input name="19_SeenPageBefore" type="radio" value="2_not_sure" />I&#39;m not sure</label></div>
+    </div>
+  </fieldset>
+  <fieldset>
+    <div class="input-group"><strong><label>
+          6. What changes would make the
+          <a href="https://www.youtube.com/news" target="_blank">page</a>
+          more useful for you?</label></strong>
+      <textarea rows="4" style="width:100%" name="20_Suggestions"></textarea>
+    </div>
+  </fieldset>
+  <fieldset>
+    <div class="input-group"><strong><label>7. What's your overall rating of the
+          <a href="https://www.youtube.com/news" target="_blank">page</a>?
+          10 is excellent, 1 is terrible.</label></strong>
+      <table>
+        <tbody>
+          <tr>
+            <td class="rating"><input name="21_Rating" type="radio" value="10" /></td>
+            <td class="rating"><input name="21_Rating" type="radio" value="09" /></td>
+            <td class="rating"><input name="21_Rating" type="radio" value="08" /></td>
+            <td class="rating"><input name="21_Rating" type="radio" value="07" /></td>
+            <td class="rating"><input name="21_Rating" type="radio" value="06" /></td>
+            <td class="rating"><input name="21_Rating" type="radio" value="05" /></td>
+            <td class="rating"><input name="21_Rating" type="radio" value="04" /></td>
+            <td class="rating"><input name="21_Rating" type="radio" value="03" /></td>
+            <td class="rating"><input name="21_Rating" type="radio" value="02" /></td>
+            <td class="rating"><input name="21_Rating" type="radio" value="01" /></td>
+          </tr>
+          <tr>
+            <td class="rating"><label>10</label></td>
+            <td class="rating"><label>9</label></td>
+            <td class="rating"><label>8</label></td>
+            <td class="rating"><label>7</label></td>
+            <td class="rating"><label>6</label></td>
+            <td class="rating"><label>5</label></td>
+            <td class="rating"><label>4</label></td>
+            <td class="rating"><label>3</label></td>
+            <td class="rating"><label>2</label></td>
+            <td class="rating"><label>1</label></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </fieldset>
+</section>
+<!-- End Content Body --><!-- close container -->
+<style type="text/css">
+  fieldset {
+    padding: 10px;
+    background:#fbfbfb;
+    border-radius:5px;
+    margin-bottom:5px;
+  }
+  td {
+    text-align: center;
+    width: 120px;
+  }
+  td.rating {
+    width: 30px;
+  }
+
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script><script>
+  // Uses slideUp/Down to show or hide the specified element according to
+  // argument "show". If the visibility of the element is already correct,
+  // then it won't do anything. This function tries to solve the problem
+  // that when slideDown is called on an element that is already visible,
+  // then it will first slide the element up and then down. Similar with
+  // slideUp.
+  function SlideIfNeeded($param, show) {
+    if (show && $param.css("display") == "none") {
+      $param.slideDown();
+      console.log("down");
+
+    } else if (!show && $param.css("display") != "none") {
+      $param.slideUp();
+      console.log("up");
+
+    }
+    console.log("hello");
+  }
+  $(document).ready(function() {
+    // Callback for any click on any radio button.
+    $('input[type="radio"]').click(function() {
+      // Only true when one of the "would you use" anwers is selected.
+      var potential_yt_news_user =
+          $("input:radio[name='03_WouldUse']:checked").val() == "1_yes" ||
+          $("input:radio[name='03_WouldUse']:checked").val() == "2_maybe"
+      var undefined_potential_yt_news_user =
+          $("input:radio[name='03_WouldUse']:checked").val() === undefined
+      // Only true when potential_yt_news_user
+      var potential_yt_news_subscriber =
+          $("input:radio[name='SubScribe']:checked").val() == "yes" ||
+          $("input:radio[name='SubScribe']:checked").val() == "maybe"
+
+      // Update the layout of the page to match the desired state, if necessary.
+      SlideIfNeeded($("#when_use_yt_news_question"), potential_yt_news_user);
+
+      // We want to show the subscribe fieldset unless the user has explicitly
+      // answered that they are not interested.
+      SlideIfNeeded($("#subscribe_fieldset"),
+                    potential_yt_news_user || undefined_potential_yt_news_user);
+  });
+});
+</script>
