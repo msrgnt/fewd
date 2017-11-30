@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style media="screen">
+      .wall {
+        height: 320px;
+        width: 1007px;
+        margin: 0 auto;
+        text-align: center;
+        background: linear-gradient(145deg, rgb(255,255,136), rgb(255, 255, 0));
+
+
+      }
+
+      .middle {
+        height: 230px;
+        background: #a84909;
+        width: 1007px;
+        margin: 0 auto;
+        text-align: center;
+      }
+
+      .border {
+        height: 10px;
+        background-color: black;
+        width: 1007px;
+        margin: 0 auto;
+        text-align: center;
+
+
+      }
+
+      .footer {
+        height: 190px;
+        width: 1007px;
+        margin: 0 auto;
+
+        text-align: center;
+
+        background: repeating-linear-gradient(
+          #D3D3D3,
+          #D3D3D3 8px,
+          #465298 9px,
+          #465298 7px
+        );
+
+      }
+
+      .wrapper {
+        position: absolute;
+        top: 325px;
+        margin-left: 40px;
+      }
+
+      .side {
+        width: 120px;
+        height: 50px;
+        transform: rotate(20deg) skew(20deg);
+        background: black;
+        margin: 100px;
+        position: absolute;
+      }
+
+      .side-b {
+        width: 120px;
+        height: 40px;
+        transform: rotate(19deg) skew(20deg);
+        background: white;
+        border: grey 1px solid;
+        margin: 100px;
+        position: absolute;
+        top: -27px;
+        left: 97px;
+      }
+
+      .left-t {
+        width: 122px;
+        height: 27px;
+        transform: rotate(20deg) skew(60deg);
+        background: pink;
+        margin: 100px;
+        position: absolute;
+        border-radius: 4px;
+        top: -40px;
+        left: -19px;
+        display: none;
+
+      }
+
+      .right-t {
+        width: 120px;
+        height: 50px;
+        transform: rotate(20deg) skew(-15deg);
+        background: pink;
+        margin: 100px;
+        position: absolute;
+        border-radius: 4px;
+        top: -77px;
+        left: 115px;
+        display: none;
+
+      }
+
+      .ovals {
+        position: absolute;
+        top: 400px;
+
+      }
+
+
+      .oval {
+        width: 160px;
+        height: 80px;
+        background: black;
+        border-radius: 50%;
+        position: absolute;
+        left: 700px;
+        top: 10px;
+
+        z-index: 2;
+      }
+
+      .oval-2 {
+        width: 160px;
+        height: 90px;
+        background: grey;
+        border-radius: 50%;
+        position: absolute;
+        left: 700px;
+        display: inline;
+        z-index: 1;
+      }
+
+      .top-r {
+        width: 120px;
+        height: 30px;
+        transform: rotate(20deg) skew(-55deg);
+        background: pink;
+        margin: 100px;
+        border-radius: 3px;
+        position: absolute;
+        left: 77px;
+        top: -41px;
+        display: none;
+
+      }
+
+      .top-l {
+        width: 120px;
+        height: 30px;
+        transform: rotate(20deg) skew(-55deg);
+        background: pink;
+        margin: 100px;
+        border-radius: 3px;
+        position: absolute;
+        left: 25px;
+        top: -27px;
+        display: none;
+
+      }
+
+      .front {
+        width: 53px;
+        height: 100px;
+        background: red;
+        margin: 100px;
+        transform: rotate(90deg) skew(15deg);
+        position: absolute;
+        left: 141px;
+        top: -18px;
+      }
+
+      .back {
+        width: 50px;
+        height: 96px;
+        background: white;
+        margin: 100px;
+        transform: rotate(90deg) skew(15deg);
+        border: grey 1px solid;
+        position: absolute;
+        left: 26px;
+        top: -58px;
+      }
+
+      .top-f {
+        width: 62px;
+        height: 52px;
+        background: black;
+        margin: 100px;
+        transform: rotate(135deg) skew(60deg) rotateY(50deg);
+        border-radius: 3px;
+        position: absolute;
+        left: 151px;
+        top: -39px;
+        display: none;
+      }
+
+      .top-b {
+        width: 98px;
+        height: 52px;
+        background: black;
+        margin: 100px;
+        transform: rotate(-15deg) skew(10deg) ;
+        border-radius: 3px;
+        position: absolute;
+        left: -8px;
+        top: -88px;
+        display: none;
+      }
+
+      .tape {
+        width: 60px;
+        height: 15px;
+        transform: rotate(20deg) skew(-55deg);
+        background: transparent;
+        border: 1px rgb(150, 150, 150) dotted;
+        margin: 100px;
+        border-radius: 3px;
+        position: absolute;
+        left: 80px;
+        top: -27px;
+      }
+
+      .main {
+        max-width: 1000px;
+        margin: 0 auto;
+        border: 1px grey solid;
+      }
+
+      .top-r-close {
+        width: 120px;
+        height: 30px;
+        transform: rotate(20deg) skew(-55deg);
+        background: pink;
+        margin: 100px;
+        border-radius: 3px;
+        position: absolute;
+        left: 77px;
+        top: -41px;
+        display: none;
+      }
+
+      .top-l-close {
+        width: 120px;
+        height: 60px;
+        transform: rotate(20deg) skew(-55deg);
+        background: pink;
+        margin: 100px;
+        position: absolute;
+        left: 50px;
+        top: -45px;
+      }
+
+      .tape {
+        width: 60px;
+        height: 15px;
+        transform: rotate(20deg) skew(-55deg);
+        background: transparent;
+        border: 1px rgb(150, 150, 150) dotted;
+        margin: 100px;
+        border-radius: 3px;
+        position: absolute;
+        left: 80px;
+        top: -27px;
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wall"></div>
+      <div class="middle">
+        <div class="wrapper">
+          <div class="back"></div>
+          <div class="top-b top-1"></div>
+          <div class="side-b"></div>
+          <div class="front"></div>
+          <div class="right-t top-1"></div>
+          <div class="top-f top-1"></div>
+          <div class="side"></div>
+          <div class="left-t top-1"></div>
+          <div class="top-l-close top-2"></div>
+          <div class="top-r-close top-2"></div>
+          <div class="tape top-2"></div>
+      </div>
+      <div class="ovals">
+        <div class="oval"></div>
+        <div class="oval-2"></div>
+      </div>
+    </div>
+    <div class="border"></div>
+    <div class="footer"></div>
+  </body>
+</html>
