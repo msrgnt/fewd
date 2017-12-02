@@ -6,13 +6,16 @@
     <style media="screen">
 
       .trapezoid {
-        border-bottom: 25px solid red;
-        border-left: 25px solid transparent;
-        border-right: 25px solid transparent;
+        border-bottom: 35px solid red;
+        border-left: 27px solid transparent;
+        border-right: 53px solid transparent;
         border-radius: 10px;
         height: 0;
         width: 50px;
         display: inline-block;
+        position: absolute;
+        top: 21px;
+        left: 1px;
 
       }
 
@@ -21,35 +24,72 @@
         height: 130px;
         background: red;
         border-radius: 10px 10px;
-
-      }
-
-      .top-right {
-        width: 0;
-      	height: 0;
-      	border-bottom: 20px solid red;
-      	border-right: 40px solid transparent;
-        display: inline-block;
         position: absolute;
-        top: 9px;
-        left: 81px;
+        top: 50px;
       }
+
 
       .top-wrap {
         position: relative;
       }
 
+      .handle {
+        background: white;
+        height: 15px;
+        width: 50px;
+        border-radius: 10px;
+        position: absolute;
+        top: 31px;
+        left: 29px;
+        z-index: 10;
+      }
+      .wrapper {
+        margin-top: 200px;
+        position: relative;
+      }
+
+      .cap {
+        height: 10px;
+        width: 30px;
+        background: black;
+        transform: rotate(33.5deg);
+        position: absolute;
+        top: 34px;
+        left: 100px;
+      }
+
+      .spout-1 {
+        height: 40px;
+        width: 10px;
+        background: black;
+        transform: rotate(33.5deg);
+        position: absolute;
+        top: -2px;
+        left: 125px;
+        border-radius: 5px 0 0 0;
+      }
+
+      .spout-2 {
+        height: 9px;
+        width: 20px;
+        background: black;
+        position: absolute;
+        top: 0px;
+        border-radius: 5px 0px 0px 5px;
+        left: 136px;
+      }
+
     </style>
   </head>
   <body>
-    <div class="top-wrap">
+    <div class="wrapper">
+      <div class="cap"></div>
+      <div class="spout-1"></div>
+      <div class="spout-2"></div>
+      <div class="handle"></div>
       <div class="trapezoid"></div>
-      <div class="top-right">
-    </div>
 
-    </div>
-    <div class="body">
-
-    </div>
+      <div class="body"></div>
+  </div>
   </body>
 </html>
