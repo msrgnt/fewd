@@ -22,7 +22,7 @@
       .body {
         width: 130px;
         height: 130px;
-        background: red;
+        background: linear-gradient(red, orange);
         border-radius: 10px 10px;
         position: absolute;
         top: 50px;
@@ -44,9 +44,13 @@
         z-index: 10;
       }
       .wrapper {
-        margin-top: 250px;
         position: relative;
-        margin-left: 200px;
+        margin-top: 250px;
+        height: 300px;
+        width: 130px;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
       }
 
       .cap {
@@ -151,6 +155,7 @@
 #cross:after {
   top: 50%;
   height: 5%;
+  margin-left: -50%;
   margin-top: -5%;
   width: 100%;
 }
