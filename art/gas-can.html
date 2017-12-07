@@ -19,13 +19,51 @@
 
       }
 
+      .trapezoid-shadow {
+        border-bottom: 35px solid rgb(105,105,105);
+        transform: rotate(-55deg) rotateX(30deg) rotateY(60deg);
+        border-left: 27px solid transparent;
+        border-right: 77px solid transparent;
+        border-radius: 10px;
+        height: 0;
+        width: 50px;
+        display: inline-block;
+        position: absolute;
+        left: -145px;
+        top: 63px;
+      }
+
+.bottom {
+  height: 70px;
+  width: 140px;
+  background: white;
+  position: absolute;
+  top: 170px;
+  left: 9px;
+
+}
+            .shadow {
+              display:inline;
+              width: 146px;
+              height: 200px;
+              background: rgb(105,105,105);
+              transform: rotate(-55deg) rotateX(30deg) rotateY(60deg);
+              z-index: 0;
+              position: absolute;
+              top: 38px;
+              left: -60px;
+
+            }
+
       .body {
         width: 130px;
         height: 130px;
-        background: linear-gradient(red, orange);
+        background: linear-gradient(red, red, red, red, red, red, red, red, red, red, red, red, red, red, rgb(250, 150, 150));
+
         border-radius: 10px 10px;
         position: absolute;
         top: 50px;
+        z-index: 3;
       }
 
 
@@ -43,9 +81,21 @@
         left: 29px;
         z-index: 10;
       }
+
+      .handle-shadow {
+        background: white;
+        transform: rotate(-55deg) rotateX(30deg) rotateY(60deg);
+        height: 8px;
+        width: 40px;
+        border-radius: 20px;
+        position: absolute;
+        top: 78px;
+        left: -107px;
+        z-index: 10;
+      }
       .wrapper {
         position: relative;
-        margin-top: 250px;
+        margin-top: 350px;
         height: 300px;
         width: 130px;
         margin-left: auto;
@@ -79,6 +129,8 @@
         left: 19px;
         z-index: 99;
       }
+
+
 
       .rounder-2 {
         background: white;
@@ -163,7 +215,10 @@
     </style>
   </head>
   <body>
+
     <div class="wrapper">
+      <div class="trapezoid-shadow"></div>
+      <div class="handle-shadow"></div>
       <div class="cap"></div>
       <div class="spout-1"></div>
       <div class="spout-2"></div>
@@ -171,10 +226,15 @@
       <div class="handle"></div>
       <div class="rounder"></div>
       <div class="rounder-2"></div>
-      <div class="trapezoid"></div>
-      <div id="cross"></div>
 
+      <div class="trapezoid"></div>
+
+      <div id="cross"></div>
       <div class="body"></div>
+      <div class="shadow"></div>
+      <div class="bottom">
+
+      </div>
   </div>
   </body>
 </html>
