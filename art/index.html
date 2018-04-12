@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link href='https://fonts.googleapis.com/css?family=Allerta Stencil' rel='stylesheet'>
+    <meta charset="utf-8">
+    <title></title>
+    <style media="screen">
+    .one {
+      background: -webkit-linear-gradient(red, #333);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .two {
+      background: -webkit-linear-gradient(orange, #333);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .three {
+      background: -webkit-linear-gradient(green, #333);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    body {
+      font-size: 55px;
+      font-family: 'Allerta Stencil';
+      text-transform: uppercase;
+    }
+    div {
+      margin: 120px auto;
+      max-width: 1000px;
+      text-align: center;
+    }
+    </style>
+
+  </head>
+  <body>
+    <div class="one">
+      You are suffering a breakdown.
+    </div>
+    <div class="two">
+      Hold on tight. It will pass.
+    </div>
+    <div class="three">
+      Learn from this.
+    </div>
+  </body>
+  <script type="text/javascript">
+  function displaySeconds() {
+    var red = Math.floor(Math.random() * 256);
+    var green = Math.floor(Math.random() * 256);
+    var blue = Math.floor(Math.random() * 256);
+    console.log(red, green, blue);
+
+  }
+  setInterval(displaySeconds, 1000);
+
+  </script>
+</html>
