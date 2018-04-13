@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script src="jquery.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Permanent+Marker" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <!-- Bootstrap CSS -->
+    <!-- <link rel="stylesheet" href="/styles.css"> -->
+    <!-- font awesome -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <!-- Bootstrap JS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js">
+    <style media="screen">
+      body {
+        background-color: rgb(241, 240, 245);
+        margin: 0;
+      }
+      main .introPop, .introText, .sharePop, .spotPop, .first {
+        width: 500px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      #pac-input {
+        background-color: #fff;
+        font-family: Roboto;
+        font-size: 15px;
+        font-weight: 300;
+        margin-left: auto;
+        margin-right: auto;
+        padding: 0 11px 0 13px;
+        text-overflow: ellipsis;
+        width: 400px;
+        position: absolute;
+        top: 0;
+        left: 100px;
+      }
+      #pac-input:focus {
+        border-color: #4d90fe;
+      }
+      .header-title {
+        width: 250px;
+        padding-top: 0px;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+        font-size: 40px;
+        position: relative;
+        font-family: 'Permanent Marker', cursive;
+      }
+      .introX {
+        font-size: 36px;
+      }
+      header {
+        background-color: pink;
+        height: 60px;
+        position: relative;
+      }
+      .introPop, .profilePop, .sharePop, .spotPop {
+        opacity: 0.85;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background:  #fff;
+        visibility: hidden;
+        text-align: center;
+        padding-top: 100px;
+        z-index: 1;
+      }
+      .glyphicon-refresh {
+        position: absolute;
+        top: 15px;
+        left: 10px;
+        font-size: 30px;
+      }
+      .glyphicon-ok-circle {
+        position: absolute;
+        top: 15px;
+        right: 10px;
+        font-size: 36px;
+      }
+      .introText, .spotText, .sharePop, .spotPop {
+        text-align: left;
+        max-width: 600px;
+        margin: 0 auto;
+        border: 10px solid pink;
+        padding: 10px;
+        border-radius: 15px;
+      }
+      .sharePop, .spotPop {
+      text-align: left;
+      max-width: 600px;
+      margin: 0 auto;
+      border: 10px solid pink;
+      padding: 10px;
+      border-radius: 15px;
+      visibility: hidden;
+      z-index: 1;
+    }
+    button {
+      height: 40px;
+      text-align: center;
+      background-color: white;
+      border: 1px solid pink;
+      z-index: 5;
+      border-radius: 5px;
+    }
+      #map{
+        margin: 0 auto;
+        margin-top: 35px;
+        max-width: 670px;
+        border: 4px solid pink;
+        border-radius: 20px;
+        height: 670px;
+        background:  #fff;
+        z-index: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="sharePop">
+      <h1>Describe the spot</h1>
+      <form id="spot-form" role="search">
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="Title" id="spot-name">
+          <input type="text" class="form-control" placeholder="Description" id="spot-info">
+          <button type="submit" id="share-button" >Add spot</button>
+          <span class="introX">X</span>
+        </div>
+      </form>
+      </div>
+      <div class="spotPop">
+        <h1>Your spots</h1><span class="introX">X</span>
+        <ul class="message-board">
+        </ul>
+      </div>
+      <header>
+        <span class="glyphicon glyphicon-refresh"></span>
+        <div class="header-title">Spot Check</div>
+        <span class="glyphicon glyphicon-ok-circle">
+
+      </header>
+      <main>
+        <input id="pac-input" class="controls" type="text" placeholder="Search Box">
+
+        <div id="map">
+
+        </div>
+
+      </main>
+      <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAEq9Lblg02E1M8SU5122WHjw79O-gYGKo&libraries=places&callback=initMap"
+    type="text/javascript"></script>
+    <script src="https://www.gstatic.com/firebasejs/3.7.5/firebase.js"></script>
+    <script>
+    // Initialize Firebase
+var config = {
+  apiKey: "AIzaSyColSFmKYzNIBgyk79NwZzaEIzoAZmP6r4",
+  authDomain: "spot-check-cbf68.firebaseapp.com",
+  databaseURL: "https://spot-check-cbf68.firebaseio.com",
+  projectId: "spot-check-cbf68",
+  storageBucket: "spot-check-cbf68.appspot.com",
+  messagingSenderId: "649653702777"
+};
+firebase.initializeApp(config);
+var markerAppReference = firebase.database();
+function share() {
+  event.preventDefault();
+  $(".sharePop").css("visibility", "visible");
+};
+function ZoomControl(controlDiv, map) {
+  // Creating divs & styles for custom zoom control
+  controlDiv.style.padding = '5px';
+  // Set CSS for the control wrapper
+  var controlWrapper = document.createElement('div');
+  controlWrapper.style.backgroundColor = 'white';
+  controlWrapper.style.backgroundImage = 'url(globe.png)';
+  controlWrapper.style.backgroundSize = '40px 40px';
+  controlWrapper.style.borderStyle = 'solid';
+  controlWrapper.style.borderColor = 'pink';
+  controlWrapper.style.borderWidth = '1px';
+  controlWrapper.style.cursor = 'pointer';
+  controlWrapper.style.textAlign = 'center';
+  controlWrapper.style.width = '40px';
+  controlWrapper.style.height = '40px';
+  controlDiv.appendChild(controlWrapper);
+  // Set CSS for the zoomIn
+  var zoomInButton = document.createElement('div');
+  zoomInButton.style.width = '32px';
+  zoomInButton.style.height = '32px';
+  /* Change this to be the .png image you want to use */
+  //zoomInButton.style.backgroundImage = 'url("http://placehold.it/32/00ff00")';
+  controlWrapper.appendChild(zoomInButton);
+  // Set CSS for the zoomOut
+  // Setup the click event listener - zoomIn
+  google.maps.event.addDomListener(zoomInButton, 'click', function() {
+      map.setZoom(map.getZoom() * 0 + 2);
+      console.log(map.zoom)
+  });
+}
+var zoomy = 15;
+function initMap() {
+  var map = new google.maps.Map(document.getElementById('map'), {
+      center: {
+          lat: 25.326572,
+          lng: -46.157227
+      },
+      zoom: zoomy,
+      disableDoubleClickZoom: true,
+      streetViewControl: false,
+      mapTypeControlOptions: {
+             style: google.maps.MapTypeControlStyle.HORIZONTAL_BAR,
+             position: google.maps.ControlPosition.LEFT_CENTER
+         }
+  });
+  // Create the DIV to hold the control and call the ZoomControl() constructor
+  // passing in this DIV.
+  var zoomControlDiv = document.createElement('div');
+  var zoomControl = new ZoomControl(zoomControlDiv, map);
+  //zoomControlDiv.index = 1;
+  map.controls[google.maps.ControlPosition.LEFT_BOTTOM].push(zoomControlDiv);
+  var infoWindow = new google.maps.InfoWindow({
+      map: map
+  });
+  getMarkers()
+  getPosts()
+  initAutocomplete()
+  //getLis()
+  function initAutocomplete() {
+      // Create the search box and link it to the UI element.
+      var input = document.getElementById('pac-input');
+      var searchBox = new google.maps.places.SearchBox(input);
+      map.controls[google.maps.ControlPosition.TOP_CENTER].push(input);
+      // Bias the SearchBox results towards current map's viewport.
+      map.addListener('bounds_changed', function() {
+          searchBox.setBounds(map.getBounds());
+      });
+      // Listen for the event fired when the user selects a prediction and retrieve
+      // more details for that place.
+      searchBox.addListener('places_changed', function() {
+          var places = searchBox.getPlaces();
+          if (places.length == 0) {
+              return;
+          }
+          // Clear out the old markers.
+          // For each place, get the icon, name and location.
+          var bounds = new google.maps.LatLngBounds();
+          places.forEach(function(place) {
+              if (!place.geometry) {
+                  return;
+              }
+              if (place.geometry.viewport) {
+                  // Only geocodes have viewport.
+                  bounds.union(place.geometry.viewport);
+              } else {
+                  bounds.extend(place.geometry.location);
+              }
+          });
+          map.fitBounds(bounds);
+          //    searchBox.getPlaces('');
+      });
+  }
+  function getPosts() {
+    console.log("first step");
+      // retrieve messages data when .on() initially executes
+      // and when its data updates
+      // https://firebase.google.com/docs/reference/js/firebase.database.Reference
+      markerAppReference.ref('spots').on('value', function (results) {
+        var $messageBoard = $('.message-board');
+        var messages = [];
+        var allMsgs = results.val();
+        console.log(allMsgs);
+        // iterate through results coming from database call; messages
+        for (var msg in allMsgs) {
+          var name = allMsgs[msg].Name;
+          var info = allMsgs[msg].Info;
+          // create message element
+          var $messageListElement = $('<li>');
+          console.log($messageListElement);
+          // create delete element
+          var $deleteElement = $('<i class="fa fa-trash pull-right delete"></i>');
+          // add id as data attribute so we can refer to later for updating
+          $messageListElement.attr('data-id', msg);
+          // add message to li
+          $messageListElement.html(name);
+          // add delete element
+          $messageListElement.append($deleteElement);
+          // push element to array of messages -- this is pushing to an array, not HTTP push
+          messages.push($messageListElement);
+          $deleteElement.on('click', function(e) {
+              var id = $(e.target.parentNode).data('id');
+              deleteMessage(id);
+              console.log(id);
+          })
+        }
+        // remove lis to avoid dupes
+        // .empty() is a jQuery method to remove all child nodes
+        $messageBoard.empty();
+        for (var i in messages) {
+          $messageBoard.append(messages[i]);
+          console.log(messages);
+        }
+      });
+    }
+  function deleteMessage(id) {
+    var bookReference = markerAppReference.ref('spots').child(id);
+    bookReference.remove();
+  }
+  function getMarkers() {
+      // retrieve messages data when .on() initially executes
+      // and when its data updates
+      // https://firebase.google.com/docs/reference/js/firebase.database.Reference
+      markerAppReference.ref('spots').on('value', function(results) {
+          var markerArray = [];
+          var allMarkers = results.val();
+          for (var marker in allMarkers) {
+              var name = allMarkers[marker].Name;
+              var info = allMarkers[marker].Info;
+              var lat = allMarkers[marker].Lat;
+              var long = allMarkers[marker].Long;
+              // create message element
+              var $markerInfoRow = $("<div class='row'></div>");
+              var latLng = new google.maps.LatLng(lat, long);
+              var shit = new google.maps.Marker({
+                  position: latLng,
+                  clickable: true,
+                  title: name
+              });
+              var contentString = '<div>' +
+                  '<div id="siteNotice">' +
+                  '</div>' +
+                  '<h1 id="firstHeading" class="firstHeading">' + name + '</h1>' +
+                  '<div id="bodyContent">' +
+                  '<p>' + info + '</p>' +
+                  '</div>' +
+                  '</div>';
+              content: ' My name is ' + name
+              shit.setMap(map);
+              var infowindow = new google.maps.InfoWindow({
+                  content: contentString
+              });
+              var $markerInfo = $('<h3 class="info">' + info + '</h3>');
+              var $markerName = $('<h2 class="name">' + name + '</h2>');
+              $markerInfoRow.attr('data-id', shit);
+              $markerInfoRow.append($markerInfo);
+              $markerInfoRow.append($markerName);
+              google.maps.event.addListener(shit, 'click', (function(marker, infowindow) {
+                  return function() {
+                      infowindow.open(map, shit);
+                  };
+              })(shit, infowindow));
+              // push element to array of messages -- this is pushing to an array, not HTTP push
+              markerArray.push($markerInfoRow);
+          }
+        //  $messageBoard.empty();
+      });
+  }
+  function deleteMessage(id) {
+      var bookReference = markerAppReference.ref('spots').child(id);
+      bookReference.remove();
+  }
+  var pressTimer;
+  google.maps.event.addListener(map, "dblclick", function(event) {
+      share();
+      placeMarker(event.latLng);
+      alert("Latitude: " + event.latLng.lat() + "\r\nLongitude: " + event.latLng.lng());
+      var lat = event.latLng.lat();
+      var long = event.latLng.lng();
+      $('#spot-form').submit(function(event) {
+          event.preventDefault();
+          var spotName = $('#spot-name').val();
+          var spotInfo = $('#spot-info').val();
+          var img =
+              $('#spot-name').val('');
+          $('#spot-info').val('');
+          var markerReference = markerAppReference.ref("spots");
+          markerReference.push({
+              Name: spotName,
+              Info: spotInfo,
+              Lat: lat,
+              Long: long
+          })
+          $(".sharePop").css("visibility", "hidden");
+      })
+  });
+  var input = document.getElementById('pac-input');
+  var searchBox = new google.maps.places.SearchBox(input);
+  function placeMarker(location) {
+      var marker = new google.maps.Marker({
+          position: location,
+          map: map
+      });
+      share();
+  }
+  // Try HTML5 geolocation.
+  if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(function(position) {
+          var pos = {
+              lat: position.coords.latitude,
+              lng: position.coords.longitude
+          };
+          infoWindow.setPosition(pos);
+          infoWindow.setContent('Location found.');
+          map.setCenter(pos);
+      }, function() {
+          handleLocationError(true, infoWindow, map.getCenter());
+      });
+  } else {
+      // Browser doesn't support Geolocation
+      handleLocationError(false, infoWindow, map.getCenter());
+  }
+}
+$('.b').click(function() {});
+$('.a').click(function() {
+  console.log("click 2");
+});
+$('.glyphicon-ok-circle').click(function() {
+  $(".spotPop").css("visibility", "visible");
+});
+$('.d').click(function() {
+  console.log("click 4");
+});
+function handleLocationError(browserHasGeolocation, infoWindow, pos) {
+  infoWindow.setPosition(pos);
+  infoWindow.setContent(browserHasGeolocation ?
+      'Error: The Geolocation service failed.' :
+      'Error: Your browser doesn\'t support geolocation.');
+}
+$('.introX').click(function() {
+  $(".introPop").css("visibility", "hidden");
+  $(".sharePop").css("visibility", "hidden");
+  $(".sharePop").removeClass("fade");
+  $(".profilePop").css("visibility", "hidden");
+  $(".profilePop").removeClass("fade");
+  $(".spotPop").css("visibility", "hidden");
+  $(".spotPop").removeClass("fade");
+});
+$('.glyphicon-refresh').click(function() {
+  location.reload();
+});
+</script>
+  </body>
+</html>
